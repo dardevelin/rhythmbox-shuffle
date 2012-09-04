@@ -2048,6 +2048,17 @@ load_uri_action_cb (GSimpleAction *action, GVariant *parameters, RBShell *shell)
 }
 
 static void
+activate_shuffle_action_cb (GSimpleAction *action, GVariant *parameters, RBShell *shell)
+{
+	gboolean shuffle;
+	gboolean repeat;
+	
+	rb_shell_player_get_playback_state (shell->priv->player_shell, &shuffle, &repeat);
+	shuffle = !shuffle;
+	rb_shell_player_set_playback_state (shell->priv->player_shell, shuffle, repeat);
+}
+
+static void
 activate_source_action_cb (GSimpleAction *action, GVariant *parameters, RBShell *shell)
 {
 	const char *source;
@@ -2082,6 +2093,12 @@ rb_shell_constructed (GObject *object)
 	g_signal_connect_object (action, "activate", G_CALLBACK (load_uri_action_cb), shell, 0);
 	g_simple_action_group_insert (actions, G_ACTION (action));
 	g_object_unref (action);
+
+	/* add shuffle callback */
+	action = g_simple_action_new ("ToggleShuffle", NULL);
+	g_signal_connect_object (action, "activate", G_CALLBACK(activate_shuffle_action_cb), shell, 0);
+	g_simple_action_group_insert (actions, G_ACTION(action));
+	g_object_unref(action);
 
 	action = g_simple_action_new ("ActivateSource", G_VARIANT_TYPE ("(su)"));
 	g_signal_connect_object (action, "activate", G_CALLBACK (activate_source_action_cb), shell, 0);
