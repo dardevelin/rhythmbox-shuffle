@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBMediaPlayerSource</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch06.html" title="Sources">
+<link rel="prev" href="RBMissingFilesSource.html" title="RBMissingFilesSource">
+<link rel="next" href="RBPlayQueueSource.html" title="RBPlayQueueSource">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBMissingFilesSource.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBPlayQueueSource.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBMediaPlayerSource.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBMediaPlayerSource.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBMediaPlayerSource.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBMediaPlayerSource.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#RBMediaPlayerSource.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBMediaPlayerSource"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBMediaPlayerSource.top_of_page"></a>RBMediaPlayerSource</span></h2>
+<p>RBMediaPlayerSource</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBMediaPlayerSource.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="rhythmbox-Media-player-ID.html#RBMediaPlayerSource-struct" title="struct RBMediaPlayerSource">RBMediaPlayerSource</a>;
+struct              <a class="link" href="rhythmbox-Media-player-ID.html#RBMediaPlayerSourceClass" title="struct RBMediaPlayerSourceClass">RBMediaPlayerSourceClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-Media-player-ID.html#rb-media-player-source-show-properties" title="rb_media_player_source_show_properties ()">rb_media_player_source_show_properties</a>
+                                                        (<em class="parameter"><code><a class="link" href="rhythmbox-Media-player-ID.html#RBMediaPlayerSource"><span class="type">RBMediaPlayerSource</span></a> *source</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBMediaPlayerSource.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBox
+                           +----GtkHBox
+                                 +----RBDisplayPage
+                                       +----<a class="link" href="RBSource.html" title="RBSource">RBSource</a>
+                                             +----<a class="link" href="RBBrowserSource.html" title="RBBrowserSource">RBBrowserSource</a>
+                                                   +----RBMediaPlayerSource
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBMediaPlayerSource.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBMediaPlayerSource implements
+ AtkImplementorIface,  GtkBuildable and  GtkOrientable.</p>
+</div>
+<div class="refsect1">
+<a name="RBMediaPlayerSource.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBMediaPlayerSource.html#RBMediaPlayerSource--encoding-target" title='The "encoding-target" property'>encoding-target</a>"          <a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingTarget"><span class="type">GstEncodingTarget</span></a>*    : Read / Write
+  "<a class="link" href="RBMediaPlayerSource.html#RBMediaPlayerSource--serial" title='The "serial" property'>serial</a>"                   <span class="type">gchar</span>*                : Read
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBMediaPlayerSource.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1">
+<a name="RBMediaPlayerSource.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBMediaPlayerSource-struct"></a><h3>struct RBMediaPlayerSource</h3>
+<pre class="programlisting">struct RBMediaPlayerSource;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBMediaPlayerSourceClass"></a><h3>struct RBMediaPlayerSourceClass</h3>
+<pre class="programlisting">struct RBMediaPlayerSourceClass {
+	RBBrowserSourceClass parent_class;
+
+	/* class members */
+	void		(*impl_get_entries) (RBMediaPlayerSource *source, const char *category, GHashTable *map);
+	guint64		(*impl_get_capacity) (RBMediaPlayerSource *source);
+	guint64		(*impl_get_free_space) (RBMediaPlayerSource *source);
+	void		(*impl_delete_entries) (RBMediaPlayerSource *source,
+						 GList *entries,
+						 RBMediaPlayerSourceDeleteCallback callback,
+						 gpointer data,
+						 GDestroyNotify destroy_data);
+	void		(*impl_add_playlist) (RBMediaPlayerSource *source, gchar *name, GList *entries);
+	void		(*impl_remove_playlists) (RBMediaPlayerSource *source);
+	void		(*impl_show_properties) (RBMediaPlayerSource *source, GtkWidget *info_box, GtkWidget *notebook);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-media-player-source-show-properties"></a><h3>rb_media_player_source_show_properties ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_media_player_source_show_properties
+                                                        (<em class="parameter"><code><a class="link" href="rhythmbox-Media-player-ID.html#RBMediaPlayerSource"><span class="type">RBMediaPlayerSource</span></a> *source</code></em>);</pre>
+<p>
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBMediaPlayerSource.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBMediaPlayerSource--encoding-target"></a><h3>The <code class="literal">"encoding-target"</code> property</h3>
+<pre class="programlisting">  "encoding-target"          <a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingTarget"><span class="type">GstEncodingTarget</span></a>*    : Read / Write</pre>
+<p>
+The <a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingTarget"><span class="type">GstEncodingTarget</span></a> for this device
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBMediaPlayerSource--serial"></a><h3>The <code class="literal">"serial"</code> property</h3>
+<pre class="programlisting">  "serial"                   <span class="type">gchar</span>*                : Read</pre>
+<p>device serial number.</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

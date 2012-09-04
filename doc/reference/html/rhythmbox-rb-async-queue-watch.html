@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>rb-async-queue-watch</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch02.html" title="Lib">
+<link rel="prev" href="rhythmbox-Media-player-ID.html" title="Media player ID">
+<link rel="next" href="rhythmbox-rb-debug.html" title="rb-debug">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rhythmbox-Media-player-ID.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="rhythmbox-rb-debug.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#rhythmbox-rb-async-queue-watch.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#rhythmbox-rb-async-queue-watch.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="rhythmbox-rb-async-queue-watch"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="rhythmbox-rb-async-queue-watch.top_of_page"></a>rb-async-queue-watch</span></h2>
+<p>rb-async-queue-watch — GSource for watching a GAsyncQueue in the main loop</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="rhythmbox-rb-async-queue-watch.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><span class="returnvalue">void</span>                (<a class="link" href="rhythmbox-rb-async-queue-watch.html#RBAsyncQueueWatchFunc" title="RBAsyncQueueWatchFunc ()">*RBAsyncQueueWatchFunc</a>)            (<em class="parameter"><code><span class="type">gpointer</span> item</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> data</code></em>);
+<span class="returnvalue">guint</span>               <a class="link" href="rhythmbox-rb-async-queue-watch.html#rb-async-queue-watch-new" title="rb_async_queue_watch_new ()">rb_async_queue_watch_new</a>            (<em class="parameter"><code><span class="type">GAsyncQueue</span> *queue</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> priority</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="rhythmbox-rb-async-queue-watch.html#RBAsyncQueueWatchFunc" title="RBAsyncQueueWatchFunc ()"><span class="type">RBAsyncQueueWatchFunc</span></a> callback</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> notify</code></em>,
+                                                         <em class="parameter"><code><span class="type">GMainContext</span> *context</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-async-queue-watch.description"></a><h2>Description</h2>
+<p>
+This provides a way to feed work items to the main loop using a <span class="type">GAsyncQueue</span>
+without polling it.
+</p>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-async-queue-watch.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBAsyncQueueWatchFunc"></a><h3>RBAsyncQueueWatchFunc ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                (*RBAsyncQueueWatchFunc)            (<em class="parameter"><code><span class="type">gpointer</span> item</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> data</code></em>);</pre>
+<p>
+Callback to call when an item is found in the queue.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>the item found in the queue</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>user data specified when creating the watch</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-async-queue-watch-new"></a><h3>rb_async_queue_watch_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>               rb_async_queue_watch_new            (<em class="parameter"><code><span class="type">GAsyncQueue</span> *queue</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> priority</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="rhythmbox-rb-async-queue-watch.html#RBAsyncQueueWatchFunc" title="RBAsyncQueueWatchFunc ()"><span class="type">RBAsyncQueueWatchFunc</span></a> callback</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> notify</code></em>,
+                                                         <em class="parameter"><code><span class="type">GMainContext</span> *context</code></em>);</pre>
+<p>
+Creates a new <span class="type">GSource</span> that triggers when the <span class="type">GAsyncQueue</span> is
+non-empty.  This is used in rhythmbox to process queues within
+<a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> in the main thread without polling.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>queue</code></em> :</span></p></td>
+<td>the <span class="type">GAsyncQueue</span> to watch</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>priority</code></em> :</span></p></td>
+<td>priority value for the <span class="type">GSource</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>callback to invoke when the queue is non-empty</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data to pass to the callback</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>notify</code></em> :</span></p></td>
+<td>function to call to clean up the user data for the callback</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>the <span class="type">GMainContext</span> to attach the source to</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the ID of the new <span class="type">GSource</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

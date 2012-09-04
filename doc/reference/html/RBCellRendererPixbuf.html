@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBCellRendererPixbuf</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch07.html" title="Widgets">
+<link rel="prev" href="ch07.html" title="Widgets">
+<link rel="next" href="RBCellRendererRating.html" title="RBCellRendererRating">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch07.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBCellRendererRating.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBCellRendererPixbuf.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBCellRendererPixbuf.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBCellRendererPixbuf.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBCellRendererPixbuf.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBCellRendererPixbuf"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBCellRendererPixbuf.top_of_page"></a>RBCellRendererPixbuf</span></h2>
+<p>RBCellRendererPixbuf — <span class="type">GtkCellRenderer</span> for displaying pixbufs in tree views</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBCellRendererPixbuf.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBCellRendererPixbuf.html#RBCellRendererPixbuf-struct" title="struct RBCellRendererPixbuf">RBCellRendererPixbuf</a>;
+struct              <a class="link" href="RBCellRendererPixbuf.html#RBCellRendererPixbufClass" title="struct RBCellRendererPixbufClass">RBCellRendererPixbufClass</a>;
+<span class="returnvalue">GtkCellRenderer</span> *   <a class="link" href="RBCellRendererPixbuf.html#rb-cell-renderer-pixbuf-new" title="rb_cell_renderer_pixbuf_new ()">rb_cell_renderer_pixbuf_new</a>         (<em class="parameter"><code><span class="type">void</span></code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBCellRendererPixbuf.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkCellRenderer
+               +----GtkCellRendererPixbuf
+                     +----RBCellRendererPixbuf
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBCellRendererPixbuf.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBCellRendererPixbuf.html#RBCellRendererPixbuf-pixbuf-clicked" title='The "pixbuf-clicked" signal'>pixbuf-clicked</a>"                                 : <code class="literal">Run First</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBCellRendererPixbuf.description"></a><h2>Description</h2>
+<p>
+This is similar to <span class="type">GtkCellRendererPixbuf</span>, except that it also emits a signal
+when the pixbuf is clicked on, and it can only use pixbuf objects.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBCellRendererPixbuf.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBCellRendererPixbuf-struct"></a><h3>struct RBCellRendererPixbuf</h3>
+<pre class="programlisting">struct RBCellRendererPixbuf;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBCellRendererPixbufClass"></a><h3>struct RBCellRendererPixbufClass</h3>
+<pre class="programlisting">struct RBCellRendererPixbufClass {
+  GtkCellRendererPixbufClass parent_class;
+
+  void (*pixbuf_clicked) (RBCellRendererPixbuf *renderer, GtkTreePath *path);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-cell-renderer-pixbuf-new"></a><h3>rb_cell_renderer_pixbuf_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">GtkCellRenderer</span> *   rb_cell_renderer_pixbuf_new         (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Creates a new <a class="link" href="RBCellRendererPixbuf.html" title="RBCellRendererPixbuf"><span class="type">RBCellRendererPixbuf</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the new cell renderer</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBCellRendererPixbuf.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="RBCellRendererPixbuf-pixbuf-clicked"></a><h3>The <code class="literal">"pixbuf-clicked"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBCellRendererPixbuf.html" title="RBCellRendererPixbuf"><span class="type">RBCellRendererPixbuf</span></a> *renderer,
+                                                        <span class="type">gchar</span>                *path,
+                                                        <span class="type">gpointer</span>              user_data)      : <code class="literal">Run First</code></pre>
+<p>
+Emitted when the user clicks on the pixbuf cell.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>renderer</code></em> :</span></p></td>
+<td>the <a class="link" href="RBCellRendererPixbuf.html" title="RBCellRendererPixbuf"><span class="type">RBCellRendererPixbuf</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>the <span class="type">GtkTreePath</span> to the row that was clicked</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!-- ##### SECTION Title ##### -->
+RBEncoder
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBEncoder ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBEncoder::completed ##### -->
+<para>
+
+</para>
+
+@rbencoder: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+
+<!-- ##### SIGNAL RBEncoder::progress ##### -->
+<para>
+
+</para>
+
+@rbencoder: the object which received the signal.
+@arg1: 
+
+<!-- ##### STRUCT RBEncoderIface ##### -->
+<para>
+
+</para>
+
+@g_iface: 
+@encode: 
+@cancel: 
+@get_missing_plugins: 
+@progress: 
+@completed: 
+
+<!-- ##### FUNCTION rb_encoder_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_encoder_encode ##### -->
+<para>
+
+</para>
+
+@encoder: 
+@entry: 
+@dest: 
+@overwrite: 
+@profile: 
+
+
+<!-- ##### FUNCTION rb_encoder_cancel ##### -->
+<para>
+
+</para>
+
+@encoder: 
+
+
+<!-- ##### FUNCTION rb_encoder_get_missing_plugins ##### -->
+<para>
+
+</para>
+
+@encoder: 
+@profile: 
+@details: 
+@descriptions: 
+@Returns: 
+
+

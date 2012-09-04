@@ -1,0 +1,57 @@
+<!-- ##### SECTION Title ##### -->
+RBImportErrorsSource
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBImportErrorsSource ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG RBImportErrorsSource:ignore-entry-type ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBImportErrorsSource:normal-entry-type ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBImportErrorsSourceClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION rb_import_errors_source_new ##### -->
+<para>
+
+</para>
+
+@shell: 
+@entry_type: 
+@normal_entry_type: 
+@ignore_entry_type: 
+@Returns: 
+
+

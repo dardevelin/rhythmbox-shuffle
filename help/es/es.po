@@ -1,0 +1,3008 @@
+# translation of rhythmbox.master.doc-es.po to
+# Jorge González <jorgegonz@svn.gnome.org>, 2008, 2009, 2011.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: rhythmbox.help.master.es\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-09 04:15+0000\n"
+"PO-Revision-Date: 2012-03-30 11:55+0200\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:301(None)
+msgid "@@image: 'figures/rb-window.png'; md5=0f4dd630b8982cec59c02f6b18869954"
+msgstr "@@image: 'figures/rb-window.png'; md5=0f4dd630b8982cec59c02f6b18869954"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:420(None)
+msgid "@@image: 'figures/rb-toolbar.png'; md5=28ce913fc2b1c35d92bde845fd42115c"
+msgstr ""
+"@@image: 'figures/rb-toolbar.png'; md5=28ce913fc2b1c35d92bde845fd42115c"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:446(None)
+msgid ""
+"@@image: 'figures/rb-statusbar.png'; md5=d936196c59e8858a7527766365ddeb1b"
+msgstr ""
+"@@image: 'figures/rb-statusbar.png'; md5=d936196c59e8858a7527766365ddeb1b"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:468(None)
+msgid ""
+"@@image: 'figures/rb-window-small.png'; md5=0a6a3eeb31bc84fe33d4b9ef12411b1a"
+msgstr ""
+"@@image: 'figures/rb-window-small.png'; md5=0a6a3eeb31bc84fe33d4b9ef12411b1a"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:502(None)
+msgid ""
+"@@image: 'figures/rb-toolbar-prevplaynext.png'; "
+"md5=a21f4be6afb905611387f0c724e2c9dd"
+msgstr ""
+"@@image: 'figures/rb-toolbar-prevplaynext.png'; "
+"md5=a21f4be6afb905611387f0c724e2c9dd"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:523(None)
+msgid ""
+"@@image: 'figures/rb-toolbar-repeat.png'; "
+"md5=9eb96896ae0b8915fdd0acff0dfad17d"
+msgstr ""
+"@@image: 'figures/rb-toolbar-repeat.png'; "
+"md5=9eb96896ae0b8915fdd0acff0dfad17d"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:542(None)
+msgid ""
+"@@image: 'figures/rb-toolbar-shuffle.png'; "
+"md5=ef0b058dd83cf9e180a3b7baf3bf912f"
+msgstr ""
+"@@image: 'figures/rb-toolbar-shuffle.png'; "
+"md5=ef0b058dd83cf9e180a3b7baf3bf912f"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:558(None)
+msgid ""
+"@@image: 'figures/rb-volume-changer.png'; "
+"md5=9c567cb7e73edd66391df649aa0f2c11"
+msgstr ""
+"@@image: 'figures/rb-volume-changer.png'; "
+"md5=9c567cb7e73edd66391df649aa0f2c11"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:723(None)
+msgid ""
+"@@image: 'figures/rb-iradio-main.png'; md5=191b1cab0db49e95ff865f820b04887b"
+msgstr ""
+"@@image: 'figures/rb-iradio-main.png'; md5=191b1cab0db49e95ff865f820b04887b"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:784(None)
+msgid ""
+"@@image: 'figures/rb-podcast-main.png'; md5=024067358a77e4fb1d5bbdfe13e49f06"
+msgstr ""
+"@@image: 'figures/rb-podcast-main.png'; md5=024067358a77e4fb1d5bbdfe13e49f06"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:1229(None)
+msgid ""
+"@@image: 'figures/rb-notification-zone.png'; "
+"md5=a3abf0f868510bff2d3860ef5cca7606"
+msgstr ""
+"@@image: 'figures/rb-notification-zone.png'; "
+"md5=a3abf0f868510bff2d3860ef5cca7606"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:1253(None)
+msgid ""
+"@@image: 'figures/rb-notification-window.png'; "
+"md5=03d7ddbb4881819a1fd24472931f3686"
+msgstr ""
+"@@image: 'figures/rb-notification-window.png'; "
+"md5=03d7ddbb4881819a1fd24472931f3686"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/rhythmbox.xml:1276(None)
+msgid ""
+"@@image: 'figures/rb-notification-area-menu.png'; "
+"md5=6c995ad302065e771ff1158dd8c0403f"
+msgstr ""
+"@@image: 'figures/rb-notification-area-menu.png'; "
+"md5=6c995ad302065e771ff1158dd8c0403f"
+
+#: C/rhythmbox.xml:37(title) C/rhythmbox.xml:304(application)
+#: C/rhythmbox.xml:305(application) C/rhythmbox.xml:331(application)
+#: C/rhythmbox.xml:471(application)
+msgid "Rhythmbox Music Player"
+msgstr "Reproductor de música Rhythmbox"
+
+#: C/rhythmbox.xml:39(year) C/rhythmbox.xml:43(year) C/rhythmbox.xml:44(year)
+msgid "2002"
+msgstr "2002"
+
+#: C/rhythmbox.xml:40(holder) C/rhythmbox.xml:129(para)
+msgid "Mark Finlay"
+msgstr "Mark Finlay"
+
+#: C/rhythmbox.xml:45(holder) C/rhythmbox.xml:138(para)
+msgid "Mark Humphreys"
+msgstr "Mark Humphreys"
+
+#: C/rhythmbox.xml:48(year)
+msgid "2005"
+msgstr "2005"
+
+#: C/rhythmbox.xml:49(year) C/rhythmbox.xml:53(year)
+msgid "2006"
+msgstr "2006"
+
+#: C/rhythmbox.xml:50(holder) C/rhythmbox.xml:147(para)
+msgid "Baptiste Mille-Mathias"
+msgstr "Baptiste Mille-Mathias"
+
+#: C/rhythmbox.xml:54(holder)
+msgid "Victor Osadci"
+msgstr "Victor Osadci"
+
+#: C/rhythmbox.xml:57(year)
+msgid "2008"
+msgstr "2008"
+
+#: C/rhythmbox.xml:58(holder) C/rhythmbox.xml:165(para)
+msgid "Dean Sas"
+msgstr "Dean Sas"
+
+#: C/rhythmbox.xml:72(publishername) C/rhythmbox.xml:84(orgname)
+#: C/rhythmbox.xml:92(orgname) C/rhythmbox.xml:100(orgname)
+#: C/rhythmbox.xml:108(orgname) C/rhythmbox.xml:131(para)
+#: C/rhythmbox.xml:140(para) C/rhythmbox.xml:149(para)
+#: C/rhythmbox.xml:158(para) C/rhythmbox.xml:166(para)
+msgid "GNOME Documentation Project"
+msgstr "Proyecto de documentación de GNOME"
+
+#: C/rhythmbox.xml:4(para)
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
+"in the file COPYING-DOCS distributed with this manual."
+msgstr ""
+"Se otorga permiso para copiar, distribuir y/o modificar este documento bajo "
+"los términos de la Licencia de Documentación Libre de GNU, Versión 1.1 o "
+"cualquier otra versión posterior publicada por la Free Software Foundation; "
+"sin Secciones Invariantes ni Textos de Cubierta Delantera ni Textos de "
+"Cubierta Trasera. Puede encontrar una copia de la licencia GFDL en este "
+"<ulink type=\"help\" url=\"ghelp:fdl\">enlace</ulink> o en el archivo "
+"COPYING-DOCS distribuido con este manual."
+
+#: C/rhythmbox.xml:14(para)
+msgid ""
+"This manual is part of a collection of GNOME manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+"Este manual es parte de una colección de manuales de GNOME distribuido bajo "
+"la GFDL. Si quiere distribuir este manual por separado de la colección, "
+"puede hacerlo añadiendo una copia de la licencia al manual, tal como se "
+"describe en la sección 6 de la licencia."
+
+#: C/rhythmbox.xml:21(para)
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any GNOME "
+"documentation, and the members of the GNOME Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"Muchos de los nombres usados por compañías para distinguir sus productos y "
+"servicios son mencionados como marcas comerciales. Donde esos nombres "
+"aparezcan en cualquier documentación de GNOME, y los miembros del Proyecto "
+"de Documentación de GNOME están al corriente de esas marcas comerciales, "
+"entonces los nombres se pondrán en mayúsculas o con la inicial en mayúsculas."
+
+#: C/rhythmbox.xml:37(para)
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"EL DOCUMENTO SE PROPORCIONA \"TAL CUAL\", SIN GARANTÍA DE NINGÚN TIPO, NI "
+"EXPLÍCITA NI IMPLÍCITA INCLUYENDO, SIN LIMITACIÓN, GARANTÍA DE QUE EL "
+"DOCUMENTO O VERSIÓN MODIFICADA DE ÉSTE CAREZCA DE DEFECTOS COMERCIALES, SEA "
+"ADECUADO A UN FIN CONCRETO O INCUMPLA ALGUNA NORMATIVA. TODO EL RIESGO "
+"RELATIVO A LA CALIDAD, PRECISIÓN Y UTILIDAD DEL DOCUMENTO O SU VERSIÓN "
+"MODIFICADA RECAE EN USTED. SI CUALQUIER DOCUMENTO O VERSIÓN MODIFICADA DE "
+"AQUÉL RESULTARA DEFECTUOSO EN CUALQUIER ASPECTO, USTED (Y NO EL REDACTOR "
+"INICIAL, AUTOR O CONTRIBUYENTE) ASUMIRÁ LOS COSTES DE TODA REPARACIÓN, "
+"MANTENIMIENTO O CORRECCIÓN NECESARIOS. ESTA RENUNCIA DE GARANTÍA ES UNA "
+"PARTE ESENCIAL DE ESTA LICENCIA. NO SE AUTORIZA EL USO DE NINGÚN DOCUMENTO "
+"NI VERSIÓN MODIFICADA DE ÉSTE POR EL PRESENTE, SALVO DENTRO DEL CUMPLIMIENTO "
+"DE LA RENUNCIA;Y"
+
+#: C/rhythmbox.xml:57(para)
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"BAJO NINGUNA CIRCUNSTANCIA NI BAJO NINGUNA TEORÍA LEGAL, SEA POR ERROR "
+"(INCLUYENDO NEGLIGENCIA), CONTRATO O DE ALGÚN OTRO MODO, EL AUTOR, EL "
+"ESCRITOR INICIAL, CUALQUIER CONTRIBUIDOR, O CUALQUIER DISTRIBUIDOR DEL "
+"DOCUMENTO O VERSIÓN MODIFICADA DEL DOCUMENTO, O CUALQUIER PROPORCIONADOR DE "
+"CUALQUIERA DE ESAS PARTES, SERÁ RESPONSABLE ANTE NINGUNA PERSONA POR NINGÚN "
+"DAÑO DIRECTO, INDIRECTO, ESPECIAL, INCIDENTAL O DERIVADO DE NINGÚN TIPO, "
+"INCLUYENDO, SIN LIMITACIÓN DAÑOS POR PÉRDIDA DE MERCANCÍAS, PARO TÉCNICO, "
+"FALLO INFORMÁTICO O MAL FUNCIONAMIENTO O CUALQUIER OTRO POSIBLE DAÑO O "
+"PÉRDIDAS DERIVADAS O RELACIONADAS CON EL USO DEL DOCUMENTO O SUS VERSIONES "
+"MODIFICADAS, AUNQUE DICHA PARTE HAYA SIDO INFORMADA DE LA POSIBILIDAD DE QUE "
+"SE PRODUJESEN DICHOS DAÑOS."
+
+#: C/rhythmbox.xml:30(para)
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<placeholder-1/>"
+msgstr ""
+"ESTE DOCUMENTO Y LAS VERSIONES MODIFICADAS DEL MISMO SE PROPORCIONAN SEGÚN "
+"LAS CONDICIONES ESTABLECIDAS EN LA LICENCIA DE DOCUMENTACIÓN LIBRE DE GNU "
+"(GFDL) Y TENIENDO EN CUENTA QUE: <placeholder-1/>"
+
+#: C/rhythmbox.xml:81(firstname) C/rhythmbox.xml:89(firstname)
+msgid "Mark"
+msgstr "Mark"
+
+#: C/rhythmbox.xml:82(surname)
+msgid "Finlay"
+msgstr "Finlay"
+
+#: C/rhythmbox.xml:85(email)
+msgid "sisob@eircom.net"
+msgstr "sisob@eircom.net"
+
+#: C/rhythmbox.xml:90(surname)
+msgid "Humphreys"
+msgstr "Humphreys"
+
+#: C/rhythmbox.xml:93(email)
+msgid "marquee@users.sourceforge.net"
+msgstr "marquee@users.sourceforge.net"
+
+#: C/rhythmbox.xml:97(firstname)
+msgid "Baptiste"
+msgstr "Baptiste"
+
+#: C/rhythmbox.xml:98(surname)
+msgid "Mille-Mathias"
+msgstr "Mille-Mathias"
+
+#: C/rhythmbox.xml:101(email)
+msgid "baptiste.millemathias@gmail.com"
+msgstr "baptiste.millemathias@gmail.com"
+
+#: C/rhythmbox.xml:105(firstname)
+msgid "Victor"
+msgstr "Victor"
+
+#: C/rhythmbox.xml:106(surname)
+msgid "Osadci"
+msgstr "Osadci"
+
+#: C/rhythmbox.xml:109(email)
+msgid "Victor.Osadci.GNOME@xhtml.md"
+msgstr "Victor.Osadci.GNOME@xhtml.md"
+
+#: C/rhythmbox.xml:113(firstname)
+msgid "Dean"
+msgstr "Dean"
+
+#: C/rhythmbox.xml:114(surname)
+msgid "Sas"
+msgstr "Sas"
+
+#: C/rhythmbox.xml:116(orgname)
+msgid "Ubuntu Documentation Project"
+msgstr "Proyecto de documentación de Ubuntu"
+
+#: C/rhythmbox.xml:117(email)
+msgid "dean@deansas.org"
+msgstr "dean@deansas.org"
+
+#: C/rhythmbox.xml:126(revnumber)
+msgid "Rhythmbox Music Player Manual V0.0.2"
+msgstr "Manual del Reproductor de música Rhythmbox V0.0.2"
+
+#: C/rhythmbox.xml:127(date)
+msgid "October 2002"
+msgstr "Octubre de 2003"
+
+#: C/rhythmbox.xml:135(revnumber)
+msgid "Rhythmbox Music Player Manual V0.0.3"
+msgstr "Manual del Reproductor de música Rhythmbox V0.0.3"
+
+#: C/rhythmbox.xml:136(date)
+msgid "August 2003"
+msgstr "Agosto de 2004"
+
+#: C/rhythmbox.xml:144(revnumber)
+msgid "Rhythmbox Music Player Manual V0.0.4"
+msgstr "Manual del Reproductor de música Rhythmbox V0.0.4"
+
+#: C/rhythmbox.xml:145(date)
+msgid "October 2005"
+msgstr "Octubre de 2003"
+
+#: C/rhythmbox.xml:153(revnumber)
+msgid "Rhythmbox Music Player Manual V2.0.2"
+msgstr "Manual del reproductor de música Rhythmbox V2.0.2"
+
+#: C/rhythmbox.xml:154(date)
+msgid "April 2006"
+msgstr "abril de 2006"
+
+#: C/rhythmbox.xml:156(para)
+msgid "Luca Ferretti"
+msgstr "Luca Ferretti"
+
+#: C/rhythmbox.xml:162(revnumber)
+msgid "Rhythmbox Music Player Manual V2.0.3"
+msgstr "Manual del reproductor de música Rhythmbox V2.0.3"
+
+#: C/rhythmbox.xml:163(date)
+msgid "May 2008"
+msgstr "Mayo de 2008"
+
+#: C/rhythmbox.xml:171(releaseinfo)
+msgid "This manual describes version 0.11.5 of Rhythmbox Music Player."
+msgstr ""
+"Este manual describe la versión 0.11.5 del reproductor de música Rhythmbox."
+
+#: C/rhythmbox.xml:174(title)
+msgid "Feedback"
+msgstr "Comentarios"
+
+#: C/rhythmbox.xml:175(para)
+msgid ""
+"To report a bug or make a suggestion regarding the Rhythmbox Music Player "
+"application or this manual, follow the directions in the <ulink url=\"ghelp:"
+"gnome-feedback\" type=\"help\">GNOME Feedback Page</ulink>."
+msgstr ""
+"Para informar sobre un fallo o hacer sugerencias sobre el reproductor de "
+"música Rhythmbox o sobre este manual, siga las indicaciones en la <ulink url="
+"\"ghelp:gnome-feedback\" type=\"help\">Página de comentarios de GNOME</"
+"ulink>."
+
+#: C/rhythmbox.xml:183(para)
+msgid "Rhythmbox is the full featured music player for GNOME Desktop."
+msgstr "Rhythmbox es el reproductor de música para el escritorio GNOME."
+
+#: C/rhythmbox.xml:190(primary)
+msgid "Rhythmbox"
+msgstr "Rhythmbox"
+
+#: C/rhythmbox.xml:193(primary)
+msgid "rhythmbox"
+msgstr "rhythmbox"
+
+#: C/rhythmbox.xml:196(primary)
+msgid "Music Player"
+msgstr "Reproductor de música"
+
+#: C/rhythmbox.xml:201(title)
+msgid "Introduction"
+msgstr "Introducción"
+
+#: C/rhythmbox.xml:202(para)
+msgid ""
+"<application>Rhythmbox Music Player</application> is a music player and "
+"library for tagged files that supports various music formats."
+msgstr ""
+"El <application>Reproductor de música Rhythmbox</application> es un "
+"reproductor de música y biblioteca para archivos etiquetados que soporta "
+"varios formatos de archivo."
+
+#: C/rhythmbox.xml:206(para)
+msgid ""
+"Current <application>Rhythmbox Music Player</application> features include:"
+msgstr ""
+"Las características actuales del <application>Reproductor de música "
+"Rhythmbox</application> actual incluyen:"
+
+#: C/rhythmbox.xml:210(para)
+msgid "Play various format music files from your tagged organized Library."
+msgstr ""
+"Reproducir varios formatos de archivo musical de su fonoteca ordenada por "
+"etiquetas."
+
+#: C/rhythmbox.xml:214(para)
+msgid "Display information on the songs through meta-data reading."
+msgstr ""
+"Mostrar información sobre las canciones a través de la lectura de los "
+"metadatos."
+
+#: C/rhythmbox.xml:217(para)
+msgid "Display songs in an organized view."
+msgstr "Mostrar las canciones de forma ordenada."
+
+#: C/rhythmbox.xml:220(para)
+msgid "Create static playlists by dragging and dropping from the Library view."
+msgstr ""
+"Crear listas de reproducción estáticas arrastrando y soltando las canciones "
+"desde la vista de la fonoteca."
+
+#: C/rhythmbox.xml:224(para)
+msgid "Create automatic playlists from criterias."
+msgstr "Crear listas de reproducción automáticas según criterios de selección."
+
+#: C/rhythmbox.xml:227(para)
+msgid "Search for songs in the sources list like Library or Playlists."
+msgstr ""
+"Buscar canciones en la lista de fuentes tales como la biblioteca o las "
+"listas de reproducción."
+
+#: C/rhythmbox.xml:231(para)
+msgid "Listen to Internet radio stations."
+msgstr "Escuchar emisoras de radio de Internet."
+
+#: C/rhythmbox.xml:234(para)
+msgid ""
+"Read Audio CDs, and retrieve information like track title from the Internet."
+msgstr ""
+"Leer CD de música y obtener información de Internet como el nombre de las "
+"pistas."
+
+#: C/rhythmbox.xml:238(para)
+msgid "Burn Audio CDs from playlists."
+msgstr "Crear un CD de música desde listas de reproducción."
+
+#: C/rhythmbox.xml:241(para)
+msgid "Transfer music to iPod, MTP and USB Mass Storage music players ."
+msgstr "Transferir música a reproductores de música iPod, MTP y USB."
+
+#: C/rhythmbox.xml:247(title)
+msgid "Getting Started"
+msgstr "Inicio"
+
+#: C/rhythmbox.xml:250(title)
+msgid "To Launch the <application>Rhythmbox Music Player</application>"
+msgstr ""
+"Para iniciar el <application>Reproductor de música Rhythmbox</application>"
+
+#: C/rhythmbox.xml:255(term)
+msgid "<guimenu>Applications</guimenu> menu"
+msgstr "Menú de <guimenu>Aplicaciones</guimenu>"
+
+#: C/rhythmbox.xml:257(para)
+msgid ""
+"Choose <menuchoice><guisubmenu>Sound &amp; Video</"
+"guisubmenu><guimenuitem>Rhythmbox Music Player</guimenuitem></menuchoice>."
+msgstr ""
+"Elija <menuchoice><guisubmenu>Sonido y vídeo</"
+"guisubmenu><guimenuitem>Reproductor de música Rhythmbox</guimenuitem></"
+"menuchoice>."
+
+#: C/rhythmbox.xml:266(term)
+msgid "Command Line"
+msgstr "Línea de comandos"
+
+#: C/rhythmbox.xml:268(para)
+msgid "Type <command>rhythmbox</command>, then press <keycap>Return</keycap>."
+msgstr "Teclee <command>rhythmbox</command> y pulse <keycap>Retorno</keycap>."
+
+#: C/rhythmbox.xml:251(para)
+msgid ""
+"You can launch the <application>Rhythmbox Music Player</application> in the "
+"following ways: <placeholder-1/>"
+msgstr ""
+"Puede iniciar el <application>Reproductor de música Rhythmbox</application> "
+"de las siguientes formas: <placeholder-1/>"
+
+#: C/rhythmbox.xml:278(title)
+msgid "Running the Assistant"
+msgstr "Ejecutar el asistente"
+
+#: C/rhythmbox.xml:279(para)
+msgid ""
+"The first time you launch the <application>Rhythmbox Music Player</"
+"application>, an assistant will help you import your music. On the second "
+"panel of the assistant, press the <guibutton>Browse</guibutton> button and "
+"select the folder where your music is stored."
+msgstr ""
+"La primera vez que inicie el <application>Reproductor de música Rhythmbox</"
+"application> un asistente le ayudará a importar su música. En el segundo "
+"panel del asistente pulse el botón <guibutton>Examinar</guibutton> y "
+"seleccione la carpeta donde tiene almacenada su música."
+
+#: C/rhythmbox.xml:288(title)
+msgid "Rhythmbox Music Player Window"
+msgstr "Ventana del Reproductor de música Rhythmbox"
+
+#: C/rhythmbox.xml:290(title) C/rhythmbox.xml:1218(title)
+msgid "Overview"
+msgstr "Vista general"
+
+#: C/rhythmbox.xml:291(para)
+msgid ""
+"The <application>Rhythmbox Music Player</application> window enables you to "
+"browse and play your favorite music. <xref linkend=\"fig-rb-window\"/> shows "
+"the interface of the <application>Rhythmbox Music Player</application> with "
+"its main components."
+msgstr ""
+"La ventana del <application>Reproductor de música Rhythmbox</application> le "
+"permite examinar y reproducir su música favorita. <xref linkend=\"fig-rb-"
+"window\"/> muestra el interfaz del <application>Reproductor de música "
+"Rhythmbox</application> con sus principales componentes."
+
+#: C/rhythmbox.xml:297(title)
+msgid "The <application>Rhythmbox Music Player</application> Window"
+msgstr ""
+"La ventana del <application>Reproductor de música Rhythmbox</application>"
+
+#: C/rhythmbox.xml:304(phrase)
+msgid ""
+"Show the <placeholder-1/> window showing the different parts on the "
+"<placeholder-2/> interface. Callouts: Menubar, Player area, Browser, Side "
+"pane, Statusbar."
+msgstr ""
+"Muestra la ventana del <placeholder-1/> mostrando las partes diferentes del "
+"interfaz del <placeholder-2/>: Barra del menú, área del reproductor, "
+"examinador, panel lateral y barra de estado."
+
+#: C/rhythmbox.xml:312(para)
+msgid ""
+"Table 1 describes the components of <application>Rhythmbox Music Player</"
+"application> window."
+msgstr ""
+"La Tabla 1 describe los componentes de la ventana del "
+"<application>Reproductor de música Rhythmbox</application>."
+
+#: C/rhythmbox.xml:314(title)
+msgid "<application>Rhythmbox Music Player</application> Window Components"
+msgstr ""
+"Componentes de la ventana del <application>Reproductor de música Rhythmbox</"
+"application>"
+
+#: C/rhythmbox.xml:321(entry)
+msgid "Id"
+msgstr "Id"
+
+#: C/rhythmbox.xml:322(entry)
+msgid "Component"
+msgstr "Componente"
+
+#: C/rhythmbox.xml:323(entry)
+msgid "Description"
+msgstr "Descripción"
+
+#: C/rhythmbox.xml:328(entry)
+msgid "1"
+msgstr "1"
+
+#: C/rhythmbox.xml:329(entry)
+msgid "Menubar"
+msgstr "Barra del menú"
+
+#: C/rhythmbox.xml:330(entry)
+msgid ""
+"Contains menus that you use to perform tasks in <placeholder-1/> window."
+msgstr ""
+"Contiene menús que puede usar para realizar tareas en la ventana del "
+"<placeholder-1/>."
+
+#: C/rhythmbox.xml:334(entry)
+msgid "2"
+msgstr "2"
+
+#: C/rhythmbox.xml:335(entry)
+msgid "Toolbar"
+msgstr "Barra de herramientas"
+
+#: C/rhythmbox.xml:336(entry)
+msgid ""
+"Provides access to player functions and details about the currently playing "
+"track."
+msgstr ""
+"Proporciona acceso a las funciones del reproductor y detalles acerca de la "
+"canción que se está reproduciendo actualmente."
+
+#: C/rhythmbox.xml:340(entry)
+msgid "3"
+msgstr "3"
+
+#: C/rhythmbox.xml:341(entry)
+msgid "Time Slider"
+msgstr "Deslizador temporal"
+
+#: C/rhythmbox.xml:342(entry)
+msgid ""
+"Displays the position of the read of a track; it enables to jump to another "
+"part of a track."
+msgstr ""
+"Muestra la posición de la lectura de una pista; permite saltar a otra "
+"posición de la misma pista."
+
+#: C/rhythmbox.xml:346(entry)
+msgid "4"
+msgstr "4"
+
+#: C/rhythmbox.xml:347(entry)
+msgid "Side Pane"
+msgstr "Panel lateral"
+
+#: C/rhythmbox.xml:348(entry)
+msgid "Displays a list of available sources."
+msgstr "Muestra la lista de fuentes disponible."
+
+#: C/rhythmbox.xml:353(entry)
+msgid "5"
+msgstr "5"
+
+#: C/rhythmbox.xml:354(entry)
+msgid "Browser"
+msgstr "Examinador"
+
+#: C/rhythmbox.xml:355(entry)
+msgid ""
+"Allows to browse and filter the Library tracks by Genre, Artist or Album "
+"name. The Browser also provides a search function to display only tracks "
+"that match your criteria."
+msgstr ""
+"Permite examinar y filtrar las pistas de la fonoteca por género, nombre de "
+"artista ó álbum. El examinador proporciona además una función de búsqueda "
+"para mostrar sólo las pistas que coincidan con sus criterios de búsqueda."
+
+#: C/rhythmbox.xml:361(entry)
+msgid "6"
+msgstr "6"
+
+#: C/rhythmbox.xml:362(entry)
+msgid "Tracks list"
+msgstr "Lista de pistas"
+
+#: C/rhythmbox.xml:363(entry)
+msgid "Lists the tracks that belong to the selected source."
+msgstr "Muestra las pistas que pertenecen a la fuente seleccionada."
+
+#: C/rhythmbox.xml:367(entry)
+msgid "7"
+msgstr "7"
+
+#: C/rhythmbox.xml:368(entry)
+msgid "Statusbar"
+msgstr "Barra de estado"
+
+#: C/rhythmbox.xml:369(entry)
+msgid "Displays informations about the source selected in the side pane."
+msgstr ""
+"Muestra información acerca de las fuentes seleccionadas en el panel lateral."
+
+#: C/rhythmbox.xml:377(title)
+msgid "The Side Pane"
+msgstr "El panel lateral"
+
+#: C/rhythmbox.xml:382(para)
+msgid ""
+"The <application>Rhythmbox Music Player</application> library, where all of "
+"the imported tracks will appear."
+msgstr ""
+"La fonoteca del <application>Reproductor de música Rhythmbox</application>, "
+"donde aparecerán todas las canciones importadas."
+
+#: C/rhythmbox.xml:384(para)
+msgid "The iRadio source, with all internet radio stations."
+msgstr "La fuente de iRadio, con todas las emisoras de radio de Internet."
+
+#: C/rhythmbox.xml:386(para)
+msgid "Podcasts."
+msgstr "Podcasts."
+
+#: C/rhythmbox.xml:387(para)
+msgid "All playlists (normal and smart)."
+msgstr "Todas las listas de reproducción (normales e inteligentes)."
+
+#: C/rhythmbox.xml:388(para)
+msgid "Audio CD's inserted into the computer's CD drives."
+msgstr "Audio CD introducidos en las unidades lectoras de CD del equipo."
+
+#: C/rhythmbox.xml:390(para)
+msgid "Portable players like iPod plugged to your computer."
+msgstr "Reproductores portátiles, como el iPod, conectados al equipo."
+
+#: C/rhythmbox.xml:392(para)
+msgid "The DAAP Music shares discovered on the local network."
+msgstr "Las comparticiones DAAP descubiertas en la red local."
+
+#: C/rhythmbox.xml:394(para)
+msgid "Music stores like Jamendo and Magnatune."
+msgstr "Almacenes de música como Jamendo y Magnatune."
+
+#: C/rhythmbox.xml:378(para)
+msgid ""
+"The side pane is where you can access your music library, internet radio, "
+"your playlists and audio CDs. The side pane can contain the following "
+"sources: <placeholder-1/>"
+msgstr ""
+"El panel lateral es donde puede acceder a su fonoteca, emisoras de radio de "
+"Internet, sus listas de reproducción y sus CD de música. La lista de fuentes "
+"puede contener las siguientes fuentes: <placeholder-1/>"
+
+#: C/rhythmbox.xml:398(para)
+msgid ""
+"The display of the side pane can be toggled on or off by selecting "
+"<menuchoice><guimenu>View</guimenu><guimenuitem>Side Pane</guimenuitem></"
+"menuchoice>."
+msgstr ""
+"Se puede conmutar entre mostrar u ocultar el panel lateral seleccionando "
+"<menuchoice><guimenu>Ver</guimenu><guimenuitem>Panel lateral</guimenuitem></"
+"menuchoice>."
+
+#: C/rhythmbox.xml:405(title)
+msgid "The Player Toolbar"
+msgstr "La barra de herramientas del reproductor"
+
+#: C/rhythmbox.xml:406(para)
+msgid ""
+"The toolbar area provides access to details about the currently playing "
+"track. When no track is being played, this area shows no information. When a "
+"track is played, the track name is displayed, and underneath, the artist and "
+"the album names."
+msgstr ""
+"El área de la barra de herramientas proporciona acceso a detalles sobre la "
+"canción que se está reproduciendo actualmente. Cuando no se está "
+"reproduciendo ninguna canción, el área no muestra ninguna información. "
+"Cuando se está reproduciendo una canción, se muestra el nombre de la pista, "
+"y debajo, el nombre del artista y del álbum."
+
+#: C/rhythmbox.xml:412(para)
+msgid ""
+"A tracker is also displayed, showing the progress of the playing track. When "
+"the tracker has focus, the arrow keys can be used to Fast-Forward or Rewind "
+"the playing track."
+msgstr ""
+"También se muestra un deslizador temporal que muestra el progreso de la "
+"pista que se está reproduciendo. Cuando el deslizador está seleccionado, se "
+"pueden usar las flechas del teclado para avanzar o retroceder en la "
+"reproducción de la pista."
+
+#: C/rhythmbox.xml:423(phrase)
+msgid "Shows player area"
+msgstr "Mostrar el área del reproductor"
+
+#: C/rhythmbox.xml:428(para)
+msgid ""
+"If you are using a mouse with a scroll wheel, you can adjust the volume by "
+"scrolling up or down while the mouse pointer is over the volume button."
+msgstr ""
+"Si está usando un ratón con rueda, puede ajustar el volumen deslizando la "
+"rueda arriba o abajo mientras el puntero del ratón está sobre el botón del "
+"volumen."
+
+#: C/rhythmbox.xml:436(title)
+msgid "The Statusbar"
+msgstr "La barra de estado"
+
+#: C/rhythmbox.xml:437(para)
+msgid ""
+"The statusbar contains additional information about the number of songs and "
+"the duration of the source selected. The display of the statusbar can be "
+"toggled on or off by selecting <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Statusbar</guimenuitem></menuchoice>."
+msgstr ""
+"La barra de estado contiene información adicional acerca del número de "
+"canciones y de la duración de la fuente seleccionada. Se puede conmutar "
+"entre mostrar u ocultar la barra de estado seleccionado "
+"<menuchoice><guimenu> Ver</guimenu> <guimenuitem>Barra de estado</"
+"guimenuitem></menuchoice>."
+
+#: C/rhythmbox.xml:449(phrase)
+msgid "Shows statusbar"
+msgstr "Muestra la barra de estado"
+
+#: C/rhythmbox.xml:455(title)
+msgid "<application>Rhythmbox Music Player</application> Minimized Window"
+msgstr ""
+"El visor pequeño del <application>Reproductor de música Rhythmbox</"
+"application>"
+
+#: C/rhythmbox.xml:456(para)
+msgid ""
+"<application>Rhythmbox Music Player</application> comes with a minimized "
+"mode. This mode enables access only to the menubar and the player function "
+"of <application>Rhythmbox Music Player</application>."
+msgstr ""
+"El <application>Reproductor de música Rhythmbox</application> tiene un modo "
+"minimizado. Este modo habilita acceso solamente a la barra del menú y a las "
+"funciones de reproducción del <application>Reproductor de música Rhythmbox</"
+"application>."
+
+#: C/rhythmbox.xml:461(para)
+msgid ""
+"To switch to the small display, select <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Small Display</guimenuitem></menuchoice>."
+msgstr ""
+"Para cambiar al visor pequeño seleccione <menuchoice><guimenu>Ver</"
+"guimenu><guimenuitem>Visor pequeño</guimenuitem></menuchoice>."
+
+#: C/rhythmbox.xml:471(phrase)
+msgid "Shows the <placeholder-1/> in small display mode"
+msgstr "Muestra el <placeholder-1/> en modo visor pequeño"
+
+#: C/rhythmbox.xml:478(title)
+msgid "Using Rhythmbox Music Player"
+msgstr "Uso del Reproductor de música Rhythmbox"
+
+#: C/rhythmbox.xml:480(title)
+msgid "Playing Music"
+msgstr "Reproducción de música"
+
+#: C/rhythmbox.xml:481(para)
+msgid ""
+"To play a track, choose <menuchoice><guimenu>Control</"
+"guimenu><guimenuitem>Play</guimenuitem></menuchoice>, or select the track "
+"and press the <guibutton>Play</guibutton> button on the toolbar, or simply "
+"double-click on the track to start playing."
+msgstr ""
+"Para reproducir una pista elija <menuchoice><guimenu>Control</"
+"guimenu><guimenuitem>Reproducir</guimenuitem></menuchoice>o seleccione la "
+"pista y pulse el botón <guibutton>Reproducir</guibutton> de la barra de "
+"herramientas, o simplemente pulse dos veces sobre la pista para comenzar su "
+"reproducción."
+
+#: C/rhythmbox.xml:486(para)
+msgid ""
+"When the track ends, <application>Rhythmbox Music Player</application> jumps "
+"to play the next track in the list showed in view pane."
+msgstr ""
+"Cuando acaban las pistas, el <application>Reproductor de música Rhythmbox</"
+"application> salta para reproducir la siguiente canción mostrada en la vista "
+"del panel."
+
+#: C/rhythmbox.xml:489(para)
+msgid ""
+"In the Library you can play all songs from an artist or a single album "
+"simply selecting <guilabel>Album</guilabel> or <guilabel>Artist</guilabel> "
+"entry in the <link linkend=\"library-filter-browser\">library browser</link>."
+msgstr ""
+"En la fonoteca puede reproducir todas las canciones de un mismo artista o un "
+"sólo álbum simplemente seleccionando la entrada <guilabel>Álbum</guilabel> o "
+"<guilabel>Artista</guilabel> en el <link linkend=\"library-filter-browser"
+"\">examinador de la fonoteca</link>."
+
+#: C/rhythmbox.xml:494(title)
+msgid "Next/Play/Previous"
+msgstr "Siguiente/Reproducir/Anterior"
+
+#: C/rhythmbox.xml:505(guibutton)
+msgid "Previous"
+msgstr "Anterior"
+
+#: C/rhythmbox.xml:506(guibutton)
+msgid "Play"
+msgstr "Reproducir"
+
+#: C/rhythmbox.xml:506(guibutton) C/rhythmbox.xml:1800(keycap)
+msgid "Next"
+msgstr "Siguiente"
+
+#: C/rhythmbox.xml:505(phrase)
+msgid ""
+"Shows buttons <placeholder-1/>, <placeholder-2/> and <placeholder-3/> in "
+"toolbar."
+msgstr ""
+"Muestra los botones <placeholder-1/>, <placeholder-2/> y <placeholder-3/> en "
+"la barra de herramientas."
+
+#: C/rhythmbox.xml:495(para)
+msgid ""
+"The <guibutton>Next</guibutton> and <guibutton>Previous</guibutton> buttons "
+"can be used to skip between tracks while playing. If a track is currently "
+"playing, the previous button will restart the track. Pressing the "
+"<guibutton>Play</guibutton> button will start playing the current track. "
+"<placeholder-1/>"
+msgstr ""
+"Los botones <guibutton>Siguiente</guibutton> y <guibutton>Anterior</"
+"guibutton> se pueden usar para saltar entre pistas mientras se está "
+"reproduciendo una. Si se está reproduciendo una pista en ese momento, el "
+"botón anterior hará que la pista vuelva al comenzar. Pulsar el botón "
+"<guibutton>Reproducir</guibutton> inicia la reproducción de la canción "
+"actual. <placeholder-1/>"
+
+#: C/rhythmbox.xml:513(title)
+msgid "Repeat"
+msgstr "Repetir"
+
+#: C/rhythmbox.xml:514(para)
+msgid ""
+"The option <guibutton>Repeat</guibutton> makes the <application>Rhythmbox "
+"Music Player</application> restart to play tracks from the beginning of the "
+"list when it reach the last track."
+msgstr ""
+"La opción <guibutton>Repetir</guibutton> hace que el "
+"<application>Reproductor de música Rhythmbox</application> comience de nuevo "
+"a reproducir las pistas de la lista desde el principio una vez que llega a "
+"la última pista."
+
+#: C/rhythmbox.xml:526(phrase)
+msgid "Shows repeat button in the statusbar."
+msgstr "Muestra el botón de repetición en la barra de estado."
+
+#: C/rhythmbox.xml:517(para)
+msgid ""
+"To activate repeat, choose <menuchoice><guimenu>Control</"
+"guimenu><guimenuitem>Repeat</guimenuitem></menuchoice>, or press the button "
+"<guibutton>Repeat</guibutton> on the toolbar. <placeholder-1/>"
+msgstr ""
+"Para activar la repetición, elija <menuchoice><guimenu>Control</"
+"guimenu><guimenuitem>Repetir</guimenuitem></menuchoice> o presione el botón "
+"<guibutton>Repetir</guibutton> de la barra de herramientas. <placeholder-1/>"
+
+#: C/rhythmbox.xml:533(title)
+msgid "Shuffle"
+msgstr "Aleatorio"
+
+#: C/rhythmbox.xml:534(para)
+msgid ""
+"The option <guibutton>Shuffle</guibutton> makes the <application>Rhythmbox "
+"Music Player</application> play tracks in a random order."
+msgstr ""
+"La opción <guibutton>Aleatorio</guibutton> hace que el "
+"<application>Reproductor de música Rhythmbox</application> reproduzca pistas "
+"en un orden aleatorio."
+
+#: C/rhythmbox.xml:545(phrase)
+msgid "Shows shuffle button in the statusbar."
+msgstr "Muestra el botón de reproducción aleatoria en la barra de estado."
+
+#: C/rhythmbox.xml:536(para)
+msgid ""
+"To activate shuffle, choose <menuchoice><guimenu>Control</"
+"guimenu><guimenuitem>Shuffle</guimenuitem></menuchoice>, or press the button "
+"<guibutton>Shuffle</guibutton> on the toolbar. <placeholder-1/>"
+msgstr ""
+"Para activar la reproducción aleatoria, elija <menuchoice><guimenu>Control</"
+"guimenu><guimenuitem>Aleatorio</guimenuitem></menuchoice> o pulse el botón "
+"<guibutton>Aleatorio</guibutton> de la barra de herramientas. <placeholder-1/"
+"> "
+
+#: C/rhythmbox.xml:552(title)
+msgid "Volume Control"
+msgstr "Control del volumen"
+
+#: C/rhythmbox.xml:558(phrase)
+msgid "Shows volume slider in toolbar."
+msgstr "Muestra el deslizador del volumen en la barra de herramientas."
+
+#: C/rhythmbox.xml:553(para)
+msgid ""
+"The volume control is located in the right hand of the toolbar. Pressing the "
+"loudspeaker icon will show the volume slider. Sliding this up and down will "
+"increase and decrease the volume. The loudspeaker icon will change to "
+"reflect the relative volume. <placeholder-1/>"
+msgstr ""
+"El control del volumen está ubicado en la parte derecha de la barra de "
+"herramientas. Pulsando sobre el icono del altavoz aparecerá el deslizador "
+"del volumen. Deslizandolo arriba y abajo hará que el volumen aumentare o "
+"disminuya. El icono del altavoz cambiará para reflejar el volumen relativo. "
+"<placeholder-1/>"
+
+#: C/rhythmbox.xml:563(para)
+msgid ""
+"You can adjust the volume by using the mouse scroll wheel over the "
+"loudspeaker icon."
+msgstr ""
+"Puede ajustar el volumen usando la rueda del ratón sobre el icono del "
+"altavoz."
+
+#: C/rhythmbox.xml:570(title)
+msgid "Library Source"
+msgstr "Fuente: Fonoteca"
+
+#: C/rhythmbox.xml:571(para)
+msgid ""
+"The Library is the main source available in the <application>Rhythmbox Music "
+"Player</application>, it is the database that contains all the music files "
+"that you import in the <application>Rhythmbox Music Player</application> "
+"(The Library stores the path to access your music files, not the files "
+"themself)."
+msgstr ""
+"La fonoteca es la principal fuente disponible en el <application>Reproductor "
+"de música Rhythmbox</application>, es la base de datos que contiene todos "
+"los archivos que importa en el <application>Reproductor de música Rhythmbox</"
+"application> (la fonoteca almacena la ruta para acceder a sus archivos "
+"musicales, no los archivos en si)."
+
+#: C/rhythmbox.xml:585(para)
+msgid "Public FTP"
+msgstr "FTP público"
+
+#: C/rhythmbox.xml:588(para)
+msgid "Authenticated FTP"
+msgstr "FTP autenticado"
+
+#: C/rhythmbox.xml:591(para)
+msgid "NFS"
+msgstr "NFS"
+
+#: C/rhythmbox.xml:594(para)
+msgid "Windows Share"
+msgstr "Comparticiones de Windows"
+
+#: C/rhythmbox.xml:578(para)
+msgid ""
+"The Library can not only contains music files which are physically on your "
+"computer (in your HOME Directory for instance), but it can also contains "
+"music files available over remote network services. Some examples of "
+"supported network services are : <placeholder-1/>"
+msgstr ""
+"La fonoteca no sólo puede contener archivos musicales que están físicamente "
+"en su equipo (por ejemplo en su carpeta personal), sino también puede "
+"contener archivos musicales disponibles sobre los servicios de red remotos. "
+"Algunos ejemplos de archivos musicales soportados son: <placeholder-1/>"
+
+#: C/rhythmbox.xml:604(para)
+msgid ""
+"Tags can be modified by choosing <menuchoice><guimenu> Music</"
+"guimenu><guimenuitem>Properties</guimenuitem></menuchoice> and filling in "
+"the details on the window that appears."
+msgstr ""
+"Las etiquetas se pueden modificar eligiendo <menuchoice><guimenu>Música</"
+"guimenu><guimenuitem>Propiedades</guimenuitem></menuchoice> y rellenando los "
+"detalles en la ventana que aparece."
+
+#: C/rhythmbox.xml:598(para)
+msgid ""
+"The files imported in the Library are displayed in the track list with the "
+"information (like the Artist name or the Album name) stored in the tags "
+"embedded on the tracks. <application>Rhythmbox Music Player</application> "
+"uses these tags to display the tracks in an organized manner. <placeholder-1/"
+">"
+msgstr ""
+"Los archivos importados en la fonoteca se muestran en la lista de pistas "
+"junto a la información almacenada en las etiquetas empotradas en las pistas "
+"(como el nombre del artista o el nombre del álbum). El "
+"<application>Reproductor de música Rhythmbox</application> usa esas "
+"etiquetas para mostrar las pistas de una forma organizada. <placeholder-1/>"
+
+#: C/rhythmbox.xml:610(title)
+msgid "Add tracks in the Library"
+msgstr "Añadir pistas a la fonoteca"
+
+#: C/rhythmbox.xml:616(para)
+msgid ""
+"To import only one track, choose <menuchoice><guimenu>Music</"
+"guimenu><guimenuitem>Import File </guimenuitem></menuchoice> from the menu, "
+"then select the file in the file selector and press the <guibutton>Open</"
+"guibutton> button."
+msgstr ""
+"Para importar una sola pista, elija <menuchoice><guimenu>Música</"
+"guimenu><guimenuitem>Importar archivo...</guimenuitem></menuchoice> del "
+"menú, después seleccione el archivo con el selector de archivos y pulse el "
+"botón <guibutton>Abrir</guibutton>."
+
+#: C/rhythmbox.xml:624(para)
+msgid ""
+"If you want to import several music files located in a folder, choose "
+"<menuchoice><guimenu>Music</guimenu><guimenuitem>Import Folder</"
+"guimenuitem></menuchoice> from the menu, then select the folder in the file "
+"selector and press the <guibutton>Open</guibutton> button. All the music "
+"files located in the folder and its sub-folders will be imported."
+msgstr ""
+"Si quiere importar varios archivos de música ubicados en una carpeta, elija "
+"<menuchoice><guimenu>Música</guimenu><guimenuitem>Importar carpeta...</"
+"guimenuitem></menuchoice> del menú, después seleccione la carpeta con el "
+"seleccionador de archivos y pulse el botón <guibutton>Abrir</guibutton>. Se "
+"importarán todos los archivos musicales ubicados en esa carpeta y sus "
+"subcarpetas."
+
+#: C/rhythmbox.xml:634(para)
+msgid ""
+"Drag and drop files from the file manager (like <application>Nautilus</"
+"application>) over the Rhythmbox window."
+msgstr ""
+"Arrastre y suelte los archivos desde el administrador (como en "
+"<application>Nautilus</application>) sobre la ventana de Rhythmbox."
+
+#: C/rhythmbox.xml:611(para)
+msgid ""
+"To add tracks to the Library, you can follow these different methods: "
+"<placeholder-1/>"
+msgstr ""
+"Para añadir pistas a la fonoteca, puede seguir los siguientes métodos: "
+"<placeholder-1/>"
+
+#: C/rhythmbox.xml:642(para)
+msgid ""
+"If you have enabled the watch directory function (see <xref linkend=\"prefs-"
+"library\"/>), all the music files stored under the chosen directory will be "
+"added to the Library. New files added later will be also added."
+msgstr ""
+"Si tiene activada la función de vigilancia en sus carpetas (vea <xref "
+"linkend=\"prefs-library\"/>), todos los archivos de música almacenados en "
+"las carpetas seleccionadas se añadirán a la fonoteca. También se añadirán "
+"los archivos nuevos añadidos posteriormente."
+
+#: C/rhythmbox.xml:651(title)
+msgid "Remove tracks from the Library"
+msgstr "Quitar pistas de la fonoteca"
+
+#: C/rhythmbox.xml:652(para)
+msgid ""
+"To remove a track from the library but leave it on the disk, choose menu "
+"<menuchoice><guimenu>Edit</guimenu><guimenu>Remove</guimenu></menuchoice>. "
+"The track and its properties (like rating or the play count) are removed "
+"from the Rhythmbox database."
+msgstr ""
+"Para quitar una pista de la fonoteca pero dejarla físicamente en el disco, "
+"elija del menú <menuchoice><guimenu>Editar</guimenu><guimenu>Eliminar</"
+"guimenu></menuchoice>. La pista y sus propiedades (como la puntuación o el "
+"número de veces que se ha reproducido) son eliminadas de la base de datos de "
+"Rhythmbox."
+
+#: C/rhythmbox.xml:658(para)
+msgid ""
+"To delete a track from the Library and also from your disk, choose "
+"<menuchoice><guimenu>Edit</guimenu><guimenuitem>Move to Trash</guimenuitem></"
+"menuchoice>. The track will be removed in the same way as previous, but the "
+"file will be moved in to the file manager Trash."
+msgstr ""
+"Para eliminar una pista de la biblioteca y también de su disco, elija del "
+"menú <menuchoice><guimenu>Editar</guimenu><guimenuitem>Mover a la papelera</"
+"guimenuitem></menuchoice>. Se quitará la pista de la misma forma anterior "
+"pero el archivo se moverá a la papelera del administrador de archivos."
+
+#: C/rhythmbox.xml:667(title)
+msgid "Find tracks using Search"
+msgstr "Buscar pistas usando la búsqueda"
+
+#: C/rhythmbox.xml:668(para)
+msgid ""
+"Rhythmbox comes with a search function, which enables you to find and filter "
+"tracks by using a search term."
+msgstr ""
+"Rhythmbox tiene una función de búsqueda que permite buscar y filtrar pistas "
+"usando un término de búsqueda."
+
+#: C/rhythmbox.xml:672(para)
+msgid ""
+"Enter some text in the search entry, and as you type, only the tracks that "
+"match the text entered will be displayed. The search function does the "
+"lookup in all of the tags of the tracks stored in the Library."
+msgstr ""
+"Introduzca texto en la entrada de búsqueda, y mientras teclea, sólo se "
+"mostrarán las pistas que coincidan con el texto introducido. La función de "
+"búsqueda se realiza sobre las todas las etiquetas de las pistas almacenadas "
+"en la fonoteca."
+
+#: C/rhythmbox.xml:678(para)
+msgid ""
+"To perform a more precise search, you can choose to lookup only in specific "
+"tags <guilabel>Artists</guilabel>, <guilabel>Albums</guilabel> or "
+"<guilabel>Titles</guilabel>."
+msgstr ""
+"Para realizar una búsqueda más precisa, puede elegir buscar solamente en las "
+"etiquetas específicas <guilabel>Artistas</guilabel>, <guilabel>Álbumes</"
+"guilabel> o <guilabel>Títulos</guilabel>."
+
+#: C/rhythmbox.xml:685(title)
+msgid "Find tracks using the Browser"
+msgstr "Buscar pistas usando el examinador"
+
+#: C/rhythmbox.xml:686(para)
+msgid ""
+"The Browser is another convenient way to find tracks. The Browser is a two "
+"or three pane view which enable to navigate among music genres, artists and "
+"albums and display tracks that match the chosen criteria."
+msgstr ""
+"El examinador es otra forma conveniente de buscar pistas. El examinador es "
+"una ventana con dos o tres paneles que permite navegar entre géneros "
+"musicales, artistas y álbumes, y mostrar las pistas que coincidan con los "
+"criterios elegidos."
+
+#: C/rhythmbox.xml:691(para)
+msgid ""
+"First, to display the Browser, select <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Browser</guimenuitem></menuchoice>. Select artist, "
+"album and genre, and as you choose, only the tracks that match your choice "
+"will be displayed in the track list. The criteria on the columns apply from "
+"the left to the right."
+msgstr ""
+"Primeramente, para mostrar el examinador, seleccione "
+"<menuchoice><guimenu>Ver</guimenu><guimenuitem>Examinar</guimenuitem></"
+"menuchoice>. Seleccione un artista, un álbum y un género, y mientras lo "
+"escoge solamente se mostrarán en la lista de pistas las que coincidan con su "
+"criterio. El criterio en las columnas se aplica de izquierda a derecha."
+
+#: C/rhythmbox.xml:699(para)
+msgid ""
+"You can choose several criteria of the same category by using the key "
+"<keycombo><keycap>Ctrl</keycap></keycombo>."
+msgstr ""
+"Puede elegir varios criterios de la misma categoría usando la tecla "
+"<keycombo><keycap>Ctrl</keycap></keycombo>."
+
+#: C/rhythmbox.xml:704(para)
+msgid ""
+"You can also find from a selected track in the track list, all of the tracks "
+"with the same genre, artist or album name. Select a track in the track list, "
+"right-click on it, and choose <guilabel>Browse this Genre/Artist/Album</"
+"guilabel>. Then the browser will filter the tracks using the criteria chosen."
+msgstr ""
+"También puede buscar desde una pista seleccionada en la lista de pistas, "
+"todas las pistas del mismo género, nombre del artista o del álbum. "
+"Seleccione una pista de la lista de pistas, pulse con el botón derecho del "
+"ratón sobre ella y elija <guilabel>Examinar este género/artista/álbum</"
+"guilabel>. El examinador filtrará las pistas usando el criterio elegido."
+
+#: C/rhythmbox.xml:714(title)
+msgid "Radio Source"
+msgstr "Fuente: Emisoras de radio"
+
+#: C/rhythmbox.xml:715(para)
+msgid ""
+"The Internet Radio tuner can be used to listen to streamed audio files over "
+"a network, local or Internet."
+msgstr ""
+"El sintonizador de emisoras de radio se puede usar para escuchar archivos de "
+"audio en streaming sobre una red, local o Internet."
+
+#: C/rhythmbox.xml:719(title)
+msgid "Internet Radio in <application>Rhythmbox Music Player</application>"
+msgstr ""
+"Emisoras de radio de Internet en el <application>Reproductor de música "
+"Rhythmbox</application>"
+
+#: C/rhythmbox.xml:729(title)
+msgid "Adding a station"
+msgstr "Añadir una emisora"
+
+#: C/rhythmbox.xml:730(para)
+msgid ""
+"To add a new station to the Internet Radio tuner, choose "
+"<menuchoice><guimenu>Music</guimenu><guimenuitem>New Internet Radio Station</"
+"guimenuitem></menuchoice>, then enter the URL of the Internet radio, then "
+"press the button <guibutton>Add</guibutton>."
+msgstr ""
+"Para añadir una nueva emisora al sintonizador de radio de Internet, elija "
+"<menuchoice><guimenu>Música</guimenu><guimenuitem>Emisora de radio de "
+"Internet nueva</guimenuitem></menuchoice>, después introduzca el URL de la "
+"emisora y pulse el botón <guibutton>Añadir</guibutton>."
+
+#: C/rhythmbox.xml:737(title)
+msgid "Viewing and Changing the settings of a station"
+msgstr "Ver y cambiar las propiedades de una emisora"
+
+#: C/rhythmbox.xml:738(para)
+msgid ""
+"You can view and edit the settings of an Internet Radio station using the "
+"menu <menuchoice><guimenu>Music</guimenu><guimenuitem>Properties</"
+"guimenuitem></menuchoice>."
+msgstr ""
+"Para ver y editar las propiedades de una emisora de radio de Internet usando "
+"el menú <menuchoice><guimenu>Música</guimenu><guimenuitem>Propiedades</"
+"guimenuitem></menuchoice>."
+
+#: C/rhythmbox.xml:742(para)
+msgid ""
+"You can also change the properties of a station by selecting the station and "
+"right-click, then choose <guimenuitem>Properties</guimenuitem>."
+msgstr ""
+"También puede cambiar las propiedades de una emisora seleccionándola y "
+"pulsando con el botón derecho del ratón sobre ella, después elija "
+"<guimenuitem>Propiedades</guimenuitem>."
+
+#: C/rhythmbox.xml:746(para)
+msgid ""
+"When you access the properties of a radio stream, you can modify its title, "
+"its genre; you can also modify the stream location, and set a rating to it."
+msgstr ""
+"Cuando acceda a las propiedades de una emisora de radio puede modificar su "
+"título, su género, también puede modificar el lugar del flujo de datos así "
+"como la puntuación de la emisora."
+
+#: C/rhythmbox.xml:752(title)
+msgid "Removing a station"
+msgstr "Eliminar una emisora"
+
+#: C/rhythmbox.xml:753(para)
+msgid ""
+"To remove a radio station from the radio stations list, choose "
+"<menuchoice><guimenu>Edit</guimenu><guimenuitem>Remove</guimenuitem></"
+"menuchoice>; you can also right-click on the station and select "
+"<guimenuitem>Remove</guimenuitem>."
+msgstr ""
+"Para eliminar una emisora de radio de la lista de emisoras, elija "
+"<menuchoice><guimenu>Editar</guimenu><guimenuitem>Eliminar</guimenuitem></"
+"menuchoice>; también puede pulsar con el botón derecho del ratón sobre la "
+"emisora y seleccionar <guimenuitem>Eliminar</guimenuitem>."
+
+#: C/rhythmbox.xml:761(title)
+msgid "Podcast Source"
+msgstr "Fuente: Podcasts"
+
+#: C/rhythmbox.xml:762(para)
+msgid ""
+"Podcasting is a new way to broadcast audio content over the web; when an "
+"author publishes an episode, podcast suscribers are informed, through an XML "
+"feed."
+msgstr ""
+"El podcasting es una nueva forma de emitir contenido audio por toda la red; "
+"cuando un autor publica un episodio se informa a los suscriptores a través "
+"de una fuente XML."
+
+#: C/rhythmbox.xml:767(para)
+msgid ""
+"Rhythmbox Music Player enables you to subscribe to podcast feeds, so when a "
+"new episode is available you'll be informed, it will download this episode "
+"and it will play it."
+msgstr ""
+"Rhythmbox le permite suscribirse a los proveedores de podcast, de tal forma "
+"que será informado cuando un nuevo episodio esté disponible, el episodio se "
+"descagará y reproducirá."
+
+#: C/rhythmbox.xml:773(para)
+msgid ""
+"You can find more information about podcasts and podcasting by visiting the "
+"definition of <ulink url=\"http://en.wikipedia.org/wiki/Podcast\">Podcast</"
+"ulink> on the site <ulink url=\"http://en.wikipedia.org/\">Wikipedia</ulink>."
+msgstr ""
+"Puede encontrar más información acerca de podcast y podcasting leyendo la "
+"definición de <ulink url=\"http://es.wikipedia.org/wiki/Podcast\">Podcast</"
+"ulink> en la <ulink url=\"http://es.wikipedia.org/\">Wikipedia</ulink>."
+
+#: C/rhythmbox.xml:781(title)
+msgid "The Podcast interface"
+msgstr "El interfaz Podcast"
+
+#: C/rhythmbox.xml:787(phrase)
+msgid "The Podcast interface with some registered podcasts"
+msgstr "El interfaz Podcast con algunos podcast registrados"
+
+#: C/rhythmbox.xml:793(title)
+msgid "Podcast Management"
+msgstr "Administración de podcast"
+
+#: C/rhythmbox.xml:795(title)
+msgid "Add a podcast"
+msgstr "Añadir un proporcionador de podcast"
+
+#: C/rhythmbox.xml:796(para)
+msgid ""
+"To register to a podcast, choose <menuchoice><guimenu>Music</"
+"guimenu><guimenuitem>New Podcast Feed</guimenuitem></menuchoice>, then in "
+"the new window, enter the URL of the podcast feed. Rhythmbox will retrieve "
+"the list of episodes and the latest episode will be downloaded on your hard "
+"disk."
+msgstr ""
+"Para registrar un podcast, elija <menuchoice><guimenu>Música</"
+"guimenu><guimenuitem>Proveedor Podcast nuevo</guimenuitem></menuchoice>, "
+"después en la nueva ventana, introduzca la URL del proveedor de podcast, "
+"Rhythmbox obtendrá la lista de episodios y descargará el último episodio a "
+"su disco duro."
+
+#: C/rhythmbox.xml:803(para)
+msgid ""
+"To add a new podcast feed, you can also right-click over the "
+"<guimenuitem>Podcasts</guimenuitem> source, and select <guimenuitem>New "
+"Podcast Feed</guimenuitem>."
+msgstr ""
+"Para añadir un nuevo proveedor de podcast también puede pulsar con el botón "
+"derecho del ratón sobre la fuente <guimenuitem>Podcasts</guimenuitem> y "
+"seleccionar <guimenuitem>Proveedor Podcast nuevo</guimenuitem>."
+
+#: C/rhythmbox.xml:810(title)
+msgid "Delete a podcast"
+msgstr "Borrar un podcast"
+
+#: C/rhythmbox.xml:811(para)
+msgid ""
+"To delete a podcast, right-click on the podcast feed's name in the browser, "
+"and choose <menuchoice><guimenuitem>Delete Podcast Feed</guimenuitem></"
+"menuchoice>, then choose <menuchoice><guimenuitem>Delete Feed Only</"
+"guimenuitem></menuchoice> if you want to keep the podcast's episodes, or "
+"choose <menuchoice><guimenuitem>Delete Feed And Item</guimenuitem></"
+"menuchoice> if you want to delete the feed and all its related episodes."
+msgstr ""
+"Para borrar un podcast, pulse en el examinador con el botón derecho del "
+"ratón sobre el nombre del proveedor del podcast, y elija "
+"<menuchoice><guimenuitem>Borrar proveedor de Podcast</guimenuitem></"
+"menuchoice>, después elija <menuchoice><guimenuitem>Borrar sólo el "
+"proveedor</guimenuitem></menuchoice> si quiere conservar los episodios "
+"podcast, o bien elija <menuchoice><guimenuitem>Borrar proveedor y archivos</"
+"guimenuitem></menuchoice> si quiere borrar el proveedor y sus episodios."
+
+#: C/rhythmbox.xml:822(title)
+msgid "Update feeds"
+msgstr "Actualizar proporcionador"
+
+#: C/rhythmbox.xml:823(para)
+msgid ""
+"To know if new episodes have been published for a podcast, right-click over "
+"the podcast name in the browser and choose <menuchoice><guimenuitem>Update "
+"Podcast Feed</guimenuitem></menuchoice>. If new episodes were published, "
+"they will appear in the episode list."
+msgstr ""
+"Para saber si se han publicado nuevos episodios de un podcast, pulse en el "
+"examinador con el botón derecho del ratón sobre el nombre del podcast y "
+"elija <menuchoice><guimenuitem>Actualizar proveedor de podcast</"
+"guimenuitem></menuchoice>. Si se han publicado nuevos episodios aparecerán "
+"en la lista de episodios."
+
+#: C/rhythmbox.xml:830(para)
+msgid ""
+"Rhythmbox Music Player checks regularly, on its own, the podcast feeds list "
+"to find out if they were updated."
+msgstr ""
+"Rhythmbox comprueba regularmente, por si mismo, la lista de proporcionadores "
+"de podcast para saber si se actualizaron."
+
+#: C/rhythmbox.xml:835(para)
+msgid ""
+"You can also check all podcasts, by right-clicking over the "
+"<menuchoice><guimenuitem>Podcasts</guimenuitem></menuchoice> source and "
+"choose <menuchoice><guimenuitem>Update All Feeds</guimenuitem></menuchoice>."
+msgstr ""
+"También puede comprobar todos los podcast, pulse con el botón derecho del "
+"ratón sobre la fuente <menuchoice><guimenuitem>Podcasts</guimenuitem></"
+"menuchoice> y elija <menuchoice><guimenuitem>Actualizar todos los "
+"proveedores</guimenuitem></menuchoice>."
+
+#: C/rhythmbox.xml:842(title)
+msgid "Access Podcast Feed properties"
+msgstr "Proporcionador de podcast nuevo"
+
+#: C/rhythmbox.xml:847(para)
+msgid ""
+"On the <guilabel>Basic</guilabel> tab you can view the podcast "
+"<guilabel>Title</guilabel>, <guilabel>Author </guilabel>, the <guilabel>Last "
+"Updated</guilabel> date and the <guilabel>Description</guilabel>."
+msgstr ""
+"En la pestaña <guilabel>Básico</guilabel> puede ver el <guilabel>Título</"
+"guilabel>, el <guilabel>Autor</guilabel>, la fecha de la <guilabel>Última "
+"actualización</guilabel> y la <guilabel>Descripción</guilabel> del podcast."
+
+#: C/rhythmbox.xml:852(para)
+msgid ""
+"On the <guilabel>Details</guilabel> tab you can view the feed "
+"<guilabel>Source</guilabel>, <guilabel>Language </guilabel>and the "
+"<guilabel>Copyright</guilabel> properties."
+msgstr ""
+"En la pestaña <guilabel>Detalles</guilabel> puede ver las propiedades "
+"<guilabel>Fuente</guilabel>, <guilabel>Idioma</guilabel> y "
+"<guilabel>Copyright</guilabel> del proveedor."
+
+#: C/rhythmbox.xml:843(para)
+msgid ""
+"To access to the Feed properties, right-click on the Feed name, and choose "
+"<menuchoice><guimenuitem>Properties</guimenuitem></menuchoice>. <placeholder-"
+"1/> You can view the properties, and also edit the rating."
+msgstr ""
+"Para acceder a las propiedades del proveedor pulse con el botón derecho del "
+"ratón sobre el nombre del proveedor, y elija "
+"<menuchoice><guimenuitem>Propiedades</guimenuitem></menuchoice>. "
+"<placeholder-1/> Puede ver las propiedades y también editar la puntuación."
+
+#: C/rhythmbox.xml:863(title)
+msgid "Episode Management"
+msgstr "Administración de episodios"
+
+#: C/rhythmbox.xml:865(title)
+msgid "Download a podcast episode"
+msgstr "Descargar un episodio podcast"
+
+#: C/rhythmbox.xml:866(para)
+msgid ""
+"To download an episode on your disk, right-click on the episode, and choose "
+"<menuchoice><guimenuitem>Download Post</guimenuitem></menuchoice>, Rhythmbox "
+"will start to download the episode in the location defined in the "
+"preferences. You can see the download progress of an episode in the column "
+"<guilabel>Status</guilabel>."
+msgstr ""
+"Para descargar un episodio a su disco, pulse con el botón derecho del ratón "
+"sobre el episodio y elija <menuchoice><guimenuitem>Descargar episodio</"
+"guimenuitem></menuchoice>, Rhythmbox comenzará a descargarlo en el lugar "
+"definido en las preferencias. Puede ver el progreso de la descarga en la "
+"columna <guilabel>Estado</guilabel>."
+
+#: C/rhythmbox.xml:874(para)
+msgid ""
+"By default, podcasts are downloaded in folder <filename class=\"directory"
+"\">Podcasts/</filename> in your home directory. To change location, see "
+"<xref linkend=\"prefs-podscast\"/>."
+msgstr ""
+"Por omisión, los podcast se descargan en la carpeta <filename class="
+"\"directory\">Podcasts/</filename> de su carpeta personal. Para cambiar el "
+"lugar vea la <xref linkend=\"prefs-podscast\"/>."
+
+#: C/rhythmbox.xml:881(title)
+msgid "Read a podcast episode"
+msgstr "Leer un episodio podcast"
+
+#: C/rhythmbox.xml:882(para)
+msgid ""
+"To play a podcast episode, select the episode you want to read, and choose "
+"<menuchoice><guimenu>Control</guimenu><guimenuitem>Play</guimenuitem></"
+"menuchoice>; you can also press the button <guibutton>Play</guibutton>."
+msgstr ""
+"Para reproducir un episodio podcast, seleccione el episodio que desea leer y "
+"elija <menuchoice><guimenu>Control</guimenu><guimenuitem>Reproducir</"
+"guimenuitem></menuchoice>; también puede pulsar el botón "
+"<guibutton>Reproducir</guibutton>."
+
+#: C/rhythmbox.xml:887(para)
+msgid ""
+"The episode have to downloaded before to read it, see <xref linkend="
+"\"podcast-episode-download\"/> to know how to download a podcast episode."
+msgstr ""
+"El episodio debe descargarse antes de leerse, vea la <xref linkend=\"podcast-"
+"episode-download\"/> para saber cómo descargar un episodio podcast."
+
+#: C/rhythmbox.xml:893(title)
+msgid "Delete a podcast episode"
+msgstr "Borrar un episodio podcast"
+
+#: C/rhythmbox.xml:894(para)
+msgid ""
+"To delete an episode from a podcast, right-click on the episode, and choose "
+"<menuchoice><guimenuitem>Delete</guimenuitem></menuchoice>, then choose "
+"<menuchoice><guimenuitem>Delete Episode Only</guimenuitem></menuchoice> if "
+"you to keep the episode file on your disk, or choose <guibutton>Delete "
+"Episode And File</guibutton> if you want to remove the episode from the list "
+"and delete the file from your disk."
+msgstr ""
+"Para borrar un episodio de un podcast, pulse con el botón derecho del ratón "
+"sobre el episodio y elija <menuchoice><guimenuitem>Borrar</guimenuitem></"
+"menuchoice>, después elija <menuchoice><guimenuitem>Borrar sólo el episodio</"
+"guimenuitem></menuchoice> si quiere conservar el archivo del episodio en su "
+"disco o bien elija <guibutton>Borrar episodio y archivo</guibutton> si "
+"quiere eliminar tanto el episodio de la lista como el archivo de su disco."
+
+#: C/rhythmbox.xml:903(para)
+msgid ""
+"After you delete an episode, it will no longer be available in the list of "
+"episodes, even if you update the podcast."
+msgstr ""
+"Después de borrar un episodio, no volverá a estar disponible en la lista de "
+"episodios, incluso si actualiza el podcast."
+
+#: C/rhythmbox.xml:910(title)
+msgid "Display Podcast Episode properties"
+msgstr "Mostrar las propiedades de un episodio podcast"
+
+#: C/rhythmbox.xml:915(para)
+msgid ""
+"On the <guilabel>Basic</guilabel> tab you can view the podcast "
+"<guilabel>Title</guilabel>, <guilabel>Feed</guilabel>, the publication "
+"<guilabel>Data</guilabel> and the <guilabel>Description</guilabel>."
+msgstr ""
+"En la pestaña <guilabel>Básico</guilabel> puede ver el <guilabel>Título</"
+"guilabel>, el <guilabel>Proveedor</guilabel>, la <guilabel>Fecha</guilabel> "
+"de publicación y la <guilabel>Descripción</guilabel> del podcast."
+
+#: C/rhythmbox.xml:920(para)
+msgid ""
+"On the <guilabel>Details</guilabel> tab you can view the podcast "
+"<guilabel>Source</guilabel>, <guilabel>Duration</guilabel>, the "
+"<guilabel>Bitrate</guilabel>, the <guilabel>Last Played Date</guilabel>, the "
+"<guilabel>Play count</guilabel> and the <guilabel>Rating</guilabel>."
+msgstr ""
+"En la pestaña <guilabel>Detalles</guilabel> puede ver la <guilabel>Fuente</"
+"guilabel>, la <guilabel>Duración</guilabel>, la <guilabel>Tasa de bits</"
+"guilabel>, la fecha de la <guilabel>Última reproducción</guilabel>, el "
+"<guilabel>Número de reproducciones</guilabel> y la <guilabel>Puntuación</"
+"guilabel> del podcast."
+
+#: C/rhythmbox.xml:911(para)
+msgid ""
+"To access to the episode properties, right-click on the episode, and choose "
+"<menuchoice><guimenuitem>Properties</guimenuitem></menuchoice>. <placeholder-"
+"1/>"
+msgstr ""
+"Para acceder a las propiedades de un episodio, pulse con el botón derecho "
+"del ratón sobre él y elija <menuchoice><guimenuitem>Propiedades</"
+"guimenuitem></menuchoice>. <placeholder-1/>"
+
+#: C/rhythmbox.xml:932(title)
+msgid "Play Queue Source"
+msgstr "Fuente: Cola de reproducción"
+
+#: C/rhythmbox.xml:933(para)
+msgid ""
+"Play queue is a source designed to temporarily store the next tracks you "
+"want to play. When you add a track to the Play Queue, <application>Rhythmbox "
+"Music Player</application> will automatically switch to this source, after "
+"the track has played."
+msgstr ""
+"La Cola de reproducción es una fuente diseñada para almacenar temporalmente "
+"las siguientes pistas que quiera reproducir. Cuando añade una pista en la "
+"cola de reproducción, el <application>Reproductor de música Rhythmbox</"
+"application> cambia automáticamente a esta fuente después de que se "
+"reproduzca la pista actual."
+
+#: C/rhythmbox.xml:939(para)
+msgid ""
+"Once a track has been played, it will be automatically removed from the Play "
+"Queue Source. Once the Play Queue is empty, <application>Rhythmbox Music "
+"Player</application> will play the source which was played before."
+msgstr ""
+"Una vez que se ha reproducido una pista se eliminará automáticamente de la "
+"cola de reproducción. Cuando la cola de reproducción esté vacía, el "
+"<application>Reproductor de música Rhythmbox</application> reproducirá la "
+"fuente que se estaba reproduciendo anteriormente."
+
+#: C/rhythmbox.xml:946(title)
+msgid "Add a track to the Play Queue"
+msgstr "Añadir una pista a la cola de reproducción"
+
+#: C/rhythmbox.xml:950(para)
+msgid "Select the track you want to play, in any source."
+msgstr "Seleccione la pista que desea reproducir, de cualquier fuente."
+
+#: C/rhythmbox.xml:956(para)
+msgid ""
+"Choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Add to playqueue</"
+"guimenuitem></menuchoice>."
+msgstr ""
+"Elija <menuchoice><guimenu>Editar</guimenu><guimenuitem>Encolar</"
+"guimenuitem></menuchoice>."
+
+#: C/rhythmbox.xml:947(para)
+msgid "To add a track: <placeholder-1/>"
+msgstr "Para añadir una pista: <placeholder-1/>"
+
+#: C/rhythmbox.xml:964(title)
+msgid "Remove a track in Play Queue"
+msgstr "Quitar una pista de la cola de reproducción"
+
+#: C/rhythmbox.xml:968(para)
+msgid "Select the track you want to remove in Play Queue source."
+msgstr "Seleccione la pista que desea quitar de la cola de reproducción."
+
+#: C/rhythmbox.xml:972(para) C/rhythmbox.xml:1044(para)
+#: C/rhythmbox.xml:1059(para) C/rhythmbox.xml:1107(para)
+msgid ""
+"Choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Delete</guimenuitem></"
+"menuchoice>."
+msgstr ""
+"Elija <menuchoice><guimenu>Editar</guimenu><guimenuitem>Eliminar</"
+"guimenuitem></menuchoice>."
+
+#: C/rhythmbox.xml:965(para)
+msgid "To remove a track stored in Play Queue: <placeholder-1/>"
+msgstr ""
+"Para quitar una pista almacenada en la cola de reproducción: <placeholder-1/>"
+
+#: C/rhythmbox.xml:983(title)
+msgid "Playlists Source"
+msgstr "Fuente: Listas de reproducción"
+
+#: C/rhythmbox.xml:984(para)
+msgid ""
+"Playlists are sources which are created from the tracks available in the "
+"Library source. They enable you to gather tracks following a particular "
+"'genre', a specific group of artists, or even tracks that are of a "
+"particular 'mood', or whatever you want."
+msgstr ""
+"Las listas de reproducción son fuentes creadas a partir de las pistas "
+"disponibles en la fonoteca. Permiten juntar pistas siguiendo un «género» "
+"particular, un grupo de artistas específico o incluso pistas de un "
+"particular estado de humor, o cualquier cosa que desee."
+
+#: C/rhythmbox.xml:994(para) C/rhythmbox.xml:1005(title)
+msgid "Static Playlists"
+msgstr "Listas de reproducción estáticas"
+
+#: C/rhythmbox.xml:997(para) C/rhythmbox.xml:1071(title)
+msgid "Smart Playlists"
+msgstr "Listas de reproducción inteligentes"
+
+#: C/rhythmbox.xml:990(para)
+msgid "Rhythmbox Music Player has 2 kinds of playlists: <placeholder-1/>"
+msgstr "Rhythmbox tiene dos tipos de listas de reproducción: <placeholder-1/>"
+
+#: C/rhythmbox.xml:1001(para)
+msgid "Rhythmbox lets you burn the tracks of your playlists to an Audio CD."
+msgstr ""
+"Rhythmbox le permite crear un CD de música con las pistas de sus listas de "
+"reproducción."
+
+#: C/rhythmbox.xml:1006(para)
+msgid ""
+"Static playlists are playlists built from tracks dropped from the Library."
+msgstr ""
+"Las listas de reproducción estáticas son aquellas construidas a partir de "
+"pistas de la fonoteca."
+
+#: C/rhythmbox.xml:1010(title)
+msgid "Create a static playlist"
+msgstr "Crear una lista de reproducción estática"
+
+#: C/rhythmbox.xml:1011(para)
+msgid ""
+"To create a new playlist, choose <menuchoice><guimenu>Music</"
+"guimenu><guisubmenu>Playlist</guisubmenu><guimenuitem>New Playlist</"
+"guimenuitem></menuchoice>. An empty playlist without name appears in the "
+"side pane. Enter a name for the playlist and press <keycombo><keycap>Enter</"
+"keycap></keycombo>."
+msgstr ""
+"Para crear una nueva lista de reproducción, elija "
+"<menuchoice><guimenu>Música</guimenu><guisubmenu>Lista de reproducción</"
+"guisubmenu><guimenuitem>Lista de reproducción nueva</guimenuitem></"
+"menuchoice>. Aparecerá una nueva lista de reproducción sin nombre en la "
+"fuente de listas. Introduzca un nombre para la lista de reproducción y pulse "
+"<keycombo><keycap>Intro</keycap></keycombo>."
+
+#: C/rhythmbox.xml:1020(title)
+msgid "Add tracks to a playlist"
+msgstr "Crear una lista de reproducción"
+
+#: C/rhythmbox.xml:1021(para)
+msgid ""
+"To add tracks to a playlist, select tracks from the track list from the "
+"library and drag and drop your selection over the playlist icon in the side "
+"pane."
+msgstr ""
+"Para añadir pistas a una lista de reproducción, seleccione las pistas de la "
+"lista de pistas de la fonoteca y arrastre y suelte su selección sobre el "
+"icono de la lista de reproducción, en el panel lateral."
+
+#: C/rhythmbox.xml:1026(para)
+msgid ""
+"You can also drop over a playlist a genre, an artist, or an album name from "
+"the browser, and all the tracks that belongs to the chosen category will be "
+"added to the playlist."
+msgstr ""
+"También puede soltar sobre una lista de reproducción un género, artista o "
+"álbum desde el examinador, y se añadirán todas las pistas que pertenezcan a "
+"la categoría elegida a dicha lista de reproducción."
+
+#: C/rhythmbox.xml:1032(para)
+msgid ""
+"You can create a playlist with tracks in one action. Select tracks from the "
+"<guilabel>Tracks List</guilabel>, or directly one or more categories from "
+"the browser (<guilabel>Genre</guilabel>, <guilabel>Artist</guilabel> or "
+"<guilabel>Album</guilabel>) and drop the selection over the <guilabel>Side "
+"pane</guilabel>. It will automatically create a named playlist."
+msgstr ""
+"En una sola acción puede crear una lista de reproducción con pistas. "
+"Seleccione las pistas de la <guilabel>Lista de pistas</guilabel>, o "
+"directamente una o más categorías del examinador (<guilabel>Género</"
+"guilabel>, <guilabel>Artista</guilabel> o <guilabel>Álbum</guilabel>) y "
+"suelte la selección sobre el <guilabel>Panel lateral</guilabel>. Creará "
+"automáticamente una lista de reproducción con nombre."
+
+#: C/rhythmbox.xml:1040(title)
+msgid "Remove tracks from a playlist"
+msgstr "Eliminar pistas de una lista de reproducción"
+
+#: C/rhythmbox.xml:1047(para)
+msgid ""
+"Right-click over the selection and choose <guimenuitem>Delete</guimenuitem>."
+msgstr ""
+"Pulse con el botón derecho del ratón sobre la selección y elija "
+"<guimenuitem>Eliminar</guimenuitem>."
+
+#: C/rhythmbox.xml:1041(para)
+msgid ""
+"To remove tracks from a playlist, first select the tracks to remove, and "
+"then you have two methods: <placeholder-1/> This operation deletes the track "
+"only from playlist and not from the Library."
+msgstr ""
+"Para quitar pistas de una lista de reproducción, primero seleccione las "
+"pistas a eliminar, y después puede escoger entre dos métodos: <placeholder-1/"
+"> Ésta operación elimina las pistas solamente de la lista de reproducción, "
+"no de la fonoteca."
+
+#: C/rhythmbox.xml:1055(title)
+msgid "Delete a static playlist"
+msgstr "Borrar una lista de reproducción estática"
+
+#: C/rhythmbox.xml:1062(para) C/rhythmbox.xml:1110(para)
+msgid ""
+"Right-click over the playlist and choose <guimenuitem>Delete</guimenuitem>."
+msgstr ""
+"Pulse con el botón derecho del ratón y seleccione <guimenuitem>Eliminar</"
+"guimenuitem>."
+
+#: C/rhythmbox.xml:1056(para)
+msgid ""
+"To delete a static playlist, select the playlist to delete, then you have "
+"two ways to delete it: <placeholder-1/> This operation deletes only the "
+"playlist and not the tracks stored in the playlist deleted."
+msgstr ""
+"Para eliminar una lista de reproducción estática, seleccione la lista de "
+"reproducción a eliminar, y después puede escoger entre dos métodos para "
+"eliminarla: <placeholder-1/> Esta operación elimina solamente las listas de "
+"reproducción y no las pistas almacenadas en la lista de reproducción "
+"eliminada."
+
+#: C/rhythmbox.xml:1072(para)
+msgid ""
+"Smart Playlists are playlists built from criteria, so tracks are added to it "
+"dynamically; all of the tracks matching the criteria will be added to the "
+"playlist."
+msgstr ""
+"Las listas de reproducción inteligentes son listas creadas desde criterios, "
+"así su contenido se construye dinámicamente; todas las pistas que coincidan "
+"con los criterios se añadirán a la lista de reproducción."
+
+#: C/rhythmbox.xml:1078(title)
+msgid "Create a smart playlist"
+msgstr "Crear una lista de reproducción inteligente"
+
+#: C/rhythmbox.xml:1081(para)
+msgid ""
+"Choose <menuchoice><guimenu>Music</guimenu><guisubmenu>Playlist</"
+"guisubmenu><guimenuitem>New Automatic Playlist</guimenuitem></menuchoice>."
+msgstr ""
+"Elija <menuchoice><guimenu>Música</guimenu><guisubmenu>Lista de "
+"reproducción</guisubmenu><guimenuitem>Lista de reproducción automática "
+"nueva...</guimenuitem></menuchoice>."
+
+#: C/rhythmbox.xml:1084(para)
+msgid "Edit the playlist criteria through the query editor."
+msgstr ""
+"Edite las criterios de la lista de reproducción a través del editor del "
+"editor de consultas."
+
+#: C/rhythmbox.xml:1086(para)
+msgid ""
+"Once your criteria have been chosen, click <guibutton>New</guibutton> to "
+"create the query."
+msgstr ""
+"Una vez que ha elegido sus criterios, pulse <guibutton>Nuevo</guibutton> "
+"para crear la consulta."
+
+#: C/rhythmbox.xml:1079(para)
+msgid "To create a new playlist: <placeholder-1/>"
+msgstr "Crear una nueva lista de reproducción: <placeholder-1/>"
+
+#: C/rhythmbox.xml:1093(title)
+msgid "Edit a smart playlist"
+msgstr "Editar una lista de reproducción inteligente"
+
+#: C/rhythmbox.xml:1094(para)
+msgid ""
+"Editing a smart playlist lets you modify the criteria set for this playlist. "
+"To edit a smart playlist, select the smart playlist, choose "
+"<menuchoice><guimenu>Music</guimenu><guisubmenu>Playlist</"
+"guisubmenu><guimenuitem>Edit</guimenuitem></menuchoice>, and edit the "
+"criteria. Once done, choose <guibutton>Close</guibutton>."
+msgstr ""
+"Editar una lista de reproducción inteligente le permite modificar los "
+"criterios establecidos para esa lista de reproducción. Para editar una lista "
+"de reproducción inteligente, elija <menuchoice><guimenu>Música</"
+"guimenu><guisubmenu>Lista de reproducción</guisubmenu><guimenuitem>Editar..."
+"</guimenuitem></menuchoice>, y edite los criterios. Una vez hecho esto, "
+"pulse el botón <guibutton>Cerrar</guibutton>."
+
+#: C/rhythmbox.xml:1103(title)
+msgid "Delete a smart playlist"
+msgstr "Borrar una lista de reproducción inteligente"
+
+#: C/rhythmbox.xml:1104(para)
+msgid ""
+"To delete a smart playlist, select the playlist to delete, then you have two "
+"ways to delete it: <placeholder-1/>"
+msgstr ""
+"Para eliminar una lista de reproducción inteligente, seleccione la lista de "
+"reproducción a eliminar, y después puede escoger entre dos métodos para "
+"eliminarla: <placeholder-1/>"
+
+#: C/rhythmbox.xml:1116(title)
+msgid "Use the query editor"
+msgstr "Uso del editor de consultas"
+
+#: C/rhythmbox.xml:1117(para)
+msgid ""
+"Choose the criteria to apply to the rule. If you need one more criteria "
+"click on the button <guibutton>Add</guibutton>, a new line appears, and you "
+"can set a new criteria."
+msgstr ""
+"Elija los criterios para aplicar a la regla. Si necesita un criterio más, "
+"pulse en el botón <guibutton>Añadir</guibutton>, aparecerá una nueva línea, "
+"y podrá añadir su nuevo criterio."
+
+#: C/rhythmbox.xml:1123(para)
+msgid ""
+"If you want to limit the number of tracks in the playlist, tick "
+"<guilabel>Limit to:</guilabel>, and choose how to limit. You can limit by "
+"tracks, by total size (in <guilabel>MB</guilabel> or <guilabel>GB</"
+"guilabel>), or by duration (expressed in <guilabel>Minutes</guilabel>)."
+msgstr ""
+"Si quiere limitar el número de pistas en la lista de reproducción, active "
+"<guilabel>Limitar a:</guilabel> y elija a cuántas limitarlo. Puede limitar "
+"por pistas, por tamaño total  (en <guilabel>MB</guilabel> o <guilabel>GB</"
+"guilabel>), o por duración (expresado en <guilabel>Minutos</guilabel>)."
+
+#: C/rhythmbox.xml:1130(para)
+msgid ""
+"Once you finish setting the criteria for the playlist, choose "
+"<guibutton>New</guibutton>; the playlist query editor window will close, and "
+"the playlist will display the tracks matched by your criteria."
+msgstr ""
+"Una vez que ha terminado de seleccionar los criterios para la lista de "
+"reproducción, elija <guibutton>Nuevo</guibutton>; se cerrará el editor de "
+"consultas de la lista de reproducción y se mostrará la lista de reproducción "
+"con las pistas que han coincidido con sus criterios."
+
+#: C/rhythmbox.xml:1140(title)
+msgid "Audio CD Source"
+msgstr "Fuente: CD de música"
+
+#: C/rhythmbox.xml:1141(para)
+msgid ""
+"<application>Rhythmbox Music Player</application> can also handle Audio CDs; "
+"it can play CDs and also let you burn your own."
+msgstr ""
+"El <application>Reproductor de música Rhythmbox</application> también puede "
+"manejar CD de música, puede reproducirlos pero también le permite grabar sus "
+"propias compilaciones."
+
+#: C/rhythmbox.xml:1144(title)
+msgid "Playing"
+msgstr "Reproduciendo"
+
+#: C/rhythmbox.xml:1145(para)
+msgid ""
+"When an Audio CD is inserted, it will appear in the side pane, and the "
+"tracks on it can be displayed in <application>Rhythmbox Music Player</"
+"application>'s main window. If you are connected to the Internet, the CD "
+"details will be retrieved and displayed."
+msgstr ""
+"Cuando se introduce un CD de música en la unidad de CD, aparecerá en la "
+"lista de fuentes, y se pueden mostrar las pistas que contiene en la ventana "
+"principal del <application>Reproductor de música Rhythmbox</application>. Si "
+"está conectado a Internet se obtendrán y mostrarán los detalles del CD."
+
+#: C/rhythmbox.xml:1150(para)
+msgid ""
+"To play and pause playback, or to skip forward or backwards, use the same "
+"controls as used for playing from the library."
+msgstr ""
+"Para reproducir y pausar la reproducción, o para saltar adelante o atrás, "
+"use los mismos controles que se usan para la reproducción desde la fonoteca."
+
+#: C/rhythmbox.xml:1155(title)
+msgid "Importing Audio CD"
+msgstr "Importar CD de música"
+
+#: C/rhythmbox.xml:1156(para)
+msgid ""
+"If you wish to keep the tracks of your Audio CDs on your computer, you can "
+"import them."
+msgstr ""
+"Si quiere conservar las pistas de sus CD de música en su equipo, puede "
+"importarlas; las pistas se guardarán como archivos de música."
+
+#: C/rhythmbox.xml:1158(para)
+msgid ""
+"To import Audio CD tracks, choose <menuchoice><guimenu>Music</"
+"guimenu><guimenuitem>Import Audio CD</guimenuitem></menuchoice>, it will "
+"start <application>Sound-Juicer</application>, an application dedicated to "
+"importing Audio CDs. To know more about <application>Sound-Juicer</"
+"application>, you can read the <ulink url=\"ghelp:sound-juicer\">Sound-"
+"Juicer manual</ulink>."
+msgstr ""
+"Para importar las pistas de un CD de música, elija "
+"<menuchoice><guimenu>Música</guimenu><guimenuitem>Importar CD de sonido...</"
+"guimenuitem></menuchoice>, iniciará Sound-Juicer, una aplicación de GNOME "
+"dedicada a importar CD de música. Para saber más acerca de Sound-Juicer, "
+"puede leer el <ulink url=\"ghelp:sound-juicer\">Manual de Sound-Juicer</"
+"ulink>."
+
+#: C/rhythmbox.xml:1163(para)
+msgid ""
+"To get imported tracks from Sound-Juicer automatically added to you "
+"Rhythmbox Library, you will have to configure Sound-Juicer to extract tracks "
+"into your Rhythmbox Library location and the Rhythmbox watch library feature "
+"has to be activated; refer to <ulink url=\"ghelp:sound-juicer#preferences"
+"\">Sound-Juicer preferences</ulink> and <link linkend=\"prefs-library"
+"\">Rhythmbox Library preferences</link>."
+msgstr ""
+"Para que las pistas importadas desde Sound-Juicer se importen "
+"automáticamente en la fonoteca de su Rhythmbox, tendrá que configurar Sound-"
+"Juicer para que extraiga las pistas en el lugar de la fonoteca de su "
+"Rhythmbox y la característica de vigilancia de la fonoteca de Rhythmbox "
+"tiene que estar activada; relacionado con las <ulink url=\"ghelp:sound-"
+"juicer#preferences\">Preferencias de Sound-Juicer</ulink> y las <link "
+"linkend=\"prefs-library\">Preferencias de la fonoteca de Rhythmbox</link>."
+
+#: C/rhythmbox.xml:1172(title)
+msgid "Creating Audio CD"
+msgstr "Crear CD de música"
+
+#: C/rhythmbox.xml:1173(para)
+msgid ""
+"Rhythmbox enables you to create you own Audio CDs with the music stored in "
+"the Rhythmbox Library."
+msgstr ""
+"Rhythmbox le permite crear sus propios CD de música con la música almacenada "
+"en la fonoteca de Rhythmbox."
+
+#: C/rhythmbox.xml:1175(para)
+msgid ""
+"Create a playlist, static or smart (see <xref linkend=\"playlist\"/>) and "
+"add tracks."
+msgstr ""
+"Cree una lista de reproducción, estática o inteligente (vea <xref linkend="
+"\"playlist\"/>) y añada pistas."
+
+#: C/rhythmbox.xml:1177(para)
+msgid ""
+"Choose <menuchoice><guimenu>Music</guimenu><guisubmenu>Playlist</"
+"guisubmenu><guimenuitem>Create Audio CD</guimenuitem></menuchoice>"
+msgstr ""
+"Elija <menuchoice><guimenu>Música</guimenu><guisubmenu>Lista de "
+"reproducción</guisubmenu><guimenuitem>Crear CD de sonido…</guimenuitem></"
+"menuchoice>"
+
+#: C/rhythmbox.xml:1178(para)
+msgid "Insert a blank CD."
+msgstr "Introduzca un CD virgen."
+
+#: C/rhythmbox.xml:1179(para)
+msgid ""
+"Click the button <guibutton>Create</guibutton>, the burning process starts."
+msgstr ""
+"Cuando pulse el botón <guibutton>Crear</guibutton> comenzará el proceso de "
+"grabación."
+
+#: C/rhythmbox.xml:1174(para)
+msgid "To create an Audio CD: <placeholder-1/>"
+msgstr "Para crear un CD de música: <placeholder-1/>"
+
+#: C/rhythmbox.xml:1185(title)
+msgid "Portable Audio Player Source"
+msgstr "Fuente: Reproductor portátil"
+
+#: C/rhythmbox.xml:1186(para)
+msgid ""
+"<application>Rhythmbox</application> can detect when an portable audio "
+"player is plugged to your computer, and is able to read tracks stored on it. "
+"<application>Rhythmbox Music Player</application> should be able to deal "
+"with most portable audio players including Apple iPod, MTP players and Mass "
+"Storage players."
+msgstr ""
+"<application>Rhythmbox</application> puede detectar cuándo un reproductor de "
+"música portátil se ha conectado a su equipo, y es capaz de leer las pistas "
+"en él almacenadas. El <application>Reproductor de música Rhythmbox</"
+"application> debería ser capaz de tratar con la mayoría de los reproductores "
+"de música portátiles, incluyendo el iPod de Apple, reproductores MTPP y de "
+"almacenamiento masivo."
+
+#: C/rhythmbox.xml:1191(para)
+msgid ""
+"When you plug in a portable audio player, an icon for the Portable Audio "
+"Player is added to the side pane. This source works in the same way as the "
+"Library source."
+msgstr ""
+"Cuando conecta un reproductor de música portátil se añadirá un icono del "
+"identificador del reproductor de música portátil en el panel lateral. Esta "
+"fuente funciona de la misma forma que la fonoteca."
+
+#: C/rhythmbox.xml:1194(para)
+msgid ""
+"If <application>Rhythmbox Music Player</application> does not detect your "
+"device as a portable audio player, you can create an empty file named "
+"<filename>.is_audio_player</filename> at the top level hierarchy of the "
+"filesystem of your player."
+msgstr ""
+"Si el <application>Reproductor de música Rhythmbox</application> no detecta "
+"su dispositivo como un reproductor de música portátil, puede crear un "
+"archivo vacío llamado <filename>.is_audio_player</filename> en el nivel "
+"superior de la jerarquía del sistema de archivos de su reproductor."
+
+#: C/rhythmbox.xml:1200(title)
+msgid "DAAP Share Source"
+msgstr "Fuente: Compartición DAAP"
+
+#: C/rhythmbox.xml:1201(para)
+msgid ""
+"DAAP is a network protocol that allows you to share the music stored in "
+"Rhythmbox. DAAP stands for Digital Audio Access Protocol."
+msgstr ""
+"DAAP es un protocolo de red que permite compartir la música almacena "
+"Rhythmbox. DAAP significa Digital Audio Access Protocol (protocolo de acceso "
+"a sonido digital)."
+
+#: C/rhythmbox.xml:1203(para)
+msgid ""
+"As DAAP is a standard protocol for music sharing, you can listen and share "
+"music not only with other Rhythmbox users, but also with other users who use "
+"DAAP compatible software, like iTunes."
+msgstr ""
+"Como DAAP es un protocolo estándar para la compartición de música, puede "
+"escuchar y compartir música no sólo con otros usuarios de Rhythmbox, sino "
+"también con otros usuarios que usen software compatible con DAAP como iTunes."
+
+#: C/rhythmbox.xml:1206(para)
+msgid ""
+"When you start Rhythmbox, it will look for all DAAP shares published on your "
+"local network (your home or your office, not the whole Internet) by other "
+"users and will display them in the side pane. If sharing is enabled, at the "
+"same time Rhythmbox will publish your library and your playlists. In this "
+"way, you can listen to music stored on your friend's computers and they can "
+"listen your music."
+msgstr ""
+"Cuando inicie Rhythmbox, éste buscará todas las comparticiones DAAP "
+"publicadas en su red local (su casa o su oficina, no toda la Internet) por "
+"otros usuarios y las mostrará en el panel lateral. Si la compartición está "
+"activada, al mismo tiempo Rhythmbox publicará su fonoteca y sus listas de "
+"reproducción. Así podrá leer la música almacenada en los equipos de sus "
+"amigos y ellos podrán escuchar su música."
+
+#: C/rhythmbox.xml:1212(para)
+msgid ""
+"To disable the Rhythmbox DAAP sharing feature, see <xref linkend=\"prefs-"
+"sharing\"/> in the preferences."
+msgstr ""
+"Para desactivar la característica de compartición de música DAAP de "
+"Rhythmbox, consulte la <xref linkend=\"prefs-sharing\"/> en las preferencias."
+
+#: C/rhythmbox.xml:1216(title)
+msgid "Notification Area"
+msgstr "Área de notificación"
+
+#: C/rhythmbox.xml:1219(para)
+msgid ""
+"The Notification Area is a GNOME feature that adds a small icon to the panel "
+"while the program is running; this allows you to control "
+"<application>Rhythmbox Music Player</application> from your tray, and "
+"receive information when the <application>Rhythmbox Music Player</"
+"application> interface is not visible."
+msgstr ""
+"El área de notificación es una característica de GNOME que añade un pequeño "
+"icono al panel mientras el programa se está ejecutando, ésto le permite "
+"controlar el <application>Reproductor de música Rhythmbox</application> "
+"desde la bandeja del sistema, y recibir información cuando el interfaz del "
+"<application>Reproductor de música Rhythmbox</application> no sea visible."
+
+#: C/rhythmbox.xml:1225(title)
+msgid ""
+"<application>Rhythmbox Music Player</application> in the Notification Area"
+msgstr ""
+"El <application>Reproductor de música Rhythmbox</application> en el área de "
+"notificación"
+
+#: C/rhythmbox.xml:1236(title)
+msgid "Get information"
+msgstr "Obtener información"
+
+#: C/rhythmbox.xml:1238(title)
+msgid "Tooltip information"
+msgstr "Consejos con información"
+
+#: C/rhythmbox.xml:1239(para)
+msgid ""
+"When you move the mouse cursor over the <application>Rhythmbox Music Player</"
+"application> icon, you can see the track artist, the track name and the time "
+"position."
+msgstr ""
+"Cuando mueve el ratón sobre el icono del <application>Reproductor de música "
+"Rhythmbox</application> puede ver el nombre del artista, el nombre de la "
+"canción y el tiempo transcurrido de la pista."
+
+#: C/rhythmbox.xml:1244(title)
+msgid "Notification window"
+msgstr "Ventana de notificación"
+
+#: C/rhythmbox.xml:1245(para)
+msgid ""
+"Each time the track has changed or a podcast episode was downloaded, the "
+"<application>Rhythmbox Music Player</application> can inform you; it "
+"displays a notification window on the desktop, containing the information."
+msgstr ""
+"Cada vez que la pista cambia o se descarga un episodio podcast, el "
+"<application>Reproductor de música Rhythmbox</application> puede informarle "
+"de ello, mostrando una ventana de notificación en el escritorio que contiene "
+"la información."
+
+#: C/rhythmbox.xml:1249(title)
+msgid ""
+"The notification window of <application>Rhythmbox Music Player</application>"
+msgstr ""
+"La ventana de notificación del <application>Reproductor de música Rhythmbox</"
+"application>"
+
+#: C/rhythmbox.xml:1259(para)
+msgid ""
+"The notification window can be disabled by deselecting the <guilabel>Show "
+"Notifications</guilabel> option from the context menu of the icon in the "
+"notification area."
+msgstr ""
+"Se puede desactivar la ventana de notificación deseleccionando la opción "
+"<guilabel>Mostrar notificaciones</guilabel> del menú contextual del icono "
+"del área de notificación."
+
+#: C/rhythmbox.xml:1267(title)
+msgid "Control Rhythmbox"
+msgstr "Controlar Rhythmbox"
+
+#: C/rhythmbox.xml:1268(para)
+msgid ""
+"Using the <application>Rhythmbox Music Player</application> icon in the "
+"notification area, the following commands can be sent to the application:"
+msgstr ""
+"Usando el icono del <application>Reproductor de música Rhythmbox</"
+"application> en el área de notificación, se pueden enviar los siguientes "
+"comandos a la aplicación:"
+
+#: C/rhythmbox.xml:1272(title)
+msgid "Notification Area (showing menu)"
+msgstr "Área de notificación (visualización del menú)"
+
+#: C/rhythmbox.xml:1284(para)
+msgid ""
+"<guibutton>Play</guibutton>&mdash; If selected, plays the currently selected "
+"song."
+msgstr ""
+"<guibutton>Reproducir</guibutton>: Si está seleccionado, reproduce la "
+"canción actualmente seleccionada."
+
+#: C/rhythmbox.xml:1288(para)
+msgid ""
+"<guibutton>Previous</guibutton>&mdash; Skip to previous song in the selected "
+"source."
+msgstr ""
+"<guibutton>Anterior</guibutton>: salta a la canción anterior de la fuente "
+"seleccionada."
+
+#: C/rhythmbox.xml:1292(para)
+msgid ""
+"<guibutton>Next</guibutton>&mdash; Skip to next song in the selected source."
+msgstr ""
+"<guibutton>Siguiente</guibutton>: salta a la siguiente canción de la fuente "
+"seleccionada."
+
+#: C/rhythmbox.xml:1296(para)
+msgid ""
+"<guibutton>Show Window Player</guibutton>&mdash; Choose whether or not the "
+"<application>Rhythmbox Music Player</application> window is visible or not "
+"on the desktop."
+msgstr ""
+"<guibutton>Mostrar la ventana del reproductor</guibutton>: Elija si quiere "
+"que la ventana del <application>Reproductor de música Rhythmbox</"
+"application> sea visible en el escritorio o no."
+
+#: C/rhythmbox.xml:1301(para)
+msgid ""
+"<guibutton>Show Notifications</guibutton>&mdash; Choose whether or not the "
+"<application>Rhythmbox Music Player</application> will notify you about "
+"track changes and various information."
+msgstr ""
+"<guibutton>Mostrar notificaciones</guibutton>: Elija si quiere que el "
+"<application>Reproductor de música Rhythmbox</application> le notifique "
+"sobre los cambios de pista y otra información variada o no."
+
+#: C/rhythmbox.xml:1306(para)
+msgid ""
+"<guibutton>Quit</guibutton>&mdash; Quit the <application>Rhythmbox Music "
+"Player</application>."
+msgstr ""
+"<guibutton>Salir</guibutton>: Salir del <application>Reproductor de música "
+"Rhythmbox</application>."
+
+#: C/rhythmbox.xml:1311(para)
+msgid ""
+"If you are using a mouse with a scroll wheel, you can adjust the volume by "
+"scrolling up or down while the mouse pointer is over the panel applet."
+msgstr ""
+"Si está usando un ratón con rueda, puede ajustar el volumen deslizando la "
+"rueda arriba o abajo mientras el puntero del ratón está sobre el icono de la "
+"miniaplicación en el panel."
+
+#: C/rhythmbox.xml:1315(para)
+msgid "You can quickly toggle Play/Pause by pressing the middle mouse button."
+msgstr ""
+"Puede conmutar rápidamente entre Reproducir/Pausar presionando el botón "
+"central del del ratón."
+
+#: C/rhythmbox.xml:1321(title)
+msgid "Customizing Rhythmbox Music Player"
+msgstr "Personalizar el Reproductor de música Rhythmbox"
+
+#: C/rhythmbox.xml:1322(para)
+msgid ""
+"This section describes how to customize <application>Rhythmbox Music Player</"
+"application> to suit your requirements and preferences."
+msgstr ""
+"Esta sección describe cómo personalizar el <application>Reproductor de "
+"música Rhythmbox</application> para que se ajuste a sus necesidades y "
+"preferencias."
+
+#: C/rhythmbox.xml:1327(title)
+msgid "Setting Your Preferences"
+msgstr "Establecer sus preferencias"
+
+#: C/rhythmbox.xml:1328(para)
+msgid ""
+"Using the <guilabel>Preferences</guilabel> dialog you can customize how you "
+"want <application>Rhythmbox Music Player</application> to look and behave. "
+"To display the <guilabel>Preferences</guilabel> dialog, choose "
+"<menuchoice><guimenu>Edit</guimenu><guimenuitem>Preferences</guimenuitem></"
+"menuchoice>."
+msgstr ""
+"Usando el diálogo de las <guilabel>Preferencias</guilabel> puede "
+"personalizar cómo quiere que el <application>Reproductor de música "
+"Rhythmbox</application> se muestre y comporte. Para mostrar el diálogo de "
+"las <guilabel>Preferencias</guilabel>, elija <menuchoice><guimenu>Editar</"
+"guimenu><guimenuitem>Preferencias</guimenuitem></menuchoice>."
+
+#: C/rhythmbox.xml:1335(title)
+msgid "General"
+msgstr "General"
+
+#: C/rhythmbox.xml:1336(para)
+msgid ""
+"Choose the way the <guilabel>Browser View</guilabel> will be displayed. You "
+"can choose to use three or two panes and what the panes should display."
+msgstr ""
+"Elija la forma en la que se mostrará la <guilabel>Vista del examinador</"
+"guilabel>. Puede elegir usar dos o tres paneles y qué paneles se deben "
+"mostrar."
+
+#: C/rhythmbox.xml:1344(para)
+msgid "Library"
+msgstr "Fonoteca"
+
+#: C/rhythmbox.xml:1345(para)
+msgid "Audio CD"
+msgstr "CD de música"
+
+#: C/rhythmbox.xml:1346(para)
+msgid "Portable Players"
+msgstr "Reproductores portátiles"
+
+#: C/rhythmbox.xml:1347(para)
+msgid "Playlists"
+msgstr "Listas de reproducción"
+
+#: C/rhythmbox.xml:1348(para)
+msgid "DAAP Music shares"
+msgstr "Comparticiones de música DAAP"
+
+#: C/rhythmbox.xml:1339(para)
+msgid ""
+"Choose the <guilabel>Visible Columns</guilabel> you want to display in "
+"<application>Rhythmbox Music Player</application>. This option affects the "
+"following sources: <placeholder-1/>"
+msgstr ""
+"Elija las <guilabel>Columnas visibles</guilabel> que desea que muestre el "
+"<application>Reproductor de música Rhythmbox</application>. Ésta opción es "
+"global y afecta a las siguientes fuentes: <placeholder-1/>"
+
+#: C/rhythmbox.xml:1353(title)
+msgid "Music"
+msgstr "Música"
+
+#: C/rhythmbox.xml:1356(para)
+msgid ""
+"The <guilabel>Library Location</guilabel> is a folder that "
+"<application>Rhythmbox Music Player</application> will monitor to find new "
+"songs. When you add new audio files in this folder or its sub-folders with "
+"the file browser (like Nautilus), <application>Rhythmbox Music Player</"
+"application> will detect them and they will be added automatically in the "
+"Library."
+msgstr ""
+"La <guilabel>Lugar de la fonoteca</guilabel> es una carpeta que el "
+"<application>Reproductor de música Rhythmbox</application> monitorizará para "
+"buscar nuevas canciones. Cuando añada nuevos archivos de audio en ésta "
+"carpeta o alguna de sus subcarpetas con el administrador de archivos (como "
+"Nautilus) el <application>Reproductor de música Rhythmbox</application>."
+
+#: C/rhythmbox.xml:1364(para)
+msgid ""
+"Avoid to set your <filename class=\"directory\">Home</filename> folder as "
+"library location because this feature is CPU consuming."
+msgstr ""
+"Evite establecer su <filename class=\"directory\">carpeta personal</"
+"filename> como el lugar de la biblioteca porque esta característica consume "
+"muchos recursos de la CPU."
+
+#: C/rhythmbox.xml:1369(para)
+msgid ""
+"To disable the watch functionality deselect <guilabel>Watch my library for "
+"new files</guilabel>."
+msgstr ""
+"Para deshabilitar la funcionalidad de vigilancia, deseleccione "
+"<guilabel>Vigilar mi fonoteca en busca de archivos nuevos</guilabel>."
+
+#: C/rhythmbox.xml:1374(para)
+msgid ""
+"If you want to add more than one folder to watch, use <application>gconf-"
+"editor</application> and add it to the list /app/rhythmbox/library_locations"
+msgstr ""
+"Si quiere añadir más de una carpeta a la vigilancia, use <application>gconf-"
+"editor</application> y añádala a lista /app/rhythmbox/library_locations"
+
+#: C/rhythmbox.xml:1383(title)
+msgid "Podcasts"
+msgstr "Podcasts"
+
+#: C/rhythmbox.xml:1386(para)
+msgid ""
+"The <guilabel>Download Location</guilabel> of Podcasts is defined by default "
+"to the <filename class=\"directory\">Podcasts/ </filename> folder in your "
+"home directory."
+msgstr ""
+"El <guilabel>Lugar de descarga</guilabel> de los podcast por omisión está "
+"definido como la carpeta <filename class=\"directory\">Podcasts/</filename> "
+"dentro de su carpeta personal."
+
+#: C/rhythmbox.xml:1391(para)
+msgid ""
+"If this location doesn't fit your needs, select another folder in the drop-"
+"down list or choose <guilabel>Other</guilabel> to make the File Selector "
+"appear."
+msgstr ""
+"Si éste lugar no satisface sus necesidades, seleccione otra carpeta en la "
+"lista desplegable o elija <guilabel>Otro</guilabel> para hacer que aparezca "
+"el selector de archivos."
+
+#: C/rhythmbox.xml:1398(para)
+msgid ""
+"Choose the frequency that <application>Rhythmbox Music Player</application> "
+"will check for new podcast episodes."
+msgstr ""
+"Elija la frecuencia con la que el <application>Reproductor de música "
+"Rhythmbox</application> comprobará si hay nuevos episodios podcast."
+
+#: C/rhythmbox.xml:1406(title)
+msgid "Sharing"
+msgstr "Compartición"
+
+#: C/rhythmbox.xml:1407(para)
+msgid ""
+"The <application>Rhythmbox Music Player</application> can share your Library "
+"contents over your Local Area Network, to other <application>Rhythmbox Music "
+"Player</application> and Apple iTunes users."
+msgstr ""
+"El <application>Reproductor de música Rhythmbox</application> puede "
+"compartir los contenidos de su fonoteca sobre una red de área local, o con "
+"otros <application>Reproductores de música Rhythmbox</application> y "
+"usuarios del Apple iTunes."
+
+#: C/rhythmbox.xml:1412(para)
+msgid ""
+"Select <guilabel>Share my music</guilabel> to enable the users of your "
+"network to see and read your songs."
+msgstr ""
+"Seleccione <guilabel>Compartir mi música</guilabel> para permitir que "
+"usuarios de su misma red puedan ver y leer sus canciones."
+
+#: C/rhythmbox.xml:1416(para)
+msgid ""
+"Enter the name of you want to appear of the network in the field "
+"<guilabel>Shared music name</guilabel>."
+msgstr ""
+"Teclee la cadena que quiera encontrar, en el campo <guilabel>Buscar</"
+"guilabel>."
+
+#: C/rhythmbox.xml:1423(title)
+msgid "Last.fm profile"
+msgstr "Perfil en Last.fm"
+
+#: C/rhythmbox.xml:1430(para)
+msgid "consult statistics, such as most played songs or most played artists."
+msgstr ""
+"consultar estadísticas, tales como las canciones o artistas más escuchados."
+
+#: C/rhythmbox.xml:1433(para)
+msgid "receive recommendations about artists that you might like."
+msgstr "recibir recomendaciones sobre artistas que puede que le gusten."
+
+#: C/rhythmbox.xml:1424(para)
+msgid ""
+"The Last.fm profile plugin collects information about the songs you listen "
+"to and sends it to the <ulink url=\"http://www.last.fm/\">Last.fm</ulink> "
+"website, building up a profile of your listening habits. With this profile, "
+"you can: <placeholder-1/>"
+msgstr ""
+"El complemento del perfil en Last.fm recoge información acerca de las "
+"canciones que escucha y las envía al sitio web de <ulink url=\"http://www."
+"last.fm/\">Last.fm</ulink>, construyendo un perfil de sus hábitos musicales. "
+"Con éste perfil, puede: <placeholder-1/>"
+
+#: C/rhythmbox.xml:1438(para)
+msgid ""
+"In order to use the Last.fm profile plugin, you must have a Last.fm account. "
+"If you don't already have one, use the <ulink url=\"http://www.last.fm/"
+"signup.php\">Last.fm signup page</ulink> to create one. Enter your Last.fm "
+"account details in the <guilabel>Username</guilabel> and <guilabel>Password</"
+"guilabel> fields in the Last.fm profile plugin configuration window."
+msgstr ""
+"Para que pueda usar el complemento del perfil en Last.fm, debe tener una "
+"cuenta en Last.fm. Si todavía no tiene una, use la <ulink url=\"http://www."
+"last.fm/signup.php\">Página de registro de Last.fm</ulink> para crearse una. "
+"Introduzca los detalles de su cuenta de Last.fm en los campos "
+"<guilabel>Usuario</guilabel> y <guilabel>Contraseña</guilabel> de la ventana "
+"de configuración del complemento del perfil en Last.fm."
+
+#: C/rhythmbox.xml:1447(para)
+msgid ""
+"The configuration window for the Last.fm profile plugin also displays status "
+"information. If your Last.fm profile page shows that your profile is not "
+"being updated, the information displayed here may help you to diagnose the "
+"problem."
+msgstr ""
+"La ventana de configuración para el complemento del perfil en Last.fm "
+"también puede mostrar información de estado. Si la página de su perfil en "
+"Last.fm muestra que su perfil no se está actualizando, la información "
+"mostrada aquí puede ayudarle a diagnosticar el problema."
+
+#: C/rhythmbox.xml:1457(title) C/rhythmbox.xml:1467(entry)
+#: C/rhythmbox.xml:1537(entry) C/rhythmbox.xml:1663(entry)
+#: C/rhythmbox.xml:1769(entry)
+msgid "Shortcuts"
+msgstr "Teclas rápidas"
+
+#: C/rhythmbox.xml:1459(title)
+msgid "Keyboard Shortcuts"
+msgstr "Combinaciones de teclas"
+
+#: C/rhythmbox.xml:1461(title)
+msgid "Player Shortcuts"
+msgstr "Combinaciones de teclas del reproductor"
+
+#: C/rhythmbox.xml:1468(entry) C/rhythmbox.xml:1538(entry)
+#: C/rhythmbox.xml:1664(entry) C/rhythmbox.xml:1770(entry)
+msgid "Actions"
+msgstr "Acciones"
+
+#: C/rhythmbox.xml:1475(keycap) C/rhythmbox.xml:1508(keycap)
+#: C/rhythmbox.xml:1519(keycap) C/rhythmbox.xml:1545(keycap)
+#: C/rhythmbox.xml:1557(keycap) C/rhythmbox.xml:1568(keycap)
+#: C/rhythmbox.xml:1579(keycap) C/rhythmbox.xml:1590(keycap)
+#: C/rhythmbox.xml:1601(keycap) C/rhythmbox.xml:1612(keycap)
+#: C/rhythmbox.xml:1623(keycap) C/rhythmbox.xml:1634(keycap)
+#: C/rhythmbox.xml:1671(keycap) C/rhythmbox.xml:1682(keycap)
+#: C/rhythmbox.xml:1693(keycap) C/rhythmbox.xml:1704(keycap)
+#: C/rhythmbox.xml:1725(keycap) C/rhythmbox.xml:1736(keycap)
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: C/rhythmbox.xml:1476(keycap)
+msgid "Space"
+msgstr "Espacio"
+
+#: C/rhythmbox.xml:1480(para)
+msgid "Play / Pause"
+msgstr "Reproducir / Pausar"
+
+#: C/rhythmbox.xml:1486(keycap) C/rhythmbox.xml:1497(keycap)
+#: C/rhythmbox.xml:1645(keycap)
+msgid "Alt"
+msgstr "Alt"
+
+#: C/rhythmbox.xml:1487(keycap)
+msgid "Left"
+msgstr "Izquierda"
+
+#: C/rhythmbox.xml:1491(para)
+msgid "Jump to the Previous Track / Back to the beginning of the track"
+msgstr "Saltar a la pista anterior / Volver al principio de la canción"
+
+#: C/rhythmbox.xml:1498(keycap)
+msgid "Right"
+msgstr "Derecha"
+
+#: C/rhythmbox.xml:1502(para)
+msgid "Jump to the Next Track"
+msgstr "Saltar a la pista siguiente"
+
+#: C/rhythmbox.xml:1509(keycap)
+msgid "R"
+msgstr "R"
+
+#: C/rhythmbox.xml:1513(para)
+msgid "Enable / Disable Repeat play"
+msgstr "Activar / Desactivar la repetición continua"
+
+#: C/rhythmbox.xml:1520(keycap)
+msgid "U"
+msgstr "U"
+
+#: C/rhythmbox.xml:1524(para)
+msgid "Enable / Disable Shuffle play"
+msgstr "Activar / Desactivar la reproducción aleatoria"
+
+#: C/rhythmbox.xml:1531(title)
+msgid "General Shortcuts"
+msgstr "Combinaciones de teclas generales"
+
+#: C/rhythmbox.xml:1546(keycap) C/rhythmbox.xml:1558(keycap)
+msgid "A"
+msgstr "A"
+
+#: C/rhythmbox.xml:1550(para)
+msgid "Select All"
+msgstr "Seleccionar todas"
+
+#: C/rhythmbox.xml:1556(keycap)
+msgid "Shift"
+msgstr "Mayús"
+
+#: C/rhythmbox.xml:1562(para)
+msgid "Deselect All"
+msgstr "Deseleccionar todas"
+
+#: C/rhythmbox.xml:1569(keycap)
+msgid "E"
+msgstr "E"
+
+#: C/rhythmbox.xml:1573(para)
+msgid "Extract CD (launch Sound-Juicer)"
+msgstr "Extraer el CD (iniciar Sound-Juicer)"
+
+#: C/rhythmbox.xml:1580(keycap)
+msgid "J"
+msgstr "J"
+
+#: C/rhythmbox.xml:1584(para)
+msgid "Jump to playing song"
+msgstr "Saltar a la canción en reproducción"
+
+#: C/rhythmbox.xml:1591(keycap)
+msgid "Y"
+msgstr "Y"
+
+#: C/rhythmbox.xml:1595(para)
+msgid "Clear the search field text and remove all filters in the browser"
+msgstr ""
+"Limpiar el campo de búsquedas y eliminar todos los filtros del examinador"
+
+#: C/rhythmbox.xml:1602(keycap)
+msgid "N"
+msgstr "N"
+
+#: C/rhythmbox.xml:1606(para)
+msgid "Create a New playlist"
+msgstr "Crear una lista de reproducción nueva"
+
+#: C/rhythmbox.xml:1613(keycap)
+msgid "I"
+msgstr "I"
+
+#: C/rhythmbox.xml:1617(para)
+msgid "Add a new Internet Radio Station"
+msgstr "Añadir una emisora de radio de Internet nueva"
+
+#: C/rhythmbox.xml:1624(keycap)
+msgid "P"
+msgstr "P"
+
+#: C/rhythmbox.xml:1628(para)
+msgid "Add a New Podcast Feed"
+msgstr "Añadir un proporcionador de Podcast nuevo"
+
+#: C/rhythmbox.xml:1635(keycap)
+msgid "O"
+msgstr "O"
+
+#: C/rhythmbox.xml:1639(para)
+msgid "Add a folder to the library"
+msgstr "Importar una carpeta en la fonoteca"
+
+#: C/rhythmbox.xml:1646(keycap)
+msgid "Return"
+msgstr "Retorno"
+
+#: C/rhythmbox.xml:1650(para)
+msgid "Display the Track Properties"
+msgstr "Mostrar las propiedades de la pista"
+
+#: C/rhythmbox.xml:1657(title) C/rhythmbox.xml:1763(title)
+#: C/rhythmbox.xml:1816(title)
+msgid "Window Shortcuts"
+msgstr "Ventana de teclas rápidas"
+
+#: C/rhythmbox.xml:1672(keycap)
+msgid "W"
+msgstr "W"
+
+#: C/rhythmbox.xml:1676(para)
+msgid "Close the <application>Rhythmbox Music Player</application> window"
+msgstr ""
+"Cerrar la ventana del <application>Reproductor de música Rhythmbox</"
+"application>"
+
+#: C/rhythmbox.xml:1683(keycap)
+msgid "Q"
+msgstr "Q"
+
+#: C/rhythmbox.xml:1687(para)
+msgid "Quit the <application>Rhythmbox Music Player</application>"
+msgstr "Salir del <application>Reproductor de música Rhythmbox</application>"
+
+#: C/rhythmbox.xml:1694(keycap)
+msgid "B"
+msgstr "B"
+
+#: C/rhythmbox.xml:1698(para)
+msgid "Show / Hide the browser"
+msgstr "Mostrar / Ocultar el examinador"
+
+#: C/rhythmbox.xml:1705(keycap)
+msgid "D"
+msgstr "D"
+
+#: C/rhythmbox.xml:1709(para)
+msgid "Toggle / Untoggle the small display mode"
+msgstr "Mostrar / Ocultar el visor pequeño"
+
+#: C/rhythmbox.xml:1715(keycap)
+msgid "F9"
+msgstr "F9"
+
+#: C/rhythmbox.xml:1719(para)
+msgid "Show / Hide the side pane"
+msgstr "Mostrar / Ocultar el panel lateral"
+
+#: C/rhythmbox.xml:1726(keycap)
+msgid "K"
+msgstr "K"
+
+#: C/rhythmbox.xml:1730(para)
+msgid "Show / Hide the Queue Sidebar"
+msgstr "Mostrar / Ocultar la cola de reproducción como panel lateral"
+
+#: C/rhythmbox.xml:1737(keycap)
+msgid "S"
+msgstr "S"
+
+#: C/rhythmbox.xml:1741(para)
+msgid "Show / Hide the Song Position Slider"
+msgstr "Mostrar / Ocultar el deslizador de posición de la canción"
+
+#: C/rhythmbox.xml:1747(keycap)
+msgid "F11"
+msgstr "F11"
+
+#: C/rhythmbox.xml:1751(para)
+msgid "Toggle / Untoggle the Full Screen mode"
+msgstr "Activar / Desactivar el modo pantalla completa"
+
+#: C/rhythmbox.xml:1759(title)
+msgid "Multimedia Keys"
+msgstr "Teclas multimedia"
+
+#: C/rhythmbox.xml:1760(para)
+msgid ""
+"<application>Rhythmbox Music Player</application> supports the keys on "
+"multimedia keyboards, if configured in your desktop environment."
+msgstr ""
+"El <application>Reproductor de música Rhythmbox</application> soporta las "
+"teclas de teclados multimedia, siempre que estén configuradas en su entorno "
+"de escritorio."
+
+#: C/rhythmbox.xml:1776(keycap) C/rhythmbox.xml:1779(para)
+msgid "Stop"
+msgstr "Parar"
+
+#: C/rhythmbox.xml:1784(keycap) C/rhythmbox.xml:1787(para)
+msgid "Pause / Play"
+msgstr "Pausar / Reproducir"
+
+#: C/rhythmbox.xml:1792(keycap)
+msgid "Prev"
+msgstr "Anterior"
+
+#: C/rhythmbox.xml:1795(para)
+msgid "Previous Played Track"
+msgstr "Pista reproducida anteriormente"
+
+#: C/rhythmbox.xml:1803(para)
+msgid "Next Track"
+msgstr "Siguiente pista"
+
+#: C/rhythmbox.xml:1811(title)
+msgid "Linux Infrared Remote Control"
+msgstr "Control remoto infrarrojo en Linux"
+
+#: C/rhythmbox.xml:1812(para)
+msgid ""
+"The <application>Rhythmbox Music Player</application> includes a plugin for "
+"Linux Infrared Remote Control (LIRC) support. The following command strings "
+"are supported, using the program name 'rhythmbox':"
+msgstr ""
+"El <application>Reproductor de música Rhythmbox</application> incluye un "
+"complemento para dar soporte al control remoto infrarrojo en Linux (LIRC). "
+"Usando el nombre de programa «rhythmbox» se soportan los siguientes comandos:"
+
+#: C/rhythmbox.xml:1822(entry)
+msgid "Command string"
+msgstr "Comando"
+
+#: C/rhythmbox.xml:1823(entry)
+msgid "Action"
+msgstr "Acción"
+
+#: C/rhythmbox.xml:1828(keycap)
+msgid "play"
+msgstr "play"
+
+#: C/rhythmbox.xml:1829(para)
+msgid "Start playback"
+msgstr "Comenzar la reproducción"
+
+#: C/rhythmbox.xml:1832(keycap)
+msgid "pause"
+msgstr "pause"
+
+#: C/rhythmbox.xml:1833(para)
+msgid "Pause playback"
+msgstr "Pausar la reproducción"
+
+#: C/rhythmbox.xml:1836(keycap)
+msgid "playpause"
+msgstr "pause"
+
+#: C/rhythmbox.xml:1837(para)
+msgid "Toggle between playing and paused"
+msgstr "Cambiar entre reproducción y pausa"
+
+#: C/rhythmbox.xml:1840(keycap)
+msgid "shuffle"
+msgstr "aleatorio"
+
+#: C/rhythmbox.xml:1841(para)
+msgid "Toggle the shuffle play order"
+msgstr "Cambiar al orden de reproducción aleatorio"
+
+#: C/rhythmbox.xml:1844(keycap)
+msgid "repeat"
+msgstr "repetir"
+
+#: C/rhythmbox.xml:1845(para)
+msgid "Toggle the repeat play order"
+msgstr "Cambiar al orden de reproducción de repetición"
+
+#: C/rhythmbox.xml:1848(keycap)
+msgid "next"
+msgstr "siguiente"
+
+#: C/rhythmbox.xml:1849(para)
+msgid "Skip to the next track"
+msgstr "Saltar a la pista siguiente"
+
+#: C/rhythmbox.xml:1852(keycap)
+msgid "previous"
+msgstr "anterior"
+
+#: C/rhythmbox.xml:1853(para)
+msgid "Skip to the previous track"
+msgstr "Saltar a la pista anterior"
+
+#: C/rhythmbox.xml:1856(keycap)
+msgid "seek_forward"
+msgstr "adelantar"
+
+#: C/rhythmbox.xml:1857(para)
+msgid "Skip 10 seconds forward in the playing track"
+msgstr "Saltar 10 segundos adelante en la pista que se está reproduciendo"
+
+#: C/rhythmbox.xml:1860(keycap)
+msgid "seek_backward"
+msgstr "retrasar"
+
+#: C/rhythmbox.xml:1861(para)
+msgid "Skip 10 seconds backward in the playing track"
+msgstr "Saltar 10 segundos atrás en la pista que se está reproduciendo"
+
+#: C/rhythmbox.xml:1864(keycap)
+msgid "volume_up"
+msgstr "subir volumen"
+
+#: C/rhythmbox.xml:1865(para)
+msgid "Increase the playback volume by 10%"
+msgstr "Incrementar el volumen de reproducción un 10%"
+
+#: C/rhythmbox.xml:1868(keycap)
+msgid "volume_down"
+msgstr "bajar volumen"
+
+#: C/rhythmbox.xml:1869(para)
+msgid "Decrease the playback volume by 10%"
+msgstr "Decrementar el volumen de reproducción un 10%"
+
+#: C/rhythmbox.xml:1872(keycap)
+msgid "mute"
+msgstr "silenciar"
+
+#: C/rhythmbox.xml:1873(para)
+msgid "Mute the playback"
+msgstr "Silenciar la reproducción"
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: C/rhythmbox.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+"Jorge González González <jorgegonz@svn.gnome.org>, 2008-2009\n"
+"María Majadas López <maria.majadas@hispalinux.es>\n"
+"Francisco Javier F. <serrador@cvs.gnome.org>\n"
+"Xan López <xan@dimensis.com>\n"
+"Germán Poo-Caamaño <gpoo@ubiobio.cl>\n"
+"Carlos Perelló Marín <carlos@gnome.org>"
+
+#~ msgid "T"
+#~ msgstr "T"
+
+#~ msgid "Source List"
+#~ msgstr "Lista de fuentes"
+
+#~ msgid "The Source List"
+#~ msgstr "La lista de fuentes"
+
+#~ msgid ""
+#~ "At this time <application>Rhythmbox Music Player</application> is not "
+#~ "able to modify the tags of your music files, but you can use another "
+#~ "software like <application>Easytag</application>."
+#~ msgstr ""
+#~ "En este momento el <application>Reproductor de música Rhythmbox</"
+#~ "application> no es capaz de modificar las etiquetas de sus archivos de "
+#~ "música pero puede usar otro software como <application>Easytag</"
+#~ "application>."
+
+#~ msgid ""
+#~ "At this time, Rhythmbox can only read information but cannot write (like "
+#~ "tags modification, tracks deletion or copy track from "
+#~ "<application>Rhythmbox Music Player</application> to your player)."
+#~ msgstr ""
+#~ "En este momento Rhythmbox sólo puede leer información pero no puede "
+#~ "escribirla (como modificaciones en las etiquetas, borrado de pistas, o "
+#~ "copiar una pista del <application>Reproductor de música Rhythmbox</"
+#~ "application> a su reproductor)."
+
+#~ msgid ""
+#~ "You can customize <application>Rhythmbox Music Player</application> to "
+#~ "suit your requirements and preferences. This section describes how to "
+#~ "customize <application>Rhythmbox Music Player</application>."
+#~ msgstr ""
+#~ "Puede personalizar el <application>Reproductor de música Rhythmbox</"
+#~ "application> para que cumpla sus requerimientos y preferencias. Ésta "
+#~ "sección describe cómo personalizar el <application>Reproductor de música "
+#~ "Rhythmbox</application>."
+
+#~ msgid "L"
+#~ msgstr "L"
+
+#~ msgid "Show / Hide the sources list"
+#~ msgstr "Mostrar / Ocultar la lista de fuentes"

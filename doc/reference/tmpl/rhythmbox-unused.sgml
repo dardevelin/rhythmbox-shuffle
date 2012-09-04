@@ -1,0 +1,37 @@
+<!-- ##### SIGNAL RBEncoder::overwrite ##### -->
+<para>
+
+</para>
+
+@rbencoder: the object which received the signal.
+@arg1: 
+@Returns: 
+
+<!-- ##### ARG RBShellPlayer:statusbar ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION rb_header_set_show_position_slider ##### -->
+<para>
+
+</para>
+
+@header: 
+@show: 
+
+<!-- ##### FUNCTION rb_header_sync ##### -->
+<para>
+
+</para>
+
+@header: 
+
+<!-- ##### FUNCTION rb_header_sync_time ##### -->
+<para>
+
+</para>
+
+@header: 
+

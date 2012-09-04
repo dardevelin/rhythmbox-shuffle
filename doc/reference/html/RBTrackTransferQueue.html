@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBTrackTransferQueue</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch05.html" title="Shell">
+<link rel="prev" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch">
+<link rel="next" href="ch06.html" title="Sources">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBTrackTransferBatch.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="ch06.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBTrackTransferQueue.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBTrackTransferQueue.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBTrackTransferQueue.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBTrackTransferQueue.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#RBTrackTransferQueue.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBTrackTransferQueue"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBTrackTransferQueue.top_of_page"></a>RBTrackTransferQueue</span></h2>
+<p>RBTrackTransferQueue — track transfer queue and surrounding junk</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBTrackTransferQueue.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBTrackTransferQueue.html#RBTrackTransferQueue-struct" title="struct RBTrackTransferQueue">RBTrackTransferQueue</a>;
+struct              <a class="link" href="RBTrackTransferQueue.html#RBTrackTransferQueueClass" title="struct RBTrackTransferQueueClass">RBTrackTransferQueueClass</a>;
+<a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="returnvalue">RBTrackTransferQueue</span></a> * <a class="link" href="RBTrackTransferQueue.html#rb-track-transfer-queue-new" title="rb_track_transfer_queue_new ()">rb_track_transfer_queue_new</a>      (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBTrackTransferQueue.html#rb-track-transfer-queue-start-batch" title="rb_track_transfer_queue_start_batch ()">rb_track_transfer_queue_start_batch</a> (<em class="parameter"><code><a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a> *queue</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBTrackTransferQueue.html#rb-track-transfer-queue-cancel-batch" title="rb_track_transfer_queue_cancel_batch ()">rb_track_transfer_queue_cancel_batch</a>
+                                                        (<em class="parameter"><code><a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a> *queue</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBTrackTransferQueue.html#rb-track-transfer-queue-get-status" title="rb_track_transfer_queue_get_status ()">rb_track_transfer_queue_get_status</a>  (<em class="parameter"><code><a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a> *queue</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **text</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **progress_text</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *progress</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> *time_left</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferQueue.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----RBTrackTransferQueue
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferQueue.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBTrackTransferQueue.html#RBTrackTransferQueue--batch" title='The "batch" property'>batch</a>"                    <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>*  : Read
+  "<a class="link" href="RBTrackTransferQueue.html#RBTrackTransferQueue--shell" title='The "shell" property'>shell</a>"                    <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>*              : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferQueue.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBTrackTransferQueue.html#RBTrackTransferQueue-missing-plugins" title='The "missing-plugins" signal'>missing-plugins</a>"                                : <code class="literal">Run Last</code>
+  "<a class="link" href="RBTrackTransferQueue.html#RBTrackTransferQueue-transfer-progress" title='The "transfer-progress" signal'>transfer-progress</a>"                              : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferQueue.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferQueue.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBTrackTransferQueue-struct"></a><h3>struct RBTrackTransferQueue</h3>
+<pre class="programlisting">struct RBTrackTransferQueue;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferQueueClass"></a><h3>struct RBTrackTransferQueueClass</h3>
+<pre class="programlisting">struct RBTrackTransferQueueClass {
+	GObjectClass parent_class;
+
+	/* signals */
+	void (*transfer_progress) (RBTrackTransferQueue *queue,
+					 int done,
+					 int total,
+					 double fraction,
+					 int time_left);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-track-transfer-queue-new"></a><h3>rb_track_transfer_queue_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="returnvalue">RBTrackTransferQueue</span></a> * rb_track_transfer_queue_new      (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>);</pre>
+<p>
+Creates the <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a> instance
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-track-transfer-queue-start-batch"></a><h3>rb_track_transfer_queue_start_batch ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_track_transfer_queue_start_batch (<em class="parameter"><code><a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a> *queue</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch</code></em>);</pre>
+<p>
+Adds a new transfer batch to the transfer queue; if the queue is currently
+empty, the transfer will start immediately, but not before the call returns.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>queue</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> to add to the queue</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-track-transfer-queue-cancel-batch"></a><h3>rb_track_transfer_queue_cancel_batch ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_track_transfer_queue_cancel_batch
+                                                        (<em class="parameter"><code><a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a> *queue</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch</code></em>);</pre>
+<p>
+Removes a transfer batch from the queue.  If an entry from the
+batch is currently being transferred, the transfer will be
+aborted.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>queue</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> to cancel, or NULL for the current batch</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-track-transfer-queue-get-status"></a><h3>rb_track_transfer_queue_get_status ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_track_transfer_queue_get_status  (<em class="parameter"><code><a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a> *queue</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **text</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **progress_text</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *progress</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> *time_left</code></em>);</pre>
+<p>
+Retrieves transfer status information.  Works similarly to
+<span class="type">rb_source_get_status</span>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>queue</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>returns the status bar text</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>progress_text</code></em> :</span></p></td>
+<td>returns the progress bar text</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>progress</code></em> :</span></p></td>
+<td>returns the progress fraction</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>time_left</code></em> :</span></p></td>
+<td>returns the estimated number of seconds remaining</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if transfer status information is returned</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferQueue.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBTrackTransferQueue--batch"></a><h3>The <code class="literal">"batch"</code> property</h3>
+<pre class="programlisting">  "batch"                    <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>*  : Read</pre>
+<p>
+The current <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> being processed
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferQueue--shell"></a><h3>The <code class="literal">"shell"</code> property</h3>
+<pre class="programlisting">  "shell"                    <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>*              : Read / Write / Construct Only</pre>
+<p>
+The <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferQueue.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="RBTrackTransferQueue-missing-plugins"></a><h3>The <code class="literal">"missing-plugins"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            user_function                      (<a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a> *queue,
+                                                        <span class="type">GStrv</span>                 details,
+                                                        <span class="type">GStrv</span>                 descriptions,
+                                                        <span class="type">GClosure</span>             *closure,
+                                                        <span class="type">gpointer</span>              user_data)         : <code class="literal">Run Last</code></pre>
+<p>
+Emitted to request installation of one or more encoder plugins for a
+destination media format.  When the closure included in the signal args
+is called, the transfer batch will be started.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>queue</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>details</code></em> :</span></p></td>
+<td>the list of plugin detail strings describing the missing plugins</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>descriptions</code></em> :</span></p></td>
+<td>the list of descriptions for the missing plugins</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>closure</code></em> :</span></p></td>
+<td>a <span class="type">GClosure</span> to be called when the plugin installation is complete</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferQueue-transfer-progress"></a><h3>The <code class="literal">"transfer-progress"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a> *queue,
+                                                        <span class="type">gint</span>                  done,
+                                                        <span class="type">gint</span>                  total,
+                                                        <span class="type">gdouble</span>               fraction,
+                                                        <span class="type">gint</span>                  time_left,
+                                                        <span class="type">gpointer</span>              user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted regularly to convey progress information.  At the end of any given
+transfer batch, there will be one signal emission with <em class="parameter"><code>done</code></em> == <em class="parameter"><code>total</code></em> and
+<em class="parameter"><code>fraction</code></em> == 1.0.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>queue</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>done</code></em> :</span></p></td>
+<td>the number of entries transferred</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>total</code></em> :</span></p></td>
+<td>the total number of entries in the batch</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fraction</code></em> :</span></p></td>
+<td>the fraction of the batch that has been transferred</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>time_left</code></em> :</span></p></td>
+<td>the estimated remaining time (in seconds)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

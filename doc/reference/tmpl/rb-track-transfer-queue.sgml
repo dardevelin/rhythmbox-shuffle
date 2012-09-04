@@ -1,0 +1,108 @@
+<!-- ##### SECTION Title ##### -->
+RBTrackTransferQueue
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBTrackTransferQueue ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBTrackTransferQueue::missing-plugins ##### -->
+<para>
+
+</para>
+
+@rbtracktransferqueue: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### SIGNAL RBTrackTransferQueue::transfer-progress ##### -->
+<para>
+
+</para>
+
+@rbtracktransferqueue: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+
+<!-- ##### ARG RBTrackTransferQueue:batch ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBTrackTransferQueue:shell ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBTrackTransferQueueClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@transfer_progress: 
+
+<!-- ##### FUNCTION rb_track_transfer_queue_new ##### -->
+<para>
+
+</para>
+
+@shell: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_track_transfer_queue_start_batch ##### -->
+<para>
+
+</para>
+
+@queue: 
+@batch: 
+
+
+<!-- ##### FUNCTION rb_track_transfer_queue_cancel_batch ##### -->
+<para>
+
+</para>
+
+@queue: 
+@batch: 
+
+
+<!-- ##### FUNCTION rb_track_transfer_queue_get_status ##### -->
+<para>
+
+</para>
+
+@queue: 
+@text: 
+@progress_text: 
+@progress: 
+@time_left: 
+@Returns: 
+
+

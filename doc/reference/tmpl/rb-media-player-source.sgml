@@ -1,0 +1,60 @@
+<!-- ##### SECTION Title ##### -->
+RBMediaPlayerSource
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBMediaPlayerSource ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG RBMediaPlayerSource:encoding-target ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBMediaPlayerSource:serial ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBMediaPlayerSourceClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@impl_get_entries: 
+@impl_get_capacity: 
+@impl_get_free_space: 
+@impl_delete_entries: 
+@impl_add_playlist: 
+@impl_remove_playlists: 
+@impl_show_properties: 
+
+<!-- ##### FUNCTION rb_media_player_source_show_properties ##### -->
+<para>
+
+</para>
+
+@source: 
+
+

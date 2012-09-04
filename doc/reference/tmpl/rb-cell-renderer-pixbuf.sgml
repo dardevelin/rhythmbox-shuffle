@@ -1,0 +1,53 @@
+<!-- ##### SECTION Title ##### -->
+RBCellRendererPixbuf
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBCellRendererPixbuf ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBCellRendererPixbuf::pixbuf-clicked ##### -->
+<para>
+
+</para>
+
+@rbcellrendererpixbuf: the object which received the signal.
+@arg1: 
+
+<!-- ##### STRUCT RBCellRendererPixbufClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@pixbuf_clicked: 
+
+<!-- ##### FUNCTION rb_cell_renderer_pixbuf_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+

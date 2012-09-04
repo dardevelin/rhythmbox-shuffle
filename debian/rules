@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/utils.mk
+include /usr/share/cdbs/1/class/gnome.mk
+include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
+include /usr/share/gnome-pkg-tools/1/rules/gnome-version.mk
+-include /usr/share/gnome-pkg-tools/1/rules/gnome-get-source.mk
+
+DEB_CONFIGURE_SCRIPT := ./autogen.sh
+
+DEB_CONFIGURE_EXTRA_FLAGS += --enable-lirc \
+                             --disable-scrollkeeper \
+                             --enable-gtk-doc
+
+ifeq ($(DEB_HOST_ARCH_OS),linux)
+DEB_CONFIGURE_EXTRA_FLAGS += --without-hal --with-gudev
+else
+DEB_CONFIGURE_EXTRA_FLAGS += --with-hal --without-gudev
+endif
+
+ifneq ($(DEB_HOST_ARCH_OS),linux)
+# Linux specific, needs linux/videodev2.h
+# There's no DEB_DH_INSTALL_ARGS_$package... #468208
+DEB_DH_INSTALL_ARGS += -Xfmradio
+endif
+
+# exclude plugins from shlibs generation
+DEB_DH_MAKESHLIBS_ARGS_rhythmbox-plugins += --no-act
+DEB_DH_MAKESHLIBS_ARGS_rhythmbox-plugin-cdrecorder += --no-act
+DEB_DH_MAKESHLIBS_ARGS_librhythmbox-core6 += -V
+
+$(patsubst %,binary-post-install/%,$(DEB_PACKAGES)) ::
+	find debian/$(cdbs_curpkg) -name '*.a' -delete
+	find debian/$(cdbs_curpkg) -name '*.la' -delete
+	dh_python2 -p$(cdbs_curpkg) /usr/lib/rhythmbox
+
+# List any files which are not installed
+common-binary-post-install-arch:: list-missing

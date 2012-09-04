@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBStreamingSource</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch06.html" title="Sources">
+<link rel="prev" href="RBStaticPlaylistSource.html" title="RBStaticPlaylistSource">
+<link rel="next" href="ch07.html" title="Widgets">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBStaticPlaylistSource.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="ch07.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBStreamingSource.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBStreamingSource.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBStreamingSource.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBStreamingSource.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBStreamingSource"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBStreamingSource.top_of_page"></a>RBStreamingSource</span></h2>
+<p>RBStreamingSource — Base class for streaming sources such as internet radio</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBStreamingSource.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBStreamingSource.html#RBStreamingSource-struct" title="struct RBStreamingSource">RBStreamingSource</a>;
+struct              <a class="link" href="RBStreamingSource.html#RBStreamingSourceClass" title="struct RBStreamingSourceClass">RBStreamingSourceClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="RBStreamingSource.html#rb-streaming-source-get-progress" title="rb_streaming_source_get_progress ()">rb_streaming_source_get_progress</a>    (<em class="parameter"><code><a class="link" href="RBStreamingSource.html" title="RBStreamingSource"><span class="type">RBStreamingSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **text</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *progress</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBStreamingSource.html#rb-streaming-source-set-streaming-title" title="rb_streaming_source_set_streaming_title ()">rb_streaming_source_set_streaming_title</a>
+                                                        (<em class="parameter"><code><a class="link" href="RBStreamingSource.html" title="RBStreamingSource"><span class="type">RBStreamingSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *title</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBStreamingSource.html#rb-streaming-source-set-streaming-artist" title="rb_streaming_source_set_streaming_artist ()">rb_streaming_source_set_streaming_artist</a>
+                                                        (<em class="parameter"><code><a class="link" href="RBStreamingSource.html" title="RBStreamingSource"><span class="type">RBStreamingSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *artist</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBStreamingSource.html#rb-streaming-source-set-streaming-album" title="rb_streaming_source_set_streaming_album ()">rb_streaming_source_set_streaming_album</a>
+                                                        (<em class="parameter"><code><a class="link" href="RBStreamingSource.html" title="RBStreamingSource"><span class="type">RBStreamingSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *album</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBStreamingSource.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBox
+                           +----GtkHBox
+                                 +----RBDisplayPage
+                                       +----<a class="link" href="RBSource.html" title="RBSource">RBSource</a>
+                                             +----RBStreamingSource
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBStreamingSource.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBStreamingSource implements
+ AtkImplementorIface,  GtkBuildable and  GtkOrientable.</p>
+</div>
+<div class="refsect1">
+<a name="RBStreamingSource.description"></a><h2>Description</h2>
+<p>
+This class provides handling of buffering signals and streaming song metadata
+common to different types of sources that play continuous streaming media.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBStreamingSource.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBStreamingSource-struct"></a><h3>struct RBStreamingSource</h3>
+<pre class="programlisting">struct RBStreamingSource;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBStreamingSourceClass"></a><h3>struct RBStreamingSourceClass</h3>
+<pre class="programlisting">struct RBStreamingSourceClass {
+	RBSourceClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-streaming-source-get-progress"></a><h3>rb_streaming_source_get_progress ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_streaming_source_get_progress    (<em class="parameter"><code><a class="link" href="RBStreamingSource.html" title="RBStreamingSource"><span class="type">RBStreamingSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **text</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> *progress</code></em>);</pre>
+<p>
+Provides status text and progress fraction suitable for use in
+a streaming source's <em class="parameter"><code>rb_source_get_status</code></em> method.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBStreamingSource.html" title="RBStreamingSource"><span class="type">RBStreamingSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>returns buffering status text. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a> callee-allocates][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>progress</code></em> :</span></p></td>
+<td>returns buffering progress fraction. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a> callee-allocates]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-streaming-source-set-streaming-title"></a><h3>rb_streaming_source_set_streaming_title ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_streaming_source_set_streaming_title
+                                                        (<em class="parameter"><code><a class="link" href="RBStreamingSource.html" title="RBStreamingSource"><span class="type">RBStreamingSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *title</code></em>);</pre>
+<p>
+Updates the streaming song title.  Call this when an updated
+streaming song title is received from the stream.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBStreamingSource.html" title="RBStreamingSource"><span class="type">RBStreamingSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td>the new streaming song title</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-streaming-source-set-streaming-artist"></a><h3>rb_streaming_source_set_streaming_artist ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_streaming_source_set_streaming_artist
+                                                        (<em class="parameter"><code><a class="link" href="RBStreamingSource.html" title="RBStreamingSource"><span class="type">RBStreamingSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *artist</code></em>);</pre>
+<p>
+Updates the streaming song artist name.  Call this when an updated
+streaming song artist name is received from the stream.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBStreamingSource.html" title="RBStreamingSource"><span class="type">RBStreamingSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>artist</code></em> :</span></p></td>
+<td>the new streaming song artist name</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-streaming-source-set-streaming-album"></a><h3>rb_streaming_source_set_streaming_album ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_streaming_source_set_streaming_album
+                                                        (<em class="parameter"><code><a class="link" href="RBStreamingSource.html" title="RBStreamingSource"><span class="type">RBStreamingSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *album</code></em>);</pre>
+<p>
+Updates the streaming song album name.  Call this when an updated
+streaming song album name is received from the stream.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBStreamingSource.html" title="RBStreamingSource"><span class="type">RBStreamingSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>album</code></em> :</span></p></td>
+<td>the new streaming song album name</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

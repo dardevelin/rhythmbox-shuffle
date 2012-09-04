@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBQueryCreator</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch07.html" title="Widgets">
+<link rel="prev" href="RBPropertyView.html" title="RBPropertyView">
+<link rel="next" href="rhythmbox-rb-rating-helper.html" title="rb-rating-helper">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBPropertyView.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="rhythmbox-rb-rating-helper.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBQueryCreator.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBQueryCreator.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBQueryCreator.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBQueryCreator.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#RBQueryCreator.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBQueryCreator"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBQueryCreator.top_of_page"></a>RBQueryCreator</span></h2>
+<p>RBQueryCreator — database query creator widget</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBQueryCreator.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBQueryCreator.html#RBQueryCreator-struct" title="struct RBQueryCreator">RBQueryCreator</a>;
+struct              <a class="link" href="RBQueryCreator.html#RBQueryCreatorClass" title="struct RBQueryCreatorClass">RBQueryCreatorClass</a>;
+<span class="returnvalue">GtkWidget</span> *         <a class="link" href="RBQueryCreator.html#rb-query-creator-new" title="rb_query_creator_new ()">rb_query_creator_new</a>                (<em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>);
+<span class="returnvalue">GtkWidget</span> *         <a class="link" href="RBQueryCreator.html#rb-query-creator-new-from-query" title="rb_query_creator_new_from_query ()">rb_query_creator_new_from_query</a>     (<em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> *query</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBQueryModel.html#RhythmDBQueryModelLimitType"><span class="type">RhythmDBQueryModelLimitType</span></a> limit_type</code></em>,
+                                                         <em class="parameter"><code><span class="type">GValueArray</span> *limit_value</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *sort_column</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> sort_direction</code></em>);
+<span class="returnvalue">GPtrArray</span> *         <a class="link" href="RBQueryCreator.html#rb-query-creator-get-query" title="rb_query_creator_get_query ()">rb_query_creator_get_query</a>          (<em class="parameter"><code><a class="link" href="RBQueryCreator.html" title="RBQueryCreator"><span class="type">RBQueryCreator</span></a> *creator</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBQueryCreator.html#rb-query-creator-get-limit" title="rb_query_creator_get_limit ()">rb_query_creator_get_limit</a>          (<em class="parameter"><code><a class="link" href="RBQueryCreator.html" title="RBQueryCreator"><span class="type">RBQueryCreator</span></a> *creator</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBQueryModel.html#RhythmDBQueryModelLimitType"><span class="type">RhythmDBQueryModelLimitType</span></a> *type</code></em>,
+                                                         <em class="parameter"><code><span class="type">GValueArray</span> **limit</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBQueryCreator.html#rb-query-creator-get-sort-order" title="rb_query_creator_get_sort_order ()">rb_query_creator_get_sort_order</a>     (<em class="parameter"><code><a class="link" href="RBQueryCreator.html" title="RBQueryCreator"><span class="type">RBQueryCreator</span></a> *creator</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> **sort_key</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> *sort_direction</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBQueryCreator.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBin
+                           +----GtkWindow
+                                 +----GtkDialog
+                                       +----RBQueryCreator
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBQueryCreator.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBQueryCreator implements
+ AtkImplementorIface and  GtkBuildable.</p>
+</div>
+<div class="refsect1">
+<a name="RBQueryCreator.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBQueryCreator.html#RBQueryCreator--creating" title='The "creating" property'>creating</a>"                 <span class="type">gboolean</span>              : Read / Write / Construct Only
+  "<a class="link" href="RBQueryCreator.html#RBQueryCreator--db" title='The "db" property'>db</a>"                       <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>*             : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBQueryCreator.description"></a><h2>Description</h2>
+<p>
+The query creator is used to create and edit automatic playlists.
+It is only capable of constructing queries that consist of a flat
+list of criteria.  It cannot nested criteria or represent full 
+boolean logic expressions.
+</p>
+<p>
+In addition to query criteria, the query creator also allows the user
+to specify limits on the size of the result set, in terms of the number
+of entries, the total duration, or the total file size; and also the
+order in which the results are to be sorted.
+</p>
+<p>
+The structure of the query creator is defined in the builder file
+create-playlist.ui.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBQueryCreator.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBQueryCreator-struct"></a><h3>struct RBQueryCreator</h3>
+<pre class="programlisting">struct RBQueryCreator;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBQueryCreatorClass"></a><h3>struct RBQueryCreatorClass</h3>
+<pre class="programlisting">struct RBQueryCreatorClass {
+	GtkDialogClass parent_class;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-query-creator-new"></a><h3>rb_query_creator_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">GtkWidget</span> *         rb_query_creator_new                (<em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>);</pre>
+<p>
+Creates a new query creator widget.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new query creator widget</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-query-creator-new-from-query"></a><h3>rb_query_creator_new_from_query ()</h3>
+<pre class="programlisting"><span class="returnvalue">GtkWidget</span> *         rb_query_creator_new_from_query     (<em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> *query</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBQueryModel.html#RhythmDBQueryModelLimitType"><span class="type">RhythmDBQueryModelLimitType</span></a> limit_type</code></em>,
+                                                         <em class="parameter"><code><span class="type">GValueArray</span> *limit_value</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *sort_column</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> sort_direction</code></em>);</pre>
+<p>
+Constructs a new query creator with an existing query and limit and sort
+settings.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>query</code></em> :</span></p></td>
+<td>an existing query to start from</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit_type</code></em> :</span></p></td>
+<td>the type of result set limit</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit_value</code></em> :</span></p></td>
+<td>the result set limit value</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sort_column</code></em> :</span></p></td>
+<td>the column on which to sort query results</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sort_direction</code></em> :</span></p></td>
+<td>the direction in which to sort query results</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new query creator widget</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-query-creator-get-query"></a><h3>rb_query_creator_get_query ()</h3>
+<pre class="programlisting"><span class="returnvalue">GPtrArray</span> *         rb_query_creator_get_query          (<em class="parameter"><code><a class="link" href="RBQueryCreator.html" title="RBQueryCreator"><span class="type">RBQueryCreator</span></a> *creator</code></em>);</pre>
+<p>
+Constructs a database query that represents the criteria in the query creator.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>creator</code></em> :</span></p></td>
+<td>
+<a class="link" href="RBQueryCreator.html" title="RBQueryCreator"><span class="type">RBQueryCreator</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>database query array. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-query-creator-get-limit"></a><h3>rb_query_creator_get_limit ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_query_creator_get_limit          (<em class="parameter"><code><a class="link" href="RBQueryCreator.html" title="RBQueryCreator"><span class="type">RBQueryCreator</span></a> *creator</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBQueryModel.html#RhythmDBQueryModelLimitType"><span class="type">RhythmDBQueryModelLimitType</span></a> *type</code></em>,
+                                                         <em class="parameter"><code><span class="type">GValueArray</span> **limit</code></em>);</pre>
+<p>
+Retrieves the limit type and value from the query creator.
+The limit value is returned as the first element in a
+<span class="type">GValueArray</span>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>creator</code></em> :</span></p></td>
+<td>
+<a class="link" href="RBQueryCreator.html" title="RBQueryCreator"><span class="type">RBQueryCreator</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>used to return the limit type. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit</code></em> :</span></p></td>
+<td>used to return the limit value. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-query-creator-get-sort-order"></a><h3>rb_query_creator_get_sort_order ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_query_creator_get_sort_order     (<em class="parameter"><code><a class="link" href="RBQueryCreator.html" title="RBQueryCreator"><span class="type">RBQueryCreator</span></a> *creator</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> **sort_key</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> *sort_direction</code></em>);</pre>
+<p>
+Retrieves the sort settings from the query creator.
+The sort direction is returned as a <span class="type">GtkSortType</span> value.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>creator</code></em> :</span></p></td>
+<td>
+<a class="link" href="RBQueryCreator.html" title="RBQueryCreator"><span class="type">RBQueryCreator</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sort_key</code></em> :</span></p></td>
+<td>returns the sort key name. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sort_direction</code></em> :</span></p></td>
+<td>returns the sort direction. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBQueryCreator.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBQueryCreator--creating"></a><h3>The <code class="literal">"creating"</code> property</h3>
+<pre class="programlisting">  "creating"                 <span class="type">gboolean</span>              : Read / Write / Construct Only</pre>
+<p>
+TRUE if a new playlist is being created.
+</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBQueryCreator--db"></a><h3>The <code class="literal">"db"</code> property</h3>
+<pre class="programlisting">  "db"                       <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>*             : Read / Write / Construct Only</pre>
+<p>
+The <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> instance
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

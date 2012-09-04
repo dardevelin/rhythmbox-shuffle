@@ -1,0 +1,128 @@
+<!-- ##### SECTION Title ##### -->
+rb-debug
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### MACRO rb_debug ##### -->
+<para>
+
+</para>
+
+@...: 
+
+
+<!-- ##### FUNCTION rb_debug_init ##### -->
+<para>
+
+</para>
+
+@debug: 
+
+
+<!-- ##### FUNCTION rb_debug_init_match ##### -->
+<para>
+
+</para>
+
+@match: 
+
+
+<!-- ##### FUNCTION rb_debug_matches ##### -->
+<para>
+
+</para>
+
+@func: 
+@file: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_debug_get_args ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_debug_stop_in_debugger ##### -->
+<para>
+
+</para>
+
+@void: 
+
+
+<!-- ##### TYPEDEF RBProfiler ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION rb_profiler_new ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_profiler_dump ##### -->
+<para>
+
+</para>
+
+@profiler: 
+
+
+<!-- ##### FUNCTION rb_profiler_reset ##### -->
+<para>
+
+</para>
+
+@profiler: 
+
+
+<!-- ##### FUNCTION rb_profiler_free ##### -->
+<para>
+
+</para>
+
+@profiler: 
+
+
+<!-- ##### MACRO rb_profile_start ##### -->
+<para>
+
+</para>
+
+@msg: 
+
+
+<!-- ##### MACRO rb_profile_end ##### -->
+<para>
+
+</para>
+
+@msg: 
+
+

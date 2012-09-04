@@ -1,0 +1,52 @@
+<!-- ##### SECTION Title ##### -->
+rb-text-helpers
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION rb_text_direction_conflict ##### -->
+<para>
+
+</para>
+
+@dir1: 
+@dir2: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_text_common_direction ##### -->
+<para>
+
+</para>
+
+@first: 
+@...: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_text_cat ##### -->
+<para>
+
+</para>
+
+@base_dir: 
+@...: 
+@Returns: 
+
+

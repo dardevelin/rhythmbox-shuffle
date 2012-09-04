@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBSearchEntry</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch07.html" title="Widgets">
+<link rel="prev" href="RBRating.html" title="RBRating">
+<link rel="next" href="RBSongInfo.html" title="RBSongInfo">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBRating.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBSongInfo.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBSearchEntry.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBSearchEntry.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBSearchEntry.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBSearchEntry.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#RBSearchEntry.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#RBSearchEntry.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBSearchEntry"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBSearchEntry.top_of_page"></a>RBSearchEntry</span></h2>
+<p>RBSearchEntry — text entry widget for the search box</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBSearchEntry.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBSearchEntry.html#RBSearchEntry-struct" title="struct RBSearchEntry">RBSearchEntry</a>;
+struct              <a class="link" href="RBSearchEntry.html#RBSearchEntryClass" title="struct RBSearchEntryClass">RBSearchEntryClass</a>;
+<a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="returnvalue">RBSearchEntry</span></a> *     <a class="link" href="RBSearchEntry.html#rb-search-entry-new" title="rb_search_entry_new ()">rb_search_entry_new</a>                 (<em class="parameter"><code><span class="type">gboolean</span> has_popup</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSearchEntry.html#rb-search-entry-clear" title="rb_search_entry_clear ()">rb_search_entry_clear</a>               (<em class="parameter"><code><a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a> *entry</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSearchEntry.html#rb-search-entry-set-text" title="rb_search_entry_set_text ()">rb_search_entry_set_text</a>            (<em class="parameter"><code><a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *text</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSearchEntry.html#rb-search-entry-searching" title="rb_search_entry_searching ()">rb_search_entry_searching</a>           (<em class="parameter"><code><a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a> *entry</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSearchEntry.html#rb-search-entry-grab-focus" title="rb_search_entry_grab_focus ()">rb_search_entry_grab_focus</a>          (<em class="parameter"><code><a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a> *entry</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSearchEntry.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBox
+                           +----GtkHBox
+                                 +----RBSearchEntry
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSearchEntry.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBSearchEntry implements
+ AtkImplementorIface,  GtkBuildable and  GtkOrientable.</p>
+</div>
+<div class="refsect1">
+<a name="RBSearchEntry.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBSearchEntry.html#RBSearchEntry--explicit-mode" title='The "explicit-mode" property'>explicit-mode</a>"            <span class="type">gboolean</span>              : Read / Write
+  "<a class="link" href="RBSearchEntry.html#RBSearchEntry--has-popup" title='The "has-popup" property'>has-popup</a>"                <span class="type">gboolean</span>              : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSearchEntry.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBSearchEntry.html#RBSearchEntry-activate" title='The "activate" signal'>activate</a>"                                       : <code class="literal">Run Last</code>
+  "<a class="link" href="RBSearchEntry.html#RBSearchEntry-search" title='The "search" signal'>search</a>"                                         : <code class="literal">Run Last</code>
+  "<a class="link" href="RBSearchEntry.html#RBSearchEntry-show-popup" title='The "show-popup" signal'>show-popup</a>"                                     : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSearchEntry.description"></a><h2>Description</h2>
+<p>
+The search entry contains a label and a text entry box.
+The text entry box contains an icon that acts as a 'clear'
+button.
+</p>
+<p>
+Signals are emitted when the search text changes,
+arbitrarily rate-limited to one every 300ms.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBSearchEntry.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBSearchEntry-struct"></a><h3>struct RBSearchEntry</h3>
+<pre class="programlisting">struct RBSearchEntry;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSearchEntryClass"></a><h3>struct RBSearchEntryClass</h3>
+<pre class="programlisting">struct RBSearchEntryClass {
+	GtkHBoxClass parent;
+
+	void (*search) (RBSearchEntry *view, const char *text);
+	void (*activate) (RBSearchEntry *entry, const char *text);
+	void (*show_popup) (RBSearchEntry *entry);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-search-entry-new"></a><h3>rb_search_entry_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="returnvalue">RBSearchEntry</span></a> *     rb_search_entry_new                 (<em class="parameter"><code><span class="type">gboolean</span> has_popup</code></em>);</pre>
+<p>
+Creates a new search entry widget.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new search entry widget.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-search-entry-clear"></a><h3>rb_search_entry_clear ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_search_entry_clear               (<em class="parameter"><code><a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a> *entry</code></em>);</pre>
+<p>
+Clears the search entry text.  The 'search' signal will
+be emitted.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-search-entry-set-text"></a><h3>rb_search_entry_set_text ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_search_entry_set_text            (<em class="parameter"><code><a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *text</code></em>);</pre>
+<p>
+Sets the text in the search entry box.
+The 'search' signal will be emitted.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>new search text</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-search-entry-searching"></a><h3>rb_search_entry_searching ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_search_entry_searching           (<em class="parameter"><code><a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a> *entry</code></em>);</pre>
+<p>
+Returns <code class="literal">TRUE</code> if there is search text in the entry widget.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if searching</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-search-entry-grab-focus"></a><h3>rb_search_entry_grab_focus ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_search_entry_grab_focus          (<em class="parameter"><code><a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a> *entry</code></em>);</pre>
+<p>
+Grabs input focus for the text entry widget.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBSearchEntry.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBSearchEntry--explicit-mode"></a><h3>The <code class="literal">"explicit-mode"</code> property</h3>
+<pre class="programlisting">  "explicit-mode"            <span class="type">gboolean</span>              : Read / Write</pre>
+<p>
+If TRUE, show a button and only emit the 'search' signal when
+the user presses it rather than when they stop typing.
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSearchEntry--has-popup"></a><h3>The <code class="literal">"has-popup"</code> property</h3>
+<pre class="programlisting">  "has-popup"                <span class="type">gboolean</span>              : Read / Write / Construct Only</pre>
+<p>
+If TRUE, show a primary icon and emit the show-popup when clicked.
+</p>
+<p>Default value: FALSE</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBSearchEntry.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="RBSearchEntry-activate"></a><h3>The <code class="literal">"activate"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a> *entry,
+                                                        <span class="type">gchar</span>         *text,
+                                                        <span class="type">gpointer</span>       user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the entry is activated.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the <a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>search text</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSearchEntry-search"></a><h3>The <code class="literal">"search"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a> *entry,
+                                                        <span class="type">gchar</span>         *text,
+                                                        <span class="type">gpointer</span>       user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the search text changes.  A signal
+handler must initiate a search on the current
+source.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the <a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>search text</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSearchEntry-show-popup"></a><h3>The <code class="literal">"show-popup"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a> *entry,
+                                                        <span class="type">gpointer</span>       user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when a popup menu should be shown
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the <a class="link" href="RBSearchEntry.html" title="RBSearchEntry"><span class="type">RBSearchEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

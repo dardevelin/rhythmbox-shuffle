@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBShellPreferences</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch05.html" title="Shell">
+<link rel="prev" href="RBShellPlayer.html" title="RBShellPlayer">
+<link rel="next" href="RBShell.html" title="RBShell">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBShellPlayer.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBShell.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBShellPreferences.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBShellPreferences.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBShellPreferences.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBShellPreferences.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBShellPreferences"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBShellPreferences.top_of_page"></a>RBShellPreferences</span></h2>
+<p>RBShellPreferences — preferences dialog</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBShellPreferences.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBShellPreferences.html#RBShellPreferences-struct" title="struct RBShellPreferences">RBShellPreferences</a>;
+struct              <a class="link" href="RBShellPreferences.html#RBShellPreferencesClass" title="struct RBShellPreferencesClass">RBShellPreferencesClass</a>;
+<span class="returnvalue">GtkWidget</span> *         <a class="link" href="RBShellPreferences.html#rb-shell-preferences-new" title="rb_shell_preferences_new ()">rb_shell_preferences_new</a>            (<em class="parameter"><code><span class="type">GList</span> *views</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBShellPreferences.html#rb-shell-preferences-append-page" title="rb_shell_preferences_append_page ()">rb_shell_preferences_append_page</a>    (<em class="parameter"><code><a class="link" href="RBShellPreferences.html" title="RBShellPreferences"><span class="type">RBShellPreferences</span></a> *prefs</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *name</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkWidget</span> *widget</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBShellPreferences.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBin
+                           +----GtkWindow
+                                 +----GtkDialog
+                                       +----RBShellPreferences
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBShellPreferences.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBShellPreferences implements
+ AtkImplementorIface and  GtkBuildable.</p>
+</div>
+<div class="refsect1">
+<a name="RBShellPreferences.description"></a><h2>Description</h2>
+<p>
+The preferences dialog is built around a <span class="type">GtkNotebook</span> widget, with two built-in
+pages and additional pages for various sources.
+</p>
+<p>
+The 'general' preferences page controls the set of browser views that are visible
+(artist and album; genre and artist; or genre, artist, and album), the columns
+that are visible, and the appearance of buttons in the main toolbar.  The browser
+and column settings apply to all sources.
+</p>
+<p>
+The 'playback' preferences page controls whether the crossfading player backend is used,
+and if enabled, the crossfade duration and network buffer size.
+</p>
+<p>
+Currently, the library and podcast sources add pages to the notebook, for configuring the
+location and layout of the library and the podcast download location and update frequency.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBShellPreferences.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBShellPreferences-struct"></a><h3>struct RBShellPreferences</h3>
+<pre class="programlisting">struct RBShellPreferences;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShellPreferencesClass"></a><h3>struct RBShellPreferencesClass</h3>
+<pre class="programlisting">struct RBShellPreferencesClass {
+	GtkDialogClass parent_class;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-preferences-new"></a><h3>rb_shell_preferences_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">GtkWidget</span> *         rb_shell_preferences_new            (<em class="parameter"><code><span class="type">GList</span> *views</code></em>);</pre>
+<p>
+Creates the <a class="link" href="RBShellPreferences.html" title="RBShellPreferences"><span class="type">RBShellPreferences</span></a> instance, populating it with the
+preferences pages for the sources in the list.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>views</code></em> :</span></p></td>
+<td>list of sources to check for preferences pages. <span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> RB.Source][<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="RBShellPreferences.html" title="RBShellPreferences"><span class="type">RBShellPreferences</span></a> instance</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-preferences-append-page"></a><h3>rb_shell_preferences_append_page ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_shell_preferences_append_page    (<em class="parameter"><code><a class="link" href="RBShellPreferences.html" title="RBShellPreferences"><span class="type">RBShellPreferences</span></a> *prefs</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *name</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkWidget</span> *widget</code></em>);</pre>
+<p>
+Appends a new page to the preferences dialog notebook.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prefs</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShellPreferences.html" title="RBShellPreferences"><span class="type">RBShellPreferences</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>name of the page to append</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>the <span class="type">GtkWidget</span> to use as the contents of the page</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

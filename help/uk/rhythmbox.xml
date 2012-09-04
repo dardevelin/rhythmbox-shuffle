@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "0.11.5">
+<!ENTITY manrevision "2.0.3">
+<!ENTITY date "May 2008">
+<!ENTITY app "Rhythmbox Music Player">
+]>
+<!--
+      (Do not remove this comment block.)
+  Version: 0.0.2
+  Last modified: October 02, 2002
+  Maintainers:
+               Mark Finlay <sisob@eircom.net>
+	       Mark Humphreys <marquee@users.sourceforge.net>
+-->
+<!--
+      (Do not remove this comment block.)
+  Version: 0.0.3
+  Last modified: August 08, 2003
+  Maintainers:
+	       Mark Humphreys <marquee@users.sourceforge.net>
+-->
+<!--
+      (Do not remove this comment block.)
+  Version: 0.0.4
+  Last modified: October 01, 2005
+  Maintainers:
+	       Baptiste Mille-Mathias <baptiste.millemathias@gmail.com>
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="uk">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo>
+    <title>Музичний програвач Rhythmbox</title>
+	<copyright>
+		<year>2002</year>
+		<holder>Mark Finlay</holder>
+	</copyright>
+        <copyright>
+                <year>2002</year>
+                <year>2002</year>
+                <holder>Mark Humphreys</holder>
+        </copyright>
+	<copyright>
+		<year>2005</year>
+		<year>2006</year>
+		<holder>Baptiste Mille-Mathias</holder>
+	</copyright>
+	<copyright>
+		<year>2006</year>
+		<holder>Victor Osadci</holder>
+	</copyright>
+	<copyright>
+		<year>2008</year>
+		<holder>Dean Sas</holder>
+	</copyright><copyright><year>2009.</year><holder>Сергій Гаврилов (sergiovana@bigmir.net)</holder></copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2000</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+  -->
+<!-- An address can be added to the publisher information.  If a role is
+     not specified, the publisher/author is the same for all versions of the
+     document.  -->
+	<publisher>
+	 	<publishername>Проект документування GNOME</publishername>
+	</publisher>
+
+   
+
+  <legalnotice id="legalnotice">
+	<para>Дозволяється копіювати, розповсюджувати та/або змінювати цей документ за умовами ліцензії GNU Free Documentation License (GFDL), версії 1.1 або будь-якої старішої версії, опублікованої Фондом вільного програмного забезпечення (Free Software Foundation), без змінених частин та без текстів на обкладинках. Ви можете знайти копію ліцензії GFDL за <ulink type="help" url="ghelp:fdl">цим посиланням</ulink> або в файлі COPYING-DOCS, який поширюється разом з цією довідкою.</para>
+         <para>Ця довідка є частиною документації GNOME яка поширюється під ліцензією GFDL. Якщо Ви бажаєте розповсюджувати цей посібник окремо від іншої документації, можете це зробити додавши до нього копію ліцензії, як описано в пункті 6 ліцензії.</para>
+
+	<para>Багато назв, які використовуються компаніями для позначення своїх продуктів та послуг, заявлені в якості товарних знаків. Якщо такі назви зустрічаються в будь-якій документації GNOME, і члени проекту документування GNOME знають про них, то назви пишуться великими літерами, або з великої літери.</para>
+
+	<para>ДОКУМЕНТ ТА ЗМІНЕНІ ВЕРСІЇ ДОКУМЕНТУ НАДАЮТЬСЯ КОРИСТУВАЧУ ЗА УМОВАМИ ЛІЦЕНЗІЇ GNU FREE DOCUMENTATION LICENSE З ПОДАЛЬШИМ РОЗУМІННЯМ ПРО ТЕ, ЩО: <orderedlist>
+		<listitem>
+		  <para>ДОКУМЕНТ НАДАЄТЬСЯ "ЯК Є", БЕЗ БУДЬ-ЯКИХ ГАРАНТІЙ, ЯВНИХ АБО НЕЯВНИХ, В ТОМУ ЧИСЛІ, БЕЗ ОБМЕЖЕННЯ ГАРАНТІЙ, ЩО ДОКУМЕНТ АБО ЗМІНЕНА ВЕРСІЯ ДОКУМЕНТУ ВІЛЬНІ ВІД ДЕФЕКТІВ, ПРИДАТНІ ДЛЯ ПРОДАЖУ ТА ВИКОРИСТАННЯ З ВИЗНАЧЕНОЮ МЕТОЮ, АБО НЕ ПОРУШУЮТЬ ЗАКОНИ. ВЕСЬ РИЗИК, ЩО ДО ЯКОСТІ, ТОЧНОСТІ, ПРАВИЛЬНОСТІ ДОКУМЕНТУ АБО ЗМІНЕНИХ ВЕРСІЇ ДОКУМЕНТУ, ЛЕЖИТЬ НА ВАС. ЯКЩО ДОКУМЕНТ АБО ЗМІНЕНА ВЕРСІЯ ДОКУМЕНТУ МАЄ НЕДОЛІКИ, ВИ (НЕ ВЛАСНИК ЧИ РОЗРОБНИК АБО ЙОГО ПОМІЧНИК) НЕСЕТЕ ВИТРАТИ З ОБСЛУГОВУВАННЯ, ВІДНОВЛЕННЯ ЧИ ВИПРАВЛЕННЯ ЙОГО. ЦЯ ВІДМОВА ВІД ГАРАНТІЙ СКЛАДАЄ ВАЖЛИВУ ЧАСТИНУ ЛІЦЕНЗІЇ. НЕ ДОПУСКАЄТЬСЯ БУДЬ-ЯКЕ ВИКОРИСТАННЯ ДОКУМЕНТУ ЧИ ЗМІНЕНОЇ ВЕРСІЇ ДОКУМЕНТУ  БЕЗ ЦЬОГО ПОПЕРЕДЖЕННЯ; І</para>
+		</listitem>
+		<listitem>
+		  <para>НІ ЗА ЯКИХ ОБСТАВИН ТА БУДЬ-ЯКОГО ПРАВОВОГО СПОСОБУ (ВКЛЮЧАЮЧИ НЕДБАЛОСТІ), НІ ЗА ЯКОЇ УГОДИ ЧИ ІНШИХ ПРИЧИН, ВЛАСНИК, РОЗРОБНИК, ПОМІЧНИКИ АБО РОЗПОВСЮДЖУВАЧІ ДОКУМЕНТУ НЕ НЕСУТЬ ВІДПОВІДАЛЬНІСТЬ ЗА ПРЯМІ, НЕ ПРЯМІ, СПЕЦІАЛЬНІ, ВИПАДКОВІ АБО НАВМИСНІ ЗБИТКИ БУДЬ-ЯКОГО ХАРАКТЕРУ, ВКЛЮЧАЮЧИ, БЕЗ ОБМЕЖЕННЯ, ВТРАТУ БАЖАННЯ, ПРАЦЕЗДАТНОСТІ, КОМП'ЮТЕРНІ ПЕРЕБОЇ АБО ПОШКОДЖЕННЯ, ЧИ БУДЬ-ЯКІ ІНШІ ЗБИТКИ АБО ВТРАТИ, ЯКІ ВИНИКАЮТЬ ВНАСЛІДОК АБО ПОВ'ЯЗАНІ З ВИКОРИСТАННЯМ ДОКУМЕНТУ АБО ЗМІНЕНИХ ВЕРСІЙ ДОКУМЕНТУ, НАВІТЬ ЯКЩО СТОРОНА БУЛА ПОІНФОРМОВАНА ПРО МОЖЛИВІСТЬ ТАКИХ ЗБИТКІВ.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+   <!-- This file  contains link to license for the documentation (GNU FDL), and
+   other legal stuff such as "NO WARRANTY" statement. Please do not change
+   any of this. -->
+   <authorgroup>
+   		<author>
+			<firstname>Mark</firstname>
+			<surname>Finlay</surname>
+			<affiliation>
+				<orgname>Проект документування GNOME</orgname>
+				<address><email>sisob@eircom.net</email></address>
+			</affiliation>
+		</author>
+		<author>
+			<firstname>Mark</firstname>
+			<surname>Humphreys</surname>
+			<affiliation>
+				<orgname>Проект документування GNOME</orgname>
+				<address><email>marquee@users.sourceforge.net</email></address>
+			</affiliation>
+		</author>		
+		<author role="maintainer">
+			<firstname>Baptiste</firstname>
+			<surname>Mille-Mathias</surname>
+			<affiliation>
+				<orgname>Проект документування GNOME</orgname>
+				<address><email>baptiste.millemathias@gmail.com</email></address>
+			</affiliation>
+		</author>
+		<author>
+			<firstname>Victor</firstname>
+			<surname>Osadci</surname>
+			<affiliation>
+				<orgname>Проект документування GNOME</orgname>
+				<address><email>Victor.Osadci.GNOME@xhtml.md</email></address>
+			</affiliation>
+		</author>
+		<author>
+			<firstname>Dean</firstname>
+			<surname>Sas</surname>
+			<affiliation>
+				<orgname>Проект документації Ubuntu</orgname>
+				<address><email>dean@deansas.org</email></address>
+			</affiliation>
+		</author>
+   </authorgroup>
+
+<!-- According to GNU FDL, revision history is mandatory if you are -->
+<!-- modifying/reusing someone else's document.  If not, you can omit it. -->
+   <revhistory>
+      <revision> 
+		<revnumber>Музичний програвач Rhythmbox - Довідка V0.0.2</revnumber>
+		<date>Жовтень 2002</date> 
+		<revdescription> 
+	  		<para role="author">Mark Finlay</para>
+	  		<para role="publisher">Проект документування GNOME</para>
+		</revdescription> 
+      </revision> 
+      <revision> 
+		<revnumber>Музичний програвач Rhythmbox - Довідка V0.0.3</revnumber>
+		<date>Серпень 2003</date> 
+		<revdescription> 
+	  		<para role="author">Mark Humphreys</para>
+	  		<para role="publisher">Проект документування GNOME</para>
+		</revdescription> 
+      </revision> 
+      <revision> 
+		<revnumber>Музичний програвач Rhythmbox - Довідка V0.0.4</revnumber>
+		<date>Жовтень 2005</date> 
+		<revdescription> 
+	  		<para role="author">Baptiste Mille-Mathias</para>
+	  		<para role="publisher">Проект документування GNOME</para>
+		</revdescription> 
+      </revision> 
+      <revision> 
+		<revnumber>Музичний програвач Rhythmbox - Довідка V2.0.2</revnumber>
+		<date>Квітень 2006</date>
+		<revdescription> 
+	  		<para role="author">Luca Ferretti</para>
+	  		<para role="publisher">Проект документування GNOME</para>
+		</revdescription> 
+      </revision> 
+	  <revision>
+		<revnumber>Музичний програвач Rhythmbox - Довідка V2.0.3</revnumber>
+		<date>Травень 2008</date>
+		<revdescription>
+			<para role="author">Dean Sas</para>
+			<para role="publisher">Проект документування GNOME</para>
+        </revdescription>
+      </revision>
+    </revhistory> 
+
+    <releaseinfo>В цій довідці описується версія 0.11.5 музичного програвача Rhythmbox.</releaseinfo> 
+    <legalnotice> 
+      <title>Зворотній зв'язок</title> 
+      <para>Щоб повідомити про помилку або внести пропозицію щодо програми Rhythmbox Music Player або цієї довідки, дотримуйтесь інструкцій на <ulink url="ghelp:gnome-feedback" type="help">сторінці зворотнього зв'язку GNOME</ulink>.</para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+
+   <abstract role="description">
+     <para>Rhythmbox - повнофункціональний музичний програвач для середовища GNOME.</para>
+   </abstract>
+
+  </articleinfo> 
+
+
+  <indexterm zone="index">
+    <primary>Rhythmbox</primary>
+  </indexterm>
+  <indexterm zone="index">
+    <primary>rhythmbox</primary>
+  </indexterm>
+  <indexterm zone="index">
+    <primary>Музичний програвач</primary>
+  </indexterm>
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+  <sect1 id="introduction">
+    <title>Вступ</title>
+      <para>Музичний програвач <application>Rhythmbox</application> — це одночасно музичний програвач та фонотека для файлів з теґами, який підтримує різні формати музики.</para>
+      <para>Музичний програвач <application>Rhythmbox</application> має наступні можливості:</para>
+      	<itemizedlist>
+          <listitem>
+            <para>Відтворення музичних файлів різного формату з Вашої фонотеки з підтримкою теґів.</para>
+          </listitem>
+          <listitem>
+            <para>Показ інформації про пісні через зчитування мета-даних.</para>
+          </listitem>
+          <listitem>
+            <para>Показ пісень в організованому вигляді.</para>
+          </listitem>
+          <listitem>
+            <para>Створення статичних списків відтворення за допомогою перетягування з вікна фонотеки.</para>
+          </listitem>
+          <listitem>
+            <para>Створення автоматичних списків відтворення за вказаними критеріями.</para>
+          </listitem>
+          <listitem>
+            <para>Пошук пісень в списку джерел, таких як фонотека або списки відтворення.</para>
+          </listitem>
+          <listitem>
+            <para>Прослуховування Інтернет-радіостанцій.</para>
+          </listitem>
+          <listitem>
+            <para>Читання звукових компакт-дисків, а також отримання інформації про назви треків з Інтернету.</para>
+          </listitem>
+          <listitem>
+            <para>Запис звукових компакт-дисків зі списків відтворення.</para>
+          </listitem>
+          <listitem>
+            <para>Передача музики на музичні плеєри IPod, MTP та USB Mass Storage.</para>
+          </listitem>
+        </itemizedlist>
+  </sect1>
+  <sect1 id="rb-getting-started">
+  	<title>Початок роботи</title>
+	
+		<sect2 id="rb-launch">
+			<title>Запуск музичного програвача <application>Rhythmbox</application></title>
+			<para>Ви можете запускати музичний програвач <application>Rhythmbox</application> наступним чином: <variablelist>
+					<varlistentry>
+						<term>Меню<guimenu>Програми</guimenu></term>
+						<listitem>
+							<para>Виберіть <menuchoice><guisubmenu>Звук та відео</guisubmenu><guimenuitem>Музичний програвач Rhythmbox</guimenuitem></menuchoice>.</para>
+						</listitem>
+					</varlistentry>
+					<varlistentry>
+						<term>Командний рядок</term>
+						<listitem>
+							<para>Введіть <command>rhythmbox</command>, та натисніть клавішу <keycap>Return</keycap>.</para>
+						</listitem>
+					</varlistentry>
+				</variablelist></para>
+		</sect2>
+		<sect2 id="rb">
+			<title>Запуск асистента</title>
+			<para>Під час першого запуску <application>Rhythmbox</application>, асистент допоможе імпортувати Вашу музику. На другій панелі асистента натисніть кнопку <guibutton>Огляд</guibutton> та виберіть теку, в якій зберігається Ваша музика.</para>
+		</sect2>
+  </sect1>
+  <sect1 id="rb-window">
+    <title>Вікно музичного програвача Rhythmbox</title>
+    <sect2 id="rb-window-intro">
+      <title>Огляд</title>
+      	<para>Вікно <application>Rhythmbox Music Player</application> дозволяє переглядати і відтворювати Вашу улюблену музику. <xref linkend="fig-rb-window"/> показує інтерфейс <application>Rhythmbox Music Player</application> та його основні компоненти.</para>
+      	<figure id="fig-rb-window">
+        <title>Вікно <application>Rhythmbox Music Player</application></title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/rb-window.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Show the <application>Музичний програвач Rhythmbox</application> window showing the different parts on the <application>Музичний програвач Rhythmbox</application> interface. Callouts: Menubar, Player area, Browser, Side pane, Statusbar.</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+      <para>Таблиця 1 описує компоненти вікна <application>Rhythmbox Music Player</application>.</para>
+      <table frame="topbot" id="table-rb-window">
+        <title>Компоненти вікна <application>Rhythmbox Music Player</application></title>
+        <tgroup cols="3" colsep="0" rowsep="0">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <colspec colname="COLSPEC2"/>
+          <thead>
+            <row rowsep="1">
+              <entry valign="top">№</entry>
+              <entry valign="top">Компонент</entry>
+              <entry valign="top">Опис</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry valign="top">1</entry>
+              <entry valign="top">Рядок меню</entry>
+              <entry valign="top">Містить меню, яке використовується для виконання завдань в вікні <application>Музичний програвач Rhythmbox</application>.</entry>
+            </row>
+            <row>
+              <entry valign="top">2</entry>
+              <entry valign="top">Панель інструментів</entry>
+              <entry valign="top">Надає доступ до функцій програвача та інформацію про трек, який відтворюється в даний момент.</entry>
+            </row>
+            <row>
+              <entry valign="top">3</entry>
+              <entry valign="top">Повзунок часу</entry>
+              <entry valign="top">Показує час відтворення треку, і дозволяє переходити до інших частин цього треку.</entry>
+            </row>
+            <row>
+              <entry valign="top">4</entry>
+              <entry valign="top">Бічна панель</entry>
+              <entry valign="top">Виводить список доступних джерел.</entry>
+
+            </row>
+            <row>
+              <entry valign="top">5</entry>
+              <entry valign="top">Браузер</entry>
+              <entry valign="top">Дозволяє переглядати і фільтрувати композиції в фонотеці за жанром, виконавцем або назвою альбому. Крім того, браузер забезпечує функції пошуку для показу тільки тих треків, які відповідають Вашому запиту.</entry>
+            </row>
+            <row>
+              <entry valign="top">6</entry>
+              <entry valign="top">Список треків</entry>
+              <entry valign="top">Список треків, які належать до вибраного джерела.</entry>
+            </row>
+            <row>
+              <entry valign="top">7</entry>
+              <entry valign="top">Рядок стану</entry>
+              <entry valign="top">Показує інформацію про джерело вибране на бічній панелі.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="intro-sourcelist">
+      <title>Бічна панель</title>
+      <para>В бічний панелі Ви можете отримати доступ до музичної фонотеки, Інтернет-радіо, списків відтворення та звукових компакт-дисків. Бічна панель може містити такі джерела: <itemizedlist>
+				  <listitem><para>Фонотека <application>Rhythmbox Music Player</application>, в якій з'являться всі імпортовані композиції.</para></listitem>
+				  <listitem><para>IRadio-джерела, з усіма інтернет-радіостанціями.</para></listitem>
+				  <listitem><para>Подкасти.</para></listitem>
+				  <listitem><para>Всі списки відтворення (звичайні та автоматичні).</para></listitem>
+				  <listitem><para>Звукові компакт-диски, вставлені в пристрій компакт-дисків комп'ютера.</para></listitem>
+				  <listitem><para>Портативні плеєри (на зразок IPod) підключені до комп'ютера.</para></listitem>
+				  <listitem><para>Музичні ресурси DAAP, знайдені в локальній мережі.</para></listitem>
+				  <listitem><para>Музичні магазини, такі як Jamendo та Magnatune.</para></listitem>
+				</itemizedlist></para>
+      	<para>Бічну панель можна ввімкнути або вимкнути, вибравши <menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Бічна панель</guimenuitem></menuchoice>.</para>
+    </sect2>
+    <sect2 id="player-toolbar">
+      <title>Панель інструментів програвача</title>
+      <para>Панель інструментів забезпечує доступ до інформації про відтворюваний в даний момент трек. Якщо жоден трек не відтворюється, в цій області немає ніякої інформації. Під час відтворення треку, в ній з'являється назва треку, а під ним, ім'я виконавця та назва альбому.</para>
+      <para>Також зображений повзунок, який показує перебіг часу відтворення треку. Коли повзунок отримує фокус, клавіші зі стрілками можуть бути використані для швидкого перемотування відтворюваного треку вперед або назад.</para>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/rb-toolbar.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase>Показує область програвача</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+      <tip>
+        <para>Якщо Ви використовуєте мишку з коліщам прокрутки, можете змінювати гучність шляхом прокручування вгору або вниз, коли вказівник мишки знаходиться над кнопкою гучності.</para>
+      </tip>
+    </sect2>
+    <sect2 id="status-area">
+      <title>Рядок стану</title>
+      <para>Рядок стану містить додаткову інформацію про кількість пісень і час загального звучання вибраного джерела. Рядок стану можна ввімкнути або вимкнути, вибравши <menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Рядок стану</guimenuitem></menuchoice>.</para>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/rb-statusbar.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase>Показує рядок стану</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </sect2>
+    <sect2 id="rb-window-small">
+      <title>Мінімізоване вікно <application>Rhythmbox Music Player</application></title>
+      <para><application>Rhythmbox Music Player</application> поставляється в мінімізованому режимі. Цей режим дає доступ тільки до меню та основних функцій <application>Rhythmbox Music Player</application>.</para>
+      <para>Щоб ввімкнути мінімізований режим, виберіть <menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Зменшений розмір</guimenuitem></menuchoice>.</para>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/rb-window-small.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase>Показаний <application>Музичний програвач Rhythmbox</application> в зменшеному розмірі</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </sect2>
+  </sect1>
+  <sect1 id="Usage">
+    <title>Використання Rhythmbox Music Player</title>
+    <sect2 id="Playing">
+      <title>Відтворення музики</title>
+      <para>Для відтворення треку виберіть <menuchoice><guimenu>Керування</guimenu><guimenuitem>Відтворити</guimenuitem></menuchoice>, або виберіть трек і натисніть кнопку <guibutton>Відтворити</guibutton> на панелі інструментів, або двічі клацніть на треку для відтворення.</para>
+      <para>Коли трек закінчується, <application>Rhythmbox Music Player</application> переходить до наступного треку з списку в панелі перегляду.</para>
+      <para>З фонотеки Ви можете відтворити всі пісні одного виконавця або всі пісні з одного альбому. Просто виберіть <guilabel>Альбом</guilabel> або <guilabel>Виконавець</guilabel> в <link linkend="library-filter-browser">браузері фонотеки</link>.</para>
+      <sect3 id="next-previous">
+        <title>Наступний/Відтворення/Попередній</title>
+        <para>Кнопки <guibutton>Наступний</guibutton> та <guibutton>Попередня</guibutton> можуть використовуватися для перемикання між треками під час відтворення. Якщо натиснути кнопку <guibutton>Попередня</guibutton> під час відтворення пісні, вона буде відтворена з початку. Натисніть кнопку <guibutton>Відтворення</guibutton> і почнеться відтворення поточного треку. <screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/rb-toolbar-prevplaynext.png" format="PNG"/>
+					</imageobject>
+					<textobject>
+						<phrase>Показує кнопки <guibutton>Попередній</guibutton>, <guibutton>Відтворення</guibutton> та <guibutton>Наступний</guibutton> на панелі інструментів.</phrase>
+					</textobject>
+				</mediaobject>
+			</screenshot></para>
+      </sect3>
+      <sect3 id="repeat">
+        <title>Повторювати</title>
+        <para>Опція <guibutton>Повторювати</guibutton> змушує <application>Rhythmbox Music Player</application> відтворювати треки з початку списку, коли він досягає останнього треку.</para>
+        <para>Щоб ввімкнути повторювання, виберіть <menuchoice><guimenu>Керування</guimenu><guimenuitem>Повторювати</guimenuitem></menuchoice>, або натисніть кнопку <guibutton>Повторювати</guibutton> на панелі інструментів. <screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/rb-toolbar-repeat.png" format="PNG"/>
+					</imageobject>
+					<textobject>
+						<phrase>Показує кнопку повторювання в рядку стану</phrase>
+					</textobject>
+				</mediaobject>
+			</screenshot></para>
+      </sect3>
+      <sect3 id="shuffle">
+        <title>Перемішати</title>
+        <para>Опція <guibutton>Перемішати</guibutton> примушує <application>Rhythmbox Music Player</application> відтворювати треки в довільному порядку.</para>
+        <para>Щоб ввімкнути перемішування, виберіть <menuchoice><guimenu>Керування</guimenu><guimenuitem>Перемішати</guimenuitem></menuchoice>, або натисніть кнопку <guibutton>Перемішати</guibutton> на панелі інструментів. <screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/rb-toolbar-shuffle.png" format="PNG"/>
+					</imageobject>
+					<textobject>
+						<phrase>Показує кнопку перемішування в рядку стану.</phrase>
+					</textobject>
+				</mediaobject>
+			</screenshot></para>
+      </sect3>
+      <sect3 id="volume">
+        <title>Регулятор гучності</title>
+        <para>Регулятор гучності знаходиться праворуч на панелі інструментів. Натиснувши значок гучномовця побачите повзунок гучності. Щоб збільшити або зменшити гучність, перетягніть повзунок вгору або вниз. Значок гучномовця змінюватиметься, в залежності від вибраного рівня гучності. <screenshot><mediaobject><imageobject><imagedata fileref="figures/rb-volume-changer.png" format="PNG"/></imageobject><textobject><phrase>Показує регулятор гучності на панелі інструментів.</phrase></textobject></mediaobject></screenshot></para>
+        <tip>
+          <para>Ви можете регулювати гучність за допомогою колеса прокрутки мишки, якщо вказівник мишки знаходиться над значком гучномовця.</para>
+        </tip>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="library">
+    <title>Фонотека</title>
+    	<para>Фонотека - основне джерело даних, доступних в <application>Rhythmbox Music Player</application>, це база даних, яка містить всі музичні файли, які Ви імпортували в <application>Rhythmbox Music Player</application> (Фонотека зберігає тільки шляхи до доступних файлів, а не самі файли).</para>
+    	<para>Фонотека може містити не тільки музичні файли, які фізично знаходяться на Вашому комп'ютері (в домашньому каталозі, наприклад), але й музичні файли, доступні через віддалені мережні послуги. Прикладами підтримуваних послуг мережі є: <itemizedlist>
+				<listitem>
+					<para>Суспільний FTP</para>
+				</listitem>
+				<listitem>
+					<para>FTP з засвідченням аутентичності</para>
+				</listitem>
+				<listitem>
+					<para>NFS</para>
+				</listitem>
+				<listitem>
+					<para>Суспільні ресурси Windows</para>
+				</listitem>
+			</itemizedlist></para>
+    	<para>Файли, імпортовані в фонотеку, з'являються в списку треків з інформацією (наприклад, ім'я виконавця або назва альбому), яка зберігаються в теґах вставлених в треки. <application>Rhythmbox Music Player</application> використовує ці теґи, щоб показувати треки в організованому порядку. <tip>
+				<para>Теґи можуть бути модифіковані шляхом вибору <menuchoice><guimenu>Музика</guimenu><guimenuitem>Властивості</guimenuitem></menuchoice> і вікно, яке з'явиться.заповніть даними про композицію.</para>
+			</tip></para>
+    <sect2 id="library-tracks-add">
+      <title>Додавання треків в фонотеку</title>
+      		<para>Додавати треки до фонотеки, Ви можете наступним чином: <itemizedlist>
+					<listitem>
+						<para>Щоб імпортувати тільки один трек, виберіть в меню <menuchoice><guimenu>Музика</guimenu><guimenuitem>Імпортувати файл </guimenuitem></menuchoice> потім виберіть файл в діалоговому вікні та натисніть кнопку <guibutton>Відкрити</guibutton>.</para>
+					</listitem>
+					<listitem>
+						<para>Щоб імпортувати кілька музичних файлів, розташованих в теці, виберіть в меню <menuchoice><guimenu>Музика</guimenu><guimenuitem>Імпортувати теку</guimenuitem></menuchoice> потім виберіть теку в діалоговому вікні та натисніть кнопку <guibutton>Відкрити</guibutton>. Будуть імпортовані всі музичні файли, розташовані в теці та її підтеках.</para>
+					</listitem>
+					<listitem>
+						<para>Також можете перетягувати файли з файлового менеджера (наприклад, <application>Nautilus</application>) на вікно Rhythmbox.</para>
+					</listitem>
+				</itemizedlist></para>
+      	<tip>
+       		<para>Якщо Ви ввімкнули функцію слідкування за каталогом (див <xref linkend="prefs-library"/>), всі музичні файли, які зберігаються в обраному каталозі, будуть додані до фонотеки. Також будуть додаватись до неї нові файли, які з'являться в цьому каталозі пізніше.</para>
+      	</tip>
+    </sect2>
+    <sect2 id="library-tracks-del">
+    	<title>Видалення треків з фонотеки</title>
+      	<para>Щоб видалити трек з бібліотеки, але залишити його на диску, виберіть в меню <menuchoice><guimenu>Правка</guimenu><guimenu>Видалити</guimenu></menuchoice>. Трек та його властивості (наприклад, рейтинг чи кількість відтвореннь) видаляються з бази даних Rhythmbox.</para>
+      	<para>Щоб видалити трек і з фонотеки і з диску, виберіть в меню <menuchoice><guimenu>Правка</guimenu><guimenuitem>Перемістити в смітник</guimenuitem></menuchoice>. Трек буде вилучений так само, як і попередній, але файл буде переміщений в смітник менеджера файлів.</para>
+    </sect2>
+    <sect2 id="library-filter-search">
+    	<title>Пошук треків за допомогою функції пошуку</title>
+      	<para>Rhythmbox поставляється з функцією пошуку, яка дозволяє знаходити і фільтрувати треки за допомогою пошукового запиту.</para>
+      	<para>Вводьте текст в поле пошуку, і треки, які відповідають запиту будуть з'являтись у вікні списку треків. Функція пошуку робить пошук у всіх теґах треків, які зберігаються в фонотеці.</para>
+		<para>Для виконання більш точного пошуку, можете вибрати пошук тільки в певних теґах, а саме: <guilabel>Виконавці</guilabel>, <guilabel>Альбоми</guilabel> або <guilabel>Назви</guilabel>.</para>
+    </sect2>
+    <sect2 id="library-filter-browser">
+    	<title>Пошук треків за допомогою браузера</title>
+      	<para>Браузер це ще один зручний спосіб пошуку треків. Браузер має дві або три панелі нагорі, які дозволяють переміщатися між жанрами музики, альбомами та виконавцями, і показувати тільки ті треки, які відповідають обраним критеріям.</para>
+      	<para>По-перше, щоб побачити браузер, виберіть в меню<menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Браузер</guimenuitem></menuchoice>. Виберіть виконавця, альбом та жанр, і в списку залишаться тільки ті треки, які відповідають Вашому вибору. Критерії, в стовпцях застосовуються зліва направо.</para>
+      	<tip>
+        	<para>Ви можете вибрати кілька критеріїв тієї ж категорії за допомогою клавіші <keycombo><keycap>Ctrl</keycap></keycombo>.</para>
+      	</tip>
+      		<para>Ви також можете за допомогою вибраного треку в списку треків, знайти всі треки того ж жанру, виконавця або назви альбому. Натисніть праву кнопку мишки з вказівником на вибраній композиції, і в контекстному меню виберіть <guilabel>Переглянути цей Жанр/Виконавця/Альбом</guilabel>. Потім, браузер відфільтрує треки за допомогою обраних критеріїв.</para>
+  	</sect2>
+  </sect1>
+  <sect1 id="radio">
+  	<title>Прослуховування радіо</title>
+    <para>Тюнер Інтернет-радіо можна використовувати для прослуховування потокових звукових файлів через локальну мережу або Інтернет.</para>
+    <figure id="fig-iradio">
+      <title>Інтернет-радіо в <application>Rhythmbox Music Player</application></title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+	    <imagedata format="PNG" fileref="figures/rb-iradio-main.png"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+    </figure>
+    <sect2 id="iradio-adding">
+      	<title>Додавання радіостанції</title>
+      	<para>Щоб додати нову радіостанцію до тюнера Інтернет-радіо, виберіть <menuchoice><guimenu>Музика</guimenu><guimenuitem>Нова Інтернет-радіостанція</guimenuitem></menuchoice>, потім введіть URL нової Інтернет-радіостанції, та натисніть кнопку <guibutton>Додати</guibutton>.</para>
+    </sect2>
+    <sect2 id="iradio-modify">
+      	<title>Перегляд та зміна налаштування радіостанції</title>
+      	<para>Ви можете переглянути та змінити налаштування Інтернет-радіостанції, використовуючи меню <menuchoice><guimenu>Музика</guimenu><guimenuitem>Властивості</guimenuitem></menuchoice>.</para>
+      	<para>Ви також можете змінити властивості радіостанції, натиснувши правою кнопкою миші з вказівником на ній і виберавши в меню <guimenuitem>Властивості</guimenuitem>.</para>
+      	<para>Ви можете змінити назву радіопотоку, його жанр та шлях до нього. Також можете встановити рейтинг потоку.</para>
+    </sect2>
+    <sect2 id="iradio-delete">
+    	<title>Видалення радіостанції</title>
+      	<para>Щоб видалити радіостанцію зі списку, виберіть <menuchoice><guimenu>Правка</guimenu><guimenuitem>Видалити</guimenuitem></menuchoice>. Також можна натиснути праву кнопку мишки, з вказівником на радіостанції, та вибрати в меню <guimenuitem>Видалити</guimenuitem>.</para>
+    </sect2>
+  </sect1>
+  <sect1 id="podcast">
+  	<title>Подкасти</title>
+    <para>Подкастинг - це новий спосіб трансляції аудіо-контента через Інтернет. Якщо автор публікує черговий епізод, він інформує передплатників подкаста через канал XML.</para>
+    <para>Rhythmbox Music Player дозволяє Вам підписуватись на подкаст-канали, і якщо новий епізод доступний, Вас буде поінформовано, а Rhythmbox завантажить цей епізод, і відтворить його.</para>
+    <tip>
+      	<para>Ви можете знайти більш детальну інформацію про подкасти та подкастинг, відвідавши сторінку <ulink url="http://en.wikipedia.org/wiki/Podcast">Podcast</ulink> на веб-сайті <ulink url="http://en.wikipedia.org/">Wikipedia</ulink>.</para>
+    </tip>
+    <para>
+      <figure>
+        <title>Інтерфейс програвача подкастів</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/rb-podcast-main.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase>Інтерфейс програвача подкастів з кількома зареєстрованими подкастами</phrase>
+          </textobject>
+        </mediaobject>
+      </figure>
+    </para>
+    <sect2 id="podcast-management">
+      <title>Управління подкастами</title>
+      <sect3 id="podcast-feed-add">
+        <title>Додавання подкаста</title>
+        <para>Щоб зареєструвати подкаст, виберіть <menuchoice><guimenu>Музика</guimenu><guimenuitem>Завантажити новий подкаст</guimenuitem></menuchoice>, потім, в новому вікні введіть URL для завантаження подкаста. Rhythmbox отримає список епізодів і останій епізод буде завантажений на Ваш жорсткий диск.</para>
+        <para>Щоб додати новий канал подкаста, натисніть праву кнопку мишки з вказівником на джерелі <guimenuitem>Подкасти</guimenuitem> в бічній панелі, та виберіть <guimenuitem>Завантажити новий подкаст</guimenuitem>.</para>
+      </sect3>
+      <sect3 id="podcast-feed-del">
+        <title>Видалення подкаста</title>
+        <para>Щоб видалити подкаст, натисніть праву кнопку мишки з вказівником на назві подкаста в браузері, та виберіть <menuchoice><guimenuitem>Видалити канал подкаста</guimenuitem></menuchoice>, якщо хочете зберегти епізоди подкаста, виберіть <menuchoice><guimenuitem>Видалити тільки канал</guimenuitem></menuchoice>, або виберіть <menuchoice><guimenuitem>Видалити канал та файли</guimenuitem></menuchoice>, якщо хочете видалити канал і всі пов'язані з ним епізоди.</para>
+      </sect3>
+      <sect3 id="podcast-feed-update">
+        <title>Оновлення каналів</title>
+        <para>Щоб дізнатися, чи з'явилися нові епізоди в підкасті, натисніть праву кнопку мишки з вказівником на назві подкаста в браузері і виберіть <menuchoice><guimenuitem>Оновити канал подкаста</guimenuitem></menuchoice>. Якщо були опубліковані нові епізоди, вони з'являться в списку епізодів.</para>
+        <tip>
+          <para>Rhythmbox Music Player сам, регулярно перевіряє список подкаст-каналів, щоб знайти, які з них були оновлені.</para>
+        </tip>
+        <para>Ви також можете перевірити всі подкасти, натиснувши праву кнопку мишки з вказівником на джерелі <guimenuitem>Подкасти</guimenuitem> в бічній панелі, та вибравши  <menuchoice><guimenuitem>Оновити всі канали</guimenuitem></menuchoice>.</para>
+      </sect3>
+      <sect3 id="podcast-feed-show">
+        <title>Властивості доступу до каналу подкаста</title>
+        <para>Для отримання доступу до властивостей каналу, натисніть праву кнопку мишки з вказівником на назві каналу і виберіть <menuchoice><guimenuitem>Властивості</guimenuitem></menuchoice>. <itemizedlist><listitem><para>На вкладці <guilabel>Основні</guilabel> Ви можете переглянути <guilabel>Назву</guilabel>, <guilabel>Автора </guilabel>, дату <guilabel>Останнього оновлення</guilabel> та <guilabel>Опис</guilabel> подкаста.</para></listitem><listitem><para>На вкладці <guilabel>Деталі</guilabel>, Ви можете переглянути властивості <guilabel>Джерела</guilabel>, <guilabel>Мови </guilabel>та <guilabel>Авторські права</guilabel> каналу.</para></listitem></itemizedlist> Ви можете переглянути властивості, а також змінити рейтинг.</para>
+      </sect3>
+    </sect2>
+    <sect2 id="episode-management">
+      <title>Управління епізодами</title>
+      <sect3 id="podcast-episode-download">
+        <title>Завантаження епізоду подкаста</title>
+        <para>Щоб завантажити епізод на диск, натисніть праву кнопку мишки з вказівником на назві епізоду і виберіть <menuchoice><guimenuitem>Завантажити епізод</guimenuitem></menuchoice>, Rhythmbox почне завантаження епізоду в теку зазначену в налаштуваннях. Ви можете бачити прогрес завантаження епізоду в стовпчику <guilabel>Статус</guilabel>.</para>
+        <tip>
+          <para>За замовчуванням, подкасти завантажуються в теку <filename class="directory">Подкасти/</filename> в Вашому домашньому каталозі. Як змінити цю теку, див. <xref linkend="prefs-podscast"/>.</para>
+        </tip>
+      </sect3>
+      <sect3 id="podcast-episode-read">
+        <title>Читання епізоду подкаста</title>
+        <para>Щоб прочитати епізод подкаста, виберіть епізод для читання та перейдіть <menuchoice><guimenu>Керування</guimenu><guimenuitem>Відтворити</guimenuitem></menuchoice>, або просто натисніть кнопку <guibutton>Відтворення</guibutton>.</para>
+        <para>Перед тим, як прочитати епізод його необхідно завантажити, докладніше про завантаження епізоду див. <xref linkend="podcast-episode-download"/>.</para>
+      </sect3>
+      <sect3 id="podcast-episode-delete">
+        <title>Видалення епізоду подкаста</title>
+        <para>Щоб видалити епізод з подкаста, натисніть праву кнопку мишки з вказівником на назві епізоду і виберіть <menuchoice><guimenuitem>Видалити</guimenuitem></menuchoice>, якщо  хочете залишити файл епізоду на диску, виберіть <menuchoice><guimenuitem>Видалити тільки епізод</guimenuitem></menuchoice>, або виберіть <guibutton>Видалити епізод і файл</guibutton>, якщо хочете видалити цей епізод зі списку і файл з диска.</para>
+        <warning>
+          <para>Після видалення епізоду він стає недоступним в списку епізодів, навіть якщо Ви оновите подкаст.</para>
+        </warning>
+      </sect3>
+      <sect3>
+        <title>Відображення властивостей епізоду подкаста</title>
+        <para>Щоб отримати доступ до властивостей епізоду, натисніть праву кнопку мишки з вказівником на назві епізоду і виберіть <menuchoice><guimenuitem>Властивості</guimenuitem></menuchoice>. <itemizedlist><listitem><para>На вкладці <guilabel>Основні</guilabel> Ви можете переглянути <guilabel>Назву</guilabel>, <guilabel>Канал</guilabel>,  <guilabel>Дату</guilabel> публікації та <guilabel>Опис</guilabel> подкаста.</para></listitem><listitem><para>На вкладці <guilabel>Подробиці</guilabel> Ви можете переглянути <guilabel>Джерело</guilabel>, <guilabel>Тривалість</guilabel>, <guilabel>Бітрейт</guilabel>, <guilabel>Дату останнього відтворення</guilabel>, <guilabel>Кількість відтвореннь</guilabel> та <guilabel>Рейтинг</guilabel> подкаста.</para></listitem></itemizedlist></para>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="playqueue">
+  	<title>Черга відтворення</title>
+	<para>Черга відтворення є місцем для тимчасового зберігання наступного треку, який Ви хочете прослухати. Коли Ви додаєте трек до черги відтворення, <application>Rhythmbox Music Player</application> автоматично перемкнеться на цей трек після закінчення відтворення поточного.</para>
+	<para>Як тільки відтворення треку закінчиться, він буде автоматично видалений з черги відтворення. Після того, як вона спорожніє, <application>Rhythmbox Music Player</application> продовжить відтворення треків з попереднього джерела.</para>
+		<sect2 id="playqueue-track-add">
+			<title>Додавання треків до Черги відтворення</title>
+			<para>Щоб додати трек: <orderedlist>
+					<listitem>
+						<para>Виділіть трек, який Ви хочете прослухати, з будь-якого джерела.</para>
+					</listitem>
+					<listitem>
+						<para>Виберіть <menuchoice><guimenu>Правка</guimenu><guimenuitem>Додати до черги відтворення</guimenuitem></menuchoice>.</para>
+					</listitem>
+				</orderedlist></para>
+		</sect2>
+		<sect2 id="playqueue-track-del">
+			<title>Видалення треку з Черги відтворення</title>
+			<para>Щоб видалити трек, який зберігається в Черзі відтворення: <orderedlist>
+					<listitem>
+						<para>Виділіть трек, який Ви хочете видалити з Черги відтворення</para>
+					</listitem>
+					<listitem>
+						<para>Виберіть <menuchoice><guimenu>Правка</guimenu><guimenuitem>Видалити</guimenuitem></menuchoice>.</para>
+					</listitem>
+				</orderedlist></para>
+		</sect2>
+  </sect1>
+  
+  <sect1 id="playlist">
+  	<title>Списки відтворення</title>
+    <para>Списки відтворення це джерела, які створюються з композицій доступних в фонотеці. Вони дозволяють зібрати треки в особливі групи, зокрема за жанром, або за  конкретними групами виконавців, чи навіть за треками, які мають специфічну 'тональність', як що хочете.</para>
+    <para>Rhythmbox Music Player має 2 види списків відтворення: <itemizedlist>
+				<listitem>
+					<para>Статичні списки відтворення</para>
+				</listitem>
+				<listitem>
+					<para>'Розумні' списки відтворення</para>
+				</listitem>
+			</itemizedlist></para>
+    <para>Rhythmbox дозволяє записувати Ваші списки відтворення на звукові компакт-диски.</para>
+    <sect2 id="playlist-static">
+    	<title>Статичні списки відтворення</title>
+      	<para>Статичні списки відтворення створюються з окремих треків вибраних з фонотеки.</para>
+      <sect3 id="playlist-static-new">
+        <title>Створення статичного списку відтворення</title>
+        <para>Щоб створити новий список відтворення, виберіть <menuchoice><guimenu>Музика</guimenu><guisubmenu>Список відтворення</guisubmenu><guimenuitem>Створити список відтворення</guimenuitem></menuchoice>. Порожній неназваний список відтворення з'явиться в списку джерел. Введіть ім'я списку відтворення та натисніть <keycombo><keycap>Enter</keycap></keycombo>.</para>
+      </sect3>
+      <sect3 id="playlist-static-tracks-add">
+        <title>Додавання треківсів до списку відтворення</title>
+        <para>Щоб додати треки до списку відтворення, виберіть треки зі списку в фонотеці та перетягніть їх на піктограму списків відтворення в бічній панелі.</para>
+        <para>Ви можете перетягнути на піктограму списку відтворення жанр, виконавця або назву альбому з браузера, всі треки, які потрапили в обрану категорію, будуть додані до списку відтворення.</para>
+        <tip>
+          <para>Ви можете створити список відтворення треків за одну дію. Виберіть треки в <guilabel>Списку композицій</guilabel>, або безпосередньо з браузера, одну або декілька категорій (<guilabel>Жанр</guilabel>, <guilabel>Виконавець</guilabel> або <guilabel>Альбом</guilabel>) і перетягніть вибране в <guilabel>Бічну панель</guilabel>. Ця дія автоматично створить іменований список відтворення.</para>
+        </tip>
+      </sect3>
+      <sect3 id="playlist-static-tracks-del">
+        <title>Видалення треків зі списку відтворення</title>
+        <para>Щоб видалити треки зі списку відтворення, спочатку виберіть треки, які необхідно видалити, і тоді маєте два способи: <itemizedlist><listitem><para>Виберіть <menuchoice><guimenu>Правка</guimenu><guimenuitem>Видалити</guimenuitem></menuchoice>.</para></listitem><listitem><para>Натисніть праву кнопку мишки з вказівником на виділиних треках та виберіть <guimenuitem>Видалити</guimenuitem>.</para></listitem></itemizedlist> Видаляється трек тільки зі списку відтворення, а не з фонотеки.</para>
+      </sect3>
+      <sect3 id="playlist-static-del">
+        <title>Видалення статичного списку відтворення</title>
+        <para>Щоб видалити статичний список відтворення, спочатку виберіть список, який необхідно видалити, і тоді маєте два способи: <itemizedlist><listitem><para>Виберіть <menuchoice><guimenu>Правка</guimenu><guimenuitem>Видалити</guimenuitem></menuchoice>.</para></listitem><listitem><para>Натисніть праву кнопку мишки з вказівником на списку відтворення та виберіть <guimenuitem>Видалити</guimenuitem>.</para></listitem></itemizedlist> Видаляється тільки список відтворення, а не самі треки.</para>
+      </sect3>
+    </sect2>
+    <sect2 id="playlist-smart">
+      <title>'Розумні' списки відтворення</title>
+      <para>'Розумні' Списки відтворення побудовані за вибраними критеріями, тому треки додаються до них динамічно. Всі треки які відповідають вибраним критеріям будуть додані до списку відтворення.</para>
+      <sect3 id="playlist-smart-new">
+        <title>Створення 'розумного' списку відтворення</title>
+        <para>Щоб створити новий список відтворення: <orderedlist><listitem><para>Виберіть <menuchoice><guimenu>Музика</guimenu><guisubmenu>Список відтворення</guisubmenu><guimenuitem>Новий автоматичний список відтворення</guimenuitem></menuchoice>.</para></listitem><listitem><para>Виберіть критерії списку відтворення в редакторі запитів.</para></listitem><listitem><para>Як тільки критерії будуть вибрані, натисніть кнопку <guibutton>Новий</guibutton>, щоб створити запит.</para></listitem></orderedlist></para>
+      </sect3>
+      <sect3 id="playlist-smart-edit">
+        <title>Створення 'розумного' списку відтворення</title>
+        <para>Редагування 'розумного' списку відтворення дозволяє змінити критерії, встановлені для цього списку. Щоб відредагувати 'розумний' список відтворення, виберіть його та перейдіть <menuchoice><guimenu>Музика</guimenu><guisubmenu>Список відтворення</guisubmenu><guimenuitem>Редагувати</guimenuitem></menuchoice>, і змініть критерії. Коли зробите, натисніть <guibutton>Закрити</guibutton>.</para>
+      </sect3>
+      <sect3 id="playlist-smart-del">
+        <title>Видалення 'розумного' списку відтворення</title>
+        <para>Щоб видалити 'розумний' список відтворення, виберіть список, який хочете видалити, потім скористайтеся одним із таких двох способів: <itemizedlist><listitem><para>Виберіть <menuchoice><guimenu>Правка</guimenu><guimenuitem>Видалити</guimenuitem></menuchoice>.</para></listitem><listitem><para>Натисніть праву кнопку мишки з вказівником на списку відтворення та виберіть <guimenuitem>Видалити</guimenuitem>.</para></listitem></itemizedlist></para>
+      </sect3>
+      <sect3 id="playlist-smart-query-use">
+        <title>Використання редактора запитів</title>
+        <para>Виберіть застосовуваний критерій. Якщо необхідно застосувати більш одного критерію, натисніть кнопку <guibutton>Додати</guibutton>, з'явиться новий рядок з критеріями, і Ви зможете додати новий крітерій.</para>
+        <para>Якщо хочете обмежити кількість доріжок в списку відтворення, відзначте <guilabel>Обмежувати до:</guilabel>, та виберіть обмеження. Обмеження може вводитися за кількістю записів в списку, або за займаним обсягом (в <guilabel>МБ</guilabel> або <guilabel>ҐБ</guilabel>), або за тривалістю (вираженою в <guilabel>Хвилинах</guilabel>).</para>
+        <para>Після завершення встановлення критеріїв списку відтворення, виберіть <guibutton>Новий</guibutton>; вікно редактора запитів закриється, а в списку відтворення будуть показані тільки ті треки, які відповідають Вашим критеріям.</para>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="AudioCD">
+    <title>Звуковий компакт-диск</title>
+	<para><application>Rhythmbox Music Player</application> також може працювати зі звуковими компакт-дисками, він дозволяє прослуховувати компакт-диски, а також записувати Ваші власні.</para>
+    <sect2 id="cd-playing">
+      <title>Відтворення</title>
+      <para>Коли звуковий компакт-диск вставлений в дисковод, то він стає доступним в бічній панелі, а треки, які є на ньому можна побачити в головному вікні <application>Rhythmbox Music Player</application>. Якщо Ви маєте активне з'єднання з мережею Інтернет,то можете побачити додаткову інформацію про цей диск отриману з Інтернету.</para>
+      <para>Для відтворення, паузи, перемотування вперед та назад, використовуйте те саме керування, як і для відтворення з фонотеки.</para>
+    </sect2>
+    <sect2 id="cd-import">
+      <title>Імпортування звукового компакт-диска</title>
+      <para>Якщо Ви хочете зберегти треки зі звукових компакт-дисків на комп'ютер, Ви можете імпортувати їх.</para>
+      <para>Щоб імпортувати треки зі звукового CD, виберіть <menuchoice><guimenu>Музика</guimenu><guimenuitem>Імпортувати звуковий CD</guimenuitem></menuchoice>, ця дія запустить програму <application>Sound-Juicer</application>, призначену для імпортування звукових CD. Більш детальну інформацію про програму <application>Sound-Juicer</application>, Ви можете отримати з довідки <ulink url="ghelp:sound-juicer">Sound-Juicer manual</ulink>.</para>
+      <tip>
+        <para>Для автоматичного додавання треків, створених програмою Sound-Juicer, в фонотеку Rhythmbox, в налаштуваннях програми Sound-Juicer необхідно вказати для витягнутих треків, теку Вашої фонотеки Rhythmbox, крім того в Rhythmbox має бути ввімкнена опція стеження за появою нових файлів в фонотеці. за детальною інформацією зверніться до <ulink url="ghelp:sound-juicer#preferences">Налаштування Sound-Juice</ulink> та <link linkend="prefs-library">Налаштування фонотеки Rhythmbox</link>.</para>
+      </tip>
+    </sect2>
+    <sect2 id="cd-burning">
+      <title>Створення звукового компакт-диска</title>
+      <para>Rhythmbox дозволяє Вам створювати свої власні компакт-диски з музичних файлів, які зберігається в фонотеці Rhythmbox.</para>
+      <para>Щоб створити звуковий компакт-диск: <orderedlist><listitem><para>Створіть будь-який список відтворення, статичний або «розумний» (див. <xref linkend="playlist"/>) та додайте до нього треки.</para></listitem>
+                <listitem><para>Виберіть <menuchoice><guimenu>Музика</guimenu><guisubmenu>Список композицій</guisubmenu><guimenuitem>Записати звуковий CD</guimenuitem></menuchoice></para></listitem>
+                <listitem><para>Вставте порожній компактний диск.</para></listitem>
+                <listitem><para>Натисніть кнопку <guibutton>Створити</guibutton>, щоб розпочати процес запису.</para></listitem>
+                </orderedlist></para>
+    </sect2>
+  </sect1>
+  <sect1 id="portable-audio-player">
+    <title>Портативний аудіопрогравач</title>
+    <para><application>Rhythmbox</application> може виявити, під'єднаний до комп'ютера портативний аудіопрогравач та прочитати записи, які зберігаються на ньому. <application>Rhythmbox Music Player</application> здатний працювати з більшістю портативних аудіопрогравачів, та разом з такими, як Apple iPod, MTP та Mass Storage.</para>
+    <para>Коли ви під'єднуєте портативний аудіопрогравач, піктограма портативного аудіопрогравача додається в бічну панель, і ви можете працювати з цим джерелом так само, як і з фонотекою.</para>
+	<tip><para>Якщо <application>Rhythmbox Music Player</application> не зміг визначити пристрій як портативний аудіопрогравач, створіть порожній файл з назвою <filename>.is_audio_player</filename> на верхньому рівні ієрархії файлової системи програвача.</para></tip>
+  </sect1>
+  <sect1 id="daap">
+    <title>Спільний ресурс DAAP</title>
+    <para>DAAP це мережевий протокол, який дозволяє спільний доступ до музики, яка зберігається в Rhythmbox. DAAP розшифровується, як Протокол цифрового аудіодоступу (Digital Audio Access Protocol).</para>
+    <para>Оскільки DAAP є стандартним протоколом для обміну музикою, ви можете слухати музику і ділитися нею не тільки з іншими користувачами Rhythmbox, а також і з тими, хто використовує DAAP сумісне програмні засоби, як-от, ITunes.</para>
+    <para>Після запуску Rhythmbox здійснює пошук всіх доступних ресурсів DAAP, опублікованих у вашій локальній мережі іншими користувачами (у вашому будинку або в офісі, але не в інтернеті), і показує їх в бічній панелі В цей самий час, якщо спільний доступ дозволений, Rhythmbox опублікує вашу фонотеку та списки композицій. Таким чином, ви можете слухати музику, яка зберігається на комп'ютерах ваших друзів, а вони можуть слухати вашу.</para>
+    <para>Щоб вимкнути спільні функції Rhythmbox DAAP, дивіться <xref linkend="prefs-sharing"/> в налаштуваннях.</para>
+  </sect1>
+  <sect1 id="notification">
+    <title>Ділянка сповіщень</title>
+    <sect2 id="notification-overview">
+      <title>Огляд</title>
+      <para>Ділянка сповіщень, це функція GNOME, яка додає невелику піктограму на панель, в той час, як програма працює, і дозволяє контролювати <application>Rhythmbox Music Player</application> з лотка, та отримувати інформацію, коли інтерфейсу <application>Rhythmbox Music Player</application> не видно.</para>
+      <figure id="fig-notification-zone">
+        <title><application>Rhythmbox Music Player</application> в ділянці сповіщень</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="figures/rb-notification-zone.png"/>
+	    </imageobject>
+	  </mediaobject>
+        </screenshot>
+      </figure>
+    </sect2>
+    <sect2 id="notification-info-receive">
+      <title>Отримання інформації</title>
+      <sect3 id="notification-info-tooltip">
+        <title>Підказка</title>
+        <para>Якщо ви підведете вказівник мишки до піктограми <application>Rhythmbox Music Player</application>, то зможете побачити підказку про виконавця, назву композиції та позицію поточного часу.</para>
+      </sect3>
+      <sect3 id="notification-info-window">
+        <title>Вікно сповіщень</title>
+        <para>Кожного разу під час зміни доріжки або звантаженні епізоду подкаста <application>Rhythmbox Music Player</application> інформує вас через вікно сповіщень на стільниці.</para>
+        <figure id="fig-notification-window">
+          <title>Вікно сповіщень <application>Rhythmbox Music Player</application></title>
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="figures/rb-notification-window.png"/>
+	      </imageobject>
+	    </mediaobject>
+          </screenshot>
+        </figure>
+        <tip>
+          <para>Вікно сповіщень можна вимкнути, знявши прапорець <guilabel>Показувати сповіщення</guilabel> в контекстному меню піктограми в ділянці сповіщень.</para>
+        </tip>
+      </sect3>
+    </sect2>
+    <sect2 id="notification-control">
+      <title>Керування Rhythmbox</title>
+      <para>Використовуючи піктограму <application>Rhythmbox Music Player</application> в діляцнці сповіщень, такі команди можуть бути надіслані програмі:</para>
+      <figure id="fig-notification-menu">
+        <title>Ділянка сповіщення (показ меню)</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="figures/rb-notification-area-menu.png"/>
+            </imageobject>
+           </mediaobject>
+        </screenshot>
+      </figure>
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para><guibutton>Відтворити</guibutton>&mdash; Якщо стоїть прапорець, відтворює поточну вибрану пісню.</para>
+          </listitem>
+          <listitem>
+            <para><guibutton>Попередній</guibutton>&mdash; Перейти до попередньої пісні з вибраного джерела.</para>
+          </listitem>
+          <listitem>
+            <para><guibutton>Наступний</guibutton>&mdash; Перейти до наступноїї пісні з вибраного джерела.</para>
+          </listitem>
+          <listitem>
+            <para><guibutton>Показати вікно програвача</guibutton>&mdash; Показувати чи ні вікно <application>Rhythmbox Music Player</application> на стільниці.</para>
+          </listitem>
+          <listitem>
+            <para><guibutton>Показувати сповіщення</guibutton>&mdash; Показувати чи ні сповіщення <application>Rhythmbox Music Player</application> про зміну доріжок і різноманітну інформацію.</para>
+          </listitem>
+          <listitem>
+            <para><guibutton>Вийти</guibutton>&mdash; Вийти з <application>Rhythmbox Music Player</application>.</para>
+          </listitem>
+        </itemizedlist>
+        <tip>
+        	<para>Якщо ви користуєтесь мишею з колесом прокрутки, можете регулювати гучність за допомогою прокручування колеса вгору або вниз, коли вказівник миші знаходиться над аплетом програвача на панелі.</para>
+          <para>Ви можете швидко перемикати Відтворення/Паузу, натискаючи середню кнопку миші.</para>
+        </tip>
+      </para>
+    </sect2>
+  </sect1>
+  <sect1 id="customize">
+    <title>Налаштування Rhythmbox Music Player</title>
+    <para>В цьому розділі описується, як налаштувати <application>Rhythmbox Music Player</application> відповідно до ваших вимог і вподобань.</para>
+    <sect2 id="prefs">
+      <title>Налаштування параметрів</title>
+      <para>Використовуючи вікно <guilabel>Параметри програвача</guilabel> ви можете налаштувати вигляд та поведінку <application>Rhythmbox Music Player</application>, щоб запустити вікно <guilabel>Параметри програвача</guilabel>, виберіть <menuchoice><guimenu>Зміни</guimenu><guimenuitem>Параметри</guimenuitem></menuchoice>.</para>
+      <sect3 id="prefs-general">
+      	<title>Загальне</title>
+		<para>Виберіть, який буде <guilabel>Переглядач</guilabel> на екрані. Ви можете використовувати дві або три панелі й вибрати, яка інформація буде на них показана.</para>
+      	<para>Виберіть <guilabel>Видимі стовпці</guilabel>, які ви бажали б побачити в <application>Rhythmbox Music Player</application>. Цей параметр впливає на такі джерела: <itemizedlist>
+				<listitem><para>Фонотека</para></listitem>
+				<listitem><para>Звуковий компактний диск</para></listitem>
+				<listitem><para>Портативні програвачі</para></listitem>
+				<listitem><para>Списки композицій</para></listitem>
+				<listitem><para>Музичні ресурси DAAP</para></listitem>
+			</itemizedlist></para>
+      </sect3>
+      <sect3 id="prefs-library">
+        <title>Музика</title>
+        <itemizedlist>
+          <listitem>
+            <para><guilabel>Адреса фонотеки</guilabel> — це тека, яку буде перевіряти <application>Rhythmbox Music Player</application>, щоб найти нові композиції. Коли ви додасте нові звукові файли в цю теку, або в її підтеки за допомогою файлового переглядача (наприклад, Nautilus), <application>Rhythmbox Music Player</application> знайде їх і автоматично додасть до фонотеки.</para>
+            <warning>
+            	<para>Уникайте встановлення каталогу <filename class="directory">Home</filename> як теку для розміщення фонотеки, бо це надто навантажує центральний процесор комп'ютера.</para>
+            </warning>
+            <para>Щоб вимкнути функцію спостереження, зніміть прапорець <guilabel>Слідкувати за моєю фонотекою на нові файли</guilabel>.</para>
+            <tip>
+            	<para>Якщо ви бажаєте додати понад одну теку для спостереження, використовуйте <application>gconf-editor</application> та додайте відповідні записи до списку /app/rhythmbox/library_locations</para>
+            </tip>
+          </listitem>
+        </itemizedlist>
+      </sect3>
+      <sect3 id="prefs-podscast">
+        <title>Подкасти</title>
+        <itemizedlist>
+          <listitem>
+            <para>Тека <guilabel>Звантаження</guilabel> подкастів визначена типово, як <filename class="directory">Podcasts/ </filename> у вашому домашньому каталозі.</para>
+            <para>Якщо ця тека не відповідає вашим потребам, виберіть іншу в спадному списку, або натисніть <guilabel>Інше</guilabel>, щоб з'явилось вікно вибору файлів.</para>
+          </listitem>
+          <listitem>
+            <para>Виберіть, як часто <application>Rhythmbox Music Player</application> буде перевіряти наявність нових епізодів подкастів.</para>
+          </listitem>
+        </itemizedlist>
+      </sect3>
+      <sect3 id="prefs-sharing">
+        <title>Спільне використання</title>
+        <para><application>Rhythmbox Music Player</application> може надавати доступ до вашої фонотеки іншим користувачам в локальній мережі, якщо вони використовують <application>Rhythmbox Music Player</application> або Apple iTunes.</para>
+        <itemizedlist>
+          <listitem>
+            <para>Виберіть <guilabel>Оприлюднити музику</guilabel>, щоб дозволити користувачам мережі бачити і читати ваші пісні.</para>
+          </listitem>
+          <listitem>
+            <para>Введіть псевдо, під яким ви будете доступні в мережі в полі <guilabel>Назва спільної музики</guilabel>.</para>
+          </listitem>
+        </itemizedlist>
+      </sect3>
+      <sect3 id="prefs-lastfm">
+        <title>Профіль Last.fm</title>
+        <para>Додаток профілю Last.fm збирає інформацію про пісні, які ви слухаєте і надсилає її до сайту <ulink url="http://www.last.fm/">Last.fm</ulink>, створюючи профіль ваших музичних уподобань. За допомогою цього додатка ви можете: <itemizedlist>
+				<listitem>
+					<para>отримати таку статистику, як найчастіше прослуховуваний виконавець або композиція.</para>
+				</listitem>
+				<listitem>
+					<para>отримати рекомендації щодо виконавців, які вас цікавлять.</para>
+				</listitem>
+			</itemizedlist></para>
+        <warning>
+          <para>Для того, щоб використовувати додаток профілю Last.fm, Ви повинні мати обліковий запис Last.fm. Якщо ви не маєте облікового запису, перейдіть до <ulink url="http://www.last.fm/signup.php">сторінки реєстрації Last.fm</ulink>, щоб створити його. У вікні налаштування додатка профілю Last.fm заповніть поля <guilabel>Користувач</guilabel> та <guilabel>Пароль</guilabel>.</para>
+        </warning>
+		<para>Вікно налаштування додатка профілю Last.fm, також має інформацію про стан. Якщо ваша сторінка профілю Last.fm показує, що профіль не оновлюється, то інформація показана тут може допомогти діагностувати проблему.</para>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="shortcuts">
+    <title>Скорочення</title>
+    <sect2 id="keyboard-keys">
+      <title>Клавіатурні скорочення</title>
+      <table frame="topbot" id="rb-shorcuts-1">
+	  	<title>Клавіатурні скорочення для програвача</title>
+        <tgroup cols="2" colsep="0" rowsep="0">
+          <colspec colname="COLSPEC0" colwidth="30*"/>
+          <colspec colname="COLSPEC1" colwidth="70*"/>
+          <thead>
+            <row>
+              <entry>Скорочення</entry>
+              <entry>Дії</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>Space</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Відтворення / Пауза</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Alt</keycap>
+                  <keycap>Стрілка вліво</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Перейти до попередньої доріжки / повернутися до початку доріжки</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Alt</keycap>
+                  <keycap>Стрілка вправо</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Перейти до наступної доріжки</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>R</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Ввімкнути / Вимкнути повторне відтворення</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>U</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Ввімкнути / Вимкнути перемішування</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table frame="topbot" id="rb-shorcuts-2">
+	  	<title>Загальні скорочення</title>
+		<tgroup cols="2" colsep="0" rowsep="0">
+          <colspec colname="COLSPEC0" colwidth="30*"/>
+          <colspec colname="COLSPEC1" colwidth="70*"/>
+          <thead>
+            <row>
+              <entry>Скорочення</entry>
+              <entry>Дії</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>A</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Виділити все</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Shift</keycap>
+                  <keycap>Ctrl</keycap>
+                  <keycap>A</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Зняти всі виділиння</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>E</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Витягнути треки з CD (запуск Sound-Juicer)</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>J</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Перейти до відтворюваної пісні</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>Y</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Очистити текстове поле пошуку та вилучити всі фільтри з переглядача</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>N</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Створити новий список компзицій</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>I</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Додати нову інтернет-радіостанцію</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>P</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Додати новий подкаст-канал</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>O</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Додати теку до фонотеки</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Alt</keycap>
+                  <keycap>Return</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Показати властивості доріжки</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table frame="topbot" id="rb-shorcuts-3">
+	  	<title>Клавіатурні скорочення для вікна</title>
+        <tgroup cols="2" colsep="0" rowsep="0">
+          <colspec colname="COLSPEC0" colwidth="30*"/>
+          <colspec colname="COLSPEC1" colwidth="70*"/>
+          <thead>
+            <row>
+              <entry>Скорочення</entry>
+              <entry>Дії</entry>
+            </row>
+          </thead>
+          <tbody>
+			<row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>W</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Закрити вікно <application>Rhythmbox Music Player</application></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>Q</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Вийти з <application>Rhythmbox Music Player</application></para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>B</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Показати / сховати переглядач</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>D</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Ввімкнути / вимкнути мінімізований режим</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>F9</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Показати / сховати бічну панель</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>K</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Показати / сховати чергу в бічній панелі</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>Ctrl</keycap>
+                  <keycap>S</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Показати / сховати повзунок позиції відтворення</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycombo>
+                  <keycap>F11</keycap>
+                </keycombo>
+              </entry>
+              <entry>
+                <para>Ввімкнути / вимкнути повноекранний режим</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="multimedia-keys">
+      <title>Мультимедійні клавіші</title>
+      <para><application>Rhythmbox Music Player</application> підтримує роботу з мультимедійними клавішами клавіатур, якщо вони налаштовані в середовищі стільниці.</para>
+      <table frame="none">
+	  	<title>Клавіатурні скорочення для вікна</title>
+        <tgroup cols="2" colsep="0" rowsep="0">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry>Скорочення</entry>
+              <entry>Дії</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <keycap>Stop</keycap>
+              </entry>
+              <entry>
+                <para>Stop</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycap>Pause / Play</keycap>
+              </entry>
+              <entry>
+                <para>Pause / Play</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycap>Prev</keycap>
+              </entry>
+              <entry>
+                <para>Попередня доріжка</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <keycap>Наступний</keycap>
+              </entry>
+              <entry>
+                <para>Наступна доріжка</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="lirc">
+      <title>Пульт інфрачервоного дистанційного керування Linux</title>
+      <para><application>Rhythmbox Music Player</application> надає додаток підтримки інфрачервоного дистанційного керування Linux (LIRC). Підтримуються такі рядки команд, використовуючи назву програми «rhythmbox»:</para>
+      <table frame="none">
+	  	<title>Клавіатурні скорочення для вікна</title>
+        <tgroup cols="2" colsep="0" rowsep="0">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry>Командний рядок</entry>
+              <entry>Дія</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry> <keycap>play</keycap> </entry>
+              <entry> <para>Почати відтворення</para> </entry>
+            </row>
+            <row>
+              <entry> <keycap>pause</keycap> </entry>
+              <entry> <para>Пауза відтворення</para> </entry>
+            </row>
+	    <row>
+	      <entry> <keycap>playpause</keycap> </entry>
+	      <entry> <para>Перемикання між режимами відтворення і паузи</para> </entry>
+	    </row>
+            <row>
+              <entry> <keycap>shuffle</keycap> </entry>
+              <entry> <para>Перемикання режиму перемішування</para> </entry>
+            </row>
+            <row>
+              <entry> <keycap>repeat</keycap> </entry>
+              <entry> <para>Перемикання режиму повторного відтворення</para> </entry>
+            </row>
+            <row>
+              <entry> <keycap>next</keycap> </entry>
+              <entry> <para>Перейти до наступної доріжки</para> </entry>
+            </row>
+            <row>
+              <entry> <keycap>previous</keycap> </entry>
+              <entry> <para>Перейти до попередньої доріжки</para> </entry>
+            </row>
+            <row>
+              <entry> <keycap>seek_forward</keycap> </entry>
+              <entry> <para>Перемотати на 10 секунд вперед відтворювану доріжку</para> </entry>
+            </row>
+            <row>
+              <entry> <keycap>seek_backward</keycap> </entry>
+              <entry> <para>Перемотати на 10 секунд назад відтворювану доріжку</para> </entry>
+            </row>
+            <row>
+              <entry> <keycap>volume_up</keycap> </entry>
+              <entry> <para>Збільшити рівень гучності на 10%</para> </entry>
+            </row>
+            <row>
+              <entry> <keycap>volume_down</keycap> </entry>
+              <entry> <para>Зменшити рівень гучності на 10%</para> </entry>
+            </row>
+            <row>
+              <entry> <keycap>mute</keycap> </entry>
+              <entry> <para>Приглушити гучність відтворення</para> </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+  </sect1>
+</article>

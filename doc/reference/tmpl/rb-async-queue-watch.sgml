@@ -1,0 +1,45 @@
+<!-- ##### SECTION Title ##### -->
+rb-async-queue-watch
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### USER_FUNCTION RBAsyncQueueWatchFunc ##### -->
+<para>
+
+</para>
+
+@item: 
+@data: 
+
+
+<!-- ##### FUNCTION rb_async_queue_watch_new ##### -->
+<para>
+
+</para>
+
+@queue: 
+@priority: 
+@callback: 
+@user_data: 
+@notify: 
+@context: 
+@Returns: 
+
+

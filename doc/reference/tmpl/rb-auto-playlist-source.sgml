@@ -1,0 +1,83 @@
+<!-- ##### SECTION Title ##### -->
+RBAutoPlaylistSource
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBAutoPlaylistSource ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT RBAutoPlaylistSourceClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+@action_group: 
+
+<!-- ##### FUNCTION rb_auto_playlist_source_new ##### -->
+<para>
+
+</para>
+
+@shell: 
+@name: 
+@local: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_auto_playlist_source_new_from_xml ##### -->
+<para>
+
+</para>
+
+@shell: 
+@node: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_auto_playlist_source_set_query ##### -->
+<para>
+
+</para>
+
+@source: 
+@query: 
+@limit_type: 
+@limit_value: 
+@sort_key: 
+@sort_order: 
+
+
+<!-- ##### FUNCTION rb_auto_playlist_source_get_query ##### -->
+<para>
+
+</para>
+
+@source: 
+@query: 
+@limit_type: 
+@limit_value: 
+@sort_key: 
+@sort_order: 
+
+

@@ -1,0 +1,94 @@
+<!-- ##### SECTION Title ##### -->
+RBSongInfo
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBSongInfo ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBSongInfo::post-metadata-change ##### -->
+<para>
+
+</para>
+
+@rbsonginfo: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBSongInfo::pre-metadata-change ##### -->
+<para>
+
+</para>
+
+@rbsonginfo: the object which received the signal.
+@arg1: 
+
+<!-- ##### ARG RBSongInfo:current-entry ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBSongInfo:entry-view ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBSongInfo:selected-entries ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBSongInfo:source ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBSongInfoClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@pre_metadata_change: 
+@post_metadata_change: 
+
+<!-- ##### FUNCTION rb_song_info_new ##### -->
+<para>
+
+</para>
+
+@source: 
+@entry_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_song_info_append_page ##### -->
+<para>
+
+</para>
+
+@info: 
+@title: 
+@page: 
+@Returns: 
+
+

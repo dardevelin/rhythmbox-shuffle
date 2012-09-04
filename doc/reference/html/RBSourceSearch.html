@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBSourceSearch</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch06.html" title="Sources">
+<link rel="prev" href="rhythmbox-RBRemovableMediaSource.html" title="RBRemovableMediaSource">
+<link rel="next" href="RBSourceSearchBasic.html" title="RBSourceSearchBasic">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rhythmbox-RBRemovableMediaSource.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBSourceSearchBasic.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBSourceSearch.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBSourceSearch.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBSourceSearch.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBSourceSearch"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBSourceSearch.top_of_page"></a>RBSourceSearch</span></h2>
+<p>RBSourceSearch — Base class for source search implementations</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBSourceSearch.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBSourceSearch.html#RBSourceSearch-struct" title="struct RBSourceSearch">RBSourceSearch</a>;
+struct              <a class="link" href="RBSourceSearch.html#RBSourceSearchClass" title="struct RBSourceSearchClass">RBSourceSearchClass</a>;
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSourceSearch.html#rb-source-search-is-subset" title="rb_source_search_is_subset ()">rb_source_search_is_subset</a>          (<em class="parameter"><code><a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> *search</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *current</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *next</code></em>);
+<a class="link" href="RhythmDB.html#RhythmDBQuery"><span class="returnvalue">RhythmDBQuery</span></a> *     <a class="link" href="RBSourceSearch.html#rb-source-search-create-query" title="rb_source_search_create_query ()">rb_source_search_create_query</a>       (<em class="parameter"><code><a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> *search</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *search_text</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSourceSearch.html#rb-source-search-action-attach" title="rb_source_search_action_attach ()">rb_source_search_action_attach</a>      (<em class="parameter"><code><a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> *search</code></em>,
+                                                         <em class="parameter"><code><span class="type">GObject</span> *action</code></em>);
+<a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="returnvalue">RBSourceSearch</span></a> *    <a class="link" href="RBSourceSearch.html#rb-source-search-get-from-action" title="rb_source_search_get_from_action ()">rb_source_search_get_from_action</a>    (<em class="parameter"><code><span class="type">GObject</span> *action</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSourceSearch.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----RBSourceSearch
+         +----<a class="link" href="RBSourceSearchBasic.html" title="RBSourceSearchBasic">RBSourceSearchBasic</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSourceSearch.description"></a><h2>Description</h2>
+<p>
+These translate the text in the search entry box into a
+RhythmDBQuery.  The basic implementation will return
+a query like RHYTHMDB_QUERY_PROP_LIKE, RHYTHMDB_PROP_SEARCH_MATCH,
+text.  Simple variants can restrict the search to single
+properties (artist, album, genre).  More complicated searches
+could implement something like the Xesam User Query spec.
+</p>
+<p>
+The source header finds the search instance to use by looking
+for the 'rb-source-search' data item on the active search
+action.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBSourceSearch.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBSourceSearch-struct"></a><h3>struct RBSourceSearch</h3>
+<pre class="programlisting">struct RBSourceSearch;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSourceSearchClass"></a><h3>struct RBSourceSearchClass</h3>
+<pre class="programlisting">struct RBSourceSearchClass {
+	GObjectClass parent_class;
+
+	/* virtual functions */
+	gboolean       (*is_subset) (RBSourceSearch *search,
+					 const char *current,
+					 const char *next);
+	RhythmDBQuery *(*create_query) (RBSourceSearch *search,
+					 RhythmDB *db,
+					 const char *search_text);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-search-is-subset"></a><h3>rb_source_search_is_subset ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_source_search_is_subset          (<em class="parameter"><code><a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> *search</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *current</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *next</code></em>);</pre>
+<p>
+Determines whether the new search text will result in a
+subset of entries matched by the previous search.  This is
+used to optimise the search query.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>search</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>current</code></em> :</span></p></td>
+<td>the current search text (or NULL if the current search was done with a different
+search implementation and so cannot be considered)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>next</code></em> :</span></p></td>
+<td>the new search text</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE iff the new search text will match a subset of those matched by the current search.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-search-create-query"></a><h3>rb_source_search_create_query ()</h3>
+<pre class="programlisting"><a class="link" href="RhythmDB.html#RhythmDBQuery"><span class="returnvalue">RhythmDBQuery</span></a> *     rb_source_search_create_query       (<em class="parameter"><code><a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> *search</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *search_text</code></em>);</pre>
+<p>
+Creates a <a class="link" href="RhythmDB.html#RhythmDBQuery"><span class="type">RhythmDBQuery</span></a> from the user's search text.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>search</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>search_text</code></em> :</span></p></td>
+<td>the search text</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="RhythmDB.html#RhythmDBQuery"><span class="type">RhythmDBQuery</span></a> for the source to use. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-search-action-attach"></a><h3>rb_source_search_action_attach ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_source_search_action_attach      (<em class="parameter"><code><a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> *search</code></em>,
+                                                         <em class="parameter"><code><span class="type">GObject</span> *action</code></em>);</pre>
+<p>
+Attaches a <a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> to a UI action so that
+the search implementation will be used when the action is active.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>search</code></em> :</span></p></td>
+<td>
+<a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> to associate with the action</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>action</code></em> :</span></p></td>
+<td>UI action to associate the search with</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-search-get-from-action"></a><h3>rb_source_search_get_from_action ()</h3>
+<pre class="programlisting"><a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="returnvalue">RBSourceSearch</span></a> *    rb_source_search_get_from_action    (<em class="parameter"><code><span class="type">GObject</span> *action</code></em>);</pre>
+<p>
+Returns the <a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> associated with the
+specified UI action.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>action</code></em> :</span></p></td>
+<td>the action to find the <a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> for</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>associated <a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a>. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

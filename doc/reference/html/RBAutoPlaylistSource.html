@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBAutoPlaylistSource</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch06.html" title="Sources">
+<link rel="prev" href="ch06.html" title="Sources">
+<link rel="next" href="RBBrowserSource.html" title="RBBrowserSource">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch06.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBBrowserSource.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBAutoPlaylistSource.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBAutoPlaylistSource.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBAutoPlaylistSource.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBAutoPlaylistSource.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBAutoPlaylistSource"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBAutoPlaylistSource.top_of_page"></a>RBAutoPlaylistSource</span></h2>
+<p>RBAutoPlaylistSource — automatic playlist source, based on a database query</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBAutoPlaylistSource.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBAutoPlaylistSource.html#RBAutoPlaylistSource-struct" title="struct RBAutoPlaylistSource">RBAutoPlaylistSource</a>;
+struct              <a class="link" href="RBAutoPlaylistSource.html#RBAutoPlaylistSourceClass" title="struct RBAutoPlaylistSourceClass">RBAutoPlaylistSourceClass</a>;
+<a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          <a class="link" href="RBAutoPlaylistSource.html#rb-auto-playlist-source-new" title="rb_auto_playlist_source_new ()">rb_auto_playlist_source_new</a>         (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *name</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> local</code></em>);
+<a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          <a class="link" href="RBAutoPlaylistSource.html#rb-auto-playlist-source-new-from-xml" title="rb_auto_playlist_source_new_from_xml ()">rb_auto_playlist_source_new_from_xml</a>
+                                                        (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">xmlNodePtr</span> node</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBAutoPlaylistSource.html#rb-auto-playlist-source-set-query" title="rb_auto_playlist_source_set_query ()">rb_auto_playlist_source_set_query</a>   (<em class="parameter"><code><a class="link" href="RBAutoPlaylistSource.html" title="RBAutoPlaylistSource"><span class="type">RBAutoPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> *query</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBQueryModel.html#RhythmDBQueryModelLimitType"><span class="type">RhythmDBQueryModelLimitType</span></a> limit_type</code></em>,
+                                                         <em class="parameter"><code><span class="type">GValueArray</span> *limit_value</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *sort_key</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> sort_order</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBAutoPlaylistSource.html#rb-auto-playlist-source-get-query" title="rb_auto_playlist_source_get_query ()">rb_auto_playlist_source_get_query</a>   (<em class="parameter"><code><a class="link" href="RBAutoPlaylistSource.html" title="RBAutoPlaylistSource"><span class="type">RBAutoPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> **query</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBQueryModel.html#RhythmDBQueryModelLimitType"><span class="type">RhythmDBQueryModelLimitType</span></a> *limit_type</code></em>,
+                                                         <em class="parameter"><code><span class="type">GValueArray</span> **limit_value</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **sort_key</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> *sort_order</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBAutoPlaylistSource.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBox
+                           +----GtkHBox
+                                 +----RBDisplayPage
+                                       +----<a class="link" href="RBSource.html" title="RBSource">RBSource</a>
+                                             +----<a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource">RBPlaylistSource</a>
+                                                   +----RBAutoPlaylistSource
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBAutoPlaylistSource.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBAutoPlaylistSource implements
+ AtkImplementorIface,  GtkBuildable and  GtkOrientable.</p>
+</div>
+<div class="refsect1">
+<a name="RBAutoPlaylistSource.description"></a><h2>Description</h2>
+<p>
+A playlist populated with the results of a database query.
+</p>
+<p>
+The query, limit, and sort settings are saved to the playlists file, so
+they are persistent.
+</p>
+<p>
+Searching is implemented by appending the query criteria generated from
+the search text to the query.  Browsing is implemented by using the base
+query model (or a query model using the query generated from the search text,
+there is some) as the input to a <a class="link" href="RBLibraryBrowser.html" title="RBLibraryBrowser"><span class="type">RBLibraryBrowser</span></a>.
+</p>
+<p>
+If the user has not set a sort order as part of the playlist definition,
+the entry view columns are made clickable to allow the user to sort the
+results.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBAutoPlaylistSource.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBAutoPlaylistSource-struct"></a><h3>struct RBAutoPlaylistSource</h3>
+<pre class="programlisting">struct RBAutoPlaylistSource;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBAutoPlaylistSourceClass"></a><h3>struct RBAutoPlaylistSourceClass</h3>
+<pre class="programlisting">struct RBAutoPlaylistSourceClass {
+	RBPlaylistSourceClass parent;
+
+	GtkActionGroup *action_group;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-auto-playlist-source-new"></a><h3>rb_auto_playlist_source_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          rb_auto_playlist_source_new         (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *name</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> local</code></em>);</pre>
+<p>
+Creates a new automatic playlist source, initially with an empty query.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the name of the new playlist</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>local</code></em> :</span></p></td>
+<td>if TRUE, the playlist will be considered local</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the new source</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-auto-playlist-source-new-from-xml"></a><h3>rb_auto_playlist_source_new_from_xml ()</h3>
+<pre class="programlisting"><a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          rb_auto_playlist_source_new_from_xml
+                                                        (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">xmlNodePtr</span> node</code></em>);</pre>
+<p>
+Creates a new auto playlist source by parsing an XML-encoded query.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>libxml node containing the playlist</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the new source</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-auto-playlist-source-set-query"></a><h3>rb_auto_playlist_source_set_query ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_auto_playlist_source_set_query   (<em class="parameter"><code><a class="link" href="RBAutoPlaylistSource.html" title="RBAutoPlaylistSource"><span class="type">RBAutoPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> *query</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBQueryModel.html#RhythmDBQueryModelLimitType"><span class="type">RhythmDBQueryModelLimitType</span></a> limit_type</code></em>,
+                                                         <em class="parameter"><code><span class="type">GValueArray</span> *limit_value</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *sort_key</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> sort_order</code></em>);</pre>
+<p>
+Sets the database query used to populate the playlist, and also the limit on
+playlist size, and the sorting type used.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>the <a class="link" href="RBAutoPlaylistSource.html" title="RBAutoPlaylistSource"><span class="type">RBAutoPlaylistSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>query</code></em> :</span></p></td>
+<td>the new database query. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit_type</code></em> :</span></p></td>
+<td>the playlist limit type</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit_value</code></em> :</span></p></td>
+<td>the playlist limit value</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sort_key</code></em> :</span></p></td>
+<td>the sorting key</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sort_order</code></em> :</span></p></td>
+<td>the sorting direction (as a <span class="type">GtkSortType</span>)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-auto-playlist-source-get-query"></a><h3>rb_auto_playlist_source_get_query ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_auto_playlist_source_get_query   (<em class="parameter"><code><a class="link" href="RBAutoPlaylistSource.html" title="RBAutoPlaylistSource"><span class="type">RBAutoPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> **query</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBQueryModel.html#RhythmDBQueryModelLimitType"><span class="type">RhythmDBQueryModelLimitType</span></a> *limit_type</code></em>,
+                                                         <em class="parameter"><code><span class="type">GValueArray</span> **limit_value</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> **sort_key</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> *sort_order</code></em>);</pre>
+<p>
+Extracts the current query, playlist limit, and sorting settings for the playlist.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>the <a class="link" href="RBAutoPlaylistSource.html" title="RBAutoPlaylistSource"><span class="type">RBAutoPlaylistSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>query</code></em> :</span></p></td>
+<td>returns the database query for the playlist. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a> caller-allocates][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit_type</code></em> :</span></p></td>
+<td>returns the playlist limit type. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a> callee-allocates]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit_value</code></em> :</span></p></td>
+<td>returns the playlist limit value. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a> callee-allocates]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sort_key</code></em> :</span></p></td>
+<td>returns the playlist sorting key. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a> callee-allocates][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sort_order</code></em> :</span></p></td>
+<td>returns the playlist sorting direction (as a <span class="type">GtkSortType</span>). <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a> callee-allocates]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

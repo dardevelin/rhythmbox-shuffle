@@ -1,0 +1,292 @@
+<!-- ##### SECTION Title ##### -->
+RBPlayer
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBPlayer ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBPlayer::buffering ##### -->
+<para>
+
+</para>
+
+@rbplayer: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL RBPlayer::eos ##### -->
+<para>
+
+</para>
+
+@rbplayer: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL RBPlayer::error ##### -->
+<para>
+
+</para>
+
+@rbplayer: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL RBPlayer::event ##### -->
+<para>
+
+</para>
+
+@rbplayer: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL RBPlayer::image ##### -->
+<para>
+
+</para>
+
+@rbplayer: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL RBPlayer::info ##### -->
+<para>
+
+</para>
+
+@rbplayer: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+
+<!-- ##### SIGNAL RBPlayer::playing-stream ##### -->
+<para>
+
+</para>
+
+@rbplayer: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBPlayer::redirect ##### -->
+<para>
+
+</para>
+
+@rbplayer: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL RBPlayer::tick ##### -->
+<para>
+
+</para>
+
+@rbplayer: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+
+<!-- ##### SIGNAL RBPlayer::volume-changed ##### -->
+<para>
+
+</para>
+
+@rbplayer: the object which received the signal.
+@arg1: 
+
+<!-- ##### STRUCT RBPlayerIface ##### -->
+<para>
+
+</para>
+
+@g_iface: 
+@open: 
+@opened: 
+@close: 
+@play: 
+@pause: 
+@playing: 
+@set_volume: 
+@get_volume: 
+@seekable: 
+@set_time: 
+@get_time: 
+@multiple_open: 
+@playing_stream: 
+@eos: 
+@info: 
+@buffering: 
+@error: 
+@tick: 
+@event: 
+@volume_changed: 
+@image: 
+@redirect: 
+
+<!-- ##### ENUM RBPlayerPlayType ##### -->
+<para>
+
+</para>
+
+@RB_PLAYER_PLAY_REPLACE: 
+@RB_PLAYER_PLAY_AFTER_EOS: 
+@RB_PLAYER_PLAY_CROSSFADE: 
+
+<!-- ##### ENUM RBPlayerError ##### -->
+<para>
+
+</para>
+
+@RB_PLAYER_ERROR_NO_AUDIO: 
+@RB_PLAYER_ERROR_GENERAL: 
+@RB_PLAYER_ERROR_INTERNAL: 
+@RB_PLAYER_ERROR_NOT_FOUND: 
+
+<!-- ##### FUNCTION rb_player_new ##### -->
+<para>
+
+</para>
+
+@want_crossfade: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_player_open ##### -->
+<para>
+
+</para>
+
+@player: 
+@uri: 
+@stream_data: 
+@stream_data_destroy: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_player_opened ##### -->
+<para>
+
+</para>
+
+@player: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_player_close ##### -->
+<para>
+
+</para>
+
+@player: 
+@uri: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_player_play ##### -->
+<para>
+
+</para>
+
+@player: 
+@play_type: 
+@crossfade: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_player_pause ##### -->
+<para>
+
+</para>
+
+@player: 
+
+
+<!-- ##### FUNCTION rb_player_playing ##### -->
+<para>
+
+</para>
+
+@player: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_player_set_volume ##### -->
+<para>
+
+</para>
+
+@player: 
+@volume: 
+
+
+<!-- ##### FUNCTION rb_player_get_volume ##### -->
+<para>
+
+</para>
+
+@player: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_player_seekable ##### -->
+<para>
+
+</para>
+
+@player: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_player_set_time ##### -->
+<para>
+
+</para>
+
+@player: 
+@newtime: 
+
+
+<!-- ##### FUNCTION rb_player_get_time ##### -->
+<para>
+
+</para>
+
+@player: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_player_multiple_open ##### -->
+<para>
+
+</para>
+
+@player: 
+@Returns: 
+
+

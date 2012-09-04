@@ -1,0 +1,54 @@
+<!-- ##### SECTION Title ##### -->
+RBShellPreferences
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBShellPreferences ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT RBShellPreferencesClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION rb_shell_preferences_new ##### -->
+<para>
+
+</para>
+
+@views: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_shell_preferences_append_page ##### -->
+<para>
+
+</para>
+
+@prefs: 
+@name: 
+@widget: 
+
+

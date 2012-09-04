@@ -1,0 +1,77 @@
+<!-- ##### SECTION Title ##### -->
+RBSourceSearch
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBSourceSearch ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT RBSourceSearchClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@is_subset: 
+@create_query: 
+
+<!-- ##### FUNCTION rb_source_search_is_subset ##### -->
+<para>
+
+</para>
+
+@search: 
+@current: 
+@next: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_source_search_create_query ##### -->
+<para>
+
+</para>
+
+@search: 
+@db: 
+@search_text: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_source_search_action_attach ##### -->
+<para>
+
+</para>
+
+@search: 
+@action: 
+
+
+<!-- ##### FUNCTION rb_source_search_get_from_action ##### -->
+<para>
+
+</para>
+
+@action: 
+@Returns: 
+
+

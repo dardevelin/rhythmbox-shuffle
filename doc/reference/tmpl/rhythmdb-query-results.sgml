@@ -1,0 +1,64 @@
+<!-- ##### SECTION Title ##### -->
+RhythmDBQueryResults
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RhythmDBQueryResults ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT RhythmDBQueryResultsIface ##### -->
+<para>
+
+</para>
+
+@g_iface: 
+@set_query: 
+@add_results: 
+@query_complete: 
+
+<!-- ##### FUNCTION rhythmdb_query_results_set_query ##### -->
+<para>
+
+</para>
+
+@results: 
+@query: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_results_add_results ##### -->
+<para>
+
+</para>
+
+@results: 
+@entries: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_results_query_complete ##### -->
+<para>
+
+</para>
+
+@results: 
+
+

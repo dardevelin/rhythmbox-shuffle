@@ -1,0 +1,343 @@
+<!-- ##### SECTION Title ##### -->
+rb-file-helpers
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION rb_file ##### -->
+<para>
+
+</para>
+
+@filename: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_user_data_dir ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_user_cache_dir ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_music_dir ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_find_user_data_file ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_find_user_cache_file ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_file_helpers_init ##### -->
+<para>
+
+</para>
+
+@uninstalled: 
+
+
+<!-- ##### FUNCTION rb_file_helpers_shutdown ##### -->
+<para>
+
+</para>
+
+@void: 
+
+
+<!-- ##### FUNCTION rb_uri_resolve_symlink ##### -->
+<para>
+
+</para>
+
+@uri: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_is_directory ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_exists ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_is_readable ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_is_writable ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_is_local ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_is_hidden ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_could_be_podcast ##### -->
+<para>
+
+</para>
+
+@uri: 
+@is_opml: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_make_hidden ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_handle_recursively ##### -->
+<para>
+
+</para>
+
+@uri: 
+@cancel: 
+@func: 
+@user_data: 
+
+
+<!-- ##### FUNCTION rb_uri_handle_recursively_async ##### -->
+<para>
+
+</para>
+
+@uri: 
+@cancel: 
+@func: 
+@user_data: 
+@data_destroy: 
+
+
+<!-- ##### FUNCTION rb_uri_mkstemp ##### -->
+<para>
+
+</para>
+
+@prefix: 
+@uri_ret: 
+@stream: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_canonicalise_uri ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_append_path ##### -->
+<para>
+
+</para>
+
+@uri: 
+@path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_append_uri ##### -->
+<para>
+
+</para>
+
+@uri: 
+@fragment: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_get_dir_name ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_get_short_path_name ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_check_dir_has_space ##### -->
+<para>
+
+</para>
+
+@dir: 
+@bytes_needed: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_check_dir_has_space_uri ##### -->
+<para>
+
+</para>
+
+@uri: 
+@bytes_needed: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_get_mount_point ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_create_parent_dirs ##### -->
+<para>
+
+</para>
+
+@uri: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_file_find_extant_parent ##### -->
+<para>
+
+</para>
+
+@file: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_get_filesystem_type ##### -->
+<para>
+
+</para>
+
+@uri: 
+@mount_point: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_sanitize_path_for_msdos_filesystem ##### -->
+<para>
+
+</para>
+
+@path: 
+
+
+<!-- ##### FUNCTION rb_sanitize_uri_for_filesystem ##### -->
+<para>
+
+</para>
+
+@uri: 
+@Returns: 
+
+
+<!-- ##### USER_FUNCTION RBUriRecurseFunc ##### -->
+<para>
+
+</para>
+
+@file: 
+@dir: 
+@data: 
+@Returns: 
+
+

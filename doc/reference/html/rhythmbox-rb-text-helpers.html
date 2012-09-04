@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>rb-text-helpers</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch02.html" title="Lib">
+<link rel="prev" href="rhythmbox-rb-util.html" title="rb-util">
+<link rel="next" href="ch03.html" title="Metadata">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rhythmbox-rb-util.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="ch03.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#rhythmbox-rb-text-helpers.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#rhythmbox-rb-text-helpers.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="rhythmbox-rb-text-helpers"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="rhythmbox-rb-text-helpers.top_of_page"></a>rb-text-helpers</span></h2>
+<p>rb-text-helpers — text direction (LTR/RTL) functions</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="rhythmbox-rb-text-helpers.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><span class="returnvalue">gboolean</span>            <a class="link" href="rhythmbox-rb-text-helpers.html#rb-text-direction-conflict" title="rb_text_direction_conflict ()">rb_text_direction_conflict</a>          (<em class="parameter"><code><span class="type">PangoDirection</span> dir1</code></em>,
+                                                         <em class="parameter"><code><span class="type">PangoDirection</span> dir2</code></em>);
+<span class="returnvalue">PangoDirection</span>      <a class="link" href="rhythmbox-rb-text-helpers.html#rb-text-common-direction" title="rb_text_common_direction ()">rb_text_common_direction</a>            (<em class="parameter"><code>const <span class="type">char</span> *first</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);
+<span class="returnvalue">char</span> *              <a class="link" href="rhythmbox-rb-text-helpers.html#rb-text-cat" title="rb_text_cat ()">rb_text_cat</a>                         (<em class="parameter"><code><span class="type">PangoDirection</span> base_dir</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-text-helpers.description"></a><h2>Description</h2>
+<p>
+Provides some helper functions for constructing strings that
+may include both left-to-right and right-to-left text.
+</p>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-text-helpers.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="rb-text-direction-conflict"></a><h3>rb_text_direction_conflict ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_text_direction_conflict          (<em class="parameter"><code><span class="type">PangoDirection</span> dir1</code></em>,
+                                                         <em class="parameter"><code><span class="type">PangoDirection</span> dir2</code></em>);</pre>
+<p>
+Direction conflict here means the two directions are defined (non-neutral)
+and they are different.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dir1</code></em> :</span></p></td>
+<td>direction A</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dir2</code></em> :</span></p></td>
+<td>direction B</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the two directions conflict.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-text-common-direction"></a><h3>rb_text_common_direction ()</h3>
+<pre class="programlisting"><span class="returnvalue">PangoDirection</span>      rb_text_common_direction            (<em class="parameter"><code>const <span class="type">char</span> *first</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);</pre>
+<p>
+This functions checks the direction of all given strings and:
+</p>
+<p>
+1. If all strings are direction neutral, returns <code class="literal">PANGO_DIRECTION_NEUTRAL</code>;
+</p>
+<p>
+2. If all strings are either LTR or neutral, returns <code class="literal">PANGO_DIRECTION_LTR</code>;
+</p>
+<p>
+3. If all strings are either RTL or neutral, returns <code class="literal">PANGO_DIRECTION_RTL</code>;
+</p>
+<p>
+4. If at least one is RTL and one LTR, returns <code class="literal">PANGO_DIRECTION_NEUTRAL</code>.
+</p>
+<p>
+Note: neutral (1) and mixed (4) are two very different situations,
+they share a return code here only because they're the same for our
+specific use.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>first</code></em> :</span></p></td>
+<td>first string</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td>rest of strings, terminated with <code class="literal">NULL</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>common direction of all strings, as defined above.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-text-cat"></a><h3>rb_text_cat ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> *              rb_text_cat                         (<em class="parameter"><code><span class="type">PangoDirection</span> base_dir</code></em>,
+                                                         <em class="parameter"><code>...</code></em>);</pre>
+<p>
+This function concatenates strings to a single string, preserving
+each part's original direction (LTR or RTL) using unicode markup,
+as detailed here: http://unicode.org/reports/tr9/.
+</p>
+<p>
+It is called like this:
+</p>
+<p>
+s = rb_text_cat(base_dir, str1, format1, ..., strN, formatN, <code class="literal">NULL</code>)
+</p>
+<p>
+Format is a printf format with exactly one %s. "%s" or "" will
+insert the string as is.
+</p>
+<p>
+Any string that is empty ("") will be skipped, its format must still be
+passed.
+</p>
+<p>
+A space is inserted between strings.
+</p>
+<p>
+The algorithm:
+</p>
+<p>
+1. Caller supplies the base direction of the result in base_dir.
+</p>
+<p>
+2. Insert either LRM or RLM at the beginning of the string to set
+   its base direction, according to base_dir.
+</p>
+<p>
+3. Find the direction of each string using pango.
+</p>
+<p>
+4. For strings that have the same direction as the base direction,
+   just insert them in.
+</p>
+<p>
+5. For strings that have the opposite direction than the base one,
+   insert them surrounded with embedding codes RLE/LRE .. PDF.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>base_dir</code></em> :</span></p></td>
+<td>direction of the result string.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td>pairs of strings (content, format) terminated with <code class="literal">NULL</code>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new string containing the result.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

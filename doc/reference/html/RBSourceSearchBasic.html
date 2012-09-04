@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBSourceSearchBasic</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch06.html" title="Sources">
+<link rel="prev" href="RBSourceSearch.html" title="RBSourceSearch">
+<link rel="next" href="RBSource.html" title="RBSource">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBSourceSearch.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBSource.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBSourceSearchBasic.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBSourceSearchBasic.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBSourceSearchBasic.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBSourceSearchBasic.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBSourceSearchBasic"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBSourceSearchBasic.top_of_page"></a>RBSourceSearchBasic</span></h2>
+<p>RBSourceSearchBasic — Simple implementation of <a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a></p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBSourceSearchBasic.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBSourceSearchBasic.html#RBSourceSearchBasic-struct" title="struct RBSourceSearchBasic">RBSourceSearchBasic</a>;
+struct              <a class="link" href="RBSourceSearchBasic.html#RBSourceSearchBasicClass" title="struct RBSourceSearchBasicClass">RBSourceSearchBasicClass</a>;
+<a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="returnvalue">RBSourceSearch</span></a> *    <a class="link" href="RBSourceSearchBasic.html#rb-source-search-basic-new" title="rb_source_search_basic_new ()">rb_source_search_basic_new</a>          (<em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBPropType"><span class="type">RhythmDBPropType</span></a> prop</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSourceSearchBasic.html#rb-source-search-basic-create-for-actions" title="rb_source_search_basic_create_for_actions ()">rb_source_search_basic_create_for_actions</a>
+                                                        (<em class="parameter"><code><span class="type">GtkActionGroup</span> *action_group</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkRadioActionEntry</span> *actions</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> n_actions</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSourceSearchBasic.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----<a class="link" href="RBSourceSearch.html" title="RBSourceSearch">RBSourceSearch</a>
+         +----RBSourceSearchBasic
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSourceSearchBasic.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBSourceSearchBasic.html#RBSourceSearchBasic--prop" title='The "prop" property'>prop</a>"                     <span class="type">gint</span>                  : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSourceSearchBasic.description"></a><h2>Description</h2>
+<p>
+This implementation of <a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> constructs queries that
+search on a single <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> property.  It's useful for
+providing basic searches.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBSourceSearchBasic.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBSourceSearchBasic-struct"></a><h3>struct RBSourceSearchBasic</h3>
+<pre class="programlisting">struct RBSourceSearchBasic;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSourceSearchBasicClass"></a><h3>struct RBSourceSearchBasicClass</h3>
+<pre class="programlisting">struct RBSourceSearchBasicClass {
+	RBSourceSearchClass parent_class;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-search-basic-new"></a><h3>rb_source_search_basic_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="returnvalue">RBSourceSearch</span></a> *    rb_source_search_basic_new          (<em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBPropType"><span class="type">RhythmDBPropType</span></a> prop</code></em>);</pre>
+<p>
+Creates a new <a class="link" href="RBSourceSearchBasic.html" title="RBSourceSearchBasic"><span class="type">RBSourceSearchBasic</span></a> instance.
+This performs simple string matching on a specified
+property.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html#RhythmDBPropType"><span class="type">RhythmDBPropType</span></a> to search</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>newly created <a class="link" href="RBSourceSearchBasic.html" title="RBSourceSearchBasic"><span class="type">RBSourceSearchBasic</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-search-basic-create-for-actions"></a><h3>rb_source_search_basic_create_for_actions ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_source_search_basic_create_for_actions
+                                                        (<em class="parameter"><code><span class="type">GtkActionGroup</span> *action_group</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkRadioActionEntry</span> *actions</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> n_actions</code></em>);</pre>
+<p>
+Creates <a class="link" href="RBSourceSearchBasic.html" title="RBSourceSearchBasic"><span class="type">RBSourceSearchBasic</span></a> instances for a set of
+search actions and associates them with the actions.
+The property to match on is taken from the action
+value in the GtkRadioActionEntry structure.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>action_group</code></em> :</span></p></td>
+<td>the GtkActionGroup containing the actions</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actions</code></em> :</span></p></td>
+<td>the GtkRadioActionEntries for the actions</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_actions</code></em> :</span></p></td>
+<td>the number of actions</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBSourceSearchBasic.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBSourceSearchBasic--prop"></a><h3>The <code class="literal">"prop"</code> property</h3>
+<pre class="programlisting">  "prop"                     <span class="type">gint</span>                  : Read / Write / Construct Only</pre>
+<p>Property id.</p>
+<p>Allowed values: [0,67]</p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

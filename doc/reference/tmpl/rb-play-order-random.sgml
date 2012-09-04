@@ -1,0 +1,36 @@
+<!-- ##### SECTION Title ##### -->
+RBRandomPlayOrder
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBRandomPlayOrder ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT RBRandomPlayOrderClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@get_entry_weight: 
+

@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>rb-rating-helper</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch07.html" title="Widgets">
+<link rel="prev" href="RBQueryCreator.html" title="RBQueryCreator">
+<link rel="next" href="RBRating.html" title="RBRating">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBQueryCreator.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBRating.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#rhythmbox-rb-rating-helper.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#rhythmbox-rb-rating-helper.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="rhythmbox-rb-rating-helper"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="rhythmbox-rb-rating-helper.top_of_page"></a>rb-rating-helper</span></h2>
+<p>rb-rating-helper — helper functions for displaying song ratings</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="rhythmbox-rb-rating-helper.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="rhythmbox-rb-rating-helper.html#RBRatingPixbufs" title="RBRatingPixbufs">RBRatingPixbufs</a>;
+#define             <a class="link" href="rhythmbox-rb-rating-helper.html#RB-RATING-MAX-SCORE:CAPS" title="RB_RATING_MAX_SCORE">RB_RATING_MAX_SCORE</a>
+<span class="returnvalue">gboolean</span>            <a class="link" href="rhythmbox-rb-rating-helper.html#rb-rating-render-stars" title="rb_rating_render_stars ()">rb_rating_render_stars</a>              (<em class="parameter"><code><span class="type">GtkWidget</span> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="rhythmbox-rb-rating-helper.html#RBRatingPixbufs" title="RBRatingPixbufs"><span class="type">RBRatingPixbufs</span></a> *pixbufs</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> x</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> y</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> x_offset</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> y_offset</code></em>,
+                                                         <em class="parameter"><code><span class="type">gdouble</span> rating</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> selected</code></em>);
+<span class="returnvalue">double</span>              <a class="link" href="rhythmbox-rb-rating-helper.html#rb-rating-get-rating-from-widget" title="rb_rating_get_rating_from_widget ()">rb_rating_get_rating_from_widget</a>    (<em class="parameter"><code><span class="type">GtkWidget</span> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> widget_x</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> widget_width</code></em>,
+                                                         <em class="parameter"><code><span class="type">double</span> current_rating</code></em>);
+<a class="link" href="rhythmbox-rb-rating-helper.html#RBRatingPixbufs" title="RBRatingPixbufs"><span class="returnvalue">RBRatingPixbufs</span></a> *   <a class="link" href="rhythmbox-rb-rating-helper.html#rb-rating-pixbufs-new" title="rb_rating_pixbufs_new ()">rb_rating_pixbufs_new</a>               (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-rb-rating-helper.html#rb-rating-pixbufs-free" title="rb_rating_pixbufs_free ()">rb_rating_pixbufs_free</a>              (<em class="parameter"><code><a class="link" href="rhythmbox-rb-rating-helper.html#RBRatingPixbufs" title="RBRatingPixbufs"><span class="type">RBRatingPixbufs</span></a> *pixbufs</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-rb-rating-helper.html#rb-rating-install-rating-property" title="rb_rating_install_rating_property ()">rb_rating_install_rating_property</a>   (<em class="parameter"><code><span class="type">GObjectClass</span> *klass</code></em>,
+                                                         <em class="parameter"><code><span class="type">gulong</span> prop</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-rating-helper.description"></a><h2>Description</h2>
+<p>
+A few helper functions for dealing with ratings.  These are shared
+between <a class="link" href="RBRating.html" title="RBRating"><span class="type">RBRating</span></a> and <a class="link" href="RBCellRendererRating.html" title="RBCellRendererRating"><span class="type">RBCellRendererRating</span></a>.
+</p>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-rating-helper.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBRatingPixbufs"></a><h3>RBRatingPixbufs</h3>
+<pre class="programlisting">typedef struct _RBRatingPixbufs RBRatingPixbufs;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RB-RATING-MAX-SCORE:CAPS"></a><h3>RB_RATING_MAX_SCORE</h3>
+<pre class="programlisting">#define RB_RATING_MAX_SCORE 5
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-rating-render-stars"></a><h3>rb_rating_render_stars ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_rating_render_stars              (<em class="parameter"><code><span class="type">GtkWidget</span> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="rhythmbox-rb-rating-helper.html#RBRatingPixbufs" title="RBRatingPixbufs"><span class="type">RBRatingPixbufs</span></a> *pixbufs</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> x</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> y</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> x_offset</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> y_offset</code></em>,
+                                                         <em class="parameter"><code><span class="type">gdouble</span> rating</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> selected</code></em>);</pre>
+<p>
+Renders a rating as a row of stars.  floor(<em class="parameter"><code>rating</code></em>) large stars
+are drawn, followed by 5-floor(<em class="parameter"><code>rating</code></em>) small stars.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>a <span class="type">GtkWidget</span> to render on behalf of</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cr</code></em> :</span></p></td>
+<td>cairo context to render into</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pixbufs</code></em> :</span></p></td>
+<td>a <a class="link" href="rhythmbox-rb-rating-helper.html#RBRatingPixbufs" title="RBRatingPixbufs"><span class="type">RBRatingPixbufs</span></a> structure</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>source X coordinate within the rating pixbufs (usually 0)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>source Y coordinate within the rating pixbufs (usually 0)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x_offset</code></em> :</span></p></td>
+<td>destination X coordinate within the window</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y_offset</code></em> :</span></p></td>
+<td>destination Y coordinate within the window</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rating</code></em> :</span></p></td>
+<td>the rating to display (between 0.0 and 5.0)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selected</code></em> :</span></p></td>
+<td>TRUE if the widget is currently selected for input</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if the stars were drawn successfully</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-rating-get-rating-from-widget"></a><h3>rb_rating_get_rating_from_widget ()</h3>
+<pre class="programlisting"><span class="returnvalue">double</span>              rb_rating_get_rating_from_widget    (<em class="parameter"><code><span class="type">GtkWidget</span> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> widget_x</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> widget_width</code></em>,
+                                                         <em class="parameter"><code><span class="type">double</span> current_rating</code></em>);</pre>
+<p>
+Updates the rating for a widget after the user clicks on the
+rating.  If the user clicks on the Nth star, the rating is set
+to N, unless the rating is already N, in which case the rating is
+set to N-1.  This allows the user to set the rating to 0.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>the <span class="type">GtkWidget</span> displaying the rating</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget_x</code></em> :</span></p></td>
+<td>x component of the position to query</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget_width</code></em> :</span></p></td>
+<td>width of the widget</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>current_rating</code></em> :</span></p></td>
+<td>the current rating displayed in the widget</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the updated rating</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-rating-pixbufs-new"></a><h3>rb_rating_pixbufs_new ()</h3>
+<pre class="programlisting"><a class="link" href="rhythmbox-rb-rating-helper.html#RBRatingPixbufs" title="RBRatingPixbufs"><span class="returnvalue">RBRatingPixbufs</span></a> *   rb_rating_pixbufs_new               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Creates and returns a structure holding a set of pixbufs
+to use to display ratings.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a class="link" href="rhythmbox-rb-rating-helper.html#RBRatingPixbufs" title="RBRatingPixbufs"><span class="type">RBRatingPixbufs</span></a> structure, or NULL if not all of
+the pixbufs could be loaded.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-rating-pixbufs-free"></a><h3>rb_rating_pixbufs_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_rating_pixbufs_free              (<em class="parameter"><code><a class="link" href="rhythmbox-rb-rating-helper.html#RBRatingPixbufs" title="RBRatingPixbufs"><span class="type">RBRatingPixbufs</span></a> *pixbufs</code></em>);</pre>
+<p>
+Frees a set of rating pixbufs.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>pixbufs</code></em> :</span></p></td>
+<td>
+<a class="link" href="rhythmbox-rb-rating-helper.html#RBRatingPixbufs" title="RBRatingPixbufs"><span class="type">RBRatingPixbufs</span></a> instance</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-rating-install-rating-property"></a><h3>rb_rating_install_rating_property ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_rating_install_rating_property   (<em class="parameter"><code><span class="type">GObjectClass</span> *klass</code></em>,
+                                                         <em class="parameter"><code><span class="type">gulong</span> prop</code></em>);</pre>
+<p>
+Installs a 'rating' property in the specified class.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>klass</code></em> :</span></p></td>
+<td>a <span class="type">GObjectClass</span> to add the property to</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop</code></em> :</span></p></td>
+<td>property index to use</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

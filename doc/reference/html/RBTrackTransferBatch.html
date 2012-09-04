@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBTrackTransferBatch</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch05.html" title="Shell">
+<link rel="prev" href="RBStatusbar.html" title="RBStatusbar">
+<link rel="next" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBStatusbar.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBTrackTransferQueue.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBTrackTransferBatch.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBTrackTransferBatch.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBTrackTransferBatch.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBTrackTransferBatch.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#RBTrackTransferBatch.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBTrackTransferBatch"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBTrackTransferBatch.top_of_page"></a>RBTrackTransferBatch</span></h2>
+<p>RBTrackTransferBatch — batch track transfer job</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBTrackTransferBatch.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch-struct" title="struct RBTrackTransferBatch">RBTrackTransferBatch</a>;
+struct              <a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatchClass" title="struct RBTrackTransferBatchClass">RBTrackTransferBatchClass</a>;
+<a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="returnvalue">RBTrackTransferBatch</span></a> * <a class="link" href="RBTrackTransferBatch.html#rb-track-transfer-batch-new" title="rb_track_transfer_batch_new ()">rb_track_transfer_batch_new</a>      (<em class="parameter"><code><a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingTarget"><span class="type">GstEncodingTarget</span></a> *target</code></em>,
+                                                         <em class="parameter"><code><span class="type">GObject</span> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GObject</span> *destination</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBTrackTransferBatch.html#rb-track-transfer-batch-add" title="rb_track_transfer_batch_add ()">rb_track_transfer_batch_add</a>         (<em class="parameter"><code><a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBTrackTransferBatch.html#rb-track-transfer-batch-cancel" title="rb_track_transfer_batch_cancel ()">rb_track_transfer_batch_cancel</a>      (<em class="parameter"><code><a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferBatch.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----RBTrackTransferBatch
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferBatch.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch--destination" title='The "destination" property'>destination</a>"              <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>*             : Read / Write / Construct Only
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch--done-entries" title='The "done-entries" property'>done-entries</a>"             <span class="type">gint</span>                  : Read
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch--encoding-target" title='The "encoding-target" property'>encoding-target</a>"          <a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingTarget"><span class="type">GstEncodingTarget</span></a>*    : Read / Write / Construct Only
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch--entry-list" title='The "entry-list" property'>entry-list</a>"               <span class="type">gpointer</span>              : Read
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch--progress" title='The "progress" property'>progress</a>"                 <span class="type">gdouble</span>               : Read
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch--source" title='The "source" property'>source</a>"                   <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>*             : Read / Write / Construct Only
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch--total-entries" title='The "total-entries" property'>total-entries</a>"            <span class="type">gint</span>                  : Read
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferBatch.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch-cancelled" title='The "cancelled" signal'>cancelled</a>"                                      : <code class="literal">Run Last</code>
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch-complete" title='The "complete" signal'>complete</a>"                                       : <code class="literal">Run Last</code>
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch-configure-profile" title='The "configure-profile" signal'>configure-profile</a>"                              : <code class="literal">Run Last</code>
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch-get-dest-uri" title='The "get-dest-uri" signal'>get-dest-uri</a>"                                   : <code class="literal">Run Last</code>
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch-overwrite-prompt" title='The "overwrite-prompt" signal'>overwrite-prompt</a>"                               : <code class="literal">Run Last</code>
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch-started" title='The "started" signal'>started</a>"                                        : <code class="literal">Run Last</code>
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch-track-done" title='The "track-done" signal'>track-done</a>"                                     : <code class="literal">Run Last</code>
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch-track-progress" title='The "track-progress" signal'>track-progress</a>"                                 : <code class="literal">Run Last</code>
+  "<a class="link" href="RBTrackTransferBatch.html#RBTrackTransferBatch-track-started" title='The "track-started" signal'>track-started</a>"                                  : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferBatch.description"></a><h2>Description</h2>
+<p>
+Manages the transfer of a set of tracks (using <a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a>), providing overall
+status information and allowing the transfer to be cancelled as a single unit.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferBatch.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBTrackTransferBatch-struct"></a><h3>struct RBTrackTransferBatch</h3>
+<pre class="programlisting">struct RBTrackTransferBatch;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatchClass"></a><h3>struct RBTrackTransferBatchClass</h3>
+<pre class="programlisting">struct RBTrackTransferBatchClass {
+	GObjectClass parent_class;
+
+	/* signals */
+	void (*started)		(RBTrackTransferBatch *batch);
+	void (*cancelled)		(RBTrackTransferBatch *batch);
+	void (*complete)		(RBTrackTransferBatch *batch);
+
+	char * (*configure_profile) (RBTrackTransferBatch *batch,
+					 const char *mediatype,
+					 GstEncodingProfile *profile);
+	char *  (*get_dest_uri)		(RBTrackTransferBatch *batch,
+					 RhythmDBEntry *entry,
+					 const char *mediatype,
+					 const char *extension);
+	gboolean (*overwrite_prompt) (RBTrackTransferBatch *batch,
+					 GFile *dest_file);
+	void (*track_started) (RBTrackTransferBatch *batch,
+					 RhythmDBEntry *entry,
+					 const char *dest);
+	void (*track_progress) (RBTrackTransferBatch *batch,
+					 RhythmDBEntry *entry,
+					 const char *dest,
+					 int done,
+					 int total,
+					 double fraction);
+	void (*track_done)		(RBTrackTransferBatch *batch,
+					 RhythmDBEntry *entry,
+					 const char *dest,
+					 guint64 dest_size,
+					 GError *error);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-track-transfer-batch-new"></a><h3>rb_track_transfer_batch_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="returnvalue">RBTrackTransferBatch</span></a> * rb_track_transfer_batch_new      (<em class="parameter"><code><a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingTarget"><span class="type">GstEncodingTarget</span></a> *target</code></em>,
+                                                         <em class="parameter"><code><span class="type">GObject</span> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GObject</span> *destination</code></em>);</pre>
+<p>
+Creates a new transfer batch with the specified encoding target.  If no target
+is specified, the default target will be used with the user's preferred
+encoding type.
+</p>
+<p>
+One or more entries must be added to the batch (using <a class="link" href="RBTrackTransferBatch.html#rb-track-transfer-batch-add" title="rb_track_transfer_batch_add ()"><span class="type">rb_track_transfer_batch_add</span></a>)
+before the batch can be started (<span class="type">rb_track_transfer_manager_start_batch</span>).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>target</code></em> :</span></p></td>
+<td>a <a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingTarget"><span class="type">GstEncodingTarget</span></a> describing allowable encodings (or NULL for defaults)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>the <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> from which the entries are to be transferred</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>destination</code></em> :</span></p></td>
+<td>the <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> to which the entries are to be transferred</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> object</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-track-transfer-batch-add"></a><h3>rb_track_transfer_batch_add ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_track_transfer_batch_add         (<em class="parameter"><code><a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>);</pre>
+<p>
+Adds an entry to be transferred.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>a <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the source <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> to transfer</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-track-transfer-batch-cancel"></a><h3>rb_track_transfer_batch_cancel ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_track_transfer_batch_cancel      (<em class="parameter"><code><a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch</code></em>);</pre>
+<p>
+Cancels the batch.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>a <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferBatch.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBTrackTransferBatch--destination"></a><h3>The <code class="literal">"destination"</code> property</h3>
+<pre class="programlisting">  "destination"              <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>*             : Read / Write / Construct Only</pre>
+<p>
+The RBSource to which the tracks are being transferred.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch--done-entries"></a><h3>The <code class="literal">"done-entries"</code> property</h3>
+<pre class="programlisting">  "done-entries"             <span class="type">gint</span>                  : Read</pre>
+<p>
+Number of entries in the batch that have been transferred.
+</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch--encoding-target"></a><h3>The <code class="literal">"encoding-target"</code> property</h3>
+<pre class="programlisting">  "encoding-target"          <a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingTarget"><span class="type">GstEncodingTarget</span></a>*    : Read / Write / Construct Only</pre>
+<p>
+A GstEncodingTarget describing allowable target formats.
+If NULL, the default set of profiles will be used.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch--entry-list"></a><h3>The <code class="literal">"entry-list"</code> property</h3>
+<pre class="programlisting">  "entry-list"               <span class="type">gpointer</span>              : Read</pre>
+<p>
+A list of all entries in the batch.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch--progress"></a><h3>The <code class="literal">"progress"</code> property</h3>
+<pre class="programlisting">  "progress"                 <span class="type">gdouble</span>               : Read</pre>
+<p>
+Fraction of the transfer batch that has been processed.
+</p>
+<p>Allowed values: [0,1]</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch--source"></a><h3>The <code class="literal">"source"</code> property</h3>
+<pre class="programlisting">  "source"                   <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>*             : Read / Write / Construct Only</pre>
+<p>
+The RBSource from which the tracks are being transferred.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch--total-entries"></a><h3>The <code class="literal">"total-entries"</code> property</h3>
+<pre class="programlisting">  "total-entries"            <span class="type">gint</span>                  : Read</pre>
+<p>
+Total number of entries in the transfer batch.
+</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBTrackTransferBatch.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="RBTrackTransferBatch-cancelled"></a><h3>The <code class="literal">"cancelled"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch,
+                                                        <span class="type">gpointer</span>              user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the batch is cancelled.
+</p>
+<p>
+hmm.  will 'complete' still be emitted in this case?
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch-complete"></a><h3>The <code class="literal">"complete"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch,
+                                                        <span class="type">gpointer</span>              user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the batch is complete.  This will be immediately
+after the final entry transfer is complete.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch-configure-profile"></a><h3>The <code class="literal">"configure-profile"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch,
+                                                        <span class="type">gchar</span>                *mediatype,
+                                                        <a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingProfile"><span class="type">GstEncodingProfile</span></a>   *profile,
+                                                        <span class="type">gpointer</span>              user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted to allow configuration of encoding profile settings
+(mostly by setting presets on sub-profiles).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mediatype</code></em> :</span></p></td>
+<td>the target media type</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>profile</code></em> :</span></p></td>
+<td>the <a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingProfile"><span class="type">GstEncodingProfile</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch-get-dest-uri"></a><h3>The <code class="literal">"get-dest-uri"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span>*              user_function                      (<a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch,
+                                                        <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a>        *entry,
+                                                        <span class="type">gchar</span>                *mediatype,
+                                                        <span class="type">gchar</span>                *extension,
+                                                        <span class="type">gpointer</span>              user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+The batch emits this to allow the creator to provide a destination
+URI for an entry being transferred.  This is emitted after the
+output media type is decided, so the usual extension for the media
+type can be taken into consideration.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> to be transferred</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mediatype</code></em> :</span></p></td>
+<td>the destination media type for the transfer</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>extension</code></em> :</span></p></td>
+<td>usual extension for the destionation media type</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch-overwrite-prompt"></a><h3>The <code class="literal">"overwrite-prompt"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch,
+                                                        <span class="type">gchar</span>                *uri,
+                                                        <span class="type">gpointer</span>              user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the destination URI for a transfer already exists.
+The handler must call _rb_track_transfer_batch_continue or
+_rb_track_transfer_batch_cancel when it has figured out what to
+do.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>the destination URI that already exists</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch-started"></a><h3>The <code class="literal">"started"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch,
+                                                        <span class="type">gpointer</span>              user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the batch is started.  This will be after
+all previous batches have finished, which is not necessarily
+when <span class="type">rb_track_transfer_manager_start_batch</span> is called.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch-track-done"></a><h3>The <code class="literal">"track-done"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch,
+                                                        <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a>        *entry,
+                                                        <span class="type">gchar</span>                *dest,
+                                                        <span class="type">guint64</span>               dest_size,
+                                                        <span class="type">gchar</span>                *dest_mediatype,
+                                                        <span class="type">gpointer</span>              error,
+                                                        <span class="type">gpointer</span>              user_data)           : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when a track transfer is complete, whether because
+the track was fully transferred, because an error occurred,
+or because the batch was cancelled (maybe..).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> that was transferred</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>the destination URI for the transfer</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest_size</code></em> :</span></p></td>
+<td>size of the destination file</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest_mediatype</code></em> :</span></p></td>
+<td>the media type of the destination file</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>any error that occurred during transfer</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch-track-progress"></a><h3>The <code class="literal">"track-progress"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch,
+                                                        <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a>        *entry,
+                                                        <span class="type">gchar</span>                *dest,
+                                                        <span class="type">gint</span>                  done,
+                                                        <span class="type">gint</span>                  total,
+                                                        <span class="type">gdouble</span>               fraction,
+                                                        <span class="type">gpointer</span>              user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted regularly throughout the transfer to allow progress bars
+and other UI elements to be updated.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> being transferred</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>the destination URI for the transfer</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>done</code></em> :</span></p></td>
+<td>some measure of how much of the transfer is done</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>total</code></em> :</span></p></td>
+<td>the total amount of that same measure</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fraction</code></em> :</span></p></td>
+<td>the fraction of the transfer that is done</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBTrackTransferBatch-track-started"></a><h3>The <code class="literal">"track-started"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> *batch,
+                                                        <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a>        *entry,
+                                                        <span class="type">gchar</span>                *dest,
+                                                        <span class="type">gpointer</span>              user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when a new entry is about to be transferred.
+This will be emitted for each entry in the batch, unless
+the batch is cancelled.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>batch</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> being transferred</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>the destination URI for the transfer</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

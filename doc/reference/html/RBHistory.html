@@ -1,0 +1,660 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBHistory</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch05.html" title="Shell">
+<link rel="prev" href="ch05.html" title="Shell">
+<link rel="next" href="RBPlayOrder.html" title="RBPlayOrder">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch05.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBPlayOrder.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBHistory.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBHistory.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBHistory.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBHistory.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBHistory"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBHistory.top_of_page"></a>RBHistory</span></h2>
+<p>RBHistory — sequence data structure useful for implementing play orders</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBHistory.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBHistory.html#RBHistory-struct" title="struct RBHistory">RBHistory</a>;
+struct              <a class="link" href="RBHistory.html#RBHistoryClass" title="struct RBHistoryClass">RBHistoryClass</a>;
+<a class="link" href="RBHistory.html" title="RBHistory"><span class="returnvalue">RBHistory</span></a> *         <a class="link" href="RBHistory.html#rb-history-new" title="rb_history_new ()">rb_history_new</a>                      (<em class="parameter"><code><span class="type">gboolean</span> truncate_on_play</code></em>,
+                                                         <em class="parameter"><code><span class="type">GFunc</span> destroyer</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> destroy_userdata</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBHistory.html#rb-history-set-destroy-notify" title="rb_history_set_destroy_notify ()">rb_history_set_destroy_notify</a>       (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><span class="type">GFunc</span> destroyer</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> destroy_userdata</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBHistory.html#rb-history-set-truncate-on-play" title="rb_history_set_truncate_on_play ()">rb_history_set_truncate_on_play</a>     (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> truncate_on_play</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBHistory.html#rb-history-set-maximum-size" title="rb_history_set_maximum_size ()">rb_history_set_maximum_size</a>         (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> maximum_size</code></em>);
+<span class="returnvalue">guint</span>               <a class="link" href="RBHistory.html#rb-history-length" title="rb_history_length ()">rb_history_length</a>                   (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="returnvalue">RhythmDBEntry</span></a> *     <a class="link" href="RBHistory.html#rb-history-first" title="rb_history_first ()">rb_history_first</a>                    (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="returnvalue">RhythmDBEntry</span></a> *     <a class="link" href="RBHistory.html#rb-history-previous" title="rb_history_previous ()">rb_history_previous</a>                 (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="returnvalue">RhythmDBEntry</span></a> *     <a class="link" href="RBHistory.html#rb-history-current" title="rb_history_current ()">rb_history_current</a>                  (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="returnvalue">RhythmDBEntry</span></a> *     <a class="link" href="RBHistory.html#rb-history-next" title="rb_history_next ()">rb_history_next</a>                     (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="returnvalue">RhythmDBEntry</span></a> *     <a class="link" href="RBHistory.html#rb-history-last" title="rb_history_last ()">rb_history_last</a>                     (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBHistory.html#rb-history-go-first" title="rb_history_go_first ()">rb_history_go_first</a>                 (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBHistory.html#rb-history-go-previous" title="rb_history_go_previous ()">rb_history_go_previous</a>              (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBHistory.html#rb-history-go-next" title="rb_history_go_next ()">rb_history_go_next</a>                  (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBHistory.html#rb-history-go-last" title="rb_history_go_last ()">rb_history_go_last</a>                  (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBHistory.html#rb-history-set-playing" title="rb_history_set_playing ()">rb_history_set_playing</a>              (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBHistory.html#rb-history-append" title="rb_history_append ()">rb_history_append</a>                   (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>);
+<span class="returnvalue">gint</span>                <a class="link" href="RBHistory.html#rb-history-get-current-index" title="rb_history_get_current_index ()">rb_history_get_current_index</a>        (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBHistory.html#rb-history-insert-at-index" title="rb_history_insert_at_index ()">rb_history_insert_at_index</a>          (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> index</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBHistory.html#rb-history-remove-entry" title="rb_history_remove_entry ()">rb_history_remove_entry</a>             (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBHistory.html#rb-history-clear" title="rb_history_clear ()">rb_history_clear</a>                    (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<span class="returnvalue">GPtrArray</span> *         <a class="link" href="RBHistory.html#rb-history-dump" title="rb_history_dump ()">rb_history_dump</a>                     (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBHistory.html#rb-history-contains-entry" title="rb_history_contains_entry ()">rb_history_contains_entry</a>           (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBHistory.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----RBHistory
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBHistory.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBHistory.html#RBHistory--maximum-size" title='The "maximum-size" property'>maximum-size</a>"             <span class="type">guint</span>                 : Read / Write
+  "<a class="link" href="RBHistory.html#RBHistory--truncate-on-play" title='The "truncate-on-play" property'>truncate-on-play</a>"         <span class="type">gboolean</span>              : Read / Write / Construct
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBHistory.description"></a><h2>Description</h2>
+<p>
+RBHistory is a GSequence that maintains a "current" pointer and can delete
+an arbitrary element in amortized O(log(N)) time. It can call a deletion
+callback when it removes one of its entries.
+</p>
+<p>
+All operations take amortized O(log(N)) (worst-case O(N)) time unless noted
+otherwise.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBHistory.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBHistory-struct"></a><h3>struct RBHistory</h3>
+<pre class="programlisting">struct RBHistory;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBHistoryClass"></a><h3>struct RBHistoryClass</h3>
+<pre class="programlisting">struct RBHistoryClass {
+	GObjectClass parent_class;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-new"></a><h3>rb_history_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBHistory.html" title="RBHistory"><span class="returnvalue">RBHistory</span></a> *         rb_history_new                      (<em class="parameter"><code><span class="type">gboolean</span> truncate_on_play</code></em>,
+                                                         <em class="parameter"><code><span class="type">GFunc</span> destroyer</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> destroy_userdata</code></em>);</pre>
+<p>
+Creates a new history instance.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>truncate_on_play</code></em> :</span></p></td>
+<td>Whether <a class="link" href="RBHistory.html#rb-history-set-playing" title="rb_history_set_playing ()"><code class="function">rb_history_set_playing()</code></a> should truncate the history</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>destroyer</code></em> :</span></p></td>
+<td>function to call when removing an entry from the history. <span class="annotation">[<a href="http://foldoc.org/scope%20async"><span class="acronym">scope async</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>destroy_userdata</code></em> :</span></p></td>
+<td>data to pass to <em class="parameter"><code>destroyer</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-set-destroy-notify"></a><h3>rb_history_set_destroy_notify ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_history_set_destroy_notify       (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><span class="type">GFunc</span> destroyer</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> destroy_userdata</code></em>);</pre>
+<p>
+Sets a new function to call when removing entries from the history.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>destroyer</code></em> :</span></p></td>
+<td>function to call when removing an entry from the history. <span class="annotation">[<a href="http://foldoc.org/scope%20async"><span class="acronym">scope async</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>destroy_userdata</code></em> :</span></p></td>
+<td>data to pass to <em class="parameter"><code>destroyer</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-set-truncate-on-play"></a><h3>rb_history_set_truncate_on_play ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_history_set_truncate_on_play     (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> truncate_on_play</code></em>);</pre>
+<p>
+Sets the 'truncate-on-play' property.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>truncate_on_play</code></em> :</span></p></td>
+<td>Whether <a class="link" href="RBHistory.html#rb-history-set-playing" title="rb_history_set_playing ()"><code class="function">rb_history_set_playing()</code></a> should truncate the history</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-set-maximum-size"></a><h3>rb_history_set_maximum_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_history_set_maximum_size         (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> maximum_size</code></em>);</pre>
+<p>
+Sets the maximum-size property
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>maximum_size</code></em> :</span></p></td>
+<td>new maximum size of the history (or 0 for no limit)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-length"></a><h3>rb_history_length ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>               rb_history_length                   (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Returns the number of entries in the history.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>number of entries</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-first"></a><h3>rb_history_first ()</h3>
+<pre class="programlisting"><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="returnvalue">RhythmDBEntry</span></a> *     rb_history_first                    (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Returns the first entry in the history.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>first entry. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-previous"></a><h3>rb_history_previous ()</h3>
+<pre class="programlisting"><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="returnvalue">RhythmDBEntry</span></a> *     rb_history_previous                 (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Returns the <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> before the current position.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>previous entry. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-current"></a><h3>rb_history_current ()</h3>
+<pre class="programlisting"><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="returnvalue">RhythmDBEntry</span></a> *     rb_history_current                  (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Returns the current <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a>, or NULL if there is no current position
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>current entry or NULL. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-next"></a><h3>rb_history_next ()</h3>
+<pre class="programlisting"><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="returnvalue">RhythmDBEntry</span></a> *     rb_history_next                     (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Returns the <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> after the current position
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>next entry. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-last"></a><h3>rb_history_last ()</h3>
+<pre class="programlisting"><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="returnvalue">RhythmDBEntry</span></a> *     rb_history_last                     (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Returns the last <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> in the history
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>last entry. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-go-first"></a><h3>rb_history_go_first ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_history_go_first                 (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Moves the current position to the first entry in the history
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-go-previous"></a><h3>rb_history_go_previous ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_history_go_previous              (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Moves the current position to the previous entry.  If the current position is
+already at the start of the history, nothing happens.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-go-next"></a><h3>rb_history_go_next ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_history_go_next                  (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Moves the current position to the next entry.  If the current position is
+already at the end of the history, nothing happens.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-go-last"></a><h3>rb_history_go_last ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_history_go_last                  (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Moves the current position to the last entry in the history
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-set-playing"></a><h3>rb_history_set_playing ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_history_set_playing              (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>);</pre>
+<p>
+Updates the current position to point to the specified entry.
+If the truncate-on-play property is set, this will remove all entries
+after that.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the new playing <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-append"></a><h3>rb_history_append ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_history_append                   (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>);</pre>
+<p>
+Adds a new entry to the end of the history list.
+If a size limit is set, an entry may be removed from the start to
+keep the history list within the limit.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> to append</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-get-current-index"></a><h3>rb_history_get_current_index ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>                rb_history_get_current_index        (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Gets the index of the current entry. This is guaranteed to be &lt; the
+history's size, so if the history is empty, it returns -1.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>index of the current entry</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-insert-at-index"></a><h3>rb_history_insert_at_index ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_history_insert_at_index          (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> index</code></em>);</pre>
+<p>
+Inserts <em class="parameter"><code>entry</code></em> at <em class="parameter"><code>index</code></em> within the history list. 0&lt;=<em class="parameter"><code>index</code></em>&lt;=size
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> to insert</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td>position at which to insert <em class="parameter"><code>entry</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-remove-entry"></a><h3>rb_history_remove_entry ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_history_remove_entry             (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>);</pre>
+<p>
+Removes the specified entry from the history list.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> to remove</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-clear"></a><h3>rb_history_clear ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_history_clear                    (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Empties the history list.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-dump"></a><h3>rb_history_dump ()</h3>
+<pre class="programlisting"><span class="returnvalue">GPtrArray</span> *         rb_history_dump                     (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>);</pre>
+<p>
+Constructs a copy of the whole history in order. Caller must free the result.
+The caller does not own any references on the entries in the returned array.
+Takes O(Nlog(N)) time.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a copy of the history list. <span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> RB.RhythmDBEntry][<a href="http://foldoc.org/transfer%20container"><span class="acronym">transfer container</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-history-contains-entry"></a><h3>rb_history_contains_entry ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_history_contains_entry           (<em class="parameter"><code><a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a> *hist</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>);</pre>
+<p>
+Returns <code class="literal">TRUE</code> if the entry is present in the history list.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hist</code></em> :</span></p></td>
+<td>a <a class="link" href="RBHistory.html" title="RBHistory"><span class="type">RBHistory</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>a <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> to check for</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if found</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBHistory.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBHistory--maximum-size"></a><h3>The <code class="literal">"maximum-size"</code> property</h3>
+<pre class="programlisting">  "maximum-size"             <span class="type">guint</span>                 : Read / Write</pre>
+<p>
+Maximum number of entries to store in the history.  If 0, no limit is applied.
+</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBHistory--truncate-on-play"></a><h3>The <code class="literal">"truncate-on-play"</code> property</h3>
+<pre class="programlisting">  "truncate-on-play"         <span class="type">gboolean</span>              : Read / Write / Construct</pre>
+<p>
+If set, <a class="link" href="RBHistory.html#rb-history-set-playing" title="rb_history_set_playing ()"><code class="function">rb_history_set_playing()</code></a> truncates the rest of the history
+</p>
+<p>Default value: FALSE</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!-- ##### SECTION Title ##### -->
+rb-util
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION rb_true_function ##### -->
+<para>
+
+</para>
+
+@dummy: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_false_function ##### -->
+<para>
+
+</para>
+
+@dummy: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_null_function ##### -->
+<para>
+
+</para>
+
+@dummy: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_copy_function ##### -->
+<para>
+
+</para>
+
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_gvalue_compare ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_compare_gtimeval ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_image_new_from_stock ##### -->
+<para>
+
+</para>
+
+@stock_id: 
+@size: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_gtk_action_popup_menu ##### -->
+<para>
+
+</para>
+
+@uimanager: 
+@path: 
+
+
+<!-- ##### FUNCTION rb_is_main_thread ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_assert_locked ##### -->
+<para>
+
+</para>
+
+@mutex: 
+
+
+<!-- ##### FUNCTION rb_threads_init ##### -->
+<para>
+
+</para>
+
+@void: 
+
+
+<!-- ##### FUNCTION rb_string_split_words ##### -->
+<para>
+
+</para>
+
+@string: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_search_fold ##### -->
+<para>
+
+</para>
+
+@original: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_make_duration_string ##### -->
+<para>
+
+</para>
+
+@duration: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_make_elapsed_time_string ##### -->
+<para>
+
+</para>
+
+@elapsed: 
+@duration: 
+@show_remaining: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_string_list_equal ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_string_list_copy ##### -->
+<para>
+
+</para>
+
+@list: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_string_list_contains ##### -->
+<para>
+
+</para>
+
+@list: 
+@s: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_list_destroy_free ##### -->
+<para>
+
+</para>
+
+@list: 
+@destroyer: 
+
+
+<!-- ##### FUNCTION rb_list_deep_free ##### -->
+<para>
+
+</para>
+
+@list: 
+
+
+<!-- ##### FUNCTION rb_slist_deep_free ##### -->
+<para>
+
+</para>
+
+@list: 
+
+
+<!-- ##### FUNCTION rb_collate_hash_table_keys ##### -->
+<para>
+
+</para>
+
+@table: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_collate_hash_table_values ##### -->
+<para>
+
+</para>
+
+@table: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_uri_list_parse ##### -->
+<para>
+
+</para>
+
+@uri_list: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_signal_accumulator_object_handled ##### -->
+<para>
+
+</para>
+
+@hint: 
+@return_accu: 
+@handler_return: 
+@dummy: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_signal_accumulator_value_array ##### -->
+<para>
+
+</para>
+
+@hint: 
+@return_accu: 
+@handler_return: 
+@dummy: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_value_array_append_data ##### -->
+<para>
+
+</para>
+
+@array: 
+@type: 
+@...: 
+
+
+<!-- ##### FUNCTION rb_value_free ##### -->
+<para>
+
+</para>
+
+@val: 
+
+
+<!-- ##### FUNCTION rb_str_in_strv ##### -->
+<para>
+
+</para>
+
+@needle: 
+@haystack: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_set_tree_view_column_fixed_width ##### -->
+<para>
+
+</para>
+
+@treeview: 
+@column: 
+@renderer: 
+@strings: 
+@padding: 
+
+
+<!-- ##### FUNCTION rb_scale_pixbuf_to_size ##### -->
+<para>
+
+</para>
+
+@pixbuf: 
+@size: 
+@Returns: 
+
+

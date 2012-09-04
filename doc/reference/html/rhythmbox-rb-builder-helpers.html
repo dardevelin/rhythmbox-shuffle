@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>rb-builder-helpers</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch02.html" title="Lib">
+<link rel="prev" href="rhythmbox-rb-file-helpers.html" title="rb-file-helpers">
+<link rel="next" href="RBStringValueMap.html" title="RBStringValueMap">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rhythmbox-rb-file-helpers.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBStringValueMap.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#rhythmbox-rb-builder-helpers.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#rhythmbox-rb-builder-helpers.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="rhythmbox-rb-builder-helpers"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="rhythmbox-rb-builder-helpers.top_of_page"></a>rb-builder-helpers</span></h2>
+<p>rb-builder-helpers — helper functions for dealing with GtkBuilder files</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="rhythmbox-rb-builder-helpers.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis"><span class="returnvalue">GtkBuilder</span> *        <a class="link" href="rhythmbox-rb-builder-helpers.html#rb-builder-load" title="rb_builder_load ()">rb_builder_load</a>                     (<em class="parameter"><code>const <span class="type">char</span> *file</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-rb-builder-helpers.html#rb-builder-boldify-label" title="rb_builder_boldify_label ()">rb_builder_boldify_label</a>            (<em class="parameter"><code><span class="type">GtkBuilder</span> *builder</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *name</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="rhythmbox-rb-builder-helpers.html#rb-combo-box-hyphen-separator-func" title="rb_combo_box_hyphen_separator_func ()">rb_combo_box_hyphen_separator_func</a>  (<em class="parameter"><code><span class="type">GtkTreeModel</span> *model</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreeIter</span> *iter</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> data</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-builder-helpers.description"></a><h2>Description</h2>
+<p>
+Some simple helper functions to make it a bit easier to deal with
+widgets built from GtkBuilder files.
+</p>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-builder-helpers.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="rb-builder-load"></a><h3>rb_builder_load ()</h3>
+<pre class="programlisting"><span class="returnvalue">GtkBuilder</span> *        rb_builder_load                     (<em class="parameter"><code>const <span class="type">char</span> *file</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>
+Locates and reads a GtkBuilder file, automatically connecting
+signal handlers where possible.  The caller can specify a path
+relative to the shared data directory, or its 'ui' or 'art'
+subdirectories.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>file</code></em> :</span></p></td>
+<td>filename, either absolute or relative to the data directory</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data to pass to autoconnected signal handlers</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<span class="type">GtkBuilder</span> object built from the file. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-builder-boldify-label"></a><h3>rb_builder_boldify_label ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_builder_boldify_label            (<em class="parameter"><code><span class="type">GtkBuilder</span> *builder</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
+<p>
+Makes a label built from a GtkBuilder file bold.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>builder</code></em> :</span></p></td>
+<td>a <span class="type">GtkBuilder</span> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>name of the label to boldify</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-combo-box-hyphen-separator-func"></a><h3>rb_combo_box_hyphen_separator_func ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_combo_box_hyphen_separator_func  (<em class="parameter"><code><span class="type">GtkTreeModel</span> *model</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreeIter</span> *iter</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> data</code></em>);</pre>
+<p>
+A row separator function to use for GtkComboBox widgets.
+It expects the model to contain a string in its first column,
+and interprets a string containing a single hyphen character
+as a separator.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>a <span class="type">GtkTreeModel</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>iter</code></em> :</span></p></td>
+<td>a <span class="type">GtkTreeIter</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>nothing</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the row pointed to by <em class="parameter"><code>iter</code></em> is a separator</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

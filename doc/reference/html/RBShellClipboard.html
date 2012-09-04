@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBShellClipboard</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch05.html" title="Shell">
+<link rel="prev" href="RBRemovableMediaManager.html" title="RBRemovableMediaManager">
+<link rel="next" href="RBShellPlayer.html" title="RBShellPlayer">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBRemovableMediaManager.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBShellPlayer.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBShellClipboard.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBShellClipboard.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBShellClipboard.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBShellClipboard.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBShellClipboard"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBShellClipboard.top_of_page"></a>RBShellClipboard</span></h2>
+<p>RBShellClipboard — cut and paste handling</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBShellClipboard.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBShellClipboard.html#RBShellClipboard-struct" title="struct RBShellClipboard">RBShellClipboard</a>;
+struct              <a class="link" href="RBShellClipboard.html#RBShellClipboardClass" title="struct RBShellClipboardClass">RBShellClipboardClass</a>;
+<a class="link" href="RBShellClipboard.html" title="RBShellClipboard"><span class="returnvalue">RBShellClipboard</span></a> *  <a class="link" href="RBShellClipboard.html#rb-shell-clipboard-new" title="rb_shell_clipboard_new ()">rb_shell_clipboard_new</a>              (<em class="parameter"><code><span class="type">GtkActionGroup</span> *actiongroup</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkUIManager</span> *ui_mgr</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBShellClipboard.html#rb-shell-clipboard-set-source" title="rb_shell_clipboard_set_source ()">rb_shell_clipboard_set_source</a>       (<em class="parameter"><code><a class="link" href="RBShellClipboard.html" title="RBShellClipboard"><span class="type">RBShellClipboard</span></a> *clipboard</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBShellClipboard.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----RBShellClipboard
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBShellClipboard.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBShellClipboard.html#RBShellClipboard--action-group" title='The "action-group" property'>action-group</a>"             <span class="type">GtkActionGroup</span>*       : Read / Write / Construct Only
+  "<a class="link" href="RBShellClipboard.html#RBShellClipboard--db" title='The "db" property'>db</a>"                       <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>*             : Read / Write / Construct Only
+  "<a class="link" href="RBShellClipboard.html#RBShellClipboard--playlist-manager" title='The "playlist-manager" property'>playlist-manager</a>"         <a class="link" href="RBPlaylistManager.html" title="RBPlaylistManager"><span class="type">RBPlaylistManager</span></a>*    : Read / Write
+  "<a class="link" href="RBShellClipboard.html#RBShellClipboard--queue-source" title='The "queue-source" property'>queue-source</a>"             <a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a>*     : Read / Write
+  "<a class="link" href="RBShellClipboard.html#RBShellClipboard--source" title='The "source" property'>source</a>"                   <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>*             : Read / Write
+  "<a class="link" href="RBShellClipboard.html#RBShellClipboard--ui-manager" title='The "ui-manager" property'>ui-manager</a>"               <span class="type">GtkUIManager</span>*         : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBShellClipboard.description"></a><h2>Description</h2>
+<p>
+The clipboard is primarily responsible for handling cut and paste actions,
+as well as various other actions that relate to a selected set of entries
+from a source, such as move to trash, delete, and add to playlist.
+</p>
+<p>
+It updates the sensitivity of the various actions it handles when the selected
+source changes, and when the track list selection changes.  The actual action
+handlers are fairly simple, mostly calling <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> methods.
+</p>
+<p>
+For the 'add to playlist' action, the clipboard builds a menu containing
+the available playlists that entries can be added to from the current selected
+source.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBShellClipboard.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBShellClipboard-struct"></a><h3>struct RBShellClipboard</h3>
+<pre class="programlisting">struct RBShellClipboard;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShellClipboardClass"></a><h3>struct RBShellClipboardClass</h3>
+<pre class="programlisting">struct RBShellClipboardClass {
+	GObjectClass parent_class;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-clipboard-new"></a><h3>rb_shell_clipboard_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBShellClipboard.html" title="RBShellClipboard"><span class="returnvalue">RBShellClipboard</span></a> *  rb_shell_clipboard_new              (<em class="parameter"><code><span class="type">GtkActionGroup</span> *actiongroup</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkUIManager</span> *ui_mgr</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>);</pre>
+<p>
+Creates the <a class="link" href="RBShellClipboard.html" title="RBShellClipboard"><span class="type">RBShellClipboard</span></a> instance
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actiongroup</code></em> :</span></p></td>
+<td>the <span class="type">GtkActionGroup</span> to use</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ui_mgr</code></em> :</span></p></td>
+<td>the <span class="type">GtkUIManager</span> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="RBShellClipboard.html" title="RBShellClipboard"><span class="type">RBShellClipboard</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-clipboard-set-source"></a><h3>rb_shell_clipboard_set_source ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_shell_clipboard_set_source       (<em class="parameter"><code><a class="link" href="RBShellClipboard.html" title="RBShellClipboard"><span class="type">RBShellClipboard</span></a> *clipboard</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Updates the clipboard to reflect a newly selected source.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>clipboard</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShellClipboard.html" title="RBShellClipboard"><span class="type">RBShellClipboard</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>the new selected <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBShellClipboard.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBShellClipboard--action-group"></a><h3>The <code class="literal">"action-group"</code> property</h3>
+<pre class="programlisting">  "action-group"             <span class="type">GtkActionGroup</span>*       : Read / Write / Construct Only</pre>
+<p>GtkActionGroup object.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShellClipboard--db"></a><h3>The <code class="literal">"db"</code> property</h3>
+<pre class="programlisting">  "db"                       <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>*             : Read / Write / Construct Only</pre>
+<p>RhythmDB database.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShellClipboard--playlist-manager"></a><h3>The <code class="literal">"playlist-manager"</code> property</h3>
+<pre class="programlisting">  "playlist-manager"         <a class="link" href="RBPlaylistManager.html" title="RBPlaylistManager"><span class="type">RBPlaylistManager</span></a>*    : Read / Write</pre>
+<p>RBPlaylistManager object.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShellClipboard--queue-source"></a><h3>The <code class="literal">"queue-source"</code> property</h3>
+<pre class="programlisting">  "queue-source"             <a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a>*     : Read / Write</pre>
+<p>RBPlaylistSource object.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShellClipboard--source"></a><h3>The <code class="literal">"source"</code> property</h3>
+<pre class="programlisting">  "source"                   <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>*             : Read / Write</pre>
+<p>RBSource object.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShellClipboard--ui-manager"></a><h3>The <code class="literal">"ui-manager"</code> property</h3>
+<pre class="programlisting">  "ui-manager"               <span class="type">GtkUIManager</span>*         : Read / Write / Construct Only</pre>
+<p>GtkUIManager object.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

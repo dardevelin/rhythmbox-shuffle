@@ -1,0 +1,75 @@
+<!-- ##### SECTION Title ##### -->
+RBPlayerGstFilter
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBPlayerGstFilter ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBPlayerGstFilter::filter-inserted ##### -->
+<para>
+
+</para>
+
+@rbplayergstfilter: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBPlayerGstFilter::filter-pre-remove ##### -->
+<para>
+
+</para>
+
+@rbplayergstfilter: the object which received the signal.
+@arg1: 
+
+<!-- ##### STRUCT RBPlayerGstFilterIface ##### -->
+<para>
+
+</para>
+
+@g_iface: 
+@add_filter: 
+@remove_filter: 
+@filter_inserted: 
+@filter_pre_remove: 
+
+<!-- ##### FUNCTION rb_player_gst_filter_add_filter ##### -->
+<para>
+
+</para>
+
+@player: 
+@element: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_player_gst_filter_remove_filter ##### -->
+<para>
+
+</para>
+
+@player: 
+@element: 
+@Returns: 
+
+

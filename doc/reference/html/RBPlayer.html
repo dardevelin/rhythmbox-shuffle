@@ -1,0 +1,1015 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBPlayer</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch01.html" title="Backends">
+<link rel="prev" href="ch01.html" title="Backends">
+<link rel="next" href="RBPlayerGstDataTee.html" title="RBPlayerGstDataTee">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBPlayerGstDataTee.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBPlayer.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBPlayer.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBPlayer.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBPlayer.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBPlayer"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBPlayer.top_of_page"></a>RBPlayer</span></h2>
+<p>RBPlayer — playback backend interface</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBPlayer.synopsis"></a><h2>Synopsis</h2>
+<a name="RBPlayerError"></a><pre class="synopsis">
+#include &lt;rb-player.h&gt;
+
+                    <a class="link" href="RBPlayer.html#RBPlayer-struct" title="RBPlayer">RBPlayer</a>;
+struct              <a class="link" href="RBPlayer.html#RBPlayerIface" title="struct RBPlayerIface">RBPlayerIface</a>;
+enum                <a class="link" href="RBPlayer.html#RBPlayerPlayType" title="enum RBPlayerPlayType">RBPlayerPlayType</a>;
+enum                <a class="link" href="RBPlayer.html#RBPlayerError-enum" title="enum RBPlayerError">RBPlayerError</a>;
+<a class="link" href="RBPlayer.html" title="RBPlayer"><span class="returnvalue">RBPlayer</span></a> *          <a class="link" href="RBPlayer.html#rb-player-new" title="rb_player_new ()">rb_player_new</a>                       (<em class="parameter"><code><span class="type">gboolean</span> want_crossfade</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBPlayer.html#rb-player-open" title="rb_player_open ()">rb_player_open</a>                      (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> stream_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> stream_data_destroy</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBPlayer.html#rb-player-opened" title="rb_player_opened ()">rb_player_opened</a>                    (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBPlayer.html#rb-player-close" title="rb_player_close ()">rb_player_close</a>                     (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBPlayer.html#rb-player-play" title="rb_player_play ()">rb_player_play</a>                      (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBPlayer.html#RBPlayerPlayType" title="enum RBPlayerPlayType"><span class="type">RBPlayerPlayType</span></a> play_type</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint64</span> crossfade</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBPlayer.html#rb-player-pause" title="rb_player_pause ()">rb_player_pause</a>                     (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBPlayer.html#rb-player-playing" title="rb_player_playing ()">rb_player_playing</a>                   (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBPlayer.html#rb-player-set-volume" title="rb_player_set_volume ()">rb_player_set_volume</a>                (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> volume</code></em>);
+<span class="returnvalue">float</span>               <a class="link" href="RBPlayer.html#rb-player-get-volume" title="rb_player_get_volume ()">rb_player_get_volume</a>                (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBPlayer.html#rb-player-seekable" title="rb_player_seekable ()">rb_player_seekable</a>                  (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBPlayer.html#rb-player-set-time" title="rb_player_set_time ()">rb_player_set_time</a>                  (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint64</span> newtime</code></em>);
+<span class="returnvalue">gint64</span>              <a class="link" href="RBPlayer.html#rb-player-get-time" title="rb_player_get_time ()">rb_player_get_time</a>                  (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBPlayer.html#rb-player-multiple-open" title="rb_player_multiple_open ()">rb_player_multiple_open</a>             (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBPlayer.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----RBPlayer
+</pre>
+<pre class="synopsis">
+  GEnum
+   +----RBPlayerError
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBPlayer.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBPlayer.html#RBPlayer-buffering" title='The "buffering" signal'>buffering</a>"                                      : <code class="literal">Run Last</code>
+  "<a class="link" href="RBPlayer.html#RBPlayer-eos" title='The "eos" signal'>eos</a>"                                            : <code class="literal">No Recursion</code>
+  "<a class="link" href="RBPlayer.html#RBPlayer-error" title='The "error" signal'>error</a>"                                          : <code class="literal">No Recursion</code>
+  "<a class="link" href="RBPlayer.html#RBPlayer-event" title='The "event" signal'>event</a>"                                          : <code class="literal">Has Details</code>
+  "<a class="link" href="RBPlayer.html#RBPlayer-image" title='The "image" signal'>image</a>"                                          : <code class="literal">Run Last</code>
+  "<a class="link" href="RBPlayer.html#RBPlayer-info" title='The "info" signal'>info</a>"                                           : <code class="literal">Run Last</code>
+  "<a class="link" href="RBPlayer.html#RBPlayer-playing-stream" title='The "playing-stream" signal'>playing-stream</a>"                                 : <code class="literal">Run Last</code>
+  "<a class="link" href="RBPlayer.html#RBPlayer-redirect" title='The "redirect" signal'>redirect</a>"                                       : <code class="literal">Run Last</code>
+  "<a class="link" href="RBPlayer.html#RBPlayer-tick" title='The "tick" signal'>tick</a>"                                           : <code class="literal">Run Last</code>
+  "<a class="link" href="RBPlayer.html#RBPlayer-volume-changed" title='The "volume-changed" signal'>volume-changed</a>"                                 : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBPlayer.description"></a><h2>Description</h2>
+<p>
+This is the interface implemented by the rhythmbox playback backends.
+It allows the caller to control playback (open, play, pause, close), 
+seek (set_time), control volume (get_volume, set_volume)
+and receive playback state information (get_time, various signals).
+</p>
+<p>
+The playback interface allows for multiple streams to be playing (or at
+least open) concurrently. The caller associates some data with each stream
+it opens (<a class="link" href="RBPlayer.html#rb-player-open" title="rb_player_open ()"><span class="type">rb_player_open</span></a>), which is included in the paramters with each
+signal emitted. The caller should not assume that the new stream is playing
+immediately upon returning from <a class="link" href="RBPlayer.html#rb-player-play" title="rb_player_play ()"><span class="type">rb_player_play</span></a>. Instead, it should use
+the 'playing-stream' signal to determine that.
+</p>
+<p>
+The player implementation should emit signals for metadata extracted from the
+stream using the 'info' signal
+</p>
+<p>
+While playing, the player implementation should emit 'tick' signals frequently
+enough to update an elapsed/remaining time display consistently.  The duration
+value included in tick signal emissions is used to prepare the next stream before
+the current stream reaches EOS, so it should be updated for each emission to account
+for variable bitrate streams that produce inaccurate duration estimates early on.
+</p>
+<p>
+When playing a stream from the network, the player can report buffering status
+using the 'buffering' signal.  The value included in the signal indicates the
+percentage of the buffer that has been filled.
+</p>
+<p>
+The 'event' signal can be used to communicate events from the player to the application.
+For GStreamer-based player implementations, events are triggered by elements in the
+pipeline posting application messages.  The name of the message becomes the name of the
+event.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBPlayer.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBPlayer-struct"></a><h3>RBPlayer</h3>
+<pre class="programlisting">typedef struct _RBPlayer RBPlayer;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlayerIface"></a><h3>struct RBPlayerIface</h3>
+<pre class="programlisting">struct RBPlayerIface {
+	GTypeInterface g_iface;
+
+	/* virtual functions */
+	gboolean        (*open)			(RBPlayer *player,
+						 const char *uri,
+						 gpointer stream_data,
+						 GDestroyNotify stream_data_destroy,
+						 GError **error);
+	gboolean (*opened)		(RBPlayer *player);
+	gboolean        (*close)		(RBPlayer *player,
+						 const char *uri,
+						 GError **error);
+
+	gboolean (*play)			(RBPlayer *player,
+						 RBPlayerPlayType play_type,
+						 gint64 crossfade,
+						 GError **error);
+	void		(*pause)		(RBPlayer *player);
+	gboolean (*playing)		(RBPlayer *player);
+
+	void		(*set_volume)		(RBPlayer *player,
+						 float volume);
+	float		(*get_volume)		(RBPlayer *player);
+
+	gboolean (*seekable)		(RBPlayer *player);
+	void		(*set_time)		(RBPlayer *player,
+						 gint64 newtime);
+	gint64		(*get_time)		(RBPlayer *player);
+	gboolean (*multiple_open) (RBPlayer *player);
+
+
+	/* signals */
+	void		(*playing_stream) (RBPlayer *player,
+						 gpointer stream_data);
+	void		(*eos)			(RBPlayer *player,
+						 gpointer stream_data,
+						 gboolean early);
+	void		(*info)			(RBPlayer *player,
+						 gpointer stream_data,
+						 RBMetaDataField field,
+						 GValue *value);
+	void		(*buffering)		(RBPlayer *player,
+						 gpointer stream_data,
+						 guint progress);
+	void		(*error)           	(RBPlayer *player,
+						 gpointer stream_data,
+						 GError *error);
+	void		(*tick)            	(RBPlayer *player,
+						 gpointer stream_data,
+						 gint64 elapsed,
+						 gint64 duration);
+	void		(*event)		(RBPlayer *player,
+						 gpointer stream_data,
+						 gpointer data);
+	void		(*volume_changed) (RBPlayer *player,
+						 float volume);
+	void		(*image)		(RBPlayer *player,
+						 gpointer stream_data,
+						 GdkPixbuf *image);
+	void		(*redirect)		(RBPlayer *player,
+						 gpointer stream_data,
+						 const gchar *uri);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlayerPlayType"></a><h3>enum RBPlayerPlayType</h3>
+<pre class="programlisting">typedef enum {
+	RB_PLAYER_PLAY_REPLACE,
+	RB_PLAYER_PLAY_AFTER_EOS,
+	RB_PLAYER_PLAY_CROSSFADE
+} RBPlayerPlayType;
+</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="RB-PLAYER-PLAY-REPLACE:CAPS"></a><span class="term"><code class="literal">RB_PLAYER_PLAY_REPLACE</code></span></p></td>
+<td>Replace the existing stream
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-PLAYER-PLAY-AFTER-EOS:CAPS"></a><span class="term"><code class="literal">RB_PLAYER_PLAY_AFTER_EOS</code></span></p></td>
+<td>Start the new stream after the current stream ends
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-PLAYER-PLAY-CROSSFADE:CAPS"></a><span class="term"><code class="literal">RB_PLAYER_PLAY_CROSSFADE</code></span></p></td>
+<td>Crossfade between the existing stream and the new stream
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlayerError-enum"></a><h3>enum RBPlayerError</h3>
+<pre class="programlisting">typedef enum {
+	RB_PLAYER_ERROR_NO_AUDIO,
+	RB_PLAYER_ERROR_GENERAL,
+	RB_PLAYER_ERROR_INTERNAL,
+	RB_PLAYER_ERROR_NOT_FOUND
+} RBPlayerError;
+</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="RB-PLAYER-ERROR-NO-AUDIO:CAPS"></a><span class="term"><code class="literal">RB_PLAYER_ERROR_NO_AUDIO</code></span></p></td>
+<td>Audio playback not available
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-PLAYER-ERROR-GENERAL:CAPS"></a><span class="term"><code class="literal">RB_PLAYER_ERROR_GENERAL</code></span></p></td>
+<td>Nonspecific error
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-PLAYER-ERROR-INTERNAL:CAPS"></a><span class="term"><code class="literal">RB_PLAYER_ERROR_INTERNAL</code></span></p></td>
+<td>Internal error
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-PLAYER-ERROR-NOT-FOUND:CAPS"></a><span class="term"><code class="literal">RB_PLAYER_ERROR_NOT_FOUND</code></span></p></td>
+<td>The resource could not be found
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-new"></a><h3>rb_player_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="returnvalue">RBPlayer</span></a> *          rb_player_new                       (<em class="parameter"><code><span class="type">gboolean</span> want_crossfade</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Creates a new player object.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>want_crossfade</code></em> :</span></p></td>
+<td>if TRUE, try to use a backend that supports
+crossfading and other track transitions.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>returns error information</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new player object. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-open"></a><h3>rb_player_open ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_player_open                      (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> stream_data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> stream_data_destroy</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Prepares a stream for playback.  Depending on the player
+implementation, this may stop any existing stream being
+played.  The stream preparation process may continue
+asynchronously, in which case errors may be reported from
+<a class="link" href="RBPlayer.html#rb-player-play" title="rb_player_play ()"><span class="type">rb_player_play</span></a> or using the 'error' signal.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>URI to open</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream_data</code></em> :</span></p></td>
+<td>arbitrary data to associate with the stream</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream_data_destroy</code></em> :</span></p></td>
+<td>function to call to destroy the stream data</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>returns error information</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if the stream preparation was not unsuccessful</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-opened"></a><h3>rb_player_opened ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_player_opened                    (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);</pre>
+<p>
+Determines whether a stream has been prepared for playback.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if a stream is prepared for playback</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-close"></a><h3>rb_player_close ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_player_close                     (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+If a URI is specified, this will close the stream corresponding
+to that URI and free any resources related resources.  If <em class="parameter"><code>uri</code></em>
+is NULL, this will close all streams.
+</p>
+<p>
+If no streams remain open after this call, the audio device will
+be released.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>optionally, the URI of the stream to close</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>returns error information</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if a stream was found and closed</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-play"></a><h3>rb_player_play ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_player_play                      (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBPlayer.html#RBPlayerPlayType" title="enum RBPlayerPlayType"><span class="type">RBPlayerPlayType</span></a> play_type</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint64</span> crossfade</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Starts playback of the most recently opened stream.
+if <em class="parameter"><code>play_type</code></em> is <a class="link" href="RBPlayer.html#RB-PLAYER-PLAY-CROSSFADE:CAPS"><span class="type">RB_PLAYER_PLAY_CROSSFADE</span></a>, the player
+may attempt to crossfade the new stream with any existing
+streams.  If it does this, the it will use <em class="parameter"><code>crossfade</code></em> as the
+duration of the fade.
+</p>
+<p>
+If <em class="parameter"><code>play_type</code></em> is <a class="link" href="RBPlayer.html#RB-PLAYER-PLAY-AFTER-EOS:CAPS"><span class="type">RB_PLAYER_PLAY_AFTER_EOS</span></a>, the player may
+attempt to start the stream immediately after the current
+playing stream reaches EOS.  This may or may not result in
+the phenomemon known as 'gapless playback'.
+</p>
+<p>
+If <em class="parameter"><code>play_type</code></em> is <a class="link" href="RBPlayer.html#RB-PLAYER-PLAY-REPLACE:CAPS"><span class="type">RB_PLAYER_PLAY_REPLACE</span></a>, the player will stop any
+existing stream before starting the new stream. It may do
+this anyway, regardless of the value of <em class="parameter"><code>play_type</code></em>.
+</p>
+<p>
+The 'playing-stream' signal will be emitted when the new stream
+is actually playing. This may be before or after control returns
+to the caller.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>play_type</code></em> :</span></p></td>
+<td>requested playback start type</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>crossfade</code></em> :</span></p></td>
+<td>requested crossfade duration (nanoseconds)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>returns error information</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if playback started successfully</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-pause"></a><h3>rb_player_pause ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_player_pause                     (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);</pre>
+<p>
+Pauses playback of the most recently started stream.  Any
+streams being faded out may continue until the fade is
+complete.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-playing"></a><h3>rb_player_playing ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_player_playing                   (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);</pre>
+<p>
+Determines whether the player is currently playing a stream.
+A stream is playing if it's not paused or being faded out.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if playing</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-set-volume"></a><h3>rb_player_set_volume ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_player_set_volume                (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>,
+                                                         <em class="parameter"><code><span class="type">float</span> volume</code></em>);</pre>
+<p>
+Adjusts the output volume level.  This affects all streams.
+The player may use a hardware volume control to implement
+this volume adjustment.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>volume</code></em> :</span></p></td>
+<td>new output volume level</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-get-volume"></a><h3>rb_player_get_volume ()</h3>
+<pre class="programlisting"><span class="returnvalue">float</span>               rb_player_get_volume                (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);</pre>
+<p>
+Returns the current volume level, between 0.0 and 1.0.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>current output volume level</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-seekable"></a><h3>rb_player_seekable ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_player_seekable                  (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);</pre>
+<p>
+Determines whether seeking is supported for the current stream.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if the current stream is seekable</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-set-time"></a><h3>rb_player_set_time ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_player_set_time                  (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint64</span> newtime</code></em>);</pre>
+<p>
+Attempts to seek in the current stream.  The player
+may ignore this if the stream is not seekable.
+The seek may take place asynchronously.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>newtime</code></em> :</span></p></td>
+<td>seek target position in seconds</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-get-time"></a><h3>rb_player_get_time ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint64</span>              rb_player_get_time                  (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);</pre>
+<p>
+Returns the current playback for the current stream in nanoseconds.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>playback position</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-player-multiple-open"></a><h3>rb_player_multiple_open ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_player_multiple_open             (<em class="parameter"><code><a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player</code></em>);</pre>
+<p>
+Determines whether the player supports multiple open streams.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if multiple open is supported</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBPlayer.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="RBPlayer-buffering"></a><h3>The <code class="literal">"buffering"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player,
+                                                        <span class="type">gpointer</span>  stream_data,
+                                                        <span class="type">guint</span>     progress,
+                                                        <span class="type">gpointer</span>  user_data)        : <code class="literal">Run Last</code></pre>
+<p>
+The 'buffering' signal is emitted while a stream is paused so
+that a buffer can be filled.  The progress value typically varies
+from 0 to 100, and once it reaches 100, playback resumes.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>the <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream_data</code></em> :</span></p></td>
+<td>the data associated with the buffering stream</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>progress</code></em> :</span></p></td>
+<td>buffering percentage</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlayer-eos"></a><h3>The <code class="literal">"eos"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player,
+                                                        <span class="type">gpointer</span>  stream_data,
+                                                        <span class="type">gboolean</span>  early,
+                                                        <span class="type">gpointer</span>  user_data)        : <code class="literal">No Recursion</code></pre>
+<p>
+The 'eos' signal is emitted when a stream finishes, or in some cases, when it
+is about to finish (with <em class="parameter"><code>early</code></em> set to <code class="literal">TRUE</code>) to allow for a new track to be
+played immediately afterwards.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>the <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream_data</code></em> :</span></p></td>
+<td>the data associated with the stream that finished</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>early</code></em> :</span></p></td>
+<td>if <code class="literal">TRUE</code>, the EOS notification should only be used for track changes.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlayer-error"></a><h3>The <code class="literal">"error"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player,
+                                                        <span class="type">gpointer</span>  stream_data,
+                                                        <span class="type">gpointer</span>  error,
+                                                        <span class="type">gpointer</span>  user_data)        : <code class="literal">No Recursion</code></pre>
+<p>
+The 'error' signal is emitted when an error is encountered
+while opening or playing a stream.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>the <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream_data</code></em> :</span></p></td>
+<td>the data associated with the stream</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>description of the error</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlayer-event"></a><h3>The <code class="literal">"event"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player,
+                                                        <span class="type">gpointer</span>  stream_data,
+                                                        <span class="type">gpointer</span>  data,
+                                                        <span class="type">gpointer</span>  user_data)        : <code class="literal">Has Details</code></pre>
+<p>
+The 'event' signal provides a means for custom GStreamer
+elements to communicate events back to the rest of the
+application.  The GStreamer element posts an application
+message on the GStreamer bus, which is translated into an
+event signal with the detail of the signal set to the name
+of the structure found in the message.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>the <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream_data</code></em> :</span></p></td>
+<td>data associated with the stream</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>event data</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlayer-image"></a><h3>The <code class="literal">"image"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>  *player,
+                                                        <span class="type">gpointer</span>   stream_data,
+                                                        <span class="type">GdkPixbuf</span> *image,
+                                                        <span class="type">gpointer</span>   user_data)        : <code class="literal">Run Last</code></pre>
+<p>
+The 'image' signal is emitted to provide access to images extracted
+from the stream.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>the <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream_data</code></em> :</span></p></td>
+<td>data associated with the stream</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>image</code></em> :</span></p></td>
+<td>the image extracted from the stream</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlayer-info"></a><h3>The <code class="literal">"info"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player,
+                                                        <span class="type">gpointer</span>  stream_data,
+                                                        <span class="type">gint</span>      field,
+                                                        <span class="type">GValue</span>   *value,
+                                                        <span class="type">gpointer</span>  user_data)        : <code class="literal">Run Last</code></pre>
+<p>
+The 'info' signal is emitted when a metadata value is found in
+the stream.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>the <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream_data</code></em> :</span></p></td>
+<td>the data associated with the stream</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>the <a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a> corresponding to the stream info</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>the value of the stream info field</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlayer-playing-stream"></a><h3>The <code class="literal">"playing-stream"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player,
+                                                        <span class="type">gpointer</span>  stream_data,
+                                                        <span class="type">gpointer</span>  user_data)        : <code class="literal">Run Last</code></pre>
+<p>
+The 'playing-stream' signal is emitted when the main playing stream
+changes. It should be used to update the UI to show the new
+stream. It can either be emitted before or after <a class="link" href="RBPlayer.html#rb-player-play" title="rb_player_play ()"><span class="type">rb_player_play</span></a> returns,
+depending on the player backend.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>the <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream_data</code></em> :</span></p></td>
+<td>data associated with the stream</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlayer-redirect"></a><h3>The <code class="literal">"redirect"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player,
+                                                        <span class="type">gpointer</span>  stream_data,
+                                                        <span class="type">gchar</span>    *uri,
+                                                        <span class="type">gpointer</span>  user_data)        : <code class="literal">Run Last</code></pre>
+<p>
+The 'redirect' signal is emitted to indicate when a stream has change URI.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>the <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream_data</code></em> :</span></p></td>
+<td>data associated with the stream</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>URI to redirect to</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlayer-tick"></a><h3>The <code class="literal">"tick"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player,
+                                                        <span class="type">gpointer</span>  stream_data,
+                                                        <span class="type">gint64</span>    elapsed,
+                                                        <span class="type">gint64</span>    duration,
+                                                        <span class="type">gpointer</span>  user_data)        : <code class="literal">Run Last</code></pre>
+<p>
+The 'tick' signal is emitted repeatedly while the stream is
+playing. Signal handlers can use this to update UI and to
+prepare new streams for crossfade or gapless playback.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>the <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>stream_data</code></em> :</span></p></td>
+<td>the data associated with the stream</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>elapsed</code></em> :</span></p></td>
+<td>playback position in the stream (in nanoseconds)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>duration</code></em> :</span></p></td>
+<td>current estimate of the duration of the stream
+(in nanoseconds)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlayer-volume-changed"></a><h3>The <code class="literal">"volume-changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a> *player,
+                                                        <span class="type">gfloat</span>    volume,
+                                                        <span class="type">gpointer</span>  user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+The 'volume-changed' signal is emitted when the output stream volume is
+changed externally.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>player</code></em> :</span></p></td>
+<td>the <a class="link" href="RBPlayer.html" title="RBPlayer"><span class="type">RBPlayer</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>volume</code></em> :</span></p></td>
+<td>the new volume level</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RhythmDBQueryResults</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch04.html" title="RhythmDB">
+<link rel="prev" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel">
+<link rel="next" href="RhythmDB.html" title="RhythmDB">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RhythmDBQueryModel.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RhythmDB.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RhythmDBQueryResults.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RhythmDBQueryResults.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RhythmDBQueryResults.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RhythmDBQueryResults.implementations" class="shortcut">Known Implementations</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RhythmDBQueryResults"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RhythmDBQueryResults.top_of_page"></a>RhythmDBQueryResults</span></h2>
+<p>RhythmDBQueryResults — interface for receiving query results from RhythmDB</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RhythmDBQueryResults.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="RhythmDBQueryResults.html#RhythmDBQueryResults-struct" title="RhythmDBQueryResults">RhythmDBQueryResults</a>;
+struct              <a class="link" href="RhythmDBQueryResults.html#RhythmDBQueryResultsIface" title="struct RhythmDBQueryResultsIface">RhythmDBQueryResultsIface</a>;
+<span class="returnvalue">void</span>                <a class="link" href="RhythmDBQueryResults.html#rhythmdb-query-results-set-query" title="rhythmdb_query_results_set_query ()">rhythmdb_query_results_set_query</a>    (<em class="parameter"><code><a class="link" href="RhythmDBQueryResults.html" title="RhythmDBQueryResults"><span class="type">RhythmDBQueryResults</span></a> *results</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> *query</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RhythmDBQueryResults.html#rhythmdb-query-results-add-results" title="rhythmdb_query_results_add_results ()">rhythmdb_query_results_add_results</a>  (<em class="parameter"><code><a class="link" href="RhythmDBQueryResults.html" title="RhythmDBQueryResults"><span class="type">RhythmDBQueryResults</span></a> *results</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> *entries</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RhythmDBQueryResults.html#rhythmdb-query-results-query-complete" title="rhythmdb_query_results_query_complete ()">rhythmdb_query_results_query_complete</a>
+                                                        (<em class="parameter"><code><a class="link" href="RhythmDBQueryResults.html" title="RhythmDBQueryResults"><span class="type">RhythmDBQueryResults</span></a> *results</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RhythmDBQueryResults.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----RhythmDBQueryResults
+</pre>
+</div>
+<div class="refsect1">
+<a name="RhythmDBQueryResults.implementations"></a><h2>Known Implementations</h2>
+<p>
+RhythmDBQueryResults is implemented by
+ <a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel">RhythmDBQueryModel</a>.</p>
+</div>
+<div class="refsect1">
+<a name="RhythmDBQueryResults.description"></a><h2>Description</h2>
+<p>
+This is the interface that <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> uses to report results of database
+queries.  When running a query, it first calls rhythmdb_query_results_set_query,
+then passes entries matching the query to rhythmdb_query_results_add_results
+in batches, and finally calls rhythmdb_query_results_query_complete.
+There are no guarantees as to which threads the calls are made from.
+</p>
+</div>
+<div class="refsect1">
+<a name="RhythmDBQueryResults.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RhythmDBQueryResults-struct"></a><h3>RhythmDBQueryResults</h3>
+<pre class="programlisting">typedef struct _RhythmDBQueryResults RhythmDBQueryResults;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RhythmDBQueryResultsIface"></a><h3>struct RhythmDBQueryResultsIface</h3>
+<pre class="programlisting">struct RhythmDBQueryResultsIface {
+	GTypeInterface g_iface;
+
+	/* vtable */
+	void (*set_query)		(RhythmDBQueryResults *results,
+				 	 GPtrArray *query);
+
+	void (*add_results)		(RhythmDBQueryResults *results,
+				 	 GPtrArray *entries);
+
+	void 	(*query_complete) (RhythmDBQueryResults *results);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rhythmdb-query-results-set-query"></a><h3>rhythmdb_query_results_set_query ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rhythmdb_query_results_set_query    (<em class="parameter"><code><a class="link" href="RhythmDBQueryResults.html" title="RhythmDBQueryResults"><span class="type">RhythmDBQueryResults</span></a> *results</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> *query</code></em>);</pre>
+<p>
+When a new query is run, this method is invoked to give the
+object implementing this interface a chance to take a copy of the
+query criteria, so that it can evaluate the query for newly added
+or changed entries once the query is complete.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>results</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBQueryResults.html" title="RhythmDBQueryResults"><span class="type">RhythmDBQueryResults</span></a> implementation</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>query</code></em> :</span></p></td>
+<td>the new query</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rhythmdb-query-results-add-results"></a><h3>rhythmdb_query_results_add_results ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rhythmdb_query_results_add_results  (<em class="parameter"><code><a class="link" href="RhythmDBQueryResults.html" title="RhythmDBQueryResults"><span class="type">RhythmDBQueryResults</span></a> *results</code></em>,
+                                                         <em class="parameter"><code><span class="type">GPtrArray</span> *entries</code></em>);</pre>
+<p>
+Provides a new set of query results.  References must be taken on the
+entries.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>results</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBQueryResults.html" title="RhythmDBQueryResults"><span class="type">RhythmDBQueryResults</span></a> implementation</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entries</code></em> :</span></p></td>
+<td>
+<span class="type">GPtrArray</span> containing <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> results</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rhythmdb-query-results-query-complete"></a><h3>rhythmdb_query_results_query_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rhythmdb_query_results_query_complete
+                                                        (<em class="parameter"><code><a class="link" href="RhythmDBQueryResults.html" title="RhythmDBQueryResults"><span class="type">RhythmDBQueryResults</span></a> *results</code></em>);</pre>
+<p>
+Called when the query is complete and all entries that match the query
+have been supplied to rhythmdb_query_results_add_results.  If the object
+implementing this interface needs to identify newly added or changed entries
+that match the query, it needs to use the entry-added, entry-deleted and
+entry-changed signals from <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>results</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBQueryResults.html" title="RhythmDBQueryResults"><span class="type">RhythmDBQueryResults</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

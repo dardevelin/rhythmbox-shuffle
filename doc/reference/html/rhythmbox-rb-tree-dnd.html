@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>rb-tree-dnd</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch02.html" title="Lib">
+<link rel="prev" href="RBStringValueMap.html" title="RBStringValueMap">
+<link rel="next" href="rhythmbox-rb-util.html" title="rb-util">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBStringValueMap.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="rhythmbox-rb-util.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#rhythmbox-rb-tree-dnd.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#rhythmbox-rb-tree-dnd.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#rhythmbox-rb-tree-dnd.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#rhythmbox-rb-tree-dnd.implementations" class="shortcut">Known Implementations</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="rhythmbox-rb-tree-dnd"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="rhythmbox-rb-tree-dnd.top_of_page"></a>rb-tree-dnd</span></h2>
+<p>rb-tree-dnd — multi-row drag and drop support for GtkTreeViews</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="rhythmbox-rb-tree-dnd.synopsis"></a><h2>Synopsis</h2>
+<a name="RbTreeDragSource"></a><a name="RbTreeDragDest"></a><pre class="synopsis">                    <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource-struct" title="RbTreeDragSource">RbTreeDragSource</a>;
+struct              <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSourceIface" title="struct RbTreeDragSourceIface">RbTreeDragSourceIface</a>;
+                    <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest-struct" title="RbTreeDragDest">RbTreeDragDest</a>;
+struct              <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDestIface" title="struct RbTreeDragDestIface">RbTreeDragDestIface</a>;
+enum                <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDestFlag" title="enum RbTreeDestFlag">RbTreeDestFlag</a>;
+<span class="returnvalue">gboolean</span>            <a class="link" href="rhythmbox-rb-tree-dnd.html#rb-tree-drag-source-row-draggable" title="rb_tree_drag_source_row_draggable ()">rb_tree_drag_source_row_draggable</a>   (<em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a> *drag_source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *path_list</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="rhythmbox-rb-tree-dnd.html#rb-tree-drag-source-drag-data-delete" title="rb_tree_drag_source_drag_data_delete ()">rb_tree_drag_source_drag_data_delete</a>
+                                                        (<em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a> *drag_source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *path_list</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="rhythmbox-rb-tree-dnd.html#rb-tree-drag-source-drag-data-get" title="rb_tree_drag_source_drag_data_get ()">rb_tree_drag_source_drag_data_get</a>   (<em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a> *drag_source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *path_list</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkSelectionData</span> *selection_data</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="rhythmbox-rb-tree-dnd.html#rb-tree-drag-dest-drag-data-received" title="rb_tree_drag_dest_drag_data_received ()">rb_tree_drag_dest_drag_data_received</a>
+                                                        (<em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a> *drag_dest</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreePath</span> *dest</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreeViewDropPosition</span> pos</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkSelectionData</span> *selection_data</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="rhythmbox-rb-tree-dnd.html#rb-tree-drag-dest-row-drop-possible" title="rb_tree_drag_dest_row_drop_possible ()">rb_tree_drag_dest_row_drop_possible</a> (<em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a> *drag_dest</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreePath</span> *dest_path</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreeViewDropPosition</span> pos</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkSelectionData</span> *selection_data</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="rhythmbox-rb-tree-dnd.html#rb-tree-drag-dest-row-drop-position" title="rb_tree_drag_dest_row_drop_position ()">rb_tree_drag_dest_row_drop_position</a> (<em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a> *drag_dest</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreePath</span> *dest_path</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *targets</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreeViewDropPosition</span> *pos</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-rb-tree-dnd.html#rb-tree-dnd-add-drag-dest-support" title="rb_tree_dnd_add_drag_dest_support ()">rb_tree_dnd_add_drag_dest_support</a>   (<em class="parameter"><code><span class="type">GtkTreeView</span> *tree_view</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDestFlag" title="enum RbTreeDestFlag"><span class="type">RbTreeDestFlag</span></a> flags</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">GtkTargetEntry</span> *targets</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> n_targets</code></em>,
+                                                         <em class="parameter"><code><span class="type">GdkDragAction</span> actions</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-rb-tree-dnd.html#rb-tree-dnd-add-drag-source-support" title="rb_tree_dnd_add_drag_source_support ()">rb_tree_dnd_add_drag_source_support</a> (<em class="parameter"><code><span class="type">GtkTreeView</span> *tree_view</code></em>,
+                                                         <em class="parameter"><code><span class="type">GdkModifierType</span> start_button_mask</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">GtkTargetEntry</span> *targets</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> n_targets</code></em>,
+                                                         <em class="parameter"><code><span class="type">GdkDragAction</span> actions</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-tree-dnd.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----RbTreeDragSource
+</pre>
+<pre class="synopsis">
+  GInterface
+   +----RbTreeDragDest
+</pre>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-tree-dnd.implementations"></a><h2>Known Implementations</h2>
+<p>
+RbTreeDragSource is implemented by
+ <a class="link" href="RhythmDBPropertyModel.html" title="RhythmDBPropertyModel">RhythmDBPropertyModel</a> and  <a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel">RhythmDBQueryModel</a>.</p>
+<p>
+RbTreeDragDest is implemented by
+ <a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel">RhythmDBQueryModel</a>.</p>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-tree-dnd.description"></a><h2>Description</h2>
+<p>
+Provides support for drag and drop operations to and from GtkTreeView
+widgets that can include multiple rows.  The model backing the tree view
+widgets must implement the <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a> and <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a> interfaces.
+</p>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-tree-dnd.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RbTreeDragSource-struct"></a><h3>RbTreeDragSource</h3>
+<pre class="programlisting">typedef struct _RbTreeDragSource RbTreeDragSource;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RbTreeDragSourceIface"></a><h3>struct RbTreeDragSourceIface</h3>
+<pre class="programlisting">struct RbTreeDragSourceIface {
+	GTypeInterface g_iface;
+
+	/* VTable - not signals */
+	gboolean     (* rb_row_draggable)        (RbTreeDragSource   *drag_source,
+	                              GList              *path_list);
+
+	gboolean     (* rb_drag_data_get)        (RbTreeDragSource   *drag_source,
+                                         GList              *path_list,
+                                         GtkSelectionData   *selection_data);
+
+	gboolean     (* rb_drag_data_delete)     (RbTreeDragSource *drag_source,
+                                         GList            *path_list);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RbTreeDragDest-struct"></a><h3>RbTreeDragDest</h3>
+<pre class="programlisting">typedef struct _RbTreeDragDest RbTreeDragDest;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RbTreeDragDestIface"></a><h3>struct RbTreeDragDestIface</h3>
+<pre class="programlisting">struct RbTreeDragDestIface {
+	GTypeInterface g_iface;
+
+	/* VTable - not signals */
+
+	gboolean (* rb_drag_data_received) (RbTreeDragDest   *drag_dest,
+					 GtkTreePath       *dest,
+					 GtkTreeViewDropPosition pos,
+					 GtkSelectionData  *selection_data);
+
+	gboolean (* rb_row_drop_possible)  (RbTreeDragDest   *drag_dest,
+					 GtkTreePath       *dest_path,
+					 GtkTreeViewDropPosition pos,
+					 GtkSelectionData  *selection_data);
+
+	gboolean (* rb_row_drop_position) (RbTreeDragDest   *drag_dest,
+					GtkTreePath       *dest_path,
+					GList *targets,
+					GtkTreeViewDropPosition *pos);
+
+	/* optional */
+	GdkAtom  (* rb_get_drag_target)    (RbTreeDragDest   *drag_dest,
+					 GtkWidget        *widget,
+					 GdkDragContext   *context,
+					 GtkTreePath      *dest_path,
+					 GtkTargetList    *target_list);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RbTreeDestFlag"></a><h3>enum RbTreeDestFlag</h3>
+<pre class="programlisting">typedef enum {
+	RB_TREE_DEST_EMPTY_VIEW_DROP = 1 &lt;&lt; 0,
+	RB_TREE_DEST_CAN_DROP_INTO = 1 &lt;&lt; 1,
+	RB_TREE_DEST_CAN_DROP_BETWEEN = 1 &lt;&lt; 2,
+	RB_TREE_DEST_SELECT_ON_DRAG_TIMEOUT = 1 &lt;&lt; 3
+} RbTreeDestFlag;
+</pre>
+<p>
+Flags controlling drag destination behaviour.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="RB-TREE-DEST-EMPTY-VIEW-DROP:CAPS"></a><span class="term"><code class="literal">RB_TREE_DEST_EMPTY_VIEW_DROP</code></span></p></td>
+<td>If set, drops into empty spaces in the view are accepted
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-TREE-DEST-CAN-DROP-INTO:CAPS"></a><span class="term"><code class="literal">RB_TREE_DEST_CAN_DROP_INTO</code></span></p></td>
+<td>If set, drops into existing rows are accepted
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-TREE-DEST-CAN-DROP-BETWEEN:CAPS"></a><span class="term"><code class="literal">RB_TREE_DEST_CAN_DROP_BETWEEN</code></span></p></td>
+<td>If set, drops between existing rows are accepted
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-TREE-DEST-SELECT-ON-DRAG-TIMEOUT:CAPS"></a><span class="term"><code class="literal">RB_TREE_DEST_SELECT_ON_DRAG_TIMEOUT</code></span></p></td>
+<td>If set, update the drag selection using a timeout
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-tree-drag-source-row-draggable"></a><h3>rb_tree_drag_source_row_draggable ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_tree_drag_source_row_draggable   (<em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a> *drag_source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *path_list</code></em>);</pre>
+<p>
+Asks the <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a> whether a particular row can be used as
+the source of a DND operation. If the source doesn't implement
+this interface, the row is assumed draggable.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>drag_source</code></em> :</span></p></td>
+<td>a <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path_list</code></em> :</span></p></td>
+<td>row on which user is initiating a drag</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the row can be dragged</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-tree-drag-source-drag-data-delete"></a><h3>rb_tree_drag_source_drag_data_delete ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_tree_drag_source_drag_data_delete
+                                                        (<em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a> *drag_source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *path_list</code></em>);</pre>
+<p>
+Asks the <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a> to delete the row at <em class="parameter"><code>path</code></em>, because
+it was moved somewhere else via drag-and-drop. Returns <code class="literal">FALSE</code>
+if the deletion fails because <em class="parameter"><code>path</code></em> no longer exists, or for
+some model-specific reason. Should robustly handle a <em class="parameter"><code>path</code></em> no
+longer found in the model!
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>drag_source</code></em> :</span></p></td>
+<td>a <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path_list</code></em> :</span></p></td>
+<td>row that was being dragged</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the row was successfully deleted</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-tree-drag-source-drag-data-get"></a><h3>rb_tree_drag_source_drag_data_get ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_tree_drag_source_drag_data_get   (<em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a> *drag_source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *path_list</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkSelectionData</span> *selection_data</code></em>);</pre>
+<p>
+Asks the <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a> to fill in <em class="parameter"><code>selection_data</code></em> with a
+representation of the row at <em class="parameter"><code>path</code></em>. <em class="parameter"><code>selection_data-&gt;target</code></em> gives
+the required type of the data.  Should robustly handle a <em class="parameter"><code>path</code></em> no
+longer found in the model!
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>drag_source</code></em> :</span></p></td>
+<td>a <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path_list</code></em> :</span></p></td>
+<td>row that was dragged</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection_data</code></em> :</span></p></td>
+<td>a <span class="type">GtkSelectionData</span> to fill with data from the dragged row</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if data of the required type was provided</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-tree-drag-dest-drag-data-received"></a><h3>rb_tree_drag_dest_drag_data_received ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_tree_drag_dest_drag_data_received
+                                                        (<em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a> *drag_dest</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreePath</span> *dest</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreeViewDropPosition</span> pos</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkSelectionData</span> *selection_data</code></em>);</pre>
+<p>
+Asks a <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a> to accept some drag and drop data.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>drag_dest</code></em> :</span></p></td>
+<td>a <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>the <span class="type">GtkTreePath</span> on which the data was dropped</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pos</code></em> :</span></p></td>
+<td>the drop position relative to the row identified by <em class="parameter"><code>dest</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection_data</code></em> :</span></p></td>
+<td>a <span class="type">GtkSelectionData</span> containing the drag data</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the data was accepted, <code class="literal">FALSE</code> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-tree-drag-dest-row-drop-possible"></a><h3>rb_tree_drag_dest_row_drop_possible ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_tree_drag_dest_row_drop_possible (<em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a> *drag_dest</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreePath</span> *dest_path</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreeViewDropPosition</span> pos</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkSelectionData</span> *selection_data</code></em>);</pre>
+<p>
+Asks the <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a> whether data can be dropped on a particular
+row.  This should probably check based on the format and the row.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>drag_dest</code></em> :</span></p></td>
+<td>a <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest_path</code></em> :</span></p></td>
+<td>the <span class="type">GtkTreePath</span> on which the data may be dropped</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pos</code></em> :</span></p></td>
+<td>the drop position relative to the row identified by <em class="parameter"><code>dest</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection_data</code></em> :</span></p></td>
+<td>a <span class="type">GtkSelectionData</span> containing the drag data</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the data can be dropped there</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-tree-drag-dest-row-drop-position"></a><h3>rb_tree_drag_dest_row_drop_position ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_tree_drag_dest_row_drop_position (<em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a> *drag_dest</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreePath</span> *dest_path</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *targets</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkTreeViewDropPosition</span> *pos</code></em>);</pre>
+<p>
+Asks the <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a> which drop position to use relative to the specified row.
+The drag destination should decide which drop position to use based on the 
+target row and the list of drag targets.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>drag_dest</code></em> :</span></p></td>
+<td>a <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest_path</code></em> :</span></p></td>
+<td>a <span class="type">GtkTreePath</span> describing a possible drop row</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>targets</code></em> :</span></p></td>
+<td>a <span class="type">GList</span> containing possible drop target types</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pos</code></em> :</span></p></td>
+<td>returns the <span class="type">GtkTreeViewDropPosition</span> to use relative to the row</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if a drop position has been set, <code class="literal">FALSE</code> if a drop should not be
+allowed in the specified row</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-tree-dnd-add-drag-dest-support"></a><h3>rb_tree_dnd_add_drag_dest_support ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_tree_dnd_add_drag_dest_support   (<em class="parameter"><code><span class="type">GtkTreeView</span> *tree_view</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDestFlag" title="enum RbTreeDestFlag"><span class="type">RbTreeDestFlag</span></a> flags</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">GtkTargetEntry</span> *targets</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> n_targets</code></em>,
+                                                         <em class="parameter"><code><span class="type">GdkDragAction</span> actions</code></em>);</pre>
+<p>
+Adds event handlers to perform multi-row drag and drop operations to the specified
+<span class="type">GtkTreeView</span>.  The model backing the tree view should implement the <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragDest"><span class="type">RbTreeDragDest</span></a>
+interface.  This should be called immediately after the tree view is created.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tree_view</code></em> :</span></p></td>
+<td>a <span class="type">GtkTreeView</span> that wants to be a drag destination</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td>
+<a href="rhythmbox-rb-tree-dnd.html#RbTreeDestFlag"><span class="type">RbTreeDestFlags</span></a> for this drag destination</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>targets</code></em> :</span></p></td>
+<td>an array of <span class="type">GtkTargetEntry</span> structures describing the allowed drag targets</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_targets</code></em> :</span></p></td>
+<td>the number of elements in <em class="parameter"><code>targets</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actions</code></em> :</span></p></td>
+<td>the allowable drag actions for this destination</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-tree-dnd-add-drag-source-support"></a><h3>rb_tree_dnd_add_drag_source_support ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_tree_dnd_add_drag_source_support (<em class="parameter"><code><span class="type">GtkTreeView</span> *tree_view</code></em>,
+                                                         <em class="parameter"><code><span class="type">GdkModifierType</span> start_button_mask</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">GtkTargetEntry</span> *targets</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> n_targets</code></em>,
+                                                         <em class="parameter"><code><span class="type">GdkDragAction</span> actions</code></em>);</pre>
+<p>
+Adds event handlers to perform multi-row drag and drop operations from the
+specified <span class="type">GtkTreeView</span> widget.  The model backing the <span class="type">GtkTreeView</span> must
+implement the <a class="link" href="rhythmbox-rb-tree-dnd.html#RbTreeDragSource"><span class="type">RbTreeDragSource</span></a> interface.  This should be called immediately
+after the tree view is created.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tree_view</code></em> :</span></p></td>
+<td>a <span class="type">GtkTreeView</span> that wants to be a drag source</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>start_button_mask</code></em> :</span></p></td>
+<td>a mask describing modifier keys to handle when dragging</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>targets</code></em> :</span></p></td>
+<td>an array of <span class="type">GtkTargetEntry</span> structures describing drag data types</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_targets</code></em> :</span></p></td>
+<td>the number of elements in <em class="parameter"><code>targets</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>actions</code></em> :</span></p></td>
+<td>a mask describing drag actions that are allowed from this source</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

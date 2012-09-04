@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="Rhythmbox Development Reference Manual" link="index.html" author="" name="rhythmbox" version="2" language="c">
+  <chapters>
+    <sub name="Backends" link="ch01.html">
+      <sub name="RBPlayer" link="RBPlayer.html"/>
+      <sub name="RBPlayerGstDataTee" link="RBPlayerGstDataTee.html"/>
+      <sub name="RBPlayerGstFilter" link="RBPlayerGstFilter.html"/>
+      <sub name="RBPlayerGstTee" link="RBPlayerGstTee.html"/>
+      <sub name="RBEncoder" link="RBEncoder.html"/>
+    </sub>
+    <sub name="Lib" link="ch02.html">
+      <sub name="Media player ID" link="rhythmbox-Media-player-ID.html"/>
+      <sub name="rb-async-queue-watch" link="rhythmbox-rb-async-queue-watch.html"/>
+      <sub name="rb-debug" link="rhythmbox-rb-debug.html"/>
+      <sub name="rb-file-helpers" link="rhythmbox-rb-file-helpers.html"/>
+      <sub name="rb-builder-helpers" link="rhythmbox-rb-builder-helpers.html"/>
+      <sub name="RBStringValueMap" link="RBStringValueMap.html"/>
+      <sub name="rb-tree-dnd" link="rhythmbox-rb-tree-dnd.html"/>
+      <sub name="rb-util" link="rhythmbox-rb-util.html"/>
+      <sub name="rb-text-helpers" link="rhythmbox-rb-text-helpers.html"/>
+    </sub>
+    <sub name="Metadata" link="ch03.html">
+      <sub name="RBMetaData" link="RBMetaData.html"/>
+    </sub>
+    <sub name="RhythmDB" link="ch04.html">
+      <sub name="RhythmDBEntryType" link="RhythmDBEntryType.html"/>
+      <sub name="RhythmDBImportJob" link="RhythmDBImportJob.html"/>
+      <sub name="RhythmDBPropertyModel" link="RhythmDBPropertyModel.html"/>
+      <sub name="RhythmDBQueryModel" link="RhythmDBQueryModel.html"/>
+      <sub name="RhythmDBQueryResults" link="RhythmDBQueryResults.html"/>
+      <sub name="RhythmDB" link="RhythmDB.html"/>
+    </sub>
+    <sub name="Shell" link="ch05.html">
+      <sub name="RBHistory" link="RBHistory.html"/>
+      <sub name="RBPlayOrder" link="RBPlayOrder.html"/>
+      <sub name="RBRandomPlayOrder" link="RBRandomPlayOrder.html"/>
+      <sub name="RBPlaylistManager" link="RBPlaylistManager.html"/>
+      <sub name="RBRemovableMediaManager" link="RBRemovableMediaManager.html"/>
+      <sub name="RBShellClipboard" link="RBShellClipboard.html"/>
+      <sub name="RBShellPlayer" link="RBShellPlayer.html"/>
+      <sub name="RBShellPreferences" link="RBShellPreferences.html"/>
+      <sub name="RBShell" link="RBShell.html"/>
+      <sub name="RBSourceHeader" link="rhythmbox-RBSourceHeader.html"/>
+      <sub name="RBStatusbar" link="RBStatusbar.html"/>
+      <sub name="RBTrackTransferBatch" link="RBTrackTransferBatch.html"/>
+      <sub name="RBTrackTransferQueue" link="RBTrackTransferQueue.html"/>
+    </sub>
+    <sub name="Sources" link="ch06.html">
+      <sub name="RBAutoPlaylistSource" link="RBAutoPlaylistSource.html"/>
+      <sub name="RBBrowserSource" link="RBBrowserSource.html"/>
+      <sub name="RBImportErrorsSource" link="RBImportErrorsSource.html"/>
+      <sub name="RBLibrarySource" link="RBLibrarySource.html"/>
+      <sub name="RBMissingFilesSource" link="RBMissingFilesSource.html"/>
+      <sub name="RBMediaPlayerSource" link="RBMediaPlayerSource.html"/>
+      <sub name="RBPlayQueueSource" link="RBPlayQueueSource.html"/>
+      <sub name="RBPlaylistSource" link="RBPlaylistSource.html"/>
+      <sub name="RBRemovableMediaSource" link="rhythmbox-RBRemovableMediaSource.html"/>
+      <sub name="RBSourceSearch" link="RBSourceSearch.html"/>
+      <sub name="RBSourceSearchBasic" link="RBSourceSearchBasic.html"/>
+      <sub name="RBSource" link="RBSource.html"/>
+      <sub name="RBStaticPlaylistSource" link="RBStaticPlaylistSource.html"/>
+      <sub name="RBStreamingSource" link="RBStreamingSource.html"/>
+    </sub>
+    <sub name="Widgets" link="ch07.html">
+      <sub name="RBCellRendererPixbuf" link="RBCellRendererPixbuf.html"/>
+      <sub name="RBCellRendererRating" link="RBCellRendererRating.html"/>
+      <sub name="rb-dialog" link="rhythmbox-rb-dialog.html"/>
+      <sub name="RBEntryView" link="RBEntryView.html"/>
+      <sub name="RBHeader" link="RBHeader.html"/>
+      <sub name="RBLibraryBrowser" link="RBLibraryBrowser.html"/>
+      <sub name="RBPropertyView" link="RBPropertyView.html"/>
+      <sub name="RBQueryCreator" link="RBQueryCreator.html"/>
+      <sub name="rb-rating-helper" link="rhythmbox-rb-rating-helper.html"/>
+      <sub name="RBRating" link="RBRating.html"/>
+      <sub name="RBSearchEntry" link="RBSearchEntry.html"/>
+      <sub name="RBSongInfo" link="RBSongInfo.html"/>
+      <sub name="RBURIDialog" link="RBURIDialog.html"/>
+    </sub>
+  </chapters>
+  <functions>
+    <keyword type="struct" name="RBPlayer" link="RBPlayer.html#RBPlayer-struct"/>
+    <keyword type="struct" name="struct RBPlayerIface" link="RBPlayer.html#RBPlayerIface"/>
+    <keyword type="enum" name="enum RBPlayerPlayType" link="RBPlayer.html#RBPlayerPlayType"/>
+    <keyword type="enum" name="enum RBPlayerError" link="RBPlayer.html#RBPlayerError-enum"/>
+    <keyword type="function" name="rb_player_new ()" link="RBPlayer.html#rb-player-new"/>
+    <keyword type="function" name="rb_player_open ()" link="RBPlayer.html#rb-player-open"/>
+    <keyword type="function" name="rb_player_opened ()" link="RBPlayer.html#rb-player-opened"/>
+    <keyword type="function" name="rb_player_close ()" link="RBPlayer.html#rb-player-close"/>
+    <keyword type="function" name="rb_player_play ()" link="RBPlayer.html#rb-player-play"/>
+    <keyword type="function" name="rb_player_pause ()" link="RBPlayer.html#rb-player-pause"/>
+    <keyword type="function" name="rb_player_playing ()" link="RBPlayer.html#rb-player-playing"/>
+    <keyword type="function" name="rb_player_set_volume ()" link="RBPlayer.html#rb-player-set-volume"/>
+    <keyword type="function" name="rb_player_get_volume ()" link="RBPlayer.html#rb-player-get-volume"/>
+    <keyword type="function" name="rb_player_seekable ()" link="RBPlayer.html#rb-player-seekable"/>
+    <keyword type="function" name="rb_player_set_time ()" link="RBPlayer.html#rb-player-set-time"/>
+    <keyword type="function" name="rb_player_get_time ()" link="RBPlayer.html#rb-player-get-time"/>
+    <keyword type="function" name="rb_player_multiple_open ()" link="RBPlayer.html#rb-player-multiple-open"/>
+    <keyword type="signal" name="The &quot;buffering&quot; signal" link="RBPlayer.html#RBPlayer-buffering"/>
+    <keyword type="signal" name="The &quot;eos&quot; signal" link="RBPlayer.html#RBPlayer-eos"/>
+    <keyword type="signal" name="The &quot;error&quot; signal" link="RBPlayer.html#RBPlayer-error"/>
+    <keyword type="signal" name="The &quot;event&quot; signal" link="RBPlayer.html#RBPlayer-event"/>
+    <keyword type="signal" name="The &quot;image&quot; signal" link="RBPlayer.html#RBPlayer-image"/>
+    <keyword type="signal" name="The &quot;info&quot; signal" link="RBPlayer.html#RBPlayer-info"/>
+    <keyword type="signal" name="The &quot;playing-stream&quot; signal" link="RBPlayer.html#RBPlayer-playing-stream"/>
+    <keyword type="signal" name="The &quot;redirect&quot; signal" link="RBPlayer.html#RBPlayer-redirect"/>
+    <keyword type="signal" name="The &quot;tick&quot; signal" link="RBPlayer.html#RBPlayer-tick"/>
+    <keyword type="signal" name="The &quot;volume-changed&quot; signal" link="RBPlayer.html#RBPlayer-volume-changed"/>
+    <keyword type="struct" name="RBPlayerGstDataTee" link="RBPlayerGstDataTee.html#RBPlayerGstDataTee-struct"/>
+    <keyword type="struct" name="struct RBPlayerGstDataTeeIface" link="RBPlayerGstDataTee.html#RBPlayerGstDataTeeIface"/>
+    <keyword type="function" name="rb_player_gst_data_tee_add_data_tee ()" link="RBPlayerGstDataTee.html#rb-player-gst-data-tee-add-data-tee"/>
+    <keyword type="function" name="rb_player_gst_data_tee_remove_data_tee ()" link="RBPlayerGstDataTee.html#rb-player-gst-data-tee-remove-data-tee"/>
+    <keyword type="signal" name="The &quot;data-tee-inserted&quot; signal" link="RBPlayerGstDataTee.html#RBPlayerGstDataTee-data-tee-inserted"/>
+    <keyword type="signal" name="The &quot;data-tee-pre-remove&quot; signal" link="RBPlayerGstDataTee.html#RBPlayerGstDataTee-data-tee-pre-remove"/>
+    <keyword type="struct" name="RBPlayerGstFilter" link="RBPlayerGstFilter.html#RBPlayerGstFilter-struct"/>
+    <keyword type="struct" name="struct RBPlayerGstFilterIface" link="RBPlayerGstFilter.html#RBPlayerGstFilterIface"/>
+    <keyword type="function" name="rb_player_gst_filter_add_filter ()" link="RBPlayerGstFilter.html#rb-player-gst-filter-add-filter"/>
+    <keyword type="function" name="rb_player_gst_filter_remove_filter ()" link="RBPlayerGstFilter.html#rb-player-gst-filter-remove-filter"/>
+    <keyword type="signal" name="The &quot;filter-inserted&quot; signal" link="RBPlayerGstFilter.html#RBPlayerGstFilter-filter-inserted"/>
+    <keyword type="signal" name="The &quot;filter-pre-remove&quot; signal" link="RBPlayerGstFilter.html#RBPlayerGstFilter-filter-pre-remove"/>
+    <keyword type="struct" name="RBPlayerGstTee" link="RBPlayerGstTee.html#RBPlayerGstTee-struct"/>
+    <keyword type="struct" name="struct RBPlayerGstTeeIface" link="RBPlayerGstTee.html#RBPlayerGstTeeIface"/>
+    <keyword type="function" name="rb_player_gst_tee_add_tee ()" link="RBPlayerGstTee.html#rb-player-gst-tee-add-tee"/>
+    <keyword type="function" name="rb_player_gst_tee_remove_tee ()" link="RBPlayerGstTee.html#rb-player-gst-tee-remove-tee"/>
+    <keyword type="signal" name="The &quot;tee-inserted&quot; signal" link="RBPlayerGstTee.html#RBPlayerGstTee-tee-inserted"/>
+    <keyword type="signal" name="The &quot;tee-pre-remove&quot; signal" link="RBPlayerGstTee.html#RBPlayerGstTee-tee-pre-remove"/>
+    <keyword type="struct" name="RBEncoder" link="RBEncoder.html#RBEncoder-struct"/>
+    <keyword type="struct" name="struct RBEncoderIface" link="RBEncoder.html#RBEncoderIface"/>
+    <keyword type="function" name="rb_encoder_new ()" link="RBEncoder.html#rb-encoder-new"/>
+    <keyword type="function" name="rb_encoder_encode ()" link="RBEncoder.html#rb-encoder-encode"/>
+    <keyword type="function" name="rb_encoder_cancel ()" link="RBEncoder.html#rb-encoder-cancel"/>
+    <keyword type="function" name="rb_encoder_get_missing_plugins ()" link="RBEncoder.html#rb-encoder-get-missing-plugins"/>
+    <keyword type="signal" name="The &quot;completed&quot; signal" link="RBEncoder.html#RBEncoder-completed"/>
+    <keyword type="signal" name="The &quot;progress&quot; signal" link="RBEncoder.html#RBEncoder-progress"/>
+    <keyword type="struct" name="struct RBMediaPlayerSource" link="rhythmbox-Media-player-ID.html#RBMediaPlayerSource-struct"/>
+    <keyword type="struct" name="struct RBMediaPlayerSourceClass" link="rhythmbox-Media-player-ID.html#RBMediaPlayerSourceClass"/>
+    <keyword type="function" name="rb_media_player_source_show_properties ()" link="rhythmbox-Media-player-ID.html#rb-media-player-source-show-properties"/>
+    <keyword type="struct" name="MPIDDevice" link="rhythmbox-Media-player-ID.html#MPIDDevice"/>
+    <keyword type="enum" name="enum MPIDError" link="rhythmbox-Media-player-ID.html#MPIDError"/>
+    <keyword type="enum" name="enum MPIDSource" link="rhythmbox-Media-player-ID.html#MPIDSource"/>
+    <keyword type="function" name="mpid_device_new ()" link="rhythmbox-Media-player-ID.html#mpid-device-new"/>
+    <keyword type="function" name="mpid_enable_debug ()" link="rhythmbox-Media-player-ID.html#mpid-enable-debug"/>
+    <keyword type="function" name="RBAsyncQueueWatchFunc ()" link="rhythmbox-rb-async-queue-watch.html#RBAsyncQueueWatchFunc"/>
+    <keyword type="function" name="rb_async_queue_watch_new ()" link="rhythmbox-rb-async-queue-watch.html#rb-async-queue-watch-new"/>
+    <keyword type="macro" name="rb_debug()" link="rhythmbox-rb-debug.html#rb-debug"/>
+    <keyword type="function" name="rb_debug_init ()" link="rhythmbox-rb-debug.html#rb-debug-init"/>
+    <keyword type="function" name="rb_debug_init_match ()" link="rhythmbox-rb-debug.html#rb-debug-init-match"/>
+    <keyword type="function" name="rb_debug_matches ()" link="rhythmbox-rb-debug.html#rb-debug-matches"/>
+    <keyword type="function" name="rb_debug_get_args ()" link="rhythmbox-rb-debug.html#rb-debug-get-args"/>
+    <keyword type="function" name="rb_debug_stop_in_debugger ()" link="rhythmbox-rb-debug.html#rb-debug-stop-in-debugger"/>
+    <keyword type="typedef" name="RBProfiler" link="rhythmbox-rb-debug.html#RBProfiler"/>
+    <keyword type="function" name="rb_profiler_new ()" link="rhythmbox-rb-debug.html#rb-profiler-new"/>
+    <keyword type="function" name="rb_profiler_dump ()" link="rhythmbox-rb-debug.html#rb-profiler-dump"/>
+    <keyword type="function" name="rb_profiler_reset ()" link="rhythmbox-rb-debug.html#rb-profiler-reset"/>
+    <keyword type="function" name="rb_profiler_free ()" link="rhythmbox-rb-debug.html#rb-profiler-free"/>
+    <keyword type="macro" name="rb_profile_start()" link="rhythmbox-rb-debug.html#rb-profile-start"/>
+    <keyword type="macro" name="rb_profile_end()" link="rhythmbox-rb-debug.html#rb-profile-end"/>
+    <keyword type="function" name="rb_file ()" link="rhythmbox-rb-file-helpers.html#rb-file"/>
+    <keyword type="function" name="rb_user_data_dir ()" link="rhythmbox-rb-file-helpers.html#rb-user-data-dir"/>
+    <keyword type="function" name="rb_user_cache_dir ()" link="rhythmbox-rb-file-helpers.html#rb-user-cache-dir"/>
+    <keyword type="function" name="rb_music_dir ()" link="rhythmbox-rb-file-helpers.html#rb-music-dir"/>
+    <keyword type="function" name="rb_find_user_data_file ()" link="rhythmbox-rb-file-helpers.html#rb-find-user-data-file"/>
+    <keyword type="function" name="rb_find_user_cache_file ()" link="rhythmbox-rb-file-helpers.html#rb-find-user-cache-file"/>
+    <keyword type="function" name="rb_file_helpers_init ()" link="rhythmbox-rb-file-helpers.html#rb-file-helpers-init"/>
+    <keyword type="function" name="rb_file_helpers_shutdown ()" link="rhythmbox-rb-file-helpers.html#rb-file-helpers-shutdown"/>
+    <keyword type="function" name="rb_uri_resolve_symlink ()" link="rhythmbox-rb-file-helpers.html#rb-uri-resolve-symlink"/>
+    <keyword type="function" name="rb_uri_is_directory ()" link="rhythmbox-rb-file-helpers.html#rb-uri-is-directory"/>
+    <keyword type="function" name="rb_uri_exists ()" link="rhythmbox-rb-file-helpers.html#rb-uri-exists"/>
+    <keyword type="function" name="rb_uri_is_readable ()" link="rhythmbox-rb-file-helpers.html#rb-uri-is-readable"/>
+    <keyword type="function" name="rb_uri_is_writable ()" link="rhythmbox-rb-file-helpers.html#rb-uri-is-writable"/>
+    <keyword type="function" name="rb_uri_is_local ()" link="rhythmbox-rb-file-helpers.html#rb-uri-is-local"/>
+    <keyword type="function" name="rb_uri_is_hidden ()" link="rhythmbox-rb-file-helpers.html#rb-uri-is-hidden"/>
+    <keyword type="function" name="rb_uri_could_be_podcast ()" link="rhythmbox-rb-file-helpers.html#rb-uri-could-be-podcast"/>
+    <keyword type="function" name="rb_uri_make_hidden ()" link="rhythmbox-rb-file-helpers.html#rb-uri-make-hidden"/>
+    <keyword type="function" name="rb_uri_handle_recursively ()" link="rhythmbox-rb-file-helpers.html#rb-uri-handle-recursively"/>
+    <keyword type="function" name="rb_uri_handle_recursively_async ()" link="rhythmbox-rb-file-helpers.html#rb-uri-handle-recursively-async"/>
+    <keyword type="function" name="rb_uri_mkstemp ()" link="rhythmbox-rb-file-helpers.html#rb-uri-mkstemp"/>
+    <keyword type="function" name="rb_canonicalise_uri ()" link="rhythmbox-rb-file-helpers.html#rb-canonicalise-uri"/>
+    <keyword type="function" name="rb_uri_append_path ()" link="rhythmbox-rb-file-helpers.html#rb-uri-append-path"/>
+    <keyword type="function" name="rb_uri_append_uri ()" link="rhythmbox-rb-file-helpers.html#rb-uri-append-uri"/>
+    <keyword type="function" name="rb_uri_get_dir_name ()" link="rhythmbox-rb-file-helpers.html#rb-uri-get-dir-name"/>
+    <keyword type="function" name="rb_uri_get_short_path_name ()" link="rhythmbox-rb-file-helpers.html#rb-uri-get-short-path-name"/>
+    <keyword type="function" name="rb_check_dir_has_space ()" link="rhythmbox-rb-file-helpers.html#rb-check-dir-has-space"/>
+    <keyword type="function" name="rb_check_dir_has_space_uri ()" link="rhythmbox-rb-file-helpers.html#rb-check-dir-has-space-uri"/>
+    <keyword type="function" name="rb_uri_get_mount_point ()" link="rhythmbox-rb-file-helpers.html#rb-uri-get-mount-point"/>
+    <keyword type="function" name="rb_uri_create_parent_dirs ()" link="rhythmbox-rb-file-helpers.html#rb-uri-create-parent-dirs"/>
+    <keyword type="function" name="rb_file_find_extant_parent ()" link="rhythmbox-rb-file-helpers.html#rb-file-find-extant-parent"/>
+    <keyword type="function" name="rb_uri_get_filesystem_type ()" link="rhythmbox-rb-file-helpers.html#rb-uri-get-filesystem-type"/>
+    <keyword type="function" name="rb_sanitize_path_for_msdos_filesystem ()" link="rhythmbox-rb-file-helpers.html#rb-sanitize-path-for-msdos-filesystem"/>
+    <keyword type="function" name="rb_sanitize_uri_for_filesystem ()" link="rhythmbox-rb-file-helpers.html#rb-sanitize-uri-for-filesystem"/>
+    <keyword type="function" name="RBUriRecurseFunc ()" link="rhythmbox-rb-file-helpers.html#RBUriRecurseFunc"/>
+    <keyword type="function" name="rb_builder_load ()" link="rhythmbox-rb-builder-helpers.html#rb-builder-load"/>
+    <keyword type="function" name="rb_builder_boldify_label ()" link="rhythmbox-rb-builder-helpers.html#rb-builder-boldify-label"/>
+    <keyword type="function" name="rb_combo_box_hyphen_separator_func ()" link="rhythmbox-rb-builder-helpers.html#rb-combo-box-hyphen-separator-func"/>
+    <keyword type="struct" name="struct RBStringValueMap" link="RBStringValueMap.html#RBStringValueMap-struct"/>
+    <keyword type="struct" name="struct RBStringValueMapClass" link="RBStringValueMap.html#RBStringValueMapClass"/>
+    <keyword type="function" name="rb_string_value_map_new ()" link="RBStringValueMap.html#rb-string-value-map-new"/>
+    <keyword type="function" name="rb_string_value_map_set ()" link="RBStringValueMap.html#rb-string-value-map-set"/>
+    <keyword type="function" name="rb_string_value_map_get ()" link="RBStringValueMap.html#rb-string-value-map-get"/>
+    <keyword type="function" name="rb_string_value_map_peek ()" link="RBStringValueMap.html#rb-string-value-map-peek"/>
+    <keyword type="function" name="rb_string_value_map_remove ()" link="RBStringValueMap.html#rb-string-value-map-remove"/>
+    <keyword type="function" name="rb_string_value_map_size ()" link="RBStringValueMap.html#rb-string-value-map-size"/>
+    <keyword type="function" name="rb_string_value_map_steal_hashtable ()" link="RBStringValueMap.html#rb-string-value-map-steal-hashtable"/>
+    <keyword type="struct" name="RbTreeDragSource" link="rhythmbox-rb-tree-dnd.html#RbTreeDragSource-struct"/>
+    <keyword type="struct" name="struct RbTreeDragSourceIface" link="rhythmbox-rb-tree-dnd.html#RbTreeDragSourceIface"/>
+    <keyword type="struct" name="RbTreeDragDest" link="rhythmbox-rb-tree-dnd.html#RbTreeDragDest-struct"/>
+    <keyword type="struct" name="struct RbTreeDragDestIface" link="rhythmbox-rb-tree-dnd.html#RbTreeDragDestIface"/>
+    <keyword type="enum" name="enum RbTreeDestFlag" link="rhythmbox-rb-tree-dnd.html#RbTreeDestFlag"/>
+    <keyword type="function" name="rb_tree_drag_source_row_draggable ()" link="rhythmbox-rb-tree-dnd.html#rb-tree-drag-source-row-draggable"/>
+    <keyword type="function" name="rb_tree_drag_source_drag_data_delete ()" link="rhythmbox-rb-tree-dnd.html#rb-tree-drag-source-drag-data-delete"/>
+    <keyword type="function" name="rb_tree_drag_source_drag_data_get ()" link="rhythmbox-rb-tree-dnd.html#rb-tree-drag-source-drag-data-get"/>
+    <keyword type="function" name="rb_tree_drag_dest_drag_data_received ()" link="rhythmbox-rb-tree-dnd.html#rb-tree-drag-dest-drag-data-received"/>
+    <keyword type="function" name="rb_tree_drag_dest_row_drop_possible ()" link="rhythmbox-rb-tree-dnd.html#rb-tree-drag-dest-row-drop-possible"/>
+    <keyword type="function" name="rb_tree_drag_dest_row_drop_position ()" link="rhythmbox-rb-tree-dnd.html#rb-tree-drag-dest-row-drop-position"/>
+    <keyword type="function" name="rb_tree_dnd_add_drag_dest_support ()" link="rhythmbox-rb-tree-dnd.html#rb-tree-dnd-add-drag-dest-support"/>
+    <keyword type="function" name="rb_tree_dnd_add_drag_source_support ()" link="rhythmbox-rb-tree-dnd.html#rb-tree-dnd-add-drag-source-support"/>
+    <keyword type="function" name="rb_true_function ()" link="rhythmbox-rb-util.html#rb-true-function"/>
+    <keyword type="function" name="rb_false_function ()" link="rhythmbox-rb-util.html#rb-false-function"/>
+    <keyword type="function" name="rb_null_function ()" link="rhythmbox-rb-util.html#rb-null-function"/>
+    <keyword type="function" name="rb_copy_function ()" link="rhythmbox-rb-util.html#rb-copy-function"/>
+    <keyword type="function" name="rb_gvalue_compare ()" link="rhythmbox-rb-util.html#rb-gvalue-compare"/>
+    <keyword type="function" name="rb_compare_gtimeval ()" link="rhythmbox-rb-util.html#rb-compare-gtimeval"/>
+    <keyword type="function" name="rb_image_new_from_stock ()" link="rhythmbox-rb-util.html#rb-image-new-from-stock"/>
+    <keyword type="function" name="rb_gtk_action_popup_menu ()" link="rhythmbox-rb-util.html#rb-gtk-action-popup-menu"/>
+    <keyword type="function" name="rb_is_main_thread ()" link="rhythmbox-rb-util.html#rb-is-main-thread"/>
+    <keyword type="function" name="rb_assert_locked ()" link="rhythmbox-rb-util.html#rb-assert-locked"/>
+    <keyword type="function" name="rb_threads_init ()" link="rhythmbox-rb-util.html#rb-threads-init"/>
+    <keyword type="function" name="rb_string_split_words ()" link="rhythmbox-rb-util.html#rb-string-split-words"/>
+    <keyword type="function" name="rb_search_fold ()" link="rhythmbox-rb-util.html#rb-search-fold"/>
+    <keyword type="function" name="rb_make_duration_string ()" link="rhythmbox-rb-util.html#rb-make-duration-string"/>
+    <keyword type="function" name="rb_make_elapsed_time_string ()" link="rhythmbox-rb-util.html#rb-make-elapsed-time-string"/>
+    <keyword type="function" name="rb_string_list_equal ()" link="rhythmbox-rb-util.html#rb-string-list-equal"/>
+    <keyword type="function" name="rb_string_list_copy ()" link="rhythmbox-rb-util.html#rb-string-list-copy"/>
+    <keyword type="function" name="rb_string_list_contains ()" link="rhythmbox-rb-util.html#rb-string-list-contains"/>
+    <keyword type="function" name="rb_list_destroy_free ()" link="rhythmbox-rb-util.html#rb-list-destroy-free"/>
+    <keyword type="function" name="rb_list_deep_free ()" link="rhythmbox-rb-util.html#rb-list-deep-free"/>
+    <keyword type="function" name="rb_slist_deep_free ()" link="rhythmbox-rb-util.html#rb-slist-deep-free"/>
+    <keyword type="function" name="rb_collate_hash_table_keys ()" link="rhythmbox-rb-util.html#rb-collate-hash-table-keys"/>
+    <keyword type="function" name="rb_collate_hash_table_values ()" link="rhythmbox-rb-util.html#rb-collate-hash-table-values"/>
+    <keyword type="function" name="rb_uri_list_parse ()" link="rhythmbox-rb-util.html#rb-uri-list-parse"/>
+    <keyword type="function" name="rb_signal_accumulator_object_handled ()" link="rhythmbox-rb-util.html#rb-signal-accumulator-object-handled"/>
+    <keyword type="function" name="rb_signal_accumulator_value_array ()" link="rhythmbox-rb-util.html#rb-signal-accumulator-value-array"/>
+    <keyword type="function" name="rb_value_array_append_data ()" link="rhythmbox-rb-util.html#rb-value-array-append-data"/>
+    <keyword type="function" name="rb_value_free ()" link="rhythmbox-rb-util.html#rb-value-free"/>
+    <keyword type="function" name="rb_str_in_strv ()" link="rhythmbox-rb-util.html#rb-str-in-strv"/>
+    <keyword type="function" name="rb_set_tree_view_column_fixed_width ()" link="rhythmbox-rb-util.html#rb-set-tree-view-column-fixed-width"/>
+    <keyword type="function" name="rb_scale_pixbuf_to_size ()" link="rhythmbox-rb-util.html#rb-scale-pixbuf-to-size"/>
+    <keyword type="function" name="rb_text_direction_conflict ()" link="rhythmbox-rb-text-helpers.html#rb-text-direction-conflict"/>
+    <keyword type="function" name="rb_text_common_direction ()" link="rhythmbox-rb-text-helpers.html#rb-text-common-direction"/>
+    <keyword type="function" name="rb_text_cat ()" link="rhythmbox-rb-text-helpers.html#rb-text-cat"/>
+    <keyword type="struct" name="struct RBMetaData" link="RBMetaData.html#RBMetaData-struct"/>
+    <keyword type="struct" name="struct RBMetaDataClass" link="RBMetaData.html#RBMetaDataClass"/>
+    <keyword type="enum" name="enum RBMetaDataField" link="RBMetaData.html#RBMetaDataField"/>
+    <keyword type="enum" name="enum RBMetaDataError" link="RBMetaData.html#RBMetaDataError"/>
+    <keyword type="function" name="rb_metadata_new ()" link="RBMetaData.html#rb-metadata-new"/>
+    <keyword type="function" name="rb_metadata_get_field_type ()" link="RBMetaData.html#rb-metadata-get-field-type"/>
+    <keyword type="function" name="rb_metadata_get_field_name ()" link="RBMetaData.html#rb-metadata-get-field-name"/>
+    <keyword type="function" name="rb_metadata_can_save ()" link="RBMetaData.html#rb-metadata-can-save"/>
+    <keyword type="function" name="rb_metadata_load ()" link="RBMetaData.html#rb-metadata-load"/>
+    <keyword type="function" name="rb_metadata_save ()" link="RBMetaData.html#rb-metadata-save"/>
+    <keyword type="function" name="rb_metadata_get_media_type ()" link="RBMetaData.html#rb-metadata-get-media-type"/>
+    <keyword type="function" name="rb_metadata_has_missing_plugins ()" link="RBMetaData.html#rb-metadata-has-missing-plugins"/>
+    <keyword type="function" name="rb_metadata_get_missing_plugins ()" link="RBMetaData.html#rb-metadata-get-missing-plugins"/>
+    <keyword type="function" name="rb_metadata_get ()" link="RBMetaData.html#rb-metadata-get"/>
+    <keyword type="function" name="rb_metadata_set ()" link="RBMetaData.html#rb-metadata-set"/>
+    <keyword type="enum" name="enum RhythmDBEntryCategory" link="RhythmDBEntryType.html#RhythmDBEntryCategory-enum"/>
+    <keyword type="struct" name="struct RhythmDBEntryType" link="RhythmDBEntryType.html#RhythmDBEntryType-struct"/>
+    <keyword type="struct" name="struct RhythmDBEntryTypeClass" link="RhythmDBEntryType.html#RhythmDBEntryTypeClass"/>
+    <keyword type="function" name="rhythmdb_entry_type_get_name ()" link="RhythmDBEntryType.html#rhythmdb-entry-type-get-name"/>
+    <keyword type="function" name="rhythmdb_entry_get_playback_uri ()" link="RhythmDBEntryType.html#rhythmdb-entry-get-playback-uri"/>
+    <keyword type="function" name="rhythmdb_entry_created ()" link="RhythmDBEntryType.html#rhythmdb-entry-created"/>
+    <keyword type="function" name="rhythmdb_entry_pre_destroy ()" link="RhythmDBEntryType.html#rhythmdb-entry-pre-destroy"/>
+    <keyword type="function" name="rhythmdb_entry_can_sync_metadata ()" link="RhythmDBEntryType.html#rhythmdb-entry-can-sync-metadata"/>
+    <keyword type="function" name="rhythmdb_entry_sync_metadata ()" link="RhythmDBEntryType.html#rhythmdb-entry-sync-metadata"/>
+    <keyword type="property" name="The &quot;category&quot; property" link="RhythmDBEntryType.html#RhythmDBEntryType--category"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RhythmDBEntryType.html#RhythmDBEntryType--db"/>
+    <keyword type="property" name="The &quot;has-playlists&quot; property" link="RhythmDBEntryType.html#RhythmDBEntryType--has-playlists"/>
+    <keyword type="property" name="The &quot;name&quot; property" link="RhythmDBEntryType.html#RhythmDBEntryType--name"/>
+    <keyword type="property" name="The &quot;save-to-disk&quot; property" link="RhythmDBEntryType.html#RhythmDBEntryType--save-to-disk"/>
+    <keyword type="property" name="The &quot;type-data-size&quot; property" link="RhythmDBEntryType.html#RhythmDBEntryType--type-data-size"/>
+    <keyword type="struct" name="struct RhythmDBImportJob" link="RhythmDBImportJob.html#RhythmDBImportJob-struct"/>
+    <keyword type="struct" name="struct RhythmDBImportJobClass" link="RhythmDBImportJob.html#RhythmDBImportJobClass"/>
+    <keyword type="function" name="rhythmdb_import_job_new ()" link="RhythmDBImportJob.html#rhythmdb-import-job-new"/>
+    <keyword type="function" name="rhythmdb_import_job_add_uri ()" link="RhythmDBImportJob.html#rhythmdb-import-job-add-uri"/>
+    <keyword type="function" name="rhythmdb_import_job_start ()" link="RhythmDBImportJob.html#rhythmdb-import-job-start"/>
+    <keyword type="function" name="rhythmdb_import_job_cancel ()" link="RhythmDBImportJob.html#rhythmdb-import-job-cancel"/>
+    <keyword type="function" name="rhythmdb_import_job_complete ()" link="RhythmDBImportJob.html#rhythmdb-import-job-complete"/>
+    <keyword type="function" name="rhythmdb_import_job_scan_complete ()" link="RhythmDBImportJob.html#rhythmdb-import-job-scan-complete"/>
+    <keyword type="function" name="rhythmdb_import_job_get_total ()" link="RhythmDBImportJob.html#rhythmdb-import-job-get-total"/>
+    <keyword type="function" name="rhythmdb_import_job_get_imported ()" link="RhythmDBImportJob.html#rhythmdb-import-job-get-imported"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RhythmDBImportJob.html#RhythmDBImportJob--db"/>
+    <keyword type="property" name="The &quot;entry-type&quot; property" link="RhythmDBImportJob.html#RhythmDBImportJob--entry-type"/>
+    <keyword type="property" name="The &quot;error-type&quot; property" link="RhythmDBImportJob.html#RhythmDBImportJob--error-type"/>
+    <keyword type="property" name="The &quot;ignore-type&quot; property" link="RhythmDBImportJob.html#RhythmDBImportJob--ignore-type"/>
+    <keyword type="signal" name="The &quot;complete&quot; signal" link="RhythmDBImportJob.html#RhythmDBImportJob-complete"/>
+    <keyword type="signal" name="The &quot;entry-added&quot; signal" link="RhythmDBImportJob.html#RhythmDBImportJob-entry-added"/>
+    <keyword type="signal" name="The &quot;scan-complete&quot; signal" link="RhythmDBImportJob.html#RhythmDBImportJob-scan-complete"/>
+    <keyword type="signal" name="The &quot;status-changed&quot; signal" link="RhythmDBImportJob.html#RhythmDBImportJob-status-changed"/>
+    <keyword type="struct" name="struct RhythmDBPropertyModel" link="RhythmDBPropertyModel.html#RhythmDBPropertyModel-struct"/>
+    <keyword type="struct" name="struct RhythmDBPropertyModelClass" link="RhythmDBPropertyModel.html#RhythmDBPropertyModelClass"/>
+    <keyword type="enum" name="enum RhythmDBPropertyModelColumn" link="RhythmDBPropertyModel.html#RhythmDBPropertyModelColumn-enum"/>
+    <keyword type="function" name="rhythmdb_property_model_new ()" link="RhythmDBPropertyModel.html#rhythmdb-property-model-new"/>
+    <keyword type="function" name="rhythmdb_property_model_iter_from_string ()" link="RhythmDBPropertyModel.html#rhythmdb-property-model-iter-from-string"/>
+    <keyword type="function" name="rhythmdb_property_model_enable_drag ()" link="RhythmDBPropertyModel.html#rhythmdb-property-model-enable-drag"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RhythmDBPropertyModel.html#RhythmDBPropertyModel--db"/>
+    <keyword type="property" name="The &quot;prop&quot; property" link="RhythmDBPropertyModel.html#RhythmDBPropertyModel--prop"/>
+    <keyword type="property" name="The &quot;query-model&quot; property" link="RhythmDBPropertyModel.html#RhythmDBPropertyModel--query-model"/>
+    <keyword type="signal" name="The &quot;pre-row-deletion&quot; signal" link="RhythmDBPropertyModel.html#RhythmDBPropertyModel-pre-row-deletion"/>
+    <keyword type="struct" name="struct RhythmDBQueryModel" link="RhythmDBQueryModel.html#RhythmDBQueryModel-struct"/>
+    <keyword type="struct" name="struct RhythmDBQueryModelClass" link="RhythmDBQueryModel.html#RhythmDBQueryModelClass"/>
+    <keyword type="enum" name="enum RhythmDBQueryModelLimitType" link="RhythmDBQueryModel.html#RhythmDBQueryModelLimitType-enum"/>
+    <keyword type="macro" name="RHYTHMDB_QUERY_MODEL_SUGGESTED_UPDATE_CHUNK" link="RhythmDBQueryModel.html#RHYTHMDB-QUERY-MODEL-SUGGESTED-UPDATE-CHUNK:CAPS"/>
+    <keyword type="function" name="rhythmdb_query_model_new ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-new"/>
+    <keyword type="function" name="rhythmdb_query_model_new_empty ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-new-empty"/>
+    <keyword type="function" name="rhythmdb_query_model_copy_contents ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-copy-contents"/>
+    <keyword type="function" name="rhythmdb_query_model_chain ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-chain"/>
+    <keyword type="function" name="rhythmdb_query_model_add_entry ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-add-entry"/>
+    <keyword type="function" name="rhythmdb_query_model_remove_entry ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-remove-entry"/>
+    <keyword type="function" name="rhythmdb_query_model_shuffle_entries ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-shuffle-entries"/>
+    <keyword type="function" name="rhythmdb_query_model_move_entry ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-move-entry"/>
+    <keyword type="function" name="rhythmdb_query_model_get_size ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-get-size"/>
+    <keyword type="function" name="rhythmdb_query_model_get_duration ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-get-duration"/>
+    <keyword type="function" name="rhythmdb_query_model_entry_to_iter ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-entry-to-iter"/>
+    <keyword type="function" name="rhythmdb_query_model_has_pending_changes ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-has-pending-changes"/>
+    <keyword type="function" name="rhythmdb_query_model_tree_path_to_entry ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-tree-path-to-entry"/>
+    <keyword type="function" name="rhythmdb_query_model_iter_to_entry ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-iter-to-entry"/>
+    <keyword type="function" name="rhythmdb_query_model_get_next_from_entry ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-get-next-from-entry"/>
+    <keyword type="function" name="rhythmdb_query_model_get_previous_from_entry ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-get-previous-from-entry"/>
+    <keyword type="function" name="rhythmdb_query_model_compute_status_normal ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-compute-status-normal"/>
+    <keyword type="function" name="rhythmdb_query_model_set_sort_order ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-set-sort-order"/>
+    <keyword type="function" name="rhythmdb_query_model_reapply_query ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-reapply-query"/>
+    <keyword type="function" name="rhythmdb_query_model_location_sort_func ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-location-sort-func"/>
+    <keyword type="function" name="rhythmdb_query_model_string_sort_func ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-string-sort-func"/>
+    <keyword type="function" name="rhythmdb_query_model_title_sort_func ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-title-sort-func"/>
+    <keyword type="function" name="rhythmdb_query_model_album_sort_func ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-album-sort-func"/>
+    <keyword type="function" name="rhythmdb_query_model_artist_sort_func ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-artist-sort-func"/>
+    <keyword type="function" name="rhythmdb_query_model_genre_sort_func ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-genre-sort-func"/>
+    <keyword type="function" name="rhythmdb_query_model_track_sort_func ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-track-sort-func"/>
+    <keyword type="function" name="rhythmdb_query_model_double_ceiling_sort_func ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-double-ceiling-sort-func"/>
+    <keyword type="function" name="rhythmdb_query_model_ulong_sort_func ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-ulong-sort-func"/>
+    <keyword type="function" name="rhythmdb_query_model_date_sort_func ()" link="RhythmDBQueryModel.html#rhythmdb-query-model-date-sort-func"/>
+    <keyword type="property" name="The &quot;base-model&quot; property" link="RhythmDBQueryModel.html#RhythmDBQueryModel--base-model"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RhythmDBQueryModel.html#RhythmDBQueryModel--db"/>
+    <keyword type="property" name="The &quot;limit-type&quot; property" link="RhythmDBQueryModel.html#RhythmDBQueryModel--limit-type"/>
+    <keyword type="property" name="The &quot;limit-value&quot; property" link="RhythmDBQueryModel.html#RhythmDBQueryModel--limit-value"/>
+    <keyword type="property" name="The &quot;query&quot; property" link="RhythmDBQueryModel.html#RhythmDBQueryModel--query"/>
+    <keyword type="property" name="The &quot;show-hidden&quot; property" link="RhythmDBQueryModel.html#RhythmDBQueryModel--show-hidden"/>
+    <keyword type="property" name="The &quot;sort-data&quot; property" link="RhythmDBQueryModel.html#RhythmDBQueryModel--sort-data"/>
+    <keyword type="property" name="The &quot;sort-data-destroy&quot; property" link="RhythmDBQueryModel.html#RhythmDBQueryModel--sort-data-destroy"/>
+    <keyword type="property" name="The &quot;sort-func&quot; property" link="RhythmDBQueryModel.html#RhythmDBQueryModel--sort-func"/>
+    <keyword type="property" name="The &quot;sort-reverse&quot; property" link="RhythmDBQueryModel.html#RhythmDBQueryModel--sort-reverse"/>
+    <keyword type="signal" name="The &quot;complete&quot; signal" link="RhythmDBQueryModel.html#RhythmDBQueryModel-complete"/>
+    <keyword type="signal" name="The &quot;entry-prop-changed&quot; signal" link="RhythmDBQueryModel.html#RhythmDBQueryModel-entry-prop-changed"/>
+    <keyword type="signal" name="The &quot;entry-removed&quot; signal" link="RhythmDBQueryModel.html#RhythmDBQueryModel-entry-removed"/>
+    <keyword type="signal" name="The &quot;filter-entry-drop&quot; signal" link="RhythmDBQueryModel.html#RhythmDBQueryModel-filter-entry-drop"/>
+    <keyword type="signal" name="The &quot;non-entry-dropped&quot; signal" link="RhythmDBQueryModel.html#RhythmDBQueryModel-non-entry-dropped"/>
+    <keyword type="signal" name="The &quot;post-entry-delete&quot; signal" link="RhythmDBQueryModel.html#RhythmDBQueryModel-post-entry-delete"/>
+    <keyword type="struct" name="RhythmDBQueryResults" link="RhythmDBQueryResults.html#RhythmDBQueryResults-struct"/>
+    <keyword type="struct" name="struct RhythmDBQueryResultsIface" link="RhythmDBQueryResults.html#RhythmDBQueryResultsIface"/>
+    <keyword type="function" name="rhythmdb_query_results_set_query ()" link="RhythmDBQueryResults.html#rhythmdb-query-results-set-query"/>
+    <keyword type="function" name="rhythmdb_query_results_add_results ()" link="RhythmDBQueryResults.html#rhythmdb-query-results-add-results"/>
+    <keyword type="function" name="rhythmdb_query_results_query_complete ()" link="RhythmDBQueryResults.html#rhythmdb-query-results-query-complete"/>
+    <keyword type="struct" name="struct RhythmDB" link="RhythmDB.html#RhythmDB-struct"/>
+    <keyword type="struct" name="RhythmDBEntry" link="RhythmDB.html#RhythmDBEntry-struct"/>
+    <keyword type="typedef" name="RhythmDBQuery" link="RhythmDB.html#RhythmDBQuery"/>
+    <keyword type="enum" name="enum RhythmDBQueryType" link="RhythmDB.html#RhythmDBQueryType-enum"/>
+    <keyword type="enum" name="enum RhythmDBPropType" link="RhythmDB.html#RhythmDBPropType-enum"/>
+    <keyword type="macro" name="RHYTHMDB_PROP_STREAM_SONG_TITLE" link="RhythmDB.html#RHYTHMDB-PROP-STREAM-SONG-TITLE:CAPS"/>
+    <keyword type="macro" name="RHYTHMDB_PROP_STREAM_SONG_ARTIST" link="RhythmDB.html#RHYTHMDB-PROP-STREAM-SONG-ARTIST:CAPS"/>
+    <keyword type="macro" name="RHYTHMDB_PROP_STREAM_SONG_ALBUM" link="RhythmDB.html#RHYTHMDB-PROP-STREAM-SONG-ALBUM:CAPS"/>
+    <keyword type="struct" name="RhythmDBQueryData" link="RhythmDB.html#RhythmDBQueryData"/>
+    <keyword type="struct" name="RhythmDBEntryChange" link="RhythmDB.html#RhythmDBEntryChange"/>
+    <keyword type="function" name="rhythmdb_entry_get_string ()" link="RhythmDB.html#rhythmdb-entry-get-string"/>
+    <keyword type="function" name="rhythmdb_entry_get_refstring ()" link="RhythmDB.html#rhythmdb-entry-get-refstring"/>
+    <keyword type="function" name="rhythmdb_entry_dup_string ()" link="RhythmDB.html#rhythmdb-entry-dup-string"/>
+    <keyword type="function" name="rhythmdb_entry_get_boolean ()" link="RhythmDB.html#rhythmdb-entry-get-boolean"/>
+    <keyword type="function" name="rhythmdb_entry_get_uint64 ()" link="RhythmDB.html#rhythmdb-entry-get-uint64"/>
+    <keyword type="function" name="rhythmdb_entry_get_ulong ()" link="RhythmDB.html#rhythmdb-entry-get-ulong"/>
+    <keyword type="function" name="rhythmdb_entry_get_double ()" link="RhythmDB.html#rhythmdb-entry-get-double"/>
+    <keyword type="function" name="rhythmdb_entry_get_object ()" link="RhythmDB.html#rhythmdb-entry-get-object"/>
+    <keyword type="function" name="rhythmdb_entry_get_entry_type ()" link="RhythmDB.html#rhythmdb-entry-get-entry-type"/>
+    <keyword type="enum" name="enum RhythmDBError" link="RhythmDB.html#RhythmDBError"/>
+    <keyword type="function" name="rhythmdb_shutdown ()" link="RhythmDB.html#rhythmdb-shutdown"/>
+    <keyword type="function" name="rhythmdb_load ()" link="RhythmDB.html#rhythmdb-load"/>
+    <keyword type="function" name="rhythmdb_save ()" link="RhythmDB.html#rhythmdb-save"/>
+    <keyword type="function" name="rhythmdb_save_async ()" link="RhythmDB.html#rhythmdb-save-async"/>
+    <keyword type="function" name="rhythmdb_start_action_thread ()" link="RhythmDB.html#rhythmdb-start-action-thread"/>
+    <keyword type="function" name="rhythmdb_commit ()" link="RhythmDB.html#rhythmdb-commit"/>
+    <keyword type="function" name="rhythmdb_entry_new ()" link="RhythmDB.html#rhythmdb-entry-new"/>
+    <keyword type="function" name="rhythmdb_entry_example_new ()" link="RhythmDB.html#rhythmdb-entry-example-new"/>
+    <keyword type="function" name="rhythmdb_add_uri ()" link="RhythmDB.html#rhythmdb-add-uri"/>
+    <keyword type="function" name="rhythmdb_add_uri_with_types ()" link="RhythmDB.html#rhythmdb-add-uri-with-types"/>
+    <keyword type="function" name="rhythmdb_entry_get ()" link="RhythmDB.html#rhythmdb-entry-get"/>
+    <keyword type="function" name="rhythmdb_entry_set ()" link="RhythmDB.html#rhythmdb-entry-set"/>
+    <keyword type="function" name="rhythmdb_entry_get_type_data ()" link="RhythmDB.html#rhythmdb-entry-get-type-data"/>
+    <keyword type="macro" name="RHYTHMDB_ENTRY_GET_TYPE_DATA()" link="RhythmDB.html#RHYTHMDB-ENTRY-GET-TYPE-DATA:CAPS"/>
+    <keyword type="function" name="rhythmdb_entry_delete ()" link="RhythmDB.html#rhythmdb-entry-delete"/>
+    <keyword type="function" name="rhythmdb_entry_delete_by_type ()" link="RhythmDB.html#rhythmdb-entry-delete-by-type"/>
+    <keyword type="function" name="rhythmdb_entry_move_to_trash ()" link="RhythmDB.html#rhythmdb-entry-move-to-trash"/>
+    <keyword type="function" name="rhythmdb_entry_lookup_by_location ()" link="RhythmDB.html#rhythmdb-entry-lookup-by-location"/>
+    <keyword type="function" name="rhythmdb_entry_lookup_by_id ()" link="RhythmDB.html#rhythmdb-entry-lookup-by-id"/>
+    <keyword type="function" name="rhythmdb_entry_lookup_from_string ()" link="RhythmDB.html#rhythmdb-entry-lookup-from-string"/>
+    <keyword type="function" name="rhythmdb_evaluate_query ()" link="RhythmDB.html#rhythmdb-evaluate-query"/>
+    <keyword type="function" name="rhythmdb_entry_foreach ()" link="RhythmDB.html#rhythmdb-entry-foreach"/>
+    <keyword type="function" name="rhythmdb_entry_count ()" link="RhythmDB.html#rhythmdb-entry-count"/>
+    <keyword type="function" name="rhythmdb_entry_foreach_by_type ()" link="RhythmDB.html#rhythmdb-entry-foreach-by-type"/>
+    <keyword type="function" name="rhythmdb_entry_count_by_type ()" link="RhythmDB.html#rhythmdb-entry-count-by-type"/>
+    <keyword type="function" name="rhythmdb_entry_keyword_add ()" link="RhythmDB.html#rhythmdb-entry-keyword-add"/>
+    <keyword type="function" name="rhythmdb_entry_keyword_remove ()" link="RhythmDB.html#rhythmdb-entry-keyword-remove"/>
+    <keyword type="function" name="rhythmdb_entry_keyword_has ()" link="RhythmDB.html#rhythmdb-entry-keyword-has"/>
+    <keyword type="function" name="rhythmdb_do_full_query ()" link="RhythmDB.html#rhythmdb-do-full-query"/>
+    <keyword type="function" name="rhythmdb_do_full_query_parsed ()" link="RhythmDB.html#rhythmdb-do-full-query-parsed"/>
+    <keyword type="function" name="rhythmdb_do_full_query_async ()" link="RhythmDB.html#rhythmdb-do-full-query-async"/>
+    <keyword type="function" name="rhythmdb_do_full_query_async_parsed ()" link="RhythmDB.html#rhythmdb-do-full-query-async-parsed"/>
+    <keyword type="function" name="rhythmdb_query_parse ()" link="RhythmDB.html#rhythmdb-query-parse"/>
+    <keyword type="function" name="rhythmdb_query_append ()" link="RhythmDB.html#rhythmdb-query-append"/>
+    <keyword type="function" name="rhythmdb_query_append_params ()" link="RhythmDB.html#rhythmdb-query-append-params"/>
+    <keyword type="function" name="rhythmdb_query_append_prop_multiple ()" link="RhythmDB.html#rhythmdb-query-append-prop-multiple"/>
+    <keyword type="function" name="rhythmdb_query_concatenate ()" link="RhythmDB.html#rhythmdb-query-concatenate"/>
+    <keyword type="function" name="rhythmdb_query_free ()" link="RhythmDB.html#rhythmdb-query-free"/>
+    <keyword type="function" name="rhythmdb_query_copy ()" link="RhythmDB.html#rhythmdb-query-copy"/>
+    <keyword type="function" name="rhythmdb_query_preprocess ()" link="RhythmDB.html#rhythmdb-query-preprocess"/>
+    <keyword type="function" name="rhythmdb_query_serialize ()" link="RhythmDB.html#rhythmdb-query-serialize"/>
+    <keyword type="function" name="rhythmdb_query_deserialize ()" link="RhythmDB.html#rhythmdb-query-deserialize"/>
+    <keyword type="function" name="rhythmdb_query_to_string ()" link="RhythmDB.html#rhythmdb-query-to-string"/>
+    <keyword type="function" name="rhythmdb_query_is_time_relative ()" link="RhythmDB.html#rhythmdb-query-is-time-relative"/>
+    <keyword type="function" name="rhythmdb_nice_elt_name_from_propid ()" link="RhythmDB.html#rhythmdb-nice-elt-name-from-propid"/>
+    <keyword type="function" name="rhythmdb_propid_from_nice_elt_name ()" link="RhythmDB.html#rhythmdb-propid-from-nice-elt-name"/>
+    <keyword type="function" name="rhythmdb_entry_request_extra_metadata ()" link="RhythmDB.html#rhythmdb-entry-request-extra-metadata"/>
+    <keyword type="function" name="rhythmdb_entry_gather_metadata ()" link="RhythmDB.html#rhythmdb-entry-gather-metadata"/>
+    <keyword type="function" name="rhythmdb_emit_entry_extra_metadata_notify ()" link="RhythmDB.html#rhythmdb-emit-entry-extra-metadata-notify"/>
+    <keyword type="function" name="rhythmdb_is_busy ()" link="RhythmDB.html#rhythmdb-is-busy"/>
+    <keyword type="function" name="rhythmdb_compute_status_normal ()" link="RhythmDB.html#rhythmdb-compute-status-normal"/>
+    <keyword type="function" name="rhythmdb_register_entry_type ()" link="RhythmDB.html#rhythmdb-register-entry-type"/>
+    <keyword type="function" name="rhythmdb_entry_type_get_by_name ()" link="RhythmDB.html#rhythmdb-entry-type-get-by-name"/>
+    <keyword type="function" name="rhythmdb_get_property_type ()" link="RhythmDB.html#rhythmdb-get-property-type"/>
+    <keyword type="function" name="rhythmdb_entry_ref ()" link="RhythmDB.html#rhythmdb-entry-ref"/>
+    <keyword type="function" name="rhythmdb_entry_unref ()" link="RhythmDB.html#rhythmdb-entry-unref"/>
+    <keyword type="function" name="rhythmdb_entry_is_lossless ()" link="RhythmDB.html#rhythmdb-entry-is-lossless"/>
+    <keyword type="property" name="The &quot;dry-run&quot; property" link="RhythmDB.html#RhythmDB--dry-run"/>
+    <keyword type="property" name="The &quot;name&quot; property" link="RhythmDB.html#RhythmDB--name"/>
+    <keyword type="property" name="The &quot;no-update&quot; property" link="RhythmDB.html#RhythmDB--no-update"/>
+    <keyword type="signal" name="The &quot;create-mount-op&quot; signal" link="RhythmDB.html#RhythmDB-create-mount-op"/>
+    <keyword type="signal" name="The &quot;entry-added&quot; signal" link="RhythmDB.html#RhythmDB-entry-added"/>
+    <keyword type="signal" name="The &quot;entry-changed&quot; signal" link="RhythmDB.html#RhythmDB-entry-changed"/>
+    <keyword type="signal" name="The &quot;entry-deleted&quot; signal" link="RhythmDB.html#RhythmDB-entry-deleted"/>
+    <keyword type="signal" name="The &quot;entry-extra-metadata-gather&quot; signal" link="RhythmDB.html#RhythmDB-entry-extra-metadata-gather"/>
+    <keyword type="signal" name="The &quot;entry-extra-metadata-notify&quot; signal" link="RhythmDB.html#RhythmDB-entry-extra-metadata-notify"/>
+    <keyword type="signal" name="The &quot;entry-extra-metadata-request&quot; signal" link="RhythmDB.html#RhythmDB-entry-extra-metadata-request"/>
+    <keyword type="signal" name="The &quot;entry-keyword-added&quot; signal" link="RhythmDB.html#RhythmDB-entry-keyword-added"/>
+    <keyword type="signal" name="The &quot;entry-keyword-removed&quot; signal" link="RhythmDB.html#RhythmDB-entry-keyword-removed"/>
+    <keyword type="signal" name="The &quot;load-complete&quot; signal" link="RhythmDB.html#RhythmDB-load-complete"/>
+    <keyword type="signal" name="The &quot;read-only&quot; signal" link="RhythmDB.html#RhythmDB-read-only"/>
+    <keyword type="signal" name="The &quot;save-complete&quot; signal" link="RhythmDB.html#RhythmDB-save-complete"/>
+    <keyword type="signal" name="The &quot;save-error&quot; signal" link="RhythmDB.html#RhythmDB-save-error"/>
+    <keyword type="struct" name="struct RBHistory" link="RBHistory.html#RBHistory-struct"/>
+    <keyword type="struct" name="struct RBHistoryClass" link="RBHistory.html#RBHistoryClass"/>
+    <keyword type="function" name="rb_history_new ()" link="RBHistory.html#rb-history-new"/>
+    <keyword type="function" name="rb_history_set_destroy_notify ()" link="RBHistory.html#rb-history-set-destroy-notify"/>
+    <keyword type="function" name="rb_history_set_truncate_on_play ()" link="RBHistory.html#rb-history-set-truncate-on-play"/>
+    <keyword type="function" name="rb_history_set_maximum_size ()" link="RBHistory.html#rb-history-set-maximum-size"/>
+    <keyword type="function" name="rb_history_length ()" link="RBHistory.html#rb-history-length"/>
+    <keyword type="function" name="rb_history_first ()" link="RBHistory.html#rb-history-first"/>
+    <keyword type="function" name="rb_history_previous ()" link="RBHistory.html#rb-history-previous"/>
+    <keyword type="function" name="rb_history_current ()" link="RBHistory.html#rb-history-current"/>
+    <keyword type="function" name="rb_history_next ()" link="RBHistory.html#rb-history-next"/>
+    <keyword type="function" name="rb_history_last ()" link="RBHistory.html#rb-history-last"/>
+    <keyword type="function" name="rb_history_go_first ()" link="RBHistory.html#rb-history-go-first"/>
+    <keyword type="function" name="rb_history_go_previous ()" link="RBHistory.html#rb-history-go-previous"/>
+    <keyword type="function" name="rb_history_go_next ()" link="RBHistory.html#rb-history-go-next"/>
+    <keyword type="function" name="rb_history_go_last ()" link="RBHistory.html#rb-history-go-last"/>
+    <keyword type="function" name="rb_history_set_playing ()" link="RBHistory.html#rb-history-set-playing"/>
+    <keyword type="function" name="rb_history_append ()" link="RBHistory.html#rb-history-append"/>
+    <keyword type="function" name="rb_history_get_current_index ()" link="RBHistory.html#rb-history-get-current-index"/>
+    <keyword type="function" name="rb_history_insert_at_index ()" link="RBHistory.html#rb-history-insert-at-index"/>
+    <keyword type="function" name="rb_history_remove_entry ()" link="RBHistory.html#rb-history-remove-entry"/>
+    <keyword type="function" name="rb_history_clear ()" link="RBHistory.html#rb-history-clear"/>
+    <keyword type="function" name="rb_history_dump ()" link="RBHistory.html#rb-history-dump"/>
+    <keyword type="function" name="rb_history_contains_entry ()" link="RBHistory.html#rb-history-contains-entry"/>
+    <keyword type="property" name="The &quot;maximum-size&quot; property" link="RBHistory.html#RBHistory--maximum-size"/>
+    <keyword type="property" name="The &quot;truncate-on-play&quot; property" link="RBHistory.html#RBHistory--truncate-on-play"/>
+    <keyword type="struct" name="struct RBPlayOrder" link="RBPlayOrder.html#RBPlayOrder-struct"/>
+    <keyword type="struct" name="struct RBPlayOrderClass" link="RBPlayOrder.html#RBPlayOrderClass"/>
+    <keyword type="function" name="rb_play_order_playing_source_changed ()" link="RBPlayOrder.html#rb-play-order-playing-source-changed"/>
+    <keyword type="function" name="rb_play_order_query_model_changed ()" link="RBPlayOrder.html#rb-play-order-query-model-changed"/>
+    <keyword type="function" name="rb_play_order_has_next ()" link="RBPlayOrder.html#rb-play-order-has-next"/>
+    <keyword type="function" name="rb_play_order_get_next ()" link="RBPlayOrder.html#rb-play-order-get-next"/>
+    <keyword type="function" name="rb_play_order_go_next ()" link="RBPlayOrder.html#rb-play-order-go-next"/>
+    <keyword type="function" name="rb_play_order_has_previous ()" link="RBPlayOrder.html#rb-play-order-has-previous"/>
+    <keyword type="function" name="rb_play_order_get_previous ()" link="RBPlayOrder.html#rb-play-order-get-previous"/>
+    <keyword type="function" name="rb_play_order_go_previous ()" link="RBPlayOrder.html#rb-play-order-go-previous"/>
+    <keyword type="function" name="rb_play_order_set_playing_entry ()" link="RBPlayOrder.html#rb-play-order-set-playing-entry"/>
+    <keyword type="function" name="rb_play_order_get_playing_entry ()" link="RBPlayOrder.html#rb-play-order-get-playing-entry"/>
+    <keyword type="function" name="rb_play_order_get_player ()" link="RBPlayOrder.html#rb-play-order-get-player"/>
+    <keyword type="function" name="rb_play_order_get_source ()" link="RBPlayOrder.html#rb-play-order-get-source"/>
+    <keyword type="function" name="rb_play_order_get_db ()" link="RBPlayOrder.html#rb-play-order-get-db"/>
+    <keyword type="function" name="rb_play_order_get_query_model ()" link="RBPlayOrder.html#rb-play-order-get-query-model"/>
+    <keyword type="function" name="rb_play_order_model_not_empty ()" link="RBPlayOrder.html#rb-play-order-model-not-empty"/>
+    <keyword type="property" name="The &quot;player&quot; property" link="RBPlayOrder.html#RBPlayOrder--player"/>
+    <keyword type="property" name="The &quot;playing-entry&quot; property" link="RBPlayOrder.html#RBPlayOrder--playing-entry"/>
+    <keyword type="signal" name="The &quot;have-next-previous-changed&quot; signal" link="RBPlayOrder.html#RBPlayOrder-have-next-previous-changed"/>
+    <keyword type="struct" name="struct RBRandomPlayOrder" link="RBRandomPlayOrder.html#RBRandomPlayOrder-struct"/>
+    <keyword type="struct" name="struct RBRandomPlayOrderClass" link="RBRandomPlayOrder.html#RBRandomPlayOrderClass"/>
+    <keyword type="struct" name="struct RBPlaylistManager" link="RBPlaylistManager.html#RBPlaylistManager-struct"/>
+    <keyword type="struct" name="struct RBPlaylistManagerClass" link="RBPlaylistManager.html#RBPlaylistManagerClass"/>
+    <keyword type="enum" name="enum RBPlaylistManagerError" link="RBPlaylistManager.html#RBPlaylistManagerError"/>
+    <keyword type="function" name="rb_playlist_manager_new ()" link="RBPlaylistManager.html#rb-playlist-manager-new"/>
+    <keyword type="function" name="rb_playlist_manager_shutdown ()" link="RBPlaylistManager.html#rb-playlist-manager-shutdown"/>
+    <keyword type="function" name="rb_playlist_manager_parse_file ()" link="RBPlaylistManager.html#rb-playlist-manager-parse-file"/>
+    <keyword type="function" name="rb_playlist_manager_load_playlists ()" link="RBPlaylistManager.html#rb-playlist-manager-load-playlists"/>
+    <keyword type="function" name="rb_playlist_manager_save_playlists ()" link="RBPlaylistManager.html#rb-playlist-manager-save-playlists"/>
+    <keyword type="function" name="rb_playlist_manager_new_playlist ()" link="RBPlaylistManager.html#rb-playlist-manager-new-playlist"/>
+    <keyword type="function" name="rb_playlist_manager_new_playlist_from_selection_data ()" link="RBPlaylistManager.html#rb-playlist-manager-new-playlist-from-selection-data"/>
+    <keyword type="function" name="rb_playlist_manager_get_playlists ()" link="RBPlaylistManager.html#rb-playlist-manager-get-playlists"/>
+    <keyword type="function" name="rb_playlist_manager_get_playlist_names ()" link="RBPlaylistManager.html#rb-playlist-manager-get-playlist-names"/>
+    <keyword type="function" name="rb_playlist_manager_create_static_playlist ()" link="RBPlaylistManager.html#rb-playlist-manager-create-static-playlist"/>
+    <keyword type="function" name="rb_playlist_manager_delete_playlist ()" link="RBPlaylistManager.html#rb-playlist-manager-delete-playlist"/>
+    <keyword type="function" name="rb_playlist_manager_add_to_playlist ()" link="RBPlaylistManager.html#rb-playlist-manager-add-to-playlist"/>
+    <keyword type="function" name="rb_playlist_manager_remove_from_playlist ()" link="RBPlaylistManager.html#rb-playlist-manager-remove-from-playlist"/>
+    <keyword type="function" name="rb_playlist_manager_export_playlist ()" link="RBPlaylistManager.html#rb-playlist-manager-export-playlist"/>
+    <keyword type="property" name="The &quot;display-page-model&quot; property" link="RBPlaylistManager.html#RBPlaylistManager--display-page-model"/>
+    <keyword type="property" name="The &quot;display-page-tree&quot; property" link="RBPlaylistManager.html#RBPlaylistManager--display-page-tree"/>
+    <keyword type="property" name="The &quot;playlists-file&quot; property" link="RBPlaylistManager.html#RBPlaylistManager--playlists-file"/>
+    <keyword type="property" name="The &quot;shell&quot; property" link="RBPlaylistManager.html#RBPlaylistManager--shell"/>
+    <keyword type="property" name="The &quot;source&quot; property" link="RBPlaylistManager.html#RBPlaylistManager--source"/>
+    <keyword type="signal" name="The &quot;load-finish&quot; signal" link="RBPlaylistManager.html#RBPlaylistManager-load-finish"/>
+    <keyword type="signal" name="The &quot;load-start&quot; signal" link="RBPlaylistManager.html#RBPlaylistManager-load-start"/>
+    <keyword type="signal" name="The &quot;playlist-added&quot; signal" link="RBPlaylistManager.html#RBPlaylistManager-playlist-added"/>
+    <keyword type="signal" name="The &quot;playlist-created&quot; signal" link="RBPlaylistManager.html#RBPlaylistManager-playlist-created"/>
+    <keyword type="struct" name="struct RBRemovableMediaManager" link="RBRemovableMediaManager.html#RBRemovableMediaManager-struct"/>
+    <keyword type="struct" name="struct RBRemovableMediaManagerClass" link="RBRemovableMediaManager.html#RBRemovableMediaManagerClass"/>
+    <keyword type="function" name="rb_removable_media_manager_new ()" link="RBRemovableMediaManager.html#rb-removable-media-manager-new"/>
+    <keyword type="function" name="rb_removable_media_manager_scan ()" link="RBRemovableMediaManager.html#rb-removable-media-manager-scan"/>
+    <keyword type="property" name="The &quot;scanned&quot; property" link="RBRemovableMediaManager.html#RBRemovableMediaManager--scanned"/>
+    <keyword type="property" name="The &quot;shell&quot; property" link="RBRemovableMediaManager.html#RBRemovableMediaManager--shell"/>
+    <keyword type="property" name="The &quot;source&quot; property" link="RBRemovableMediaManager.html#RBRemovableMediaManager--source"/>
+    <keyword type="signal" name="The &quot;create-source-device&quot; signal" link="RBRemovableMediaManager.html#RBRemovableMediaManager-create-source-device"/>
+    <keyword type="signal" name="The &quot;create-source-mount&quot; signal" link="RBRemovableMediaManager.html#RBRemovableMediaManager-create-source-mount"/>
+    <keyword type="signal" name="The &quot;create-source-volume&quot; signal" link="RBRemovableMediaManager.html#RBRemovableMediaManager-create-source-volume"/>
+    <keyword type="signal" name="The &quot;medium-added&quot; signal" link="RBRemovableMediaManager.html#RBRemovableMediaManager-medium-added"/>
+    <keyword type="struct" name="struct RBShellClipboard" link="RBShellClipboard.html#RBShellClipboard-struct"/>
+    <keyword type="struct" name="struct RBShellClipboardClass" link="RBShellClipboard.html#RBShellClipboardClass"/>
+    <keyword type="function" name="rb_shell_clipboard_new ()" link="RBShellClipboard.html#rb-shell-clipboard-new"/>
+    <keyword type="function" name="rb_shell_clipboard_set_source ()" link="RBShellClipboard.html#rb-shell-clipboard-set-source"/>
+    <keyword type="property" name="The &quot;action-group&quot; property" link="RBShellClipboard.html#RBShellClipboard--action-group"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RBShellClipboard.html#RBShellClipboard--db"/>
+    <keyword type="property" name="The &quot;playlist-manager&quot; property" link="RBShellClipboard.html#RBShellClipboard--playlist-manager"/>
+    <keyword type="property" name="The &quot;queue-source&quot; property" link="RBShellClipboard.html#RBShellClipboard--queue-source"/>
+    <keyword type="property" name="The &quot;source&quot; property" link="RBShellClipboard.html#RBShellClipboard--source"/>
+    <keyword type="property" name="The &quot;ui-manager&quot; property" link="RBShellClipboard.html#RBShellClipboard--ui-manager"/>
+    <keyword type="struct" name="struct RBShellPlayer" link="RBShellPlayer.html#RBShellPlayer-struct"/>
+    <keyword type="struct" name="struct RBShellPlayerClass" link="RBShellPlayer.html#RBShellPlayerClass"/>
+    <keyword type="enum" name="enum RBShellPlayerError" link="RBShellPlayer.html#RBShellPlayerError-enum"/>
+    <keyword type="function" name="rb_shell_player_new ()" link="RBShellPlayer.html#rb-shell-player-new"/>
+    <keyword type="function" name="rb_shell_player_set_selected_source ()" link="RBShellPlayer.html#rb-shell-player-set-selected-source"/>
+    <keyword type="function" name="rb_shell_player_set_playing_source ()" link="RBShellPlayer.html#rb-shell-player-set-playing-source"/>
+    <keyword type="function" name="rb_shell_player_get_playing_source ()" link="RBShellPlayer.html#rb-shell-player-get-playing-source"/>
+    <keyword type="function" name="rb_shell_player_get_active_source ()" link="RBShellPlayer.html#rb-shell-player-get-active-source"/>
+    <keyword type="function" name="rb_shell_player_jump_to_current ()" link="RBShellPlayer.html#rb-shell-player-jump-to-current"/>
+    <keyword type="function" name="rb_shell_player_play_entry ()" link="RBShellPlayer.html#rb-shell-player-play-entry"/>
+    <keyword type="function" name="rb_shell_player_play ()" link="RBShellPlayer.html#rb-shell-player-play"/>
+    <keyword type="function" name="rb_shell_player_pause ()" link="RBShellPlayer.html#rb-shell-player-pause"/>
+    <keyword type="function" name="rb_shell_player_playpause ()" link="RBShellPlayer.html#rb-shell-player-playpause"/>
+    <keyword type="function" name="rb_shell_player_stop ()" link="RBShellPlayer.html#rb-shell-player-stop"/>
+    <keyword type="function" name="rb_shell_player_do_previous ()" link="RBShellPlayer.html#rb-shell-player-do-previous"/>
+    <keyword type="function" name="rb_shell_player_do_next ()" link="RBShellPlayer.html#rb-shell-player-do-next"/>
+    <keyword type="function" name="rb_shell_player_get_playing_time_string ()" link="RBShellPlayer.html#rb-shell-player-get-playing-time-string"/>
+    <keyword type="function" name="rb_shell_player_get_playing_time ()" link="RBShellPlayer.html#rb-shell-player-get-playing-time"/>
+    <keyword type="function" name="rb_shell_player_set_playing_time ()" link="RBShellPlayer.html#rb-shell-player-set-playing-time"/>
+    <keyword type="function" name="rb_shell_player_seek ()" link="RBShellPlayer.html#rb-shell-player-seek"/>
+    <keyword type="function" name="rb_shell_player_get_playing_song_duration ()" link="RBShellPlayer.html#rb-shell-player-get-playing-song-duration"/>
+    <keyword type="function" name="rb_shell_player_get_playing ()" link="RBShellPlayer.html#rb-shell-player-get-playing"/>
+    <keyword type="function" name="rb_shell_player_get_playing_path ()" link="RBShellPlayer.html#rb-shell-player-get-playing-path"/>
+    <keyword type="function" name="rb_shell_player_set_playback_state ()" link="RBShellPlayer.html#rb-shell-player-set-playback-state"/>
+    <keyword type="function" name="rb_shell_player_get_playback_state ()" link="RBShellPlayer.html#rb-shell-player-get-playback-state"/>
+    <keyword type="function" name="rb_shell_player_get_playing_entry ()" link="RBShellPlayer.html#rb-shell-player-get-playing-entry"/>
+    <keyword type="function" name="rb_shell_player_set_volume ()" link="RBShellPlayer.html#rb-shell-player-set-volume"/>
+    <keyword type="function" name="rb_shell_player_get_volume ()" link="RBShellPlayer.html#rb-shell-player-get-volume"/>
+    <keyword type="function" name="rb_shell_player_set_volume_relative ()" link="RBShellPlayer.html#rb-shell-player-set-volume-relative"/>
+    <keyword type="function" name="rb_shell_player_set_mute ()" link="RBShellPlayer.html#rb-shell-player-set-mute"/>
+    <keyword type="function" name="rb_shell_player_get_mute ()" link="RBShellPlayer.html#rb-shell-player-get-mute"/>
+    <keyword type="function" name="rb_shell_player_add_play_order ()" link="RBShellPlayer.html#rb-shell-player-add-play-order"/>
+    <keyword type="function" name="rb_shell_player_remove_play_order ()" link="RBShellPlayer.html#rb-shell-player-remove-play-order"/>
+    <keyword type="property" name="The &quot;action-group&quot; property" link="RBShellPlayer.html#RBShellPlayer--action-group"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RBShellPlayer.html#RBShellPlayer--db"/>
+    <keyword type="property" name="The &quot;has-next&quot; property" link="RBShellPlayer.html#RBShellPlayer--has-next"/>
+    <keyword type="property" name="The &quot;has-prev&quot; property" link="RBShellPlayer.html#RBShellPlayer--has-prev"/>
+    <keyword type="property" name="The &quot;header&quot; property" link="RBShellPlayer.html#RBShellPlayer--header"/>
+    <keyword type="property" name="The &quot;mute&quot; property" link="RBShellPlayer.html#RBShellPlayer--mute"/>
+    <keyword type="property" name="The &quot;play-order&quot; property" link="RBShellPlayer.html#RBShellPlayer--play-order"/>
+    <keyword type="property" name="The &quot;player&quot; property" link="RBShellPlayer.html#RBShellPlayer--player"/>
+    <keyword type="property" name="The &quot;playing&quot; property" link="RBShellPlayer.html#RBShellPlayer--playing"/>
+    <keyword type="property" name="The &quot;playing-from-queue&quot; property" link="RBShellPlayer.html#RBShellPlayer--playing-from-queue"/>
+    <keyword type="property" name="The &quot;queue-only&quot; property" link="RBShellPlayer.html#RBShellPlayer--queue-only"/>
+    <keyword type="property" name="The &quot;queue-source&quot; property" link="RBShellPlayer.html#RBShellPlayer--queue-source"/>
+    <keyword type="property" name="The &quot;source&quot; property" link="RBShellPlayer.html#RBShellPlayer--source"/>
+    <keyword type="property" name="The &quot;ui-manager&quot; property" link="RBShellPlayer.html#RBShellPlayer--ui-manager"/>
+    <keyword type="property" name="The &quot;volume&quot; property" link="RBShellPlayer.html#RBShellPlayer--volume"/>
+    <keyword type="signal" name="The &quot;elapsed-changed&quot; signal" link="RBShellPlayer.html#RBShellPlayer-elapsed-changed"/>
+    <keyword type="signal" name="The &quot;elapsed-nano-changed&quot; signal" link="RBShellPlayer.html#RBShellPlayer-elapsed-nano-changed"/>
+    <keyword type="signal" name="The &quot;playing-changed&quot; signal" link="RBShellPlayer.html#RBShellPlayer-playing-changed"/>
+    <keyword type="signal" name="The &quot;playing-song-changed&quot; signal" link="RBShellPlayer.html#RBShellPlayer-playing-song-changed"/>
+    <keyword type="signal" name="The &quot;playing-song-property-changed&quot; signal" link="RBShellPlayer.html#RBShellPlayer-playing-song-property-changed"/>
+    <keyword type="signal" name="The &quot;playing-source-changed&quot; signal" link="RBShellPlayer.html#RBShellPlayer-playing-source-changed"/>
+    <keyword type="signal" name="The &quot;playing-uri-changed&quot; signal" link="RBShellPlayer.html#RBShellPlayer-playing-uri-changed"/>
+    <keyword type="signal" name="The &quot;window-title-changed&quot; signal" link="RBShellPlayer.html#RBShellPlayer-window-title-changed"/>
+    <keyword type="struct" name="struct RBShellPreferences" link="RBShellPreferences.html#RBShellPreferences-struct"/>
+    <keyword type="struct" name="struct RBShellPreferencesClass" link="RBShellPreferences.html#RBShellPreferencesClass"/>
+    <keyword type="function" name="rb_shell_preferences_new ()" link="RBShellPreferences.html#rb-shell-preferences-new"/>
+    <keyword type="function" name="rb_shell_preferences_append_page ()" link="RBShellPreferences.html#rb-shell-preferences-append-page"/>
+    <keyword type="struct" name="struct RBShell" link="RBShell.html#RBShell-struct"/>
+    <keyword type="struct" name="struct RBShellClass" link="RBShell.html#RBShellClass"/>
+    <keyword type="function" name="rb_shell_new ()" link="RBShell.html#rb-shell-new"/>
+    <keyword type="function" name="rb_shell_present ()" link="RBShell.html#rb-shell-present"/>
+    <keyword type="function" name="rb_shell_guess_source_for_uri ()" link="RBShell.html#rb-shell-guess-source-for-uri"/>
+    <keyword type="function" name="rb_shell_add_uri ()" link="RBShell.html#rb-shell-add-uri"/>
+    <keyword type="function" name="rb_shell_load_uri ()" link="RBShell.html#rb-shell-load-uri"/>
+    <keyword type="function" name="rb_shell_toggle_visibility ()" link="RBShell.html#rb-shell-toggle-visibility"/>
+    <keyword type="function" name="rb_shell_get_song_properties ()" link="RBShell.html#rb-shell-get-song-properties"/>
+    <keyword type="function" name="rb_shell_set_song_property ()" link="RBShell.html#rb-shell-set-song-property"/>
+    <keyword type="function" name="rb_shell_quit ()" link="RBShell.html#rb-shell-quit"/>
+    <keyword type="function" name="rb_shell_do_notify ()" link="RBShell.html#rb-shell-do-notify"/>
+    <keyword type="function" name="rb_shell_register_entry_type_for_source ()" link="RBShell.html#rb-shell-register-entry-type-for-source"/>
+    <keyword type="function" name="rb_shell_get_source_by_entry_type ()" link="RBShell.html#rb-shell-get-source-by-entry-type"/>
+    <keyword type="function" name="rb_shell_get_party_mode ()" link="RBShell.html#rb-shell-get-party-mode"/>
+    <keyword type="function" name="rb_shell_add_widget ()" link="RBShell.html#rb-shell-add-widget"/>
+    <keyword type="function" name="rb_shell_remove_widget ()" link="RBShell.html#rb-shell-remove-widget"/>
+    <keyword type="property" name="The &quot;autostarted&quot; property" link="RBShell.html#RBShell--autostarted"/>
+    <keyword type="property" name="The &quot;clipboard&quot; property" link="RBShell.html#RBShell--clipboard"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RBShell.html#RBShell--db"/>
+    <keyword type="property" name="The &quot;disable-plugins&quot; property" link="RBShell.html#RBShell--disable-plugins"/>
+    <keyword type="property" name="The &quot;display-page-model&quot; property" link="RBShell.html#RBShell--display-page-model"/>
+    <keyword type="property" name="The &quot;display-page-tree&quot; property" link="RBShell.html#RBShell--display-page-tree"/>
+    <keyword type="property" name="The &quot;dry-run&quot; property" link="RBShell.html#RBShell--dry-run"/>
+    <keyword type="property" name="The &quot;library-source&quot; property" link="RBShell.html#RBShell--library-source"/>
+    <keyword type="property" name="The &quot;no-registration&quot; property" link="RBShell.html#RBShell--no-registration"/>
+    <keyword type="property" name="The &quot;no-update&quot; property" link="RBShell.html#RBShell--no-update"/>
+    <keyword type="property" name="The &quot;playlist-manager&quot; property" link="RBShell.html#RBShell--playlist-manager"/>
+    <keyword type="property" name="The &quot;playlists-file&quot; property" link="RBShell.html#RBShell--playlists-file"/>
+    <keyword type="property" name="The &quot;prefs&quot; property" link="RBShell.html#RBShell--prefs"/>
+    <keyword type="property" name="The &quot;queue-source&quot; property" link="RBShell.html#RBShell--queue-source"/>
+    <keyword type="property" name="The &quot;removable-media-manager&quot; property" link="RBShell.html#RBShell--removable-media-manager"/>
+    <keyword type="property" name="The &quot;rhythmdb-file&quot; property" link="RBShell.html#RBShell--rhythmdb-file"/>
+    <keyword type="property" name="The &quot;selected-page&quot; property" link="RBShell.html#RBShell--selected-page"/>
+    <keyword type="property" name="The &quot;shell-player&quot; property" link="RBShell.html#RBShell--shell-player"/>
+    <keyword type="property" name="The &quot;track-transfer-queue&quot; property" link="RBShell.html#RBShell--track-transfer-queue"/>
+    <keyword type="property" name="The &quot;ui-manager&quot; property" link="RBShell.html#RBShell--ui-manager"/>
+    <keyword type="property" name="The &quot;visibility&quot; property" link="RBShell.html#RBShell--visibility"/>
+    <keyword type="property" name="The &quot;window&quot; property" link="RBShell.html#RBShell--window"/>
+    <keyword type="signal" name="The &quot;create-song-info&quot; signal" link="RBShell.html#RBShell-create-song-info"/>
+    <keyword type="signal" name="The &quot;notify-custom&quot; signal" link="RBShell.html#RBShell-notify-custom"/>
+    <keyword type="signal" name="The &quot;notify-playing-entry&quot; signal" link="RBShell.html#RBShell-notify-playing-entry"/>
+    <keyword type="signal" name="The &quot;visibility-changed&quot; signal" link="RBShell.html#RBShell-visibility-changed"/>
+    <keyword type="signal" name="The &quot;visibility-changing&quot; signal" link="RBShell.html#RBShell-visibility-changing"/>
+    <keyword type="struct" name="struct RBStatusbar" link="RBStatusbar.html#RBStatusbar-struct"/>
+    <keyword type="struct" name="struct RBStatusbarClass" link="RBStatusbar.html#RBStatusbarClass"/>
+    <keyword type="function" name="rb_statusbar_new ()" link="RBStatusbar.html#rb-statusbar-new"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RBStatusbar.html#RBStatusbar--db"/>
+    <keyword type="property" name="The &quot;page&quot; property" link="RBStatusbar.html#RBStatusbar--page"/>
+    <keyword type="property" name="The &quot;transfer-queue&quot; property" link="RBStatusbar.html#RBStatusbar--transfer-queue"/>
+    <keyword type="property" name="The &quot;ui-manager&quot; property" link="RBStatusbar.html#RBStatusbar--ui-manager"/>
+    <keyword type="struct" name="struct RBTrackTransferBatch" link="RBTrackTransferBatch.html#RBTrackTransferBatch-struct"/>
+    <keyword type="struct" name="struct RBTrackTransferBatchClass" link="RBTrackTransferBatch.html#RBTrackTransferBatchClass"/>
+    <keyword type="function" name="rb_track_transfer_batch_new ()" link="RBTrackTransferBatch.html#rb-track-transfer-batch-new"/>
+    <keyword type="function" name="rb_track_transfer_batch_add ()" link="RBTrackTransferBatch.html#rb-track-transfer-batch-add"/>
+    <keyword type="function" name="rb_track_transfer_batch_cancel ()" link="RBTrackTransferBatch.html#rb-track-transfer-batch-cancel"/>
+    <keyword type="property" name="The &quot;destination&quot; property" link="RBTrackTransferBatch.html#RBTrackTransferBatch--destination"/>
+    <keyword type="property" name="The &quot;done-entries&quot; property" link="RBTrackTransferBatch.html#RBTrackTransferBatch--done-entries"/>
+    <keyword type="property" name="The &quot;encoding-target&quot; property" link="RBTrackTransferBatch.html#RBTrackTransferBatch--encoding-target"/>
+    <keyword type="property" name="The &quot;entry-list&quot; property" link="RBTrackTransferBatch.html#RBTrackTransferBatch--entry-list"/>
+    <keyword type="property" name="The &quot;progress&quot; property" link="RBTrackTransferBatch.html#RBTrackTransferBatch--progress"/>
+    <keyword type="property" name="The &quot;source&quot; property" link="RBTrackTransferBatch.html#RBTrackTransferBatch--source"/>
+    <keyword type="property" name="The &quot;total-entries&quot; property" link="RBTrackTransferBatch.html#RBTrackTransferBatch--total-entries"/>
+    <keyword type="signal" name="The &quot;cancelled&quot; signal" link="RBTrackTransferBatch.html#RBTrackTransferBatch-cancelled"/>
+    <keyword type="signal" name="The &quot;complete&quot; signal" link="RBTrackTransferBatch.html#RBTrackTransferBatch-complete"/>
+    <keyword type="signal" name="The &quot;configure-profile&quot; signal" link="RBTrackTransferBatch.html#RBTrackTransferBatch-configure-profile"/>
+    <keyword type="signal" name="The &quot;get-dest-uri&quot; signal" link="RBTrackTransferBatch.html#RBTrackTransferBatch-get-dest-uri"/>
+    <keyword type="signal" name="The &quot;overwrite-prompt&quot; signal" link="RBTrackTransferBatch.html#RBTrackTransferBatch-overwrite-prompt"/>
+    <keyword type="signal" name="The &quot;started&quot; signal" link="RBTrackTransferBatch.html#RBTrackTransferBatch-started"/>
+    <keyword type="signal" name="The &quot;track-done&quot; signal" link="RBTrackTransferBatch.html#RBTrackTransferBatch-track-done"/>
+    <keyword type="signal" name="The &quot;track-progress&quot; signal" link="RBTrackTransferBatch.html#RBTrackTransferBatch-track-progress"/>
+    <keyword type="signal" name="The &quot;track-started&quot; signal" link="RBTrackTransferBatch.html#RBTrackTransferBatch-track-started"/>
+    <keyword type="struct" name="struct RBTrackTransferQueue" link="RBTrackTransferQueue.html#RBTrackTransferQueue-struct"/>
+    <keyword type="struct" name="struct RBTrackTransferQueueClass" link="RBTrackTransferQueue.html#RBTrackTransferQueueClass"/>
+    <keyword type="function" name="rb_track_transfer_queue_new ()" link="RBTrackTransferQueue.html#rb-track-transfer-queue-new"/>
+    <keyword type="function" name="rb_track_transfer_queue_start_batch ()" link="RBTrackTransferQueue.html#rb-track-transfer-queue-start-batch"/>
+    <keyword type="function" name="rb_track_transfer_queue_cancel_batch ()" link="RBTrackTransferQueue.html#rb-track-transfer-queue-cancel-batch"/>
+    <keyword type="function" name="rb_track_transfer_queue_get_status ()" link="RBTrackTransferQueue.html#rb-track-transfer-queue-get-status"/>
+    <keyword type="property" name="The &quot;batch&quot; property" link="RBTrackTransferQueue.html#RBTrackTransferQueue--batch"/>
+    <keyword type="property" name="The &quot;shell&quot; property" link="RBTrackTransferQueue.html#RBTrackTransferQueue--shell"/>
+    <keyword type="signal" name="The &quot;missing-plugins&quot; signal" link="RBTrackTransferQueue.html#RBTrackTransferQueue-missing-plugins"/>
+    <keyword type="signal" name="The &quot;transfer-progress&quot; signal" link="RBTrackTransferQueue.html#RBTrackTransferQueue-transfer-progress"/>
+    <keyword type="struct" name="struct RBAutoPlaylistSource" link="RBAutoPlaylistSource.html#RBAutoPlaylistSource-struct"/>
+    <keyword type="struct" name="struct RBAutoPlaylistSourceClass" link="RBAutoPlaylistSource.html#RBAutoPlaylistSourceClass"/>
+    <keyword type="function" name="rb_auto_playlist_source_new ()" link="RBAutoPlaylistSource.html#rb-auto-playlist-source-new"/>
+    <keyword type="function" name="rb_auto_playlist_source_new_from_xml ()" link="RBAutoPlaylistSource.html#rb-auto-playlist-source-new-from-xml"/>
+    <keyword type="function" name="rb_auto_playlist_source_set_query ()" link="RBAutoPlaylistSource.html#rb-auto-playlist-source-set-query"/>
+    <keyword type="function" name="rb_auto_playlist_source_get_query ()" link="RBAutoPlaylistSource.html#rb-auto-playlist-source-get-query"/>
+    <keyword type="struct" name="struct RBBrowserSource" link="RBBrowserSource.html#RBBrowserSource-struct"/>
+    <keyword type="struct" name="struct RBBrowserSourceClass" link="RBBrowserSource.html#RBBrowserSourceClass"/>
+    <keyword type="function" name="rb_browser_source_has_drop_support ()" link="RBBrowserSource.html#rb-browser-source-has-drop-support"/>
+    <keyword type="property" name="The &quot;populate&quot; property" link="RBBrowserSource.html#RBBrowserSource--populate"/>
+    <keyword type="struct" name="struct RBImportErrorsSource" link="RBImportErrorsSource.html#RBImportErrorsSource-struct"/>
+    <keyword type="struct" name="struct RBImportErrorsSourceClass" link="RBImportErrorsSource.html#RBImportErrorsSourceClass"/>
+    <keyword type="function" name="rb_import_errors_source_new ()" link="RBImportErrorsSource.html#rb-import-errors-source-new"/>
+    <keyword type="property" name="The &quot;ignore-entry-type&quot; property" link="RBImportErrorsSource.html#RBImportErrorsSource--ignore-entry-type"/>
+    <keyword type="property" name="The &quot;normal-entry-type&quot; property" link="RBImportErrorsSource.html#RBImportErrorsSource--normal-entry-type"/>
+    <keyword type="struct" name="struct RBLibrarySource" link="RBLibrarySource.html#RBLibrarySource-struct"/>
+    <keyword type="struct" name="struct RBLibrarySourceClass" link="RBLibrarySource.html#RBLibrarySourceClass"/>
+    <keyword type="function" name="rb_library_source_new ()" link="RBLibrarySource.html#rb-library-source-new"/>
+    <keyword type="struct" name="struct RBMissingFilesSource" link="RBMissingFilesSource.html#RBMissingFilesSource-struct"/>
+    <keyword type="struct" name="struct RBMissingFilesSourceClass" link="RBMissingFilesSource.html#RBMissingFilesSourceClass"/>
+    <keyword type="function" name="rb_missing_files_source_new ()" link="RBMissingFilesSource.html#rb-missing-files-source-new"/>
+    <keyword type="struct" name="struct RBMediaPlayerSource" link="RBMediaPlayerSource.html#RBMediaPlayerSource-struct"/>
+    <keyword type="struct" name="struct RBMediaPlayerSourceClass" link="RBMediaPlayerSource.html#RBMediaPlayerSourceClass"/>
+    <keyword type="function" name="rb_media_player_source_show_properties ()" link="RBMediaPlayerSource.html#rb-media-player-source-show-properties"/>
+    <keyword type="property" name="The &quot;encoding-target&quot; property" link="RBMediaPlayerSource.html#RBMediaPlayerSource--encoding-target"/>
+    <keyword type="property" name="The &quot;serial&quot; property" link="RBMediaPlayerSource.html#RBMediaPlayerSource--serial"/>
+    <keyword type="struct" name="struct RBPlayQueueSource" link="RBPlayQueueSource.html#RBPlayQueueSource-struct"/>
+    <keyword type="struct" name="struct RBPlayQueueSourceClass" link="RBPlayQueueSource.html#RBPlayQueueSourceClass"/>
+    <keyword type="function" name="rb_play_queue_source_new ()" link="RBPlayQueueSource.html#rb-play-queue-source-new"/>
+    <keyword type="function" name="rb_play_queue_source_sidebar_song_info ()" link="RBPlayQueueSource.html#rb-play-queue-source-sidebar-song-info"/>
+    <keyword type="function" name="rb_play_queue_source_sidebar_delete ()" link="RBPlayQueueSource.html#rb-play-queue-source-sidebar-delete"/>
+    <keyword type="function" name="rb_play_queue_source_clear_queue ()" link="RBPlayQueueSource.html#rb-play-queue-source-clear-queue"/>
+    <keyword type="property" name="The &quot;sidebar&quot; property" link="RBPlayQueueSource.html#RBPlayQueueSource--sidebar"/>
+    <keyword type="struct" name="struct RBPlaylistSource" link="RBPlaylistSource.html#RBPlaylistSource-struct"/>
+    <keyword type="struct" name="struct RBPlaylistSourceClass" link="RBPlaylistSource.html#RBPlaylistSourceClass"/>
+    <keyword type="function" name="rb_playlist_source_new_from_xml ()" link="RBPlaylistSource.html#rb-playlist-source-new-from-xml"/>
+    <keyword type="function" name="rb_playlist_source_save_playlist ()" link="RBPlaylistSource.html#rb-playlist-source-save-playlist"/>
+    <keyword type="function" name="rb_playlist_source_save_to_xml ()" link="RBPlaylistSource.html#rb-playlist-source-save-to-xml"/>
+    <keyword type="function" name="rb_playlist_source_set_query_model ()" link="RBPlaylistSource.html#rb-playlist-source-set-query-model"/>
+    <keyword type="function" name="rb_playlist_source_get_query_model ()" link="RBPlaylistSource.html#rb-playlist-source-get-query-model"/>
+    <keyword type="function" name="rb_playlist_source_get_db ()" link="RBPlaylistSource.html#rb-playlist-source-get-db"/>
+    <keyword type="function" name="rb_playlist_source_mark_dirty ()" link="RBPlaylistSource.html#rb-playlist-source-mark-dirty"/>
+    <keyword type="function" name="rb_playlist_source_location_in_map ()" link="RBPlaylistSource.html#rb-playlist-source-location-in-map"/>
+    <keyword type="function" name="rb_playlist_source_add_to_map ()" link="RBPlaylistSource.html#rb-playlist-source-add-to-map"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RBPlaylistSource.html#RBPlaylistSource--db"/>
+    <keyword type="property" name="The &quot;dirty&quot; property" link="RBPlaylistSource.html#RBPlaylistSource--dirty"/>
+    <keyword type="property" name="The &quot;is-local&quot; property" link="RBPlaylistSource.html#RBPlaylistSource--is-local"/>
+    <keyword type="struct" name="struct RBSourceSearch" link="RBSourceSearch.html#RBSourceSearch-struct"/>
+    <keyword type="struct" name="struct RBSourceSearchClass" link="RBSourceSearch.html#RBSourceSearchClass"/>
+    <keyword type="function" name="rb_source_search_is_subset ()" link="RBSourceSearch.html#rb-source-search-is-subset"/>
+    <keyword type="function" name="rb_source_search_create_query ()" link="RBSourceSearch.html#rb-source-search-create-query"/>
+    <keyword type="function" name="rb_source_search_action_attach ()" link="RBSourceSearch.html#rb-source-search-action-attach"/>
+    <keyword type="function" name="rb_source_search_get_from_action ()" link="RBSourceSearch.html#rb-source-search-get-from-action"/>
+    <keyword type="struct" name="struct RBSourceSearchBasic" link="RBSourceSearchBasic.html#RBSourceSearchBasic-struct"/>
+    <keyword type="struct" name="struct RBSourceSearchBasicClass" link="RBSourceSearchBasic.html#RBSourceSearchBasicClass"/>
+    <keyword type="function" name="rb_source_search_basic_new ()" link="RBSourceSearchBasic.html#rb-source-search-basic-new"/>
+    <keyword type="function" name="rb_source_search_basic_create_for_actions ()" link="RBSourceSearchBasic.html#rb-source-search-basic-create-for-actions"/>
+    <keyword type="property" name="The &quot;prop&quot; property" link="RBSourceSearchBasic.html#RBSourceSearchBasic--prop"/>
+    <keyword type="struct" name="struct RBSource" link="RBSource.html#RBSource-struct"/>
+    <keyword type="struct" name="struct RBSourceClass" link="RBSource.html#RBSourceClass"/>
+    <keyword type="enum" name="enum RBSourceEOFType" link="RBSource.html#RBSourceEOFType-enum"/>
+    <keyword type="macro" name="RB_SOURCE_ICON_SIZE" link="RBSource.html#RB-SOURCE-ICON-SIZE:CAPS"/>
+    <keyword type="function" name="rb_source_notify_filter_changed ()" link="RBSource.html#rb-source-notify-filter-changed"/>
+    <keyword type="function" name="rb_source_update_play_statistics ()" link="RBSource.html#rb-source-update-play-statistics"/>
+    <keyword type="function" name="rb_source_get_entry_view ()" link="RBSource.html#rb-source-get-entry-view"/>
+    <keyword type="function" name="rb_source_get_property_views ()" link="RBSource.html#rb-source-get-property-views"/>
+    <keyword type="function" name="rb_source_can_rename ()" link="RBSource.html#rb-source-can-rename"/>
+    <keyword type="function" name="rb_source_search ()" link="RBSource.html#rb-source-search"/>
+    <keyword type="function" name="rb_source_reset_filters ()" link="RBSource.html#rb-source-reset-filters"/>
+    <keyword type="function" name="rb_source_can_cut ()" link="RBSource.html#rb-source-can-cut"/>
+    <keyword type="function" name="rb_source_can_delete ()" link="RBSource.html#rb-source-can-delete"/>
+    <keyword type="function" name="rb_source_can_move_to_trash ()" link="RBSource.html#rb-source-can-move-to-trash"/>
+    <keyword type="function" name="rb_source_can_copy ()" link="RBSource.html#rb-source-can-copy"/>
+    <keyword type="function" name="rb_source_can_paste ()" link="RBSource.html#rb-source-can-paste"/>
+    <keyword type="function" name="rb_source_can_add_to_queue ()" link="RBSource.html#rb-source-can-add-to-queue"/>
+    <keyword type="function" name="rb_source_can_show_properties ()" link="RBSource.html#rb-source-can-show-properties"/>
+    <keyword type="function" name="rb_source_cut ()" link="RBSource.html#rb-source-cut"/>
+    <keyword type="function" name="rb_source_copy ()" link="RBSource.html#rb-source-copy"/>
+    <keyword type="function" name="rb_source_paste ()" link="RBSource.html#rb-source-paste"/>
+    <keyword type="function" name="rb_source_delete ()" link="RBSource.html#rb-source-delete"/>
+    <keyword type="function" name="rb_source_add_to_queue ()" link="RBSource.html#rb-source-add-to-queue"/>
+    <keyword type="function" name="rb_source_move_to_trash ()" link="RBSource.html#rb-source-move-to-trash"/>
+    <keyword type="function" name="rb_source_song_properties ()" link="RBSource.html#rb-source-song-properties"/>
+    <keyword type="function" name="rb_source_try_playlist ()" link="RBSource.html#rb-source-try-playlist"/>
+    <keyword type="function" name="rb_source_want_uri ()" link="RBSource.html#rb-source-want-uri"/>
+    <keyword type="function" name="rb_source_uri_is_source ()" link="RBSource.html#rb-source-uri-is-source"/>
+    <keyword type="function" name="rb_source_add_uri ()" link="RBSource.html#rb-source-add-uri"/>
+    <keyword type="function" name="rb_source_can_pause ()" link="RBSource.html#rb-source-can-pause"/>
+    <keyword type="function" name="rb_source_handle_eos ()" link="RBSource.html#rb-source-handle-eos"/>
+    <keyword type="function" name="rb_source_gather_selected_properties ()" link="RBSource.html#rb-source-gather-selected-properties"/>
+    <keyword type="function" name="rb_source_set_hidden_when_empty ()" link="RBSource.html#rb-source-set-hidden-when-empty"/>
+    <keyword type="property" name="The &quot;base-query-model&quot; property" link="RBSource.html#RBSource--base-query-model"/>
+    <keyword type="property" name="The &quot;entry-type&quot; property" link="RBSource.html#RBSource--entry-type"/>
+    <keyword type="property" name="The &quot;hidden-when-empty&quot; property" link="RBSource.html#RBSource--hidden-when-empty"/>
+    <keyword type="property" name="The &quot;load-status&quot; property" link="RBSource.html#RBSource--load-status"/>
+    <keyword type="property" name="The &quot;play-order&quot; property" link="RBSource.html#RBSource--play-order"/>
+    <keyword type="property" name="The &quot;query-model&quot; property" link="RBSource.html#RBSource--query-model"/>
+    <keyword type="property" name="The &quot;settings&quot; property" link="RBSource.html#RBSource--settings"/>
+    <keyword type="property" name="The &quot;show-browser&quot; property" link="RBSource.html#RBSource--show-browser"/>
+    <keyword type="property" name="The &quot;toolbar-path&quot; property" link="RBSource.html#RBSource--toolbar-path"/>
+    <keyword type="signal" name="The &quot;filter-changed&quot; signal" link="RBSource.html#RBSource-filter-changed"/>
+    <keyword type="struct" name="struct RBStaticPlaylistSource" link="RBStaticPlaylistSource.html#RBStaticPlaylistSource-struct"/>
+    <keyword type="struct" name="struct RBStaticPlaylistSourceClass" link="RBStaticPlaylistSource.html#RBStaticPlaylistSourceClass"/>
+    <keyword type="function" name="rb_static_playlist_source_new ()" link="RBStaticPlaylistSource.html#rb-static-playlist-source-new"/>
+    <keyword type="function" name="rb_static_playlist_source_new_from_xml ()" link="RBStaticPlaylistSource.html#rb-static-playlist-source-new-from-xml"/>
+    <keyword type="function" name="rb_static_playlist_source_load_from_xml ()" link="RBStaticPlaylistSource.html#rb-static-playlist-source-load-from-xml"/>
+    <keyword type="function" name="rb_static_playlist_source_add_entry ()" link="RBStaticPlaylistSource.html#rb-static-playlist-source-add-entry"/>
+    <keyword type="function" name="rb_static_playlist_source_remove_entry ()" link="RBStaticPlaylistSource.html#rb-static-playlist-source-remove-entry"/>
+    <keyword type="function" name="rb_static_playlist_source_add_location ()" link="RBStaticPlaylistSource.html#rb-static-playlist-source-add-location"/>
+    <keyword type="function" name="rb_static_playlist_source_add_locations ()" link="RBStaticPlaylistSource.html#rb-static-playlist-source-add-locations"/>
+    <keyword type="function" name="rb_static_playlist_source_remove_location ()" link="RBStaticPlaylistSource.html#rb-static-playlist-source-remove-location"/>
+    <keyword type="function" name="rb_static_playlist_source_move_entry ()" link="RBStaticPlaylistSource.html#rb-static-playlist-source-move-entry"/>
+    <keyword type="struct" name="struct RBStreamingSource" link="RBStreamingSource.html#RBStreamingSource-struct"/>
+    <keyword type="struct" name="struct RBStreamingSourceClass" link="RBStreamingSource.html#RBStreamingSourceClass"/>
+    <keyword type="function" name="rb_streaming_source_get_progress ()" link="RBStreamingSource.html#rb-streaming-source-get-progress"/>
+    <keyword type="function" name="rb_streaming_source_set_streaming_title ()" link="RBStreamingSource.html#rb-streaming-source-set-streaming-title"/>
+    <keyword type="function" name="rb_streaming_source_set_streaming_artist ()" link="RBStreamingSource.html#rb-streaming-source-set-streaming-artist"/>
+    <keyword type="function" name="rb_streaming_source_set_streaming_album ()" link="RBStreamingSource.html#rb-streaming-source-set-streaming-album"/>
+    <keyword type="struct" name="struct RBCellRendererPixbuf" link="RBCellRendererPixbuf.html#RBCellRendererPixbuf-struct"/>
+    <keyword type="struct" name="struct RBCellRendererPixbufClass" link="RBCellRendererPixbuf.html#RBCellRendererPixbufClass"/>
+    <keyword type="function" name="rb_cell_renderer_pixbuf_new ()" link="RBCellRendererPixbuf.html#rb-cell-renderer-pixbuf-new"/>
+    <keyword type="signal" name="The &quot;pixbuf-clicked&quot; signal" link="RBCellRendererPixbuf.html#RBCellRendererPixbuf-pixbuf-clicked"/>
+    <keyword type="struct" name="struct RBCellRendererRating" link="RBCellRendererRating.html#RBCellRendererRating-struct"/>
+    <keyword type="struct" name="struct RBCellRendererRatingClass" link="RBCellRendererRating.html#RBCellRendererRatingClass"/>
+    <keyword type="function" name="rb_cell_renderer_rating_new ()" link="RBCellRendererRating.html#rb-cell-renderer-rating-new"/>
+    <keyword type="property" name="The &quot;rating&quot; property" link="RBCellRendererRating.html#RBCellRendererRating--rating"/>
+    <keyword type="signal" name="The &quot;rated&quot; signal" link="RBCellRendererRating.html#RBCellRendererRating-rated"/>
+    <keyword type="function" name="rb_error_dialog ()" link="rhythmbox-rb-dialog.html#rb-error-dialog"/>
+    <keyword type="function" name="rb_file_chooser_new ()" link="rhythmbox-rb-dialog.html#rb-file-chooser-new"/>
+    <keyword type="struct" name="struct RBEntryView" link="RBEntryView.html#RBEntryView-struct"/>
+    <keyword type="struct" name="struct RBEntryViewClass" link="RBEntryView.html#RBEntryViewClass"/>
+    <keyword type="enum" name="enum RBEntryViewColumn" link="RBEntryView.html#RBEntryViewColumn-enum"/>
+    <keyword type="function" name="rb_entry_view_new ()" link="RBEntryView.html#rb-entry-view-new"/>
+    <keyword type="function" name="rb_entry_view_append_column ()" link="RBEntryView.html#rb-entry-view-append-column"/>
+    <keyword type="function" name="rb_entry_view_append_column_custom ()" link="RBEntryView.html#rb-entry-view-append-column-custom"/>
+    <keyword type="function" name="rb_entry_view_insert_column_custom ()" link="RBEntryView.html#rb-entry-view-insert-column-custom"/>
+    <keyword type="function" name="rb_entry_view_set_columns_clickable ()" link="RBEntryView.html#rb-entry-view-set-columns-clickable"/>
+    <keyword type="function" name="rb_entry_view_set_model ()" link="RBEntryView.html#rb-entry-view-set-model"/>
+    <keyword type="function" name="rb_entry_view_set_state ()" link="RBEntryView.html#rb-entry-view-set-state"/>
+    <keyword type="function" name="rb_entry_view_have_selection ()" link="RBEntryView.html#rb-entry-view-have-selection"/>
+    <keyword type="function" name="rb_entry_view_have_complete_selection ()" link="RBEntryView.html#rb-entry-view-have-complete-selection"/>
+    <keyword type="function" name="rb_entry_view_get_selected_entries ()" link="RBEntryView.html#rb-entry-view-get-selected-entries"/>
+    <keyword type="function" name="rb_entry_view_select_all ()" link="RBEntryView.html#rb-entry-view-select-all"/>
+    <keyword type="function" name="rb_entry_view_select_none ()" link="RBEntryView.html#rb-entry-view-select-none"/>
+    <keyword type="function" name="rb_entry_view_select_entry ()" link="RBEntryView.html#rb-entry-view-select-entry"/>
+    <keyword type="function" name="rb_entry_view_get_entry_contained ()" link="RBEntryView.html#rb-entry-view-get-entry-contained"/>
+    <keyword type="function" name="rb_entry_view_get_entry_visible ()" link="RBEntryView.html#rb-entry-view-get-entry-visible"/>
+    <keyword type="function" name="rb_entry_view_scroll_to_entry ()" link="RBEntryView.html#rb-entry-view-scroll-to-entry"/>
+    <keyword type="function" name="rb_entry_view_enable_drag_source ()" link="RBEntryView.html#rb-entry-view-enable-drag-source"/>
+    <keyword type="function" name="rb_entry_view_get_sorting_order ()" link="RBEntryView.html#rb-entry-view-get-sorting-order"/>
+    <keyword type="function" name="rb_entry_view_set_sorting_order ()" link="RBEntryView.html#rb-entry-view-set-sorting-order"/>
+    <keyword type="function" name="rb_entry_view_get_sorting_type ()" link="RBEntryView.html#rb-entry-view-get-sorting-type"/>
+    <keyword type="function" name="rb_entry_view_set_sorting_type ()" link="RBEntryView.html#rb-entry-view-set-sorting-type"/>
+    <keyword type="function" name="rb_entry_view_set_fixed_column_width ()" link="RBEntryView.html#rb-entry-view-set-fixed-column-width"/>
+    <keyword type="function" name="rb_entry_view_get_time_date_column_sample ()" link="RBEntryView.html#rb-entry-view-get-time-date-column-sample"/>
+    <keyword type="function" name="rb_entry_view_resort_model ()" link="RBEntryView.html#rb-entry-view-resort-model"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RBEntryView.html#RBEntryView--db"/>
+    <keyword type="property" name="The &quot;is-drag-dest&quot; property" link="RBEntryView.html#RBEntryView--is-drag-dest"/>
+    <keyword type="property" name="The &quot;is-drag-source&quot; property" link="RBEntryView.html#RBEntryView--is-drag-source"/>
+    <keyword type="property" name="The &quot;model&quot; property" link="RBEntryView.html#RBEntryView--model"/>
+    <keyword type="property" name="The &quot;playing-state&quot; property" link="RBEntryView.html#RBEntryView--playing-state"/>
+    <keyword type="property" name="The &quot;shell-player&quot; property" link="RBEntryView.html#RBEntryView--shell-player"/>
+    <keyword type="property" name="The &quot;sort-order&quot; property" link="RBEntryView.html#RBEntryView--sort-order"/>
+    <keyword type="property" name="The &quot;visible-columns&quot; property" link="RBEntryView.html#RBEntryView--visible-columns"/>
+    <keyword type="signal" name="The &quot;entries-replaced&quot; signal" link="RBEntryView.html#RBEntryView-entries-replaced"/>
+    <keyword type="signal" name="The &quot;entry-activated&quot; signal" link="RBEntryView.html#RBEntryView-entry-activated"/>
+    <keyword type="signal" name="The &quot;entry-added&quot; signal" link="RBEntryView.html#RBEntryView-entry-added"/>
+    <keyword type="signal" name="The &quot;entry-deleted&quot; signal" link="RBEntryView.html#RBEntryView-entry-deleted"/>
+    <keyword type="signal" name="The &quot;have-selection-changed&quot; signal" link="RBEntryView.html#RBEntryView-have-selection-changed"/>
+    <keyword type="signal" name="The &quot;selection-changed&quot; signal" link="RBEntryView.html#RBEntryView-selection-changed"/>
+    <keyword type="signal" name="The &quot;show-popup&quot; signal" link="RBEntryView.html#RBEntryView-show-popup"/>
+    <keyword type="struct" name="struct RBHeader" link="RBHeader.html#RBHeader-struct"/>
+    <keyword type="struct" name="struct RBHeaderClass" link="RBHeader.html#RBHeaderClass"/>
+    <keyword type="function" name="rb_header_new ()" link="RBHeader.html#rb-header-new"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RBHeader.html#RBHeader--db"/>
+    <keyword type="property" name="The &quot;seekable&quot; property" link="RBHeader.html#RBHeader--seekable"/>
+    <keyword type="property" name="The &quot;shell-player&quot; property" link="RBHeader.html#RBHeader--shell-player"/>
+    <keyword type="property" name="The &quot;show-album-art&quot; property" link="RBHeader.html#RBHeader--show-album-art"/>
+    <keyword type="property" name="The &quot;show-position-slider&quot; property" link="RBHeader.html#RBHeader--show-position-slider"/>
+    <keyword type="property" name="The &quot;show-remaining&quot; property" link="RBHeader.html#RBHeader--show-remaining"/>
+    <keyword type="property" name="The &quot;slider-dragging&quot; property" link="RBHeader.html#RBHeader--slider-dragging"/>
+    <keyword type="struct" name="struct RBLibraryBrowser" link="RBLibraryBrowser.html#RBLibraryBrowser-struct"/>
+    <keyword type="struct" name="struct RBLibraryBrowserClass" link="RBLibraryBrowser.html#RBLibraryBrowserClass"/>
+    <keyword type="function" name="rb_library_browser_new ()" link="RBLibraryBrowser.html#rb-library-browser-new"/>
+    <keyword type="function" name="rb_library_browser_set_model ()" link="RBLibraryBrowser.html#rb-library-browser-set-model"/>
+    <keyword type="function" name="rb_library_browser_reset ()" link="RBLibraryBrowser.html#rb-library-browser-reset"/>
+    <keyword type="function" name="rb_library_browser_construct_query ()" link="RBLibraryBrowser.html#rb-library-browser-construct-query"/>
+    <keyword type="function" name="rb_library_browser_get_property_views ()" link="RBLibraryBrowser.html#rb-library-browser-get-property-views"/>
+    <keyword type="function" name="rb_library_browser_get_property_view ()" link="RBLibraryBrowser.html#rb-library-browser-get-property-view"/>
+    <keyword type="function" name="rb_library_browser_has_selection ()" link="RBLibraryBrowser.html#rb-library-browser-has-selection"/>
+    <keyword type="function" name="rb_library_browser_set_selection ()" link="RBLibraryBrowser.html#rb-library-browser-set-selection"/>
+    <keyword type="property" name="The &quot;browser-views&quot; property" link="RBLibraryBrowser.html#RBLibraryBrowser--browser-views"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RBLibraryBrowser.html#RBLibraryBrowser--db"/>
+    <keyword type="property" name="The &quot;entry-type&quot; property" link="RBLibraryBrowser.html#RBLibraryBrowser--entry-type"/>
+    <keyword type="property" name="The &quot;input-model&quot; property" link="RBLibraryBrowser.html#RBLibraryBrowser--input-model"/>
+    <keyword type="property" name="The &quot;output-model&quot; property" link="RBLibraryBrowser.html#RBLibraryBrowser--output-model"/>
+    <keyword type="struct" name="struct RBPropertyView" link="RBPropertyView.html#RBPropertyView-struct"/>
+    <keyword type="struct" name="struct RBPropertyViewClass" link="RBPropertyView.html#RBPropertyViewClass"/>
+    <keyword type="function" name="rb_property_view_new ()" link="RBPropertyView.html#rb-property-view-new"/>
+    <keyword type="function" name="rb_property_view_append_column_custom ()" link="RBPropertyView.html#rb-property-view-append-column-custom"/>
+    <keyword type="function" name="rb_property_view_set_selection_mode ()" link="RBPropertyView.html#rb-property-view-set-selection-mode"/>
+    <keyword type="function" name="rb_property_view_reset ()" link="RBPropertyView.html#rb-property-view-reset"/>
+    <keyword type="function" name="rb_property_view_set_selection ()" link="RBPropertyView.html#rb-property-view-set-selection"/>
+    <keyword type="function" name="rb_property_view_get_selection ()" link="RBPropertyView.html#rb-property-view-get-selection"/>
+    <keyword type="function" name="rb_property_view_get_model ()" link="RBPropertyView.html#rb-property-view-get-model"/>
+    <keyword type="function" name="rb_property_view_set_model ()" link="RBPropertyView.html#rb-property-view-set-model"/>
+    <keyword type="function" name="rb_property_view_get_num_properties ()" link="RBPropertyView.html#rb-property-view-get-num-properties"/>
+    <keyword type="function" name="rb_property_view_set_search_func ()" link="RBPropertyView.html#rb-property-view-set-search-func"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RBPropertyView.html#RBPropertyView--db"/>
+    <keyword type="property" name="The &quot;draggable&quot; property" link="RBPropertyView.html#RBPropertyView--draggable"/>
+    <keyword type="property" name="The &quot;prop&quot; property" link="RBPropertyView.html#RBPropertyView--prop"/>
+    <keyword type="property" name="The &quot;property-model&quot; property" link="RBPropertyView.html#RBPropertyView--property-model"/>
+    <keyword type="property" name="The &quot;title&quot; property" link="RBPropertyView.html#RBPropertyView--title"/>
+    <keyword type="signal" name="The &quot;properties-selected&quot; signal" link="RBPropertyView.html#RBPropertyView-properties-selected"/>
+    <keyword type="signal" name="The &quot;property-activated&quot; signal" link="RBPropertyView.html#RBPropertyView-property-activated"/>
+    <keyword type="signal" name="The &quot;property-selected&quot; signal" link="RBPropertyView.html#RBPropertyView-property-selected"/>
+    <keyword type="signal" name="The &quot;property-selection-reset&quot; signal" link="RBPropertyView.html#RBPropertyView-property-selection-reset"/>
+    <keyword type="signal" name="The &quot;show-popup&quot; signal" link="RBPropertyView.html#RBPropertyView-show-popup"/>
+    <keyword type="struct" name="struct RBQueryCreator" link="RBQueryCreator.html#RBQueryCreator-struct"/>
+    <keyword type="struct" name="struct RBQueryCreatorClass" link="RBQueryCreator.html#RBQueryCreatorClass"/>
+    <keyword type="function" name="rb_query_creator_new ()" link="RBQueryCreator.html#rb-query-creator-new"/>
+    <keyword type="function" name="rb_query_creator_new_from_query ()" link="RBQueryCreator.html#rb-query-creator-new-from-query"/>
+    <keyword type="function" name="rb_query_creator_get_query ()" link="RBQueryCreator.html#rb-query-creator-get-query"/>
+    <keyword type="function" name="rb_query_creator_get_limit ()" link="RBQueryCreator.html#rb-query-creator-get-limit"/>
+    <keyword type="function" name="rb_query_creator_get_sort_order ()" link="RBQueryCreator.html#rb-query-creator-get-sort-order"/>
+    <keyword type="property" name="The &quot;creating&quot; property" link="RBQueryCreator.html#RBQueryCreator--creating"/>
+    <keyword type="property" name="The &quot;db&quot; property" link="RBQueryCreator.html#RBQueryCreator--db"/>
+    <keyword type="struct" name="RBRatingPixbufs" link="rhythmbox-rb-rating-helper.html#RBRatingPixbufs"/>
+    <keyword type="macro" name="RB_RATING_MAX_SCORE" link="rhythmbox-rb-rating-helper.html#RB-RATING-MAX-SCORE:CAPS"/>
+    <keyword type="function" name="rb_rating_render_stars ()" link="rhythmbox-rb-rating-helper.html#rb-rating-render-stars"/>
+    <keyword type="function" name="rb_rating_get_rating_from_widget ()" link="rhythmbox-rb-rating-helper.html#rb-rating-get-rating-from-widget"/>
+    <keyword type="function" name="rb_rating_pixbufs_new ()" link="rhythmbox-rb-rating-helper.html#rb-rating-pixbufs-new"/>
+    <keyword type="function" name="rb_rating_pixbufs_free ()" link="rhythmbox-rb-rating-helper.html#rb-rating-pixbufs-free"/>
+    <keyword type="function" name="rb_rating_install_rating_property ()" link="rhythmbox-rb-rating-helper.html#rb-rating-install-rating-property"/>
+    <keyword type="struct" name="struct RBRating" link="RBRating.html#RBRating-struct"/>
+    <keyword type="struct" name="struct RBRatingClass" link="RBRating.html#RBRatingClass"/>
+    <keyword type="function" name="rb_rating_new ()" link="RBRating.html#rb-rating-new"/>
+    <keyword type="property" name="The &quot;rating&quot; property" link="RBRating.html#RBRating--rating"/>
+    <keyword type="signal" name="The &quot;adjust-rating&quot; signal" link="RBRating.html#RBRating-adjust-rating"/>
+    <keyword type="signal" name="The &quot;rated&quot; signal" link="RBRating.html#RBRating-rated"/>
+    <keyword type="signal" name="The &quot;set-rating&quot; signal" link="RBRating.html#RBRating-set-rating"/>
+    <keyword type="struct" name="struct RBSearchEntry" link="RBSearchEntry.html#RBSearchEntry-struct"/>
+    <keyword type="struct" name="struct RBSearchEntryClass" link="RBSearchEntry.html#RBSearchEntryClass"/>
+    <keyword type="function" name="rb_search_entry_new ()" link="RBSearchEntry.html#rb-search-entry-new"/>
+    <keyword type="function" name="rb_search_entry_clear ()" link="RBSearchEntry.html#rb-search-entry-clear"/>
+    <keyword type="function" name="rb_search_entry_set_text ()" link="RBSearchEntry.html#rb-search-entry-set-text"/>
+    <keyword type="function" name="rb_search_entry_searching ()" link="RBSearchEntry.html#rb-search-entry-searching"/>
+    <keyword type="function" name="rb_search_entry_grab_focus ()" link="RBSearchEntry.html#rb-search-entry-grab-focus"/>
+    <keyword type="property" name="The &quot;explicit-mode&quot; property" link="RBSearchEntry.html#RBSearchEntry--explicit-mode"/>
+    <keyword type="property" name="The &quot;has-popup&quot; property" link="RBSearchEntry.html#RBSearchEntry--has-popup"/>
+    <keyword type="signal" name="The &quot;activate&quot; signal" link="RBSearchEntry.html#RBSearchEntry-activate"/>
+    <keyword type="signal" name="The &quot;search&quot; signal" link="RBSearchEntry.html#RBSearchEntry-search"/>
+    <keyword type="signal" name="The &quot;show-popup&quot; signal" link="RBSearchEntry.html#RBSearchEntry-show-popup"/>
+    <keyword type="struct" name="struct RBSongInfo" link="RBSongInfo.html#RBSongInfo-struct"/>
+    <keyword type="struct" name="struct RBSongInfoClass" link="RBSongInfo.html#RBSongInfoClass"/>
+    <keyword type="function" name="rb_song_info_new ()" link="RBSongInfo.html#rb-song-info-new"/>
+    <keyword type="function" name="rb_song_info_append_page ()" link="RBSongInfo.html#rb-song-info-append-page"/>
+    <keyword type="property" name="The &quot;current-entry&quot; property" link="RBSongInfo.html#RBSongInfo--current-entry"/>
+    <keyword type="property" name="The &quot;entry-view&quot; property" link="RBSongInfo.html#RBSongInfo--entry-view"/>
+    <keyword type="property" name="The &quot;selected-entries&quot; property" link="RBSongInfo.html#RBSongInfo--selected-entries"/>
+    <keyword type="property" name="The &quot;source&quot; property" link="RBSongInfo.html#RBSongInfo--source"/>
+    <keyword type="signal" name="The &quot;post-metadata-change&quot; signal" link="RBSongInfo.html#RBSongInfo-post-metadata-change"/>
+    <keyword type="signal" name="The &quot;pre-metadata-change&quot; signal" link="RBSongInfo.html#RBSongInfo-pre-metadata-change"/>
+    <keyword type="struct" name="struct RBURIDialog" link="RBURIDialog.html#RBURIDialog-struct"/>
+    <keyword type="struct" name="struct RBURIDialogClass" link="RBURIDialog.html#RBURIDialogClass"/>
+    <keyword type="function" name="rb_uri_dialog_new ()" link="RBURIDialog.html#rb-uri-dialog-new"/>
+    <keyword type="property" name="The &quot;label&quot; property" link="RBURIDialog.html#RBURIDialog--label"/>
+    <keyword type="signal" name="The &quot;location-added&quot; signal" link="RBURIDialog.html#RBURIDialog-location-added"/>
+    <keyword type="constant" name="RB_PLAYER_PLAY_REPLACE" link="RBPlayer.html#RB-PLAYER-PLAY-REPLACE:CAPS"/>
+    <keyword type="constant" name="RB_PLAYER_PLAY_AFTER_EOS" link="RBPlayer.html#RB-PLAYER-PLAY-AFTER-EOS:CAPS"/>
+    <keyword type="constant" name="RB_PLAYER_PLAY_CROSSFADE" link="RBPlayer.html#RB-PLAYER-PLAY-CROSSFADE:CAPS"/>
+    <keyword type="constant" name="RB_PLAYER_ERROR_NO_AUDIO" link="RBPlayer.html#RB-PLAYER-ERROR-NO-AUDIO:CAPS"/>
+    <keyword type="constant" name="RB_PLAYER_ERROR_GENERAL" link="RBPlayer.html#RB-PLAYER-ERROR-GENERAL:CAPS"/>
+    <keyword type="constant" name="RB_PLAYER_ERROR_INTERNAL" link="RBPlayer.html#RB-PLAYER-ERROR-INTERNAL:CAPS"/>
+    <keyword type="constant" name="RB_PLAYER_ERROR_NOT_FOUND" link="RBPlayer.html#RB-PLAYER-ERROR-NOT-FOUND:CAPS"/>
+    <keyword type="constant" name="MPID_ERROR_NONE" link="rhythmbox-Media-player-ID.html#MPID-ERROR-NONE:CAPS"/>
+    <keyword type="constant" name="MPID_ERROR_NO_DEVICE_PATH" link="rhythmbox-Media-player-ID.html#MPID-ERROR-NO-DEVICE-PATH:CAPS"/>
+    <keyword type="constant" name="MPID_ERROR_MECHANISM_FAILED" link="rhythmbox-Media-player-ID.html#MPID-ERROR-MECHANISM-FAILED:CAPS"/>
+    <keyword type="constant" name="MPID_ERROR_NOT_MEDIA_PLAYER" link="rhythmbox-Media-player-ID.html#MPID-ERROR-NOT-MEDIA-PLAYER:CAPS"/>
+    <keyword type="constant" name="MPID_ERROR_DEVICE_INFO_MISSING" link="rhythmbox-Media-player-ID.html#MPID-ERROR-DEVICE-INFO-MISSING:CAPS"/>
+    <keyword type="constant" name="MPID_SOURCE_NONE" link="rhythmbox-Media-player-ID.html#MPID-SOURCE-NONE:CAPS"/>
+    <keyword type="constant" name="MPID_SOURCE_SYSTEM" link="rhythmbox-Media-player-ID.html#MPID-SOURCE-SYSTEM:CAPS"/>
+    <keyword type="constant" name="MPID_SOURCE_OVERRIDE" link="rhythmbox-Media-player-ID.html#MPID-SOURCE-OVERRIDE:CAPS"/>
+    <keyword type="constant" name="RB_TREE_DEST_EMPTY_VIEW_DROP" link="rhythmbox-rb-tree-dnd.html#RB-TREE-DEST-EMPTY-VIEW-DROP:CAPS"/>
+    <keyword type="constant" name="RB_TREE_DEST_CAN_DROP_INTO" link="rhythmbox-rb-tree-dnd.html#RB-TREE-DEST-CAN-DROP-INTO:CAPS"/>
+    <keyword type="constant" name="RB_TREE_DEST_CAN_DROP_BETWEEN" link="rhythmbox-rb-tree-dnd.html#RB-TREE-DEST-CAN-DROP-BETWEEN:CAPS"/>
+    <keyword type="constant" name="RB_TREE_DEST_SELECT_ON_DRAG_TIMEOUT" link="rhythmbox-rb-tree-dnd.html#RB-TREE-DEST-SELECT-ON-DRAG-TIMEOUT:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_TITLE" link="RBMetaData.html#RB-METADATA-FIELD-TITLE:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_ARTIST" link="RBMetaData.html#RB-METADATA-FIELD-ARTIST:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_ALBUM" link="RBMetaData.html#RB-METADATA-FIELD-ALBUM:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_DATE" link="RBMetaData.html#RB-METADATA-FIELD-DATE:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_GENRE" link="RBMetaData.html#RB-METADATA-FIELD-GENRE:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_COMMENT" link="RBMetaData.html#RB-METADATA-FIELD-COMMENT:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_TRACK_NUMBER" link="RBMetaData.html#RB-METADATA-FIELD-TRACK-NUMBER:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_MAX_TRACK_NUMBER" link="RBMetaData.html#RB-METADATA-FIELD-MAX-TRACK-NUMBER:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_DISC_NUMBER" link="RBMetaData.html#RB-METADATA-FIELD-DISC-NUMBER:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_MAX_DISC_NUMBER" link="RBMetaData.html#RB-METADATA-FIELD-MAX-DISC-NUMBER:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_DESCRIPTION" link="RBMetaData.html#RB-METADATA-FIELD-DESCRIPTION:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_VERSION" link="RBMetaData.html#RB-METADATA-FIELD-VERSION:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_ISRC" link="RBMetaData.html#RB-METADATA-FIELD-ISRC:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_ORGANIZATION" link="RBMetaData.html#RB-METADATA-FIELD-ORGANIZATION:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_COPYRIGHT" link="RBMetaData.html#RB-METADATA-FIELD-COPYRIGHT:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_CONTACT" link="RBMetaData.html#RB-METADATA-FIELD-CONTACT:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_LICENSE" link="RBMetaData.html#RB-METADATA-FIELD-LICENSE:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_PERFORMER" link="RBMetaData.html#RB-METADATA-FIELD-PERFORMER:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_DURATION" link="RBMetaData.html#RB-METADATA-FIELD-DURATION:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_CODEC" link="RBMetaData.html#RB-METADATA-FIELD-CODEC:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_BITRATE" link="RBMetaData.html#RB-METADATA-FIELD-BITRATE:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_TRACK_GAIN" link="RBMetaData.html#RB-METADATA-FIELD-TRACK-GAIN:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_TRACK_PEAK" link="RBMetaData.html#RB-METADATA-FIELD-TRACK-PEAK:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_ALBUM_GAIN" link="RBMetaData.html#RB-METADATA-FIELD-ALBUM-GAIN:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_ALBUM_PEAK" link="RBMetaData.html#RB-METADATA-FIELD-ALBUM-PEAK:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_LANGUAGE_CODE" link="RBMetaData.html#RB-METADATA-FIELD-LANGUAGE-CODE:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_BPM" link="RBMetaData.html#RB-METADATA-FIELD-BPM:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_MUSICBRAINZ_TRACKID" link="RBMetaData.html#RB-METADATA-FIELD-MUSICBRAINZ-TRACKID:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_MUSICBRAINZ_ARTISTID" link="RBMetaData.html#RB-METADATA-FIELD-MUSICBRAINZ-ARTISTID:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_MUSICBRAINZ_ALBUMID" link="RBMetaData.html#RB-METADATA-FIELD-MUSICBRAINZ-ALBUMID:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_MUSICBRAINZ_ALBUMARTISTID" link="RBMetaData.html#RB-METADATA-FIELD-MUSICBRAINZ-ALBUMARTISTID:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_ARTIST_SORTNAME" link="RBMetaData.html#RB-METADATA-FIELD-ARTIST-SORTNAME:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_ALBUM_SORTNAME" link="RBMetaData.html#RB-METADATA-FIELD-ALBUM-SORTNAME:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_ALBUM_ARTIST" link="RBMetaData.html#RB-METADATA-FIELD-ALBUM-ARTIST:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_ALBUM_ARTIST_SORTNAME" link="RBMetaData.html#RB-METADATA-FIELD-ALBUM-ARTIST-SORTNAME:CAPS"/>
+    <keyword type="constant" name="RB_METADATA_FIELD_LAST" link="RBMetaData.html#RB-METADATA-FIELD-LAST:CAPS"/>
+    <keyword type="constant" name="RHYTHMDB_ENTRY_NORMAL" link="RhythmDBEntryType.html#RHYTHMDB-ENTRY-NORMAL:CAPS"/>
+    <keyword type="constant" name="RHYTHMDB_ENTRY_STREAM" link="RhythmDBEntryType.html#RHYTHMDB-ENTRY-STREAM:CAPS"/>
+    <keyword type="constant" name="RHYTHMDB_ENTRY_CONTAINER" link="RhythmDBEntryType.html#RHYTHMDB-ENTRY-CONTAINER:CAPS"/>
+    <keyword type="constant" name="RHYTHMDB_ENTRY_VIRTUAL" link="RhythmDBEntryType.html#RHYTHMDB-ENTRY-VIRTUAL:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_TRACK_NUMBER" link="RBEntryView.html#RB-ENTRY-VIEW-COL-TRACK-NUMBER:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_TITLE" link="RBEntryView.html#RB-ENTRY-VIEW-COL-TITLE:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_ARTIST" link="RBEntryView.html#RB-ENTRY-VIEW-COL-ARTIST:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_ALBUM" link="RBEntryView.html#RB-ENTRY-VIEW-COL-ALBUM:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_GENRE" link="RBEntryView.html#RB-ENTRY-VIEW-COL-GENRE:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_COMMENT" link="RBEntryView.html#RB-ENTRY-VIEW-COL-COMMENT:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_DURATION" link="RBEntryView.html#RB-ENTRY-VIEW-COL-DURATION:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_QUALITY" link="RBEntryView.html#RB-ENTRY-VIEW-COL-QUALITY:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_RATING" link="RBEntryView.html#RB-ENTRY-VIEW-COL-RATING:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_PLAY_COUNT" link="RBEntryView.html#RB-ENTRY-VIEW-COL-PLAY-COUNT:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_YEAR" link="RBEntryView.html#RB-ENTRY-VIEW-COL-YEAR:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_LAST_PLAYED" link="RBEntryView.html#RB-ENTRY-VIEW-COL-LAST-PLAYED:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_FIRST_SEEN" link="RBEntryView.html#RB-ENTRY-VIEW-COL-FIRST-SEEN:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_LAST_SEEN" link="RBEntryView.html#RB-ENTRY-VIEW-COL-LAST-SEEN:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_LOCATION" link="RBEntryView.html#RB-ENTRY-VIEW-COL-LOCATION:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_BPM" link="RBEntryView.html#RB-ENTRY-VIEW-COL-BPM:CAPS"/>
+    <keyword type="constant" name="RB_ENTRY_VIEW_COL_ERROR" link="RBEntryView.html#RB-ENTRY-VIEW-COL-ERROR:CAPS"/>
+  </functions>
+</book>

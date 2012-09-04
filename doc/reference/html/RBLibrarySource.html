@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBLibrarySource</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch06.html" title="Sources">
+<link rel="prev" href="RBImportErrorsSource.html" title="RBImportErrorsSource">
+<link rel="next" href="RBMissingFilesSource.html" title="RBMissingFilesSource">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBImportErrorsSource.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBMissingFilesSource.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBLibrarySource.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBLibrarySource.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBLibrarySource.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBLibrarySource.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBLibrarySource"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBLibrarySource.top_of_page"></a>RBLibrarySource</span></h2>
+<p>RBLibrarySource — main library source, containing all local songs</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBLibrarySource.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBLibrarySource.html#RBLibrarySource-struct" title="struct RBLibrarySource">RBLibrarySource</a>;
+struct              <a class="link" href="RBLibrarySource.html#RBLibrarySourceClass" title="struct RBLibrarySourceClass">RBLibrarySourceClass</a>;
+<a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          <a class="link" href="RBLibrarySource.html#rb-library-source-new" title="rb_library_source_new ()">rb_library_source_new</a>               (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBLibrarySource.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBox
+                           +----GtkHBox
+                                 +----RBDisplayPage
+                                       +----<a class="link" href="RBSource.html" title="RBSource">RBSource</a>
+                                             +----<a class="link" href="RBBrowserSource.html" title="RBBrowserSource">RBBrowserSource</a>
+                                                   +----RBLibrarySource
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBLibrarySource.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBLibrarySource implements
+ AtkImplementorIface,  GtkBuildable and  GtkOrientable.</p>
+</div>
+<div class="refsect1">
+<a name="RBLibrarySource.description"></a><h2>Description</h2>
+<p>
+The library source contains all local songs that have been imported
+into the database.
+</p>
+<p>
+It provides a preferences page for configuring the library location,
+the directory structure to use when transferring new files into
+the library from another source, and the preferred audio encoding
+to use.
+</p>
+<p>
+If multiple library locations are configured, the library source
+creates a child source for each location, which will only show
+files found under that location.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBLibrarySource.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBLibrarySource-struct"></a><h3>struct RBLibrarySource</h3>
+<pre class="programlisting">struct RBLibrarySource;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBLibrarySourceClass"></a><h3>struct RBLibrarySourceClass</h3>
+<pre class="programlisting">struct RBLibrarySourceClass {
+	RBBrowserSourceClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-library-source-new"></a><h3>rb_library_source_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          rb_library_source_new               (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>);</pre>
+<p>
+Creates and returns the <a class="link" href="RBLibrarySource.html" title="RBLibrarySource"><span class="type">RBLibrarySource</span></a> instance
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="RBLibrarySource.html" title="RBLibrarySource"><span class="type">RBLibrarySource</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

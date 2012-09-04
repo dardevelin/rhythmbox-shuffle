@@ -1,0 +1,196 @@
+<!-- ##### SECTION Title ##### -->
+RBPropertyView
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBPropertyView ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBPropertyView::properties-selected ##### -->
+<para>
+
+</para>
+
+@rbpropertyview: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBPropertyView::property-activated ##### -->
+<para>
+
+</para>
+
+@rbpropertyview: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBPropertyView::property-selected ##### -->
+<para>
+
+</para>
+
+@rbpropertyview: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBPropertyView::property-selection-reset ##### -->
+<para>
+
+</para>
+
+@rbpropertyview: the object which received the signal.
+
+<!-- ##### SIGNAL RBPropertyView::show-popup ##### -->
+<para>
+
+</para>
+
+@rbpropertyview: the object which received the signal.
+
+<!-- ##### ARG RBPropertyView:db ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBPropertyView:draggable ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBPropertyView:prop ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBPropertyView:property-model ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBPropertyView:title ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBPropertyViewClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+@property_selected: 
+@properties_selected: 
+@property_activated: 
+@selection_reset: 
+@show_popup: 
+
+<!-- ##### FUNCTION rb_property_view_new ##### -->
+<para>
+
+</para>
+
+@db: 
+@propid: 
+@title: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_property_view_append_column_custom ##### -->
+<para>
+
+</para>
+
+@view: 
+@column: 
+
+
+<!-- ##### FUNCTION rb_property_view_set_selection_mode ##### -->
+<para>
+
+</para>
+
+@view: 
+@mode: 
+
+
+<!-- ##### FUNCTION rb_property_view_reset ##### -->
+<para>
+
+</para>
+
+@view: 
+
+
+<!-- ##### FUNCTION rb_property_view_set_selection ##### -->
+<para>
+
+</para>
+
+@view: 
+@vals: 
+
+
+<!-- ##### FUNCTION rb_property_view_get_selection ##### -->
+<para>
+
+</para>
+
+@view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_property_view_get_model ##### -->
+<para>
+
+</para>
+
+@view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_property_view_set_model ##### -->
+<para>
+
+</para>
+
+@view: 
+@model: 
+
+
+<!-- ##### FUNCTION rb_property_view_get_num_properties ##### -->
+<para>
+
+</para>
+
+@view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_property_view_set_search_func ##### -->
+<para>
+
+</para>
+
+@view: 
+@func: 
+@func_data: 
+@notify: 
+
+

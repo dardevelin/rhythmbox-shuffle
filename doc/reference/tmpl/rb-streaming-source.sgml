@@ -1,0 +1,72 @@
+<!-- ##### SECTION Title ##### -->
+RBStreamingSource
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBStreamingSource ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT RBStreamingSourceClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION rb_streaming_source_get_progress ##### -->
+<para>
+
+</para>
+
+@source: 
+@text: 
+@progress: 
+
+
+<!-- ##### FUNCTION rb_streaming_source_set_streaming_title ##### -->
+<para>
+
+</para>
+
+@source: 
+@title: 
+
+
+<!-- ##### FUNCTION rb_streaming_source_set_streaming_artist ##### -->
+<para>
+
+</para>
+
+@source: 
+@artist: 
+
+
+<!-- ##### FUNCTION rb_streaming_source_set_streaming_album ##### -->
+<para>
+
+</para>
+
+@source: 
+@album: 
+
+

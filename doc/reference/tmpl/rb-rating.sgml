@@ -1,0 +1,76 @@
+<!-- ##### SECTION Title ##### -->
+RBRating
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBRating ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBRating::adjust-rating ##### -->
+<para>
+
+</para>
+
+@rbrating: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBRating::rated ##### -->
+<para>
+
+</para>
+
+@rbrating: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBRating::set-rating ##### -->
+<para>
+
+</para>
+
+@rbrating: the object which received the signal.
+@arg1: 
+
+<!-- ##### ARG RBRating:rating ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBRatingClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+@rated: 
+@set_rating: 
+@adjust_rating: 
+
+<!-- ##### FUNCTION rb_rating_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+

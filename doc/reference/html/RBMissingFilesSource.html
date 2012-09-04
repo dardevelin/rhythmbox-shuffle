@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBMissingFilesSource</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch06.html" title="Sources">
+<link rel="prev" href="RBLibrarySource.html" title="RBLibrarySource">
+<link rel="next" href="RBMediaPlayerSource.html" title="RBMediaPlayerSource">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBLibrarySource.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBMediaPlayerSource.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBMissingFilesSource.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBMissingFilesSource.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBMissingFilesSource.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBMissingFilesSource.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBMissingFilesSource"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBMissingFilesSource.top_of_page"></a>RBMissingFilesSource</span></h2>
+<p>RBMissingFilesSource — source displaying files missing from the library</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBMissingFilesSource.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBMissingFilesSource.html#RBMissingFilesSource-struct" title="struct RBMissingFilesSource">RBMissingFilesSource</a>;
+struct              <a class="link" href="RBMissingFilesSource.html#RBMissingFilesSourceClass" title="struct RBMissingFilesSourceClass">RBMissingFilesSourceClass</a>;
+<a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          <a class="link" href="RBMissingFilesSource.html#rb-missing-files-source-new" title="rb_missing_files_source_new ()">rb_missing_files_source_new</a>         (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBLibrarySource.html" title="RBLibrarySource"><span class="type">RBLibrarySource</span></a> *library</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBMissingFilesSource.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBox
+                           +----GtkHBox
+                                 +----RBDisplayPage
+                                       +----<a class="link" href="RBSource.html" title="RBSource">RBSource</a>
+                                             +----RBMissingFilesSource
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBMissingFilesSource.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBMissingFilesSource implements
+ AtkImplementorIface,  GtkBuildable and  GtkOrientable.</p>
+</div>
+<div class="refsect1">
+<a name="RBMissingFilesSource.description"></a><h2>Description</h2>
+<p>
+This source displays files that rhythmbox cannot find at the expected
+locations.  On startup, it does a file access check for every file
+in the library, hiding those that fail.  This source sets up a
+query model that matches only hidden entries.  It displays the file
+location and the last time the file was successfully accessed.
+</p>
+<p>
+The source only displayed in the source list when there are hidden
+entries to show.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBMissingFilesSource.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBMissingFilesSource-struct"></a><h3>struct RBMissingFilesSource</h3>
+<pre class="programlisting">struct RBMissingFilesSource;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBMissingFilesSourceClass"></a><h3>struct RBMissingFilesSourceClass</h3>
+<pre class="programlisting">struct RBMissingFilesSourceClass {
+	RBSourceClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-missing-files-source-new"></a><h3>rb_missing_files_source_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          rb_missing_files_source_new         (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBLibrarySource.html" title="RBLibrarySource"><span class="type">RBLibrarySource</span></a> *library</code></em>);</pre>
+<p>
+Creates the missing files source.  It extracts the
+entry type from the library source instance, so it
+currently only works for files in the library, but
+it would be trivial to make it use any source type
+that did file access checks for its contents.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>library</code></em> :</span></p></td>
+<td>the <a class="link" href="RBLibrarySource.html" title="RBLibrarySource"><span class="type">RBLibrarySource</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="RBMissingFilesSource.html" title="RBMissingFilesSource"><span class="type">RBMissingFilesSource</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

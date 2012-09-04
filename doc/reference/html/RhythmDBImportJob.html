@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RhythmDBImportJob</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch04.html" title="RhythmDB">
+<link rel="prev" href="RhythmDBEntryType.html" title="RhythmDBEntryType">
+<link rel="next" href="RhythmDBPropertyModel.html" title="RhythmDBPropertyModel">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RhythmDBEntryType.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch04.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RhythmDBPropertyModel.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RhythmDBImportJob.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RhythmDBImportJob.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RhythmDBImportJob.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RhythmDBImportJob.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#RhythmDBImportJob.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RhythmDBImportJob"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RhythmDBImportJob.top_of_page"></a>RhythmDBImportJob</span></h2>
+<p>RhythmDBImportJob — batch import job</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RhythmDBImportJob.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RhythmDBImportJob.html#RhythmDBImportJob-struct" title="struct RhythmDBImportJob">RhythmDBImportJob</a>;
+struct              <a class="link" href="RhythmDBImportJob.html#RhythmDBImportJobClass" title="struct RhythmDBImportJobClass">RhythmDBImportJobClass</a>;
+<a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="returnvalue">RhythmDBImportJob</span></a> * <a class="link" href="RhythmDBImportJob.html#rhythmdb-import-job-new" title="rhythmdb_import_job_new ()">rhythmdb_import_job_new</a>             (<em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> *entry_type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> *ignore_type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> *error_type</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RhythmDBImportJob.html#rhythmdb-import-job-add-uri" title="rhythmdb_import_job_add_uri ()">rhythmdb_import_job_add_uri</a>         (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RhythmDBImportJob.html#rhythmdb-import-job-start" title="rhythmdb_import_job_start ()">rhythmdb_import_job_start</a>           (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RhythmDBImportJob.html#rhythmdb-import-job-cancel" title="rhythmdb_import_job_cancel ()">rhythmdb_import_job_cancel</a>          (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RhythmDBImportJob.html#rhythmdb-import-job-complete" title="rhythmdb_import_job_complete ()">rhythmdb_import_job_complete</a>        (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RhythmDBImportJob.html#rhythmdb-import-job-scan-complete" title="rhythmdb_import_job_scan_complete ()">rhythmdb_import_job_scan_complete</a>   (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="RhythmDBImportJob.html#rhythmdb-import-job-get-total" title="rhythmdb_import_job_get_total ()">rhythmdb_import_job_get_total</a>       (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>);
+<span class="returnvalue">int</span>                 <a class="link" href="RhythmDBImportJob.html#rhythmdb-import-job-get-imported" title="rhythmdb_import_job_get_imported ()">rhythmdb_import_job_get_imported</a>    (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RhythmDBImportJob.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----RhythmDBImportJob
+</pre>
+</div>
+<div class="refsect1">
+<a name="RhythmDBImportJob.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RhythmDBImportJob.html#RhythmDBImportJob--db" title='The "db" property'>db</a>"                       <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>*             : Read / Write / Construct Only
+  "<a class="link" href="RhythmDBImportJob.html#RhythmDBImportJob--entry-type" title='The "entry-type" property'>entry-type</a>"               <a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a>*    : Read / Write / Construct Only
+  "<a class="link" href="RhythmDBImportJob.html#RhythmDBImportJob--error-type" title='The "error-type" property'>error-type</a>"               <a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a>*    : Read / Write / Construct Only
+  "<a class="link" href="RhythmDBImportJob.html#RhythmDBImportJob--ignore-type" title='The "ignore-type" property'>ignore-type</a>"              <a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a>*    : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="RhythmDBImportJob.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="RhythmDBImportJob.html#RhythmDBImportJob-complete" title='The "complete" signal'>complete</a>"                                       : <code class="literal">Run Last</code>
+  "<a class="link" href="RhythmDBImportJob.html#RhythmDBImportJob-entry-added" title='The "entry-added" signal'>entry-added</a>"                                    : <code class="literal">Run Last</code>
+  "<a class="link" href="RhythmDBImportJob.html#RhythmDBImportJob-scan-complete" title='The "scan-complete" signal'>scan-complete</a>"                                  : <code class="literal">Run Last</code>
+  "<a class="link" href="RhythmDBImportJob.html#RhythmDBImportJob-status-changed" title='The "status-changed" signal'>status-changed</a>"                                 : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RhythmDBImportJob.description"></a><h2>Description</h2>
+<p>
+Tracks the addition to the database of files under a set of 
+directories, providing status information.
+</p>
+<p>
+The entry types to use for the database entries added by the import
+job are specified on creation.
+</p>
+</div>
+<div class="refsect1">
+<a name="RhythmDBImportJob.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RhythmDBImportJob-struct"></a><h3>struct RhythmDBImportJob</h3>
+<pre class="programlisting">struct RhythmDBImportJob;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RhythmDBImportJobClass"></a><h3>struct RhythmDBImportJobClass</h3>
+<pre class="programlisting">struct RhythmDBImportJobClass {
+	GObjectClass parent_class;
+
+	/* signals */
+	void (*entry_added) (RhythmDBImportJob *job, RhythmDBEntry *entry);
+	void (*status_changed) (RhythmDBImportJob *job, int total, int imported);
+	void (*scan_complete) (RhythmDBImportJob *job, int total);
+	void (*complete) (RhythmDBImportJob *job, int total);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rhythmdb-import-job-new"></a><h3>rhythmdb_import_job_new ()</h3>
+<pre class="programlisting"><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="returnvalue">RhythmDBImportJob</span></a> * rhythmdb_import_job_new             (<em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> *entry_type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> *ignore_type</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> *error_type</code></em>);</pre>
+<p>
+Creates a new import job with the specified entry types.
+Before starting the job, the caller must add one or more
+paths to import.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> object</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry_type</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> to use for normal entries</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ignore_type</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> to use for ignored files
+(or NULL to not create ignore entries)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error_type</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> to use for import error
+entries (or NULL for none)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> object.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rhythmdb-import-job-add-uri"></a><h3>rhythmdb_import_job_add_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rhythmdb_import_job_add_uri         (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>);</pre>
+<p>
+Adds a URI to import.  All files under the specified
+URI will be imported.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>job</code></em> :</span></p></td>
+<td>a <a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>the URI to import</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rhythmdb-import-job-start"></a><h3>rhythmdb_import_job_start ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rhythmdb_import_job_start           (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>);</pre>
+<p>
+Starts the import job.  After this method has been called,
+no more URIs may be added to the import job.  May only be
+called once for a given import job.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>job</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rhythmdb-import-job-cancel"></a><h3>rhythmdb_import_job_cancel ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rhythmdb_import_job_cancel          (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>);</pre>
+<p>
+Cancels the import job.  The job will cease as soon
+as possible.  More directories may be scanned and 
+more files may be imported before the job actually
+ceases.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>job</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rhythmdb-import-job-complete"></a><h3>rhythmdb_import_job_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rhythmdb_import_job_complete        (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>);</pre>
+<p>
+Returns whether the import job is complete.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>job</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if complete.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rhythmdb-import-job-scan-complete"></a><h3>rhythmdb_import_job_scan_complete ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rhythmdb_import_job_scan_complete   (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>);</pre>
+<p>
+Returns whether the directory scan phase of the import job is complete.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>job</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if complete</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rhythmdb-import-job-get-total"></a><h3>rhythmdb_import_job_get_total ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 rhythmdb_import_job_get_total       (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>);</pre>
+<p>
+Returns the total number of files that will be processed by
+this import job.  This increases as the import directories are
+scanned.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>job</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the total number of files to be processed</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rhythmdb-import-job-get-imported"></a><h3>rhythmdb_import_job_get_imported ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>                 rhythmdb_import_job_get_imported    (<em class="parameter"><code><a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job</code></em>);</pre>
+<p>
+Returns the number of files processed by the import job so far.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>job</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>file count</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RhythmDBImportJob.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RhythmDBImportJob--db"></a><h3>The <code class="literal">"db"</code> property</h3>
+<pre class="programlisting">  "db"                       <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>*             : Read / Write / Construct Only</pre>
+<p>RhythmDB object.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RhythmDBImportJob--entry-type"></a><h3>The <code class="literal">"entry-type"</code> property</h3>
+<pre class="programlisting">  "entry-type"               <a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a>*    : Read / Write / Construct Only</pre>
+<p>Entry type to use for entries added by this job.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RhythmDBImportJob--error-type"></a><h3>The <code class="literal">"error-type"</code> property</h3>
+<pre class="programlisting">  "error-type"               <a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a>*    : Read / Write / Construct Only</pre>
+<p>Entry type to use for import error entries added by this job.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RhythmDBImportJob--ignore-type"></a><h3>The <code class="literal">"ignore-type"</code> property</h3>
+<pre class="programlisting">  "ignore-type"              <a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a>*    : Read / Write / Construct Only</pre>
+<p>Entry type to use for ignored entries added by this job.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="RhythmDBImportJob.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="RhythmDBImportJob-complete"></a><h3>The <code class="literal">"complete"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job,
+                                                        <span class="type">gint</span>               arg1,
+                                                        <span class="type">gpointer</span>           user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the whole import job is complete.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>job</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RhythmDBImportJob-entry-added"></a><h3>The <code class="literal">"entry-added"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job,
+                                                        <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a>     *entry,
+                                                        <span class="type">gpointer</span>           user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when an entry has been added to the database by the
+import job.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>job</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the newly added <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RhythmDBImportJob-scan-complete"></a><h3>The <code class="literal">"scan-complete"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job,
+                                                        <span class="type">gint</span>               arg1,
+                                                        <span class="type">gpointer</span>           user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the directory scan is complete.  Once
+the scan is complete, the total number of files to
+be processed will not change.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>job</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RhythmDBImportJob-status-changed"></a><h3>The <code class="literal">"status-changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a> *job,
+                                                        <span class="type">gint</span>               total,
+                                                        <span class="type">gint</span>               imported,
+                                                        <span class="type">gpointer</span>           user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the status of the import job has changed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>job</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBImportJob.html" title="RhythmDBImportJob"><span class="type">RhythmDBImportJob</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>total</code></em> :</span></p></td>
+<td>the current total number of files to process</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>imported</code></em> :</span></p></td>
+<td>the current count of files imported</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

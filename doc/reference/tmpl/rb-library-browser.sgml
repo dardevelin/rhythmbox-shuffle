@@ -1,0 +1,136 @@
+<!-- ##### SECTION Title ##### -->
+RBLibraryBrowser
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBLibraryBrowser ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG RBLibraryBrowser:browser-views ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBLibraryBrowser:db ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBLibraryBrowser:entry-type ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBLibraryBrowser:input-model ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBLibraryBrowser:output-model ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBLibraryBrowserClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION rb_library_browser_new ##### -->
+<para>
+
+</para>
+
+@db: 
+@entry_type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_library_browser_set_model ##### -->
+<para>
+
+</para>
+
+@widget: 
+@model: 
+@query_pending: 
+
+
+<!-- ##### FUNCTION rb_library_browser_reset ##### -->
+<para>
+
+</para>
+
+@widget: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_library_browser_construct_query ##### -->
+<para>
+
+</para>
+
+@widget: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_library_browser_get_property_views ##### -->
+<para>
+
+</para>
+
+@widget: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_library_browser_get_property_view ##### -->
+<para>
+
+</para>
+
+@widget: 
+@type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_library_browser_has_selection ##### -->
+<para>
+
+</para>
+
+@widget: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_library_browser_set_selection ##### -->
+<para>
+
+</para>
+
+@widget: 
+@type: 
+@selection: 
+
+

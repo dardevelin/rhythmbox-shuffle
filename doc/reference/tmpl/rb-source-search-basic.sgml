@@ -1,0 +1,59 @@
+<!-- ##### SECTION Title ##### -->
+RBSourceSearchBasic
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBSourceSearchBasic ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG RBSourceSearchBasic:prop ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBSourceSearchBasicClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION rb_source_search_basic_new ##### -->
+<para>
+
+</para>
+
+@prop: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_source_search_basic_create_for_actions ##### -->
+<para>
+
+</para>
+
+@action_group: 
+@actions: 
+@n_actions: 
+
+

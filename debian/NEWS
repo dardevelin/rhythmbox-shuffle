@@ -1,0 +1,7 @@
+rhythmbox (0.12.4-1) unstable; urgency=low
+
+  Since rhythmbox 0.12.3, the tray icon is a plugin. If you had it enabled
+  and still want it, you will need to reactivate it. It's located in
+  Edit -> Plugins -> Status Icon.
+
+ -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Sun, 02 Aug 2009 16:22:27 +0200

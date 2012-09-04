@@ -1,0 +1,73 @@
+<!-- ##### SECTION Title ##### -->
+RBPlayQueueSource
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBPlayQueueSource ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG RBPlayQueueSource:sidebar ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBPlayQueueSourceClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION rb_play_queue_source_new ##### -->
+<para>
+
+</para>
+
+@shell: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_play_queue_source_sidebar_song_info ##### -->
+<para>
+
+</para>
+
+@source: 
+
+
+<!-- ##### FUNCTION rb_play_queue_source_sidebar_delete ##### -->
+<para>
+
+</para>
+
+@source: 
+
+
+<!-- ##### FUNCTION rb_play_queue_source_clear_queue ##### -->
+<para>
+
+</para>
+
+@source: 
+
+

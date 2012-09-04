@@ -1,0 +1,201 @@
+<!-- ##### SECTION Title ##### -->
+RBPlayOrder
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBPlayOrder ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBPlayOrder::have-next-previous-changed ##### -->
+<para>
+
+</para>
+
+@rbplayorder: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### ARG RBPlayOrder:player ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBPlayOrder:playing-entry ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBPlayOrderClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@playing_source_changed: 
+@db_changed: 
+@playing_entry_changed: 
+@entry_added: 
+@entry_removed: 
+@query_model_changed: 
+@db_entry_deleted: 
+@playing_entry_removed: 
+@has_next: 
+@get_next: 
+@go_next: 
+@has_previous: 
+@get_previous: 
+@go_previous: 
+@have_next_previous_changed: 
+
+<!-- ##### FUNCTION rb_play_order_playing_source_changed ##### -->
+<para>
+
+</para>
+
+@porder: 
+@source: 
+
+
+<!-- ##### FUNCTION rb_play_order_query_model_changed ##### -->
+<para>
+
+</para>
+
+@porder: 
+
+
+<!-- ##### FUNCTION rb_play_order_has_next ##### -->
+<para>
+
+</para>
+
+@porder: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_play_order_get_next ##### -->
+<para>
+
+</para>
+
+@porder: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_play_order_go_next ##### -->
+<para>
+
+</para>
+
+@porder: 
+
+
+<!-- ##### FUNCTION rb_play_order_has_previous ##### -->
+<para>
+
+</para>
+
+@porder: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_play_order_get_previous ##### -->
+<para>
+
+</para>
+
+@porder: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_play_order_go_previous ##### -->
+<para>
+
+</para>
+
+@porder: 
+
+
+<!-- ##### FUNCTION rb_play_order_set_playing_entry ##### -->
+<para>
+
+</para>
+
+@porder: 
+@entry: 
+
+
+<!-- ##### FUNCTION rb_play_order_get_playing_entry ##### -->
+<para>
+
+</para>
+
+@porder: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_play_order_get_player ##### -->
+<para>
+
+</para>
+
+@porder: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_play_order_get_source ##### -->
+<para>
+
+</para>
+
+@porder: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_play_order_get_db ##### -->
+<para>
+
+</para>
+
+@porder: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_play_order_get_query_model ##### -->
+<para>
+
+</para>
+
+@porder: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_play_order_model_not_empty ##### -->
+<para>
+
+</para>
+
+@porder: 
+@Returns: 
+
+

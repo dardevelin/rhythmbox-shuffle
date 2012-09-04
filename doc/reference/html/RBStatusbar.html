@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBStatusbar</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch05.html" title="Shell">
+<link rel="prev" href="rhythmbox-RBSourceHeader.html" title="RBSourceHeader">
+<link rel="next" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rhythmbox-RBSourceHeader.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBTrackTransferBatch.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBStatusbar.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBStatusbar.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBStatusbar.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBStatusbar.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#RBStatusbar.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBStatusbar"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBStatusbar.top_of_page"></a>RBStatusbar</span></h2>
+<p>RBStatusbar — status bar widget</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBStatusbar.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBStatusbar.html#RBStatusbar-struct" title="struct RBStatusbar">RBStatusbar</a>;
+struct              <a class="link" href="RBStatusbar.html#RBStatusbarClass" title="struct RBStatusbarClass">RBStatusbarClass</a>;
+<a class="link" href="RBStatusbar.html" title="RBStatusbar"><span class="returnvalue">RBStatusbar</span></a> *       <a class="link" href="RBStatusbar.html#rb-statusbar-new" title="rb_statusbar_new ()">rb_statusbar_new</a>                    (<em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkUIManager</span> *ui_manager</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a> *transfer_queue</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBStatusbar.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBox
+                           +----GtkStatusbar
+                                 +----RBStatusbar
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBStatusbar.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBStatusbar implements
+ AtkImplementorIface,  GtkBuildable and  GtkOrientable.</p>
+</div>
+<div class="refsect1">
+<a name="RBStatusbar.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBStatusbar.html#RBStatusbar--db" title='The "db" property'>db</a>"                       <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>*             : Read / Write
+  "<a class="link" href="RBStatusbar.html#RBStatusbar--page" title='The "page" property'>page</a>"                     <span class="type">RBDisplayPage</span>*        : Read / Write
+  "<a class="link" href="RBStatusbar.html#RBStatusbar--transfer-queue" title='The "transfer-queue" property'>transfer-queue</a>"           <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a>*  : Read / Write / Construct Only
+  "<a class="link" href="RBStatusbar.html#RBStatusbar--ui-manager" title='The "ui-manager" property'>ui-manager</a>"               <span class="type">GtkUIManager</span>*         : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBStatusbar.description"></a><h2>Description</h2>
+<p>
+The status bar is displayed at the bottom of the main window.  It consists of some
+status text and a progress bar.
+</p>
+<p>
+The status text usually comes from the selected page, and typically shows the number
+of songs, the total duration and the total file size.  When a menu is open, however, 
+the status text shows the description of the currently selected menu item.
+</p>
+<p>
+The progress bar shows progress information from a variety of sources.  The page that
+is currently selected in the display page tree can provide progress information, such as
+buffering feedback, track transfer status, or progress for updating a song catalog.
+If the page does not provide status information and the database is busy (loading the
+database from disk, processing a query, etc.) the progress bar will be pulsed periodically.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBStatusbar.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBStatusbar-struct"></a><h3>struct RBStatusbar</h3>
+<pre class="programlisting">struct RBStatusbar;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBStatusbarClass"></a><h3>struct RBStatusbarClass</h3>
+<pre class="programlisting">struct RBStatusbarClass {
+	GtkStatusbarClass parent_class;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-statusbar-new"></a><h3>rb_statusbar_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBStatusbar.html" title="RBStatusbar"><span class="returnvalue">RBStatusbar</span></a> *       rb_statusbar_new                    (<em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkUIManager</span> *ui_manager</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a> *transfer_queue</code></em>);</pre>
+<p>
+Creates the status bar widget.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ui_manager</code></em> :</span></p></td>
+<td>the <span class="type">GtkUIManager</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>transfer_queue</code></em> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the status bar widget</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBStatusbar.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBStatusbar--db"></a><h3>The <code class="literal">"db"</code> property</h3>
+<pre class="programlisting">  "db"                       <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>*             : Read / Write</pre>
+<p>
+The <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> instance
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBStatusbar--page"></a><h3>The <code class="literal">"page"</code> property</h3>
+<pre class="programlisting">  "page"                     <span class="type">RBDisplayPage</span>*        : Read / Write</pre>
+<p>
+The currently selected <span class="type">RBDisplayPage</span>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBStatusbar--transfer-queue"></a><h3>The <code class="literal">"transfer-queue"</code> property</h3>
+<pre class="programlisting">  "transfer-queue"           <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a>*  : Read / Write / Construct Only</pre>
+<p>RBTrackTransferQueue instance.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBStatusbar--ui-manager"></a><h3>The <code class="literal">"ui-manager"</code> property</h3>
+<pre class="programlisting">  "ui-manager"               <span class="type">GtkUIManager</span>*         : Read / Write / Construct Only</pre>
+<p>
+The <span class="type">GtkUIManager</span> instance
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

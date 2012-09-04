@@ -1,0 +1,1097 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBSource</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch06.html" title="Sources">
+<link rel="prev" href="RBSourceSearchBasic.html" title="RBSourceSearchBasic">
+<link rel="next" href="RBStaticPlaylistSource.html" title="RBStaticPlaylistSource">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBSourceSearchBasic.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBStaticPlaylistSource.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBSource.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBSource.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBSource.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBSource.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#RBSource.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#RBSource.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBSource"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBSource.top_of_page"></a>RBSource</span></h2>
+<p>RBSource — base class for sources</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBSource.synopsis"></a><h2>Synopsis</h2>
+<a name="RBSourceEOFType"></a><pre class="synopsis">struct              <a class="link" href="RBSource.html#RBSource-struct" title="struct RBSource">RBSource</a>;
+struct              <a class="link" href="RBSource.html#RBSourceClass" title="struct RBSourceClass">RBSourceClass</a>;
+enum                <a class="link" href="RBSource.html#RBSourceEOFType-enum" title="enum RBSourceEOFType">RBSourceEOFType</a>;
+#define             <a class="link" href="RBSource.html#RB-SOURCE-ICON-SIZE:CAPS" title="RB_SOURCE_ICON_SIZE">RB_SOURCE_ICON_SIZE</a>
+<span class="returnvalue">void</span>                <a class="link" href="RBSource.html#rb-source-notify-filter-changed" title="rb_source_notify_filter_changed ()">rb_source_notify_filter_changed</a>     (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSource.html#rb-source-update-play-statistics" title="rb_source_update_play_statistics ()">rb_source_update_play_statistics</a>    (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>);
+<a class="link" href="RBEntryView.html" title="RBEntryView"><span class="returnvalue">RBEntryView</span></a> *       <a class="link" href="RBSource.html#rb-source-get-entry-view" title="rb_source_get_entry_view ()">rb_source_get_entry_view</a>            (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">GList</span> *             <a class="link" href="RBSource.html#rb-source-get-property-views" title="rb_source_get_property_views ()">rb_source_get_property_views</a>        (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSource.html#rb-source-can-rename" title="rb_source_can_rename ()">rb_source_can_rename</a>                (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSource.html#rb-source-search" title="rb_source_search ()">rb_source_search</a>                    (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> *search</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *cur_text</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *new_text</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSource.html#rb-source-reset-filters" title="rb_source_reset_filters ()">rb_source_reset_filters</a>             (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSource.html#rb-source-can-cut" title="rb_source_can_cut ()">rb_source_can_cut</a>                   (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSource.html#rb-source-can-delete" title="rb_source_can_delete ()">rb_source_can_delete</a>                (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSource.html#rb-source-can-move-to-trash" title="rb_source_can_move_to_trash ()">rb_source_can_move_to_trash</a>         (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSource.html#rb-source-can-copy" title="rb_source_can_copy ()">rb_source_can_copy</a>                  (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSource.html#rb-source-can-paste" title="rb_source_can_paste ()">rb_source_can_paste</a>                 (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSource.html#rb-source-can-add-to-queue" title="rb_source_can_add_to_queue ()">rb_source_can_add_to_queue</a>          (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSource.html#rb-source-can-show-properties" title="rb_source_can_show_properties ()">rb_source_can_show_properties</a>       (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">GList</span> *             <a class="link" href="RBSource.html#rb-source-cut" title="rb_source_cut ()">rb_source_cut</a>                       (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">GList</span> *             <a class="link" href="RBSource.html#rb-source-copy" title="rb_source_copy ()">rb_source_copy</a>                      (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="returnvalue">RBTrackTransferBatch</span></a> * <a class="link" href="RBSource.html#rb-source-paste" title="rb_source_paste ()">rb_source_paste</a>                  (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *entries</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSource.html#rb-source-delete" title="rb_source_delete ()">rb_source_delete</a>                    (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSource.html#rb-source-add-to-queue" title="rb_source_add_to_queue ()">rb_source_add_to_queue</a>              (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *queue</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSource.html#rb-source-move-to-trash" title="rb_source_move_to_trash ()">rb_source_move_to_trash</a>             (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSource.html#rb-source-song-properties" title="rb_source_song_properties ()">rb_source_song_properties</a>           (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSource.html#rb-source-try-playlist" title="rb_source_try_playlist ()">rb_source_try_playlist</a>              (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">guint</span>               <a class="link" href="RBSource.html#rb-source-want-uri" title="rb_source_want_uri ()">rb_source_want_uri</a>                  (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSource.html#rb-source-uri-is-source" title="rb_source_uri_is_source ()">rb_source_uri_is_source</a>             (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSource.html#rb-source-add-uri" title="rb_source_add_uri ()">rb_source_add_uri</a>                   (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *title</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *genre</code></em>,
+                                                         <em class="parameter"><code><span class="type">RBSourceAddCallback</span> callback</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> destroy_data</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBSource.html#rb-source-can-pause" title="rb_source_can_pause ()">rb_source_can_pause</a>                 (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<a class="link" href="RBSource.html#RBSourceEOFType"><span class="returnvalue">RBSourceEOFType</span></a>     <a class="link" href="RBSource.html#rb-source-handle-eos" title="rb_source_handle_eos ()">rb_source_handle_eos</a>                (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);
+<span class="returnvalue">GList</span> *             <a class="link" href="RBSource.html#rb-source-gather-selected-properties" title="rb_source_gather_selected_properties ()">rb_source_gather_selected_properties</a>
+                                                        (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBPropType"><span class="type">RhythmDBPropType</span></a> prop</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBSource.html#rb-source-set-hidden-when-empty" title="rb_source_set_hidden_when_empty ()">rb_source_set_hidden_when_empty</a>     (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> hidden</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSource.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBox
+                           +----GtkHBox
+                                 +----RBDisplayPage
+                                       +----RBSource
+                                             +----<a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource">RBPlaylistSource</a>
+                                             +----<a class="link" href="RBBrowserSource.html" title="RBBrowserSource">RBBrowserSource</a>
+                                             +----<a class="link" href="RBImportErrorsSource.html" title="RBImportErrorsSource">RBImportErrorsSource</a>
+                                             +----<a class="link" href="RBMissingFilesSource.html" title="RBMissingFilesSource">RBMissingFilesSource</a>
+                                             +----<a class="link" href="RBStreamingSource.html" title="RBStreamingSource">RBStreamingSource</a>
+</pre>
+<pre class="synopsis">
+  GEnum
+   +----RBSourceEOFType
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSource.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBSource implements
+ AtkImplementorIface,  GtkBuildable and  GtkOrientable.</p>
+</div>
+<div class="refsect1">
+<a name="RBSource.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBSource.html#RBSource--base-query-model" title='The "base-query-model" property'>base-query-model</a>"         <a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel"><span class="type">RhythmDBQueryModel</span></a>*   : Read
+  "<a class="link" href="RBSource.html#RBSource--entry-type" title='The "entry-type" property'>entry-type</a>"               <a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a>*    : Read / Write / Construct Only
+  "<a class="link" href="RBSource.html#RBSource--hidden-when-empty" title='The "hidden-when-empty" property'>hidden-when-empty</a>"        <span class="type">gboolean</span>              : Read / Write
+  "<a class="link" href="RBSource.html#RBSource--load-status" title='The "load-status" property'>load-status</a>"              <span class="type">RBSourceLoadStatus</span>    : Read / Write / Construct
+  "<a class="link" href="RBSource.html#RBSource--play-order" title='The "play-order" property'>play-order</a>"               <a class="link" href="RBPlayOrder.html" title="RBPlayOrder"><span class="type">RBPlayOrder</span></a>*          : Read
+  "<a class="link" href="RBSource.html#RBSource--query-model" title='The "query-model" property'>query-model</a>"              <a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel"><span class="type">RhythmDBQueryModel</span></a>*   : Read / Write
+  "<a class="link" href="RBSource.html#RBSource--settings" title='The "settings" property'>settings</a>"                 <span class="type">GSettings</span>*            : Read / Write / Construct
+  "<a class="link" href="RBSource.html#RBSource--show-browser" title='The "show-browser" property'>show-browser</a>"             <span class="type">gboolean</span>              : Read / Write
+  "<a class="link" href="RBSource.html#RBSource--toolbar-path" title='The "toolbar-path" property'>toolbar-path</a>"             <span class="type">gchar</span>*                : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSource.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBSource.html#RBSource-filter-changed" title='The "filter-changed" signal'>filter-changed</a>"                                 : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSource.description"></a><h2>Description</h2>
+<p>
+This class provides methods for requesting information
+about the UI capabilities of the source, and defines the
+expectations that apply to all sources - that they will
+provide <a class="link" href="RBEntryView.html" title="RBEntryView"><span class="type">RBEntryView</span></a> and <a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel"><span class="type">RhythmDBQueryModel</span></a> objects, mostly.
+</p>
+<p>
+Many of the methods on this class come in can_do_x and do_x
+pairs.  When can_do_x always returns FALSE, the class does not
+need to implement the do_x method.
+</p>
+<p>
+Useful subclasses include <a class="link" href="RBBrowserSource.html" title="RBBrowserSource"><span class="type">RBBrowserSource</span></a>, which includes a <a class="link" href="RBLibraryBrowser.html" title="RBLibraryBrowser"><span class="type">RBLibraryBrowser</span></a>
+and takes care of constructing an <a class="link" href="RBEntryView.html" title="RBEntryView"><span class="type">RBEntryView</span></a> too; <span class="type">RBRemovableMediaSource</span>,
+which takes care of many aspects of implementing a source that represents a
+removable device; and <a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a>, which provides functionality for
+playlist-like sources.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBSource.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBSource-struct"></a><h3>struct RBSource</h3>
+<pre class="programlisting">struct RBSource;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSourceClass"></a><h3>struct RBSourceClass</h3>
+<pre class="programlisting">struct RBSourceClass {
+	RBDisplayPageClass parent;
+
+	/* signals */
+	void (*filter_changed) (RBSource *source);
+
+	/* methods */
+
+	RBEntryView * (*impl_get_entry_view) (RBSource *source);
+	GList *		(*impl_get_property_views) (RBSource *source);
+
+	gboolean (*impl_can_rename) (RBSource *source);
+
+	void		(*impl_search)		(RBSource *source, RBSourceSearch *search, const char *cur_text, const char *new_text);
+	void		(*impl_reset_filters) (RBSource *source);
+
+	gboolean (*impl_can_cut)		(RBSource *source);
+	gboolean (*impl_can_delete) (RBSource *source);
+	gboolean (*impl_can_move_to_trash) (RBSource *source);
+	gboolean (*impl_can_copy) (RBSource *source);
+	gboolean (*impl_can_paste) (RBSource *source);
+	gboolean (*impl_can_add_to_queue)(RBSource *source);
+
+	GList *		(*impl_cut)		(RBSource *source);
+	GList *		(*impl_copy)		(RBSource *source);
+	RBTrackTransferBatch *(*impl_paste) (RBSource *source, GList *entries);
+	void		(*impl_delete)		(RBSource *source);
+	void		(*impl_add_to_queue) (RBSource *source, RBSource *queue);
+	void		(*impl_move_to_trash) (RBSource *source);
+
+	void		(*impl_song_properties) (RBSource *source);
+
+	gboolean (*impl_try_playlist) (RBSource *source);
+	guint		(*impl_want_uri) (RBSource *source, const char *uri);
+	void		(*impl_add_uri)		(RBSource *source,
+						 const char *uri,
+						 const char *title,
+						 const char *genre,
+						 RBSourceAddCallback callback,
+						 gpointer data,
+						 GDestroyNotify destroy_data);
+	gboolean (*impl_uri_is_source) (RBSource *source, const char *uri);
+
+	gboolean (*impl_can_pause) (RBSource *source);
+	RBSourceEOFType (*impl_handle_eos) (RBSource *source);
+
+	char *		(*impl_get_delete_action) (RBSource *source);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSourceEOFType-enum"></a><h3>enum RBSourceEOFType</h3>
+<pre class="programlisting">typedef enum {
+	RB_SOURCE_EOF_ERROR,
+	RB_SOURCE_EOF_STOP,
+	RB_SOURCE_EOF_RETRY,
+	RB_SOURCE_EOF_NEXT,
+} RBSourceEOFType;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RB-SOURCE-ICON-SIZE:CAPS"></a><h3>RB_SOURCE_ICON_SIZE</h3>
+<pre class="programlisting">#define RB_SOURCE_ICON_SIZE GTK_ICON_SIZE_LARGE_TOOLBAR
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-notify-filter-changed"></a><h3>rb_source_notify_filter_changed ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_source_notify_filter_changed     (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Source implementations call this when their filter state changes
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-update-play-statistics"></a><h3>rb_source_update_play_statistics ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_source_update_play_statistics    (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> *db</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>);</pre>
+<p>
+Updates play count and play time statistics for a database entry.
+Sources containing entries that do not normally reach EOS should
+call this for an entry when it is no longer being played.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> to update</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-get-entry-view"></a><h3>rb_source_get_entry_view ()</h3>
+<pre class="programlisting"><a class="link" href="RBEntryView.html" title="RBEntryView"><span class="returnvalue">RBEntryView</span></a> *       rb_source_get_entry_view            (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Returns the entry view widget for the source.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="RBEntryView.html" title="RBEntryView"><span class="type">RBEntryView</span></a> instance for the source. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-get-property-views"></a><h3>rb_source_get_property_views ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *             rb_source_get_property_views        (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Returns a list containing the <a class="link" href="RBPropertyView.html" title="RBPropertyView"><span class="type">RBPropertyView</span></a> instances for the
+source, if any.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>list of property views. <span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> RB.PropertyView][<a href="http://foldoc.org/transfer%20container"><span class="acronym">transfer container</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-can-rename"></a><h3>rb_source_can_rename ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_source_can_rename                (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Determines whether the source can be renamed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if this source can be renamed</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-search"></a><h3>rb_source_search ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_source_search                    (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> *search</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *cur_text</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *new_text</code></em>);</pre>
+<p>
+Updates the source with new search text.  The source
+should recreate the database query that feeds into the
+browser (if any).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>search</code></em> :</span></p></td>
+<td>the active <a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a> instance. <span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cur_text</code></em> :</span></p></td>
+<td>the current search text. <span class="annotation">[<a href="http://foldoc.org/allow-none"><span class="acronym">allow-none</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_text</code></em> :</span></p></td>
+<td>the new search text</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-reset-filters"></a><h3>rb_source_reset_filters ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_source_reset_filters             (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Clears all filters (browser selections, etc.) in this source.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-can-cut"></a><h3>rb_source_can_cut ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_source_can_cut                   (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Determines whether the source supporst the typical cut
+(as in cut-and-paste) operation.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if cutting is supported</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-can-delete"></a><h3>rb_source_can_delete ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_source_can_delete                (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Determines whether the source allows the user to delete
+a selected set of entries.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if deletion is supported</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-can-move-to-trash"></a><h3>rb_source_can_move_to_trash ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_source_can_move_to_trash         (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Determines whether the source allows the user to trash
+the files backing a selected set of entries.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if trashing is supported</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-can-copy"></a><h3>rb_source_can_copy ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_source_can_copy                  (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Determines whether the source supports the copy part
+of a copy-and-paste operation.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if copying is supported</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-can-paste"></a><h3>rb_source_can_paste ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_source_can_paste                 (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Determines whether the source supports paste operations.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if the pasting is supported</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-can-add-to-queue"></a><h3>rb_source_can_add_to_queue ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_source_can_add_to_queue          (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Determines whether the source can add the selected entries to
+the play queue.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if adding to the play queue is supported</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-can-show-properties"></a><h3>rb_source_can_show_properties ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_source_can_show_properties       (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Determines whether the source can display a properties
+window for the currently selected entry (or set of entries)
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if showing properties is supported</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-cut"></a><h3>rb_source_cut ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *             rb_source_cut                       (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Removes the currently selected entries from the source and
+returns them so they can be pasted into another source.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>entries cut
+from the source. <span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> RB.RhythmDBEntry][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-copy"></a><h3>rb_source_copy ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *             rb_source_copy                      (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Copies the selected entries to the clipboard.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a list containing
+the currently selected entries from the source. <span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> RB.RhythmDBEntry][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-paste"></a><h3>rb_source_paste ()</h3>
+<pre class="programlisting"><a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="returnvalue">RBTrackTransferBatch</span></a> * rb_source_paste                  (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">GList</span> *entries</code></em>);</pre>
+<p>
+Adds a list of entries previously cut or copied from another
+source.  If the entries are not of the type used by the source,
+the entries will be copied and possibly converted into an acceptable format.
+This can be used for transfers to and from devices and network shares.
+</p>
+<p>
+If the transfer is performed using an <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a>, the batch object
+is returned so the caller can monitor the transfer progress.  The caller does not
+own a reference on the batch object.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entries</code></em> :</span></p></td>
+<td>a list of <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> objects to paste in. <span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> RB.RhythmDBEntry]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="RBTrackTransferBatch.html" title="RBTrackTransferBatch"><span class="type">RBTrackTransferBatch</span></a> used to perform the transfer (if any). <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-delete"></a><h3>rb_source_delete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_source_delete                    (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Deletes the currently selected entries from the source.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-add-to-queue"></a><h3>rb_source_add_to_queue ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_source_add_to_queue              (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *queue</code></em>);</pre>
+<p>
+Adds the currently selected entries to the end of the
+play queue.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>queue</code></em> :</span></p></td>
+<td>the <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> for the play queue</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-move-to-trash"></a><h3>rb_source_move_to_trash ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_source_move_to_trash             (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Trashes the files backing the currently selected set of entries.
+In general, this should use <a class="link" href="RhythmDB.html#rhythmdb-entry-move-to-trash" title="rhythmdb_entry_move_to_trash ()"><span class="type">rhythmdb_entry_move_to_trash</span></a> to
+perform the actual trash operation.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-song-properties"></a><h3>rb_source_song_properties ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_source_song_properties           (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Displays a properties window for the currently selected entries.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-try-playlist"></a><h3>rb_source_try_playlist ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_source_try_playlist              (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Determines whether playback URIs for entries in the source should
+be parsed as playlists rather than just played.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE to attempt playlist parsing</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-want-uri"></a><h3>rb_source_want_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>               rb_source_want_uri                  (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>);</pre>
+<p>
+Returns an indication of how much the source wants to handle
+the specified URI.  100 is the highest usual value, and should
+only be used when the URI can only be associated with this source.
+0 should be used when the URI does not match the source at all.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>a URI for the source to consider</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>value from 0 to 100 indicating how much the
+source wants this URI.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-uri-is-source"></a><h3>rb_source_uri_is_source ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_source_uri_is_source             (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>);</pre>
+<p>
+Checks if the URI matches the source itself.  A source
+should return TRUE here if the URI points to the device that
+the source represents, for example.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>a URI for the source to consider</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if the URI identifies the source itself.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-add-uri"></a><h3>rb_source_add_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_source_add_uri                   (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *title</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *genre</code></em>,
+                                                         <em class="parameter"><code><span class="type">RBSourceAddCallback</span> callback</code></em>,
+                                                         <em class="parameter"><code><span class="type">gpointer</span> data</code></em>,
+                                                         <em class="parameter"><code><span class="type">GDestroyNotify</span> destroy_data</code></em>);</pre>
+<p>
+Adds an entry corresponding to the URI to the source.  The
+<em class="parameter"><code>title</code></em> and <em class="parameter"><code>genre</code></em> parameters are not really used.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>a URI to add</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td>theoretically, the title of the entity the URI points to</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>genre</code></em> :</span></p></td>
+<td>theoretically, the genre of the entity the URI points to</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>a callback function to call when complete</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>data to pass to the callback</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>destroy_data</code></em> :</span></p></td>
+<td>function to call to destroy the callback data</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-can-pause"></a><h3>rb_source_can_pause ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_source_can_pause                 (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Determines whether playback of entries from the source can
+be paused.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if pausing is supported</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-handle-eos"></a><h3>rb_source_handle_eos ()</h3>
+<pre class="programlisting"><a class="link" href="RBSource.html#RBSourceEOFType"><span class="returnvalue">RBSourceEOFType</span></a>     rb_source_handle_eos                (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>);</pre>
+<p>
+Determines how EOS events should be handled when playing entries
+from the source.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>EOS event handling type</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-gather-selected-properties"></a><h3>rb_source_gather_selected_properties ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *             rb_source_gather_selected_properties
+                                                        (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBPropType"><span class="type">RhythmDBPropType</span></a> prop</code></em>);</pre>
+<p>
+Returns a list containing the values of the specified
+property from the selected entries in the source.
+This is used to implement the 'browse this artist' (etc.)
+actions.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>prop</code></em> :</span></p></td>
+<td>property for which to gather selection</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>list of property values. <span class="annotation">[<a href="http://foldoc.org/element-type"><span class="acronym">element-type</span></a> utf8][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-source-set-hidden-when-empty"></a><h3>rb_source_set_hidden_when_empty ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_source_set_hidden_when_empty     (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> hidden</code></em>);</pre>
+<p>
+Enables or disables automatic hiding of the source when
+there are no entries in it.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hidden</code></em> :</span></p></td>
+<td>if TRUE, automatically hide the source</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBSource.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBSource--base-query-model"></a><h3>The <code class="literal">"base-query-model"</code> property</h3>
+<pre class="programlisting">  "base-query-model"         <a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel"><span class="type">RhythmDBQueryModel</span></a>*   : Read</pre>
+<p>
+The unfiltered query model for the source, containing all entries in the source.
+Source classes should override this if they perform filtering based on the search
+box or a browser.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSource--entry-type"></a><h3>The <code class="literal">"entry-type"</code> property</h3>
+<pre class="programlisting">  "entry-type"               <a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a>*    : Read / Write / Construct Only</pre>
+<p>
+Entry type for entries in this source.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSource--hidden-when-empty"></a><h3>The <code class="literal">"hidden-when-empty"</code> property</h3>
+<pre class="programlisting">  "hidden-when-empty"        <span class="type">gboolean</span>              : Read / Write</pre>
+<p>
+If TRUE, the source will not be displayed in the source list
+when it contains no entries.
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSource--load-status"></a><h3>The <code class="literal">"load-status"</code> property</h3>
+<pre class="programlisting">  "load-status"              <span class="type">RBSourceLoadStatus</span>    : Read / Write / Construct</pre>
+<p>
+Indicates whether the source is not loaded, is currently loading data, or is
+fully loaded.
+</p>
+<p>Default value: RB_SOURCE_LOAD_STATUS_LOADED</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSource--play-order"></a><h3>The <code class="literal">"play-order"</code> property</h3>
+<pre class="programlisting">  "play-order"               <a class="link" href="RBPlayOrder.html" title="RBPlayOrder"><span class="type">RBPlayOrder</span></a>*          : Read</pre>
+<p>
+If the source provides its own play order, it can override this property.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSource--query-model"></a><h3>The <code class="literal">"query-model"</code> property</h3>
+<pre class="programlisting">  "query-model"              <a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel"><span class="type">RhythmDBQueryModel</span></a>*   : Read / Write</pre>
+<p>
+The current query model for the source.  This is used in
+various places, including the play order, to find the
+set of entries within the source.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSource--settings"></a><h3>The <code class="literal">"settings"</code> property</h3>
+<pre class="programlisting">  "settings"                 <span class="type">GSettings</span>*            : Read / Write / Construct</pre>
+<p>
+The <span class="type">GSettings</span> instance storing settings for the source.  The instance must
+have a schema of org.gnome.Rhythmbox.Source.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSource--show-browser"></a><h3>The <code class="literal">"show-browser"</code> property</h3>
+<pre class="programlisting">  "show-browser"             <span class="type">gboolean</span>              : Read / Write</pre>
+<p>
+Whether the browser widget for the source (if any) should be displayed.
+This should be overridden in sources that include a browser widget.
+</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSource--toolbar-path"></a><h3>The <code class="literal">"toolbar-path"</code> property</h3>
+<pre class="programlisting">  "toolbar-path"             <span class="type">gchar</span>*                : Read / Write / Construct Only</pre>
+<p>
+UI manager path for a toolbar to display at the top of the source.
+The <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> class doesn't actually display the toolbar anywhere.
+Adding the toolbar to a container is the responsibility of a subclass
+such as <a class="link" href="RBBrowserSource.html" title="RBBrowserSource"><span class="type">RBBrowserSource</span></a>.
+</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBSource.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="RBSource-filter-changed"></a><h3>The <code class="literal">"filter-changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source,
+                                                        <span class="type">gpointer</span>  user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Fires when the user changes the filter, either by changing the
+contents of the search box or by selecting a different browser
+entry.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>the <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

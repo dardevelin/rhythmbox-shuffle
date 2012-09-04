@@ -1,0 +1,103 @@
+<!-- ##### SECTION Title ##### -->
+RBStringValueMap
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBStringValueMap ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT RBStringValueMapClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION rb_string_value_map_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_string_value_map_set ##### -->
+<para>
+
+</para>
+
+@map: 
+@key: 
+@value: 
+
+
+<!-- ##### FUNCTION rb_string_value_map_get ##### -->
+<para>
+
+</para>
+
+@map: 
+@key: 
+@out: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_string_value_map_peek ##### -->
+<para>
+
+</para>
+
+@map: 
+@key: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_string_value_map_remove ##### -->
+<para>
+
+</para>
+
+@map: 
+@key: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_string_value_map_size ##### -->
+<para>
+
+</para>
+
+@map: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_string_value_map_steal_hashtable ##### -->
+<para>
+
+</para>
+
+@map: 
+@Returns: 
+
+

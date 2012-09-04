@@ -1,0 +1,192 @@
+[encoding: UTF-8]
+backends/gstreamer/rb-encoder-gst.c
+backends/gstreamer/rb-player-gst.c
+backends/gstreamer/rb-player-gst-xfade.c
+backends/rb-player.c
+data/playlists.xml.in
+data/rhythmbox.desktop.in.in
+data/rhythmbox-device.desktop.in.in
+[type: gettext/glade]data/ui/create-playlist.ui
+[type: gettext/glade]data/ui/general-prefs.ui
+[type: gettext/glade]data/ui/library-prefs.ui
+[type: gettext/glade]data/ui/media-player-properties.ui
+[type: gettext/glade]data/ui/playback-prefs.ui
+[type: gettext/glade]data/ui/playlist-save.ui
+[type: gettext/glade]data/ui/podcast-add-dialog.ui
+[type: gettext/glade]data/ui/podcast-feed-properties.ui
+[type: gettext/glade]data/ui/podcast-prefs.ui
+[type: gettext/glade]data/ui/podcast-properties.ui
+[type: gettext/glade]data/ui/song-info-multiple.ui
+[type: gettext/glade]data/ui/song-info.ui
+[type: gettext/glade]data/ui/sync-dialog.ui
+[type: gettext/glade]data/ui/sync-state.ui
+[type: gettext/glade]data/ui/uri-new.ui
+lib/eggdesktopfile.c
+lib/eggsmclient.c
+lib/rb-cut-and-paste-code.c
+lib/rb-file-helpers.c
+lib/rb-util.c
+metadata/rb-metadata-dbus-client.c
+metadata/rb-metadata-gst.c
+[type: gettext/ini]plugins/artsearch/artsearch.plugin.in
+plugins/artsearch/artsearch.py
+plugins/artsearch/lastfm.py
+[type: gettext/glade]plugins/audiocd/album-info.ui
+[type: gettext/ini]plugins/audiocd/audiocd.plugin.in
+[type: gettext/glade]plugins/audiocd/multiple-album.ui
+plugins/audiocd/rb-audiocd-plugin.c
+plugins/audiocd/rb-audiocd-source.c
+plugins/audiocd/sj-error.c
+plugins/audiocd/sj-metadata.c
+plugins/audiocd/sj-metadata-getter.c
+plugins/audiocd/sj-metadata-gvfs.c
+plugins/audiocd/sj-structures.c
+[type: gettext/ini]plugins/audioscrobbler/audioscrobbler.plugin.in
+[type: gettext/glade]plugins/audioscrobbler/audioscrobbler-preferences.ui
+[type: gettext/glade]plugins/audioscrobbler/audioscrobbler-profile.ui
+plugins/audioscrobbler/rb-audioscrobbler.c
+plugins/audioscrobbler/rb-audioscrobbler-entry.c
+plugins/audioscrobbler/rb-audioscrobbler-plugin.c
+plugins/audioscrobbler/rb-audioscrobbler-profile-page.c
+plugins/audioscrobbler/rb-audioscrobbler-radio-source.c
+[type: gettext/ini]plugins/brasero-disc-recorder/cd-recorder.plugin.in
+plugins/brasero-disc-recorder/rb-disc-recorder-plugin.c
+plugins/context/AlbumTab.py
+plugins/context/ArtistTab.py
+[type: gettext/ini]plugins/context/context.plugin.in
+plugins/context/ContextView.py
+plugins/context/LastFM.py
+plugins/context/LinksTab.py
+plugins/context/LyricsTab.py
+plugins/context/tmpl/album-tmpl.html
+plugins/context/tmpl/artist-tmpl.html
+plugins/context/tmpl/loading.html
+plugins/context/tmpl/lyrics-tmpl.html
+[type: gettext/ini]plugins/daap/daap.plugin.in
+[type: gettext/glade]plugins/daap/daap-prefs.ui
+plugins/daap/rb-daap-plugin.c
+plugins/daap/rb-daap-sharing.c
+plugins/daap/rb-daap-source.c
+plugins/daap/rb-dacp-pairing-page.c
+plugins/daap/rb-rhythmdb-dmap-db-adapter.c
+[type: gettext/ini]plugins/dbus-media-server/dbus-media-server.plugin.in
+plugins/dbus-media-server/rb-dbus-media-server-plugin.c
+[type: gettext/ini]plugins/fmradio/fmradio.plugin.in
+plugins/fmradio/rb-fm-radio-source.c
+[type: gettext/glade]plugins/generic-player/generic-player-info.ui
+[type: gettext/ini]plugins/generic-player/generic-player.plugin.in
+plugins/generic-player/rb-generic-player-plugin.c
+plugins/generic-player/rb-generic-player-source.c
+plugins/generic-player/rb-nokia770-source.c
+plugins/generic-player/rb-psp-source.c
+[type: gettext/ini]plugins/grilo/grilo.plugin.in
+plugins/grilo/rb-grilo-plugin.c
+plugins/grilo/rb-grilo-source.c
+[type: gettext/ini]plugins/im-status/im-status.plugin.in
+plugins/im-status/im-status.py
+[type: gettext/glade]plugins/ipod/ipod-info.ui
+[type: gettext/glade]plugins/ipod/ipod-init.ui
+[type: gettext/ini]plugins/ipod/ipod.plugin.in
+plugins/ipod/rb-ipod-helpers.c
+plugins/ipod/rb-ipod-plugin.c
+plugins/ipod/rb-ipod-source.c
+[type: gettext/ini]plugins/iradio/iradio.plugin.in
+plugins/iradio/rb-iradio-source.c
+plugins/iradio/rb-station-properties-dialog.c
+[type: gettext/glade]plugins/iradio/station-properties.ui
+plugins/lirc/rb-lirc-plugin.c
+[type: gettext/ini]plugins/lirc/rblirc.plugin.in
+plugins/lyrics/LyricsConfigureDialog.py
+[type: gettext/ini]plugins/lyrics/lyrics.plugin.in
+[type: gettext/glade]plugins/lyrics/lyrics-prefs.ui
+plugins/lyrics/lyrics.py
+plugins/lyrics/LyricsSites.py
+[type: gettext/glade]plugins/magnatune/magnatune-loading.ui
+[type: gettext/ini]plugins/magnatune/magnatune.plugin.in
+[type: gettext/glade]plugins/magnatune/magnatune-prefs.ui
+plugins/magnatune/magnatune.py
+plugins/magnatune/MagnatuneSource.py
+[type: gettext/ini]plugins/mmkeys/mmkeys.plugin.in
+[type: gettext/ini]plugins/mtpdevice/mtpdevice.plugin.in
+[type: gettext/glade]plugins/mtpdevice/mtp-info.ui
+plugins/mtpdevice/rb-mtp-gst-sink.c
+plugins/mtpdevice/rb-mtp-gst-src.c
+plugins/mtpdevice/rb-mtp-plugin.c
+plugins/mtpdevice/rb-mtp-source.c
+plugins/mtpdevice/rb-mtp-thread.c
+[type: gettext/ini]plugins/notification/notification.plugin.in
+plugins/notification/rb-notification-plugin.c
+[type: gettext/ini]plugins/power-manager/power-manager.plugin.in
+plugins/power-manager/rb-power-manager-plugin.c
+[type: gettext/ini]plugins/pythonconsole/pythonconsole.plugin.in
+plugins/pythonconsole/pythonconsole.py
+[type: gettext/ini]plugins/rbzeitgeist/rbzeitgeist.plugin.in
+plugins/replaygain/config.py
+plugins/replaygain/player.py
+[type: gettext/ini]plugins/replaygain/replaygain.plugin.in
+[type: gettext/glade]plugins/replaygain/replaygain-prefs.ui
+[type: gettext/ini]plugins/sample-python/sample-python.plugin.in
+plugins/sample-python/sample-python.py
+plugins/sample/rb-sample-plugin.c
+[type: gettext/ini]plugins/sample/sample.plugin.in
+[type: gettext/ini]plugins/sample-vala/sample-vala.plugin.in
+[type: gettext/ini]plugins/sendto/sendto.plugin.in
+plugins/sendto/sendto.py
+plugins/visualizer/rb-visualizer-fullscreen.c
+plugins/visualizer/rb-visualizer-menu.c
+plugins/visualizer/rb-visualizer-page.c
+plugins/visualizer/rb-visualizer-plugin.c
+[type: gettext/ini]plugins/visualizer/visualizer.plugin.in
+podcast/rb-feed-podcast-properties-dialog.c
+podcast/rb-podcast-add-dialog.c
+podcast/rb-podcast-main-source.c
+podcast/rb-podcast-manager.c
+podcast/rb-podcast-parse.c
+podcast/rb-podcast-properties-dialog.c
+podcast/rb-podcast-source.c
+remote/dbus/rb-client.c
+rhythmdb/rhythmdb.c
+rhythmdb/rhythmdb-monitor.c
+rhythmdb/rhythmdb-property-model.c
+rhythmdb/rhythmdb-tree.c
+shell/main.c
+shell/rb-playlist-manager.c
+shell/rb-play-order.c
+shell/rb-removable-media-manager.c
+shell/rb-shell.c
+shell/rb-shell-clipboard.c
+shell/rb-shell-player.c
+shell/rb-shell-preferences.c
+shell/rb-statusbar.c
+shell/rb-track-transfer-queue.c
+sources/rb-auto-playlist-source.c
+sources/rb-browser-source.c
+sources/rb-device-source.c
+sources/rb-display-page.c
+sources/rb-display-page-group.c
+sources/rb-import-errors-source.c
+sources/rb-library-source.c
+sources/rb-media-player-source.c
+sources/rb-missing-files-source.c
+sources/rb-playlist-source.c
+sources/rb-play-queue-source.c
+sources/rb-source.c
+sources/rb-static-playlist-source.c
+sources/rb-streaming-source.c
+sources/rb-transfer-target.c
+sources/sync/rb-sync-settings-ui.c
+sources/sync/rb-sync-state-ui.c
+widgets/eggwrapbox.c
+widgets/rb-alert-dialog.c
+widgets/rb-cell-renderer-pixbuf.c
+widgets/rb-dialog.c
+widgets/rb-entry-view.c
+widgets/rb-fading-image.c
+widgets/rb-header.c
+widgets/rb-library-browser.c
+widgets/rb-property-view.c
+widgets/rb-query-creator.c
+widgets/rb-query-creator-properties.c
+widgets/rb-rating-helper.c
+widgets/rb-search-entry.c
+widgets/rb-song-info.c

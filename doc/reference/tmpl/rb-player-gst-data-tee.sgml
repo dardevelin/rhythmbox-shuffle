@@ -1,0 +1,75 @@
+<!-- ##### SECTION Title ##### -->
+RBPlayerGstDataTee
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBPlayerGstDataTee ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBPlayerGstDataTee::data-tee-inserted ##### -->
+<para>
+
+</para>
+
+@rbplayergstdatatee: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBPlayerGstDataTee::data-tee-pre-remove ##### -->
+<para>
+
+</para>
+
+@rbplayergstdatatee: the object which received the signal.
+@arg1: 
+
+<!-- ##### STRUCT RBPlayerGstDataTeeIface ##### -->
+<para>
+
+</para>
+
+@g_iface: 
+@add_data_tee: 
+@remove_data_tee: 
+@data_tee_inserted: 
+@data_tee_pre_remove: 
+
+<!-- ##### FUNCTION rb_player_gst_data_tee_add_data_tee ##### -->
+<para>
+
+</para>
+
+@player: 
+@element: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_player_gst_data_tee_remove_data_tee ##### -->
+<para>
+
+</para>
+
+@player: 
+@element: 
+@Returns: 
+
+

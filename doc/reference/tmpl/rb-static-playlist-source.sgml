@@ -1,0 +1,125 @@
+<!-- ##### SECTION Title ##### -->
+RBStaticPlaylistSource
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBStaticPlaylistSource ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT RBStaticPlaylistSourceClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+@action_group: 
+
+<!-- ##### FUNCTION rb_static_playlist_source_new ##### -->
+<para>
+
+</para>
+
+@shell: 
+@name: 
+@settings_name: 
+@local: 
+@entry_type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_static_playlist_source_new_from_xml ##### -->
+<para>
+
+</para>
+
+@shell: 
+@node: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_static_playlist_source_load_from_xml ##### -->
+<para>
+
+</para>
+
+@source: 
+@node: 
+
+
+<!-- ##### FUNCTION rb_static_playlist_source_add_entry ##### -->
+<para>
+
+</para>
+
+@source: 
+@entry: 
+@index: 
+
+
+<!-- ##### FUNCTION rb_static_playlist_source_remove_entry ##### -->
+<para>
+
+</para>
+
+@source: 
+@entry: 
+
+
+<!-- ##### FUNCTION rb_static_playlist_source_add_location ##### -->
+<para>
+
+</para>
+
+@source: 
+@location: 
+@index: 
+
+
+<!-- ##### FUNCTION rb_static_playlist_source_add_locations ##### -->
+<para>
+
+</para>
+
+@source: 
+@locations: 
+
+
+<!-- ##### FUNCTION rb_static_playlist_source_remove_location ##### -->
+<para>
+
+</para>
+
+@source: 
+@location: 
+
+
+<!-- ##### FUNCTION rb_static_playlist_source_move_entry ##### -->
+<para>
+
+</para>
+
+@source: 
+@entry: 
+@index: 
+
+

@@ -1,0 +1,5 @@
+debian/rhythmbox-small.xpm /usr/share/pixmaps
+usr/bin
+usr/lib/rhythmbox/rhythmbox-metadata
+usr/share/applications/
+usr/share/man

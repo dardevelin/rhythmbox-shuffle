@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBPlaylistSource</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch06.html" title="Sources">
+<link rel="prev" href="RBPlayQueueSource.html" title="RBPlayQueueSource">
+<link rel="next" href="rhythmbox-RBRemovableMediaSource.html" title="RBRemovableMediaSource">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBPlayQueueSource.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="rhythmbox-RBRemovableMediaSource.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBPlaylistSource.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBPlaylistSource.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBPlaylistSource.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBPlaylistSource.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#RBPlaylistSource.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBPlaylistSource"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBPlaylistSource.top_of_page"></a>RBPlaylistSource</span></h2>
+<p>RBPlaylistSource — Base class for playlist sources</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBPlaylistSource.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBPlaylistSource.html#RBPlaylistSource-struct" title="struct RBPlaylistSource">RBPlaylistSource</a>;
+struct              <a class="link" href="RBPlaylistSource.html#RBPlaylistSourceClass" title="struct RBPlaylistSourceClass">RBPlaylistSourceClass</a>;
+<a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          <a class="link" href="RBPlaylistSource.html#rb-playlist-source-new-from-xml" title="rb_playlist_source_new_from_xml ()">rb_playlist_source_new_from_xml</a>     (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">xmlNodePtr</span> node</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBPlaylistSource.html#rb-playlist-source-save-playlist" title="rb_playlist_source_save_playlist ()">rb_playlist_source_save_playlist</a>    (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">RBPlaylistExportType</span> export_type</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBPlaylistSource.html#rb-playlist-source-save-to-xml" title="rb_playlist_source_save_to_xml ()">rb_playlist_source_save_to_xml</a>      (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">xmlNodePtr</span> parent_node</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBPlaylistSource.html#rb-playlist-source-set-query-model" title="rb_playlist_source_set_query_model ()">rb_playlist_source_set_query_model</a>  (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel"><span class="type">RhythmDBQueryModel</span></a> *model</code></em>);
+<a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel"><span class="returnvalue">RhythmDBQueryModel</span></a> * <a class="link" href="RBPlaylistSource.html#rb-playlist-source-get-query-model" title="rb_playlist_source_get_query_model ()">rb_playlist_source_get_query_model</a> (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>);
+<a class="link" href="RhythmDB.html" title="RhythmDB"><span class="returnvalue">RhythmDB</span></a> *          <a class="link" href="RBPlaylistSource.html#rb-playlist-source-get-db" title="rb_playlist_source_get_db ()">rb_playlist_source_get_db</a>           (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBPlaylistSource.html#rb-playlist-source-mark-dirty" title="rb_playlist_source_mark_dirty ()">rb_playlist_source_mark_dirty</a>       (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBPlaylistSource.html#rb-playlist-source-location-in-map" title="rb_playlist_source_location_in_map ()">rb_playlist_source_location_in_map</a>  (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *location</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBPlaylistSource.html#rb-playlist-source-add-to-map" title="rb_playlist_source_add_to_map ()">rb_playlist_source_add_to_map</a>       (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *location</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBPlaylistSource.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBox
+                           +----GtkHBox
+                                 +----RBDisplayPage
+                                       +----<a class="link" href="RBSource.html" title="RBSource">RBSource</a>
+                                             +----RBPlaylistSource
+                                                   +----<a class="link" href="RBAutoPlaylistSource.html" title="RBAutoPlaylistSource">RBAutoPlaylistSource</a>
+                                                   +----<a class="link" href="RBStaticPlaylistSource.html" title="RBStaticPlaylistSource">RBStaticPlaylistSource</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBPlaylistSource.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBPlaylistSource implements
+ AtkImplementorIface,  GtkBuildable and  GtkOrientable.</p>
+</div>
+<div class="refsect1">
+<a name="RBPlaylistSource.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBPlaylistSource.html#RBPlaylistSource--db" title='The "db" property'>db</a>"                       <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>*             : Read
+  "<a class="link" href="RBPlaylistSource.html#RBPlaylistSource--dirty" title='The "dirty" property'>dirty</a>"                    <span class="type">gboolean</span>              : Read
+  "<a class="link" href="RBPlaylistSource.html#RBPlaylistSource--is-local" title='The "is-local" property'>is-local</a>"                 <span class="type">gboolean</span>              : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBPlaylistSource.description"></a><h2>Description</h2>
+<p>
+This class provides some common infrastructure for playlist
+sources.  A playlist, in this context, is a persistent user-defined
+selection from a set of songs.  Playlists (static and auto) based 
+on the main library are saved to the playlists.xml file stored
+alongside the rhythmdb.xml file.  Playlists on portable music players
+are saved on the device in the format the player itself supports.
+</p>
+<p>
+This class provides most of the source UI (excluding the search bar),
+holds some of the framework for loading and saving the playlists.xml
+file, and records which playlists need to be saved.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBPlaylistSource.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBPlaylistSource-struct"></a><h3>struct RBPlaylistSource</h3>
+<pre class="programlisting">struct RBPlaylistSource;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlaylistSourceClass"></a><h3>struct RBPlaylistSourceClass</h3>
+<pre class="programlisting">struct RBPlaylistSourceClass {
+	RBSourceClass parent;
+
+	/* methods */
+	void (*impl_show_entry_view_popup) (RBPlaylistSource *source, RBEntryView *view, gboolean over_entry);
+	void (*impl_save_contents_to_xml) (RBPlaylistSource *source, xmlNodePtr node);
+	void (*impl_mark_dirty)		(RBPlaylistSource *source);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-playlist-source-new-from-xml"></a><h3>rb_playlist_source_new_from_xml ()</h3>
+<pre class="programlisting"><a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          rb_playlist_source_new_from_xml     (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">xmlNodePtr</span> node</code></em>);</pre>
+<p>
+Constructs a playlist source instance from the XML serialized
+format.  This function knows about all the playlist types that
+can be saved to disk, and it hands off the XML node to the
+appropriate constructor based on the 'type' attribute of
+the root node of the playlist.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td>libxml node containing the playlist</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the playlist</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-playlist-source-save-playlist"></a><h3>rb_playlist_source_save_playlist ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_playlist_source_save_playlist    (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">RBPlaylistExportType</span> export_type</code></em>);</pre>
+<p>
+Saves the playlist to an external file in a standard
+format (M3U, PLS, or XSPF).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>destination URI</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>export_type</code></em> :</span></p></td>
+<td>format to save in</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-playlist-source-save-to-xml"></a><h3>rb_playlist_source_save_to_xml ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_playlist_source_save_to_xml      (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><span class="type">xmlNodePtr</span> parent_node</code></em>);</pre>
+<p>
+Converts the playlist to XML format, below the specified
+parent node.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>the playlist source to save</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent_node</code></em> :</span></p></td>
+<td>libxml node below which to save the playlist</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-playlist-source-set-query-model"></a><h3>rb_playlist_source_set_query_model ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_playlist_source_set_query_model  (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel"><span class="type">RhythmDBQueryModel</span></a> *model</code></em>);</pre>
+<p>
+Sets a new query model for the playlist.  This updates the
+entry view to use the new query model and also updates the
+source query-model property.
+</p>
+<p>
+This needs to be called when the playlist subclass
+creates a new query model.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>the <a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>model</code></em> :</span></p></td>
+<td>the new <a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel"><span class="type">RhythmDBQueryModel</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-playlist-source-get-query-model"></a><h3>rb_playlist_source_get_query_model ()</h3>
+<pre class="programlisting"><a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel"><span class="returnvalue">RhythmDBQueryModel</span></a> * rb_playlist_source_get_query_model (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>);</pre>
+<p>
+Returns the current <a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel"><span class="type">RhythmDBQueryModel</span></a> for the playlist.
+The caller must not unref the object once finished with it.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the current <a class="link" href="RhythmDBQueryModel.html" title="RhythmDBQueryModel"><span class="type">RhythmDBQueryModel</span></a>. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-playlist-source-get-db"></a><h3>rb_playlist_source_get_db ()</h3>
+<pre class="programlisting"><a class="link" href="RhythmDB.html" title="RhythmDB"><span class="returnvalue">RhythmDB</span></a> *          rb_playlist_source_get_db           (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>);</pre>
+<p>
+Returns the <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> instance.  The caller must not
+unref the object once finished with it.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> instance. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-playlist-source-mark-dirty"></a><h3>rb_playlist_source_mark_dirty ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_playlist_source_mark_dirty       (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>);</pre>
+<p>
+Marks the playlist dirty.  This generally means that the playlist
+will be saved to disk fairly soon, but the exact meaning can vary
+between playlist types.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-playlist-source-location-in-map"></a><h3>rb_playlist_source_location_in_map ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_playlist_source_location_in_map  (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *location</code></em>);</pre>
+<p>
+Returns TRUE if the specified URI is in the playlist entry map
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>location</code></em> :</span></p></td>
+<td>a URI to check</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the URI is present</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-playlist-source-add-to-map"></a><h3>rb_playlist_source_add_to_map ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_playlist_source_add_to_map       (<em class="parameter"><code><a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *location</code></em>);</pre>
+<p>
+Adds a URI to the playlist's entry map.  This is useful when the
+URI is being added to the database, but no entry exists for it yet.
+When the entry is created, it will be added to the query model.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBPlaylistSource.html" title="RBPlaylistSource"><span class="type">RBPlaylistSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>location</code></em> :</span></p></td>
+<td>a URI to add</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if the URI was added to the entry map,
+FALSE if it was already there.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBPlaylistSource.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBPlaylistSource--db"></a><h3>The <code class="literal">"db"</code> property</h3>
+<pre class="programlisting">  "db"                       <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>*             : Read</pre>
+<p>
+The <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> instance
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlaylistSource--dirty"></a><h3>The <code class="literal">"dirty"</code> property</h3>
+<pre class="programlisting">  "dirty"                    <span class="type">gboolean</span>              : Read</pre>
+<p>
+Whether the playlist has been changed since it was last saved
+to disk.
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBPlaylistSource--is-local"></a><h3>The <code class="literal">"is-local"</code> property</h3>
+<pre class="programlisting">  "is-local"                 <span class="type">gboolean</span>              : Read / Write / Construct Only</pre>
+<p>
+Whether the playlist is attached to the local library.
+Remote DAAP playlists, for example, are not local.
+</p>
+<p>Default value: TRUE</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

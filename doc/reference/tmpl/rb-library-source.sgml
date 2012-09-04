@@ -1,0 +1,44 @@
+<!-- ##### SECTION Title ##### -->
+RBLibrarySource
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBLibrarySource ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT RBLibrarySourceClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION rb_library_source_new ##### -->
+<para>
+
+</para>
+
+@shell: 
+@Returns: 
+
+

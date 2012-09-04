@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBSongInfo</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch07.html" title="Widgets">
+<link rel="prev" href="RBSearchEntry.html" title="RBSearchEntry">
+<link rel="next" href="RBURIDialog.html" title="RBURIDialog">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBSearchEntry.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch07.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBURIDialog.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBSongInfo.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBSongInfo.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBSongInfo.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBSongInfo.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#RBSongInfo.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#RBSongInfo.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBSongInfo"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBSongInfo.top_of_page"></a>RBSongInfo</span></h2>
+<p>RBSongInfo — song properties dialog</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBSongInfo.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBSongInfo.html#RBSongInfo-struct" title="struct RBSongInfo">RBSongInfo</a>;
+struct              <a class="link" href="RBSongInfo.html#RBSongInfoClass" title="struct RBSongInfoClass">RBSongInfoClass</a>;
+<span class="returnvalue">GtkWidget</span> *         <a class="link" href="RBSongInfo.html#rb-song-info-new" title="rb_song_info_new ()">rb_song_info_new</a>                    (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBEntryView.html" title="RBEntryView"><span class="type">RBEntryView</span></a> *entry_view</code></em>);
+<span class="returnvalue">guint</span>               <a class="link" href="RBSongInfo.html#rb-song-info-append-page" title="rb_song_info_append_page ()">rb_song_info_append_page</a>            (<em class="parameter"><code><a class="link" href="RBSongInfo.html" title="RBSongInfo"><span class="type">RBSongInfo</span></a> *info</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *title</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkWidget</span> *page</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSongInfo.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBin
+                           +----GtkWindow
+                                 +----GtkDialog
+                                       +----RBSongInfo
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSongInfo.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBSongInfo implements
+ AtkImplementorIface and  GtkBuildable.</p>
+</div>
+<div class="refsect1">
+<a name="RBSongInfo.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBSongInfo.html#RBSongInfo--current-entry" title='The "current-entry" property'>current-entry</a>"            <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a>*        : Read
+  "<a class="link" href="RBSongInfo.html#RBSongInfo--entry-view" title='The "entry-view" property'>entry-view</a>"               <a class="link" href="RBEntryView.html" title="RBEntryView"><span class="type">RBEntryView</span></a>*          : Read / Write / Construct Only
+  "<a class="link" href="RBSongInfo.html#RBSongInfo--selected-entries" title='The "selected-entries" property'>selected-entries</a>"         <span class="type">GValueArray</span>*          : Read
+  "<a class="link" href="RBSongInfo.html#RBSongInfo--source" title='The "source" property'>source</a>"                   <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>*             : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSongInfo.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBSongInfo.html#RBSongInfo-post-metadata-change" title='The "post-metadata-change" signal'>post-metadata-change</a>"                           : <code class="literal">Run Last</code>
+  "<a class="link" href="RBSongInfo.html#RBSongInfo-pre-metadata-change" title='The "pre-metadata-change" signal'>pre-metadata-change</a>"                            : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBSongInfo.description"></a><h2>Description</h2>
+<p>
+Displays song properties and, if we know how to edit tags in the file,
+allows the user to edit them.
+</p>
+<p>
+This class has two modes.  It can display and edit properties of a single
+entry, in which case it uses a <span class="type">GtkNotebook</span> to split the properties across
+'basic' and 'details' pages, and it can display and edit properties of
+multiple entries at a time, in which case a smaller set of properties is
+displayed in a single set.
+</p>
+<p>
+In single-entry mode, it is possible to add extra pages to the <span class="type">GtkNotebook</span>
+widget in the dialog.  The 'create-song-info' signal is emitted by the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+object, allowing signal handlers to add pages by calling <a class="link" href="RBSongInfo.html#rb-song-info-append-page" title="rb_song_info_append_page ()"><span class="type">rb_song_info_append_page</span></a>.
+The lyrics plugin is currently the only place where this ability is used.
+In this mode, the dialog features 'back' and 'forward' buttons that move to the
+next or previous entries from the currently displayed track list.
+</p>
+<p>
+In multiple-entry mode, only the set of properties that can usefully be set
+across multiple entries at once are displayed.
+</p>
+<p>
+When the dialog is closed, any changes made will be applied to the entry (or entries)
+that were displayed in the dialog.  For songs in the library, this will result
+in the song tags being updated on disk.  For other entry types, this only updates
+the data store in the database.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBSongInfo.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBSongInfo-struct"></a><h3>struct RBSongInfo</h3>
+<pre class="programlisting">struct RBSongInfo;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSongInfoClass"></a><h3>struct RBSongInfoClass</h3>
+<pre class="programlisting">struct RBSongInfoClass {
+	GtkDialogClass parent_class;
+
+	void (*pre_metadata_change) (RBSongInfo *info, RhythmDBEntry *entry);
+	void (*post_metadata_change) (RBSongInfo *info, RhythmDBEntry *entry);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-song-info-new"></a><h3>rb_song_info_new ()</h3>
+<pre class="programlisting"><span class="returnvalue">GtkWidget</span> *         rb_song_info_new                    (<em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBEntryView.html" title="RBEntryView"><span class="type">RBEntryView</span></a> *entry_view</code></em>);</pre>
+<p>
+Creates a new <a class="link" href="RBSongInfo.html" title="RBSongInfo"><span class="type">RBSongInfo</span></a> for the selected entry or entries in
+the specified entry view.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>
+<a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> creating the song properties window</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry_view</code></em> :</span></p></td>
+<td>the <a class="link" href="RBEntryView.html" title="RBEntryView"><span class="type">RBEntryView</span></a> to get selection data from</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the new song properties window</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-song-info-append-page"></a><h3>rb_song_info_append_page ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>               rb_song_info_append_page            (<em class="parameter"><code><a class="link" href="RBSongInfo.html" title="RBSongInfo"><span class="type">RBSongInfo</span></a> *info</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *title</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkWidget</span> *page</code></em>);</pre>
+<p>
+Adds a new page to the song properties window.  Should be called
+in a handler connected to the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> 'create-song-info' signal.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>info</code></em> :</span></p></td>
+<td>a <a class="link" href="RBSongInfo.html" title="RBSongInfo"><span class="type">RBSongInfo</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td>the title of the new page</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>page</code></em> :</span></p></td>
+<td>the page <span class="type">GtkWidget</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the page number</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBSongInfo.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBSongInfo--current-entry"></a><h3>The <code class="literal">"current-entry"</code> property</h3>
+<pre class="programlisting">  "current-entry"            <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a>*        : Read</pre>
+<p>
+The <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> that is currently being displayed.  Will be NULL for
+multiple-entry song properties windows.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSongInfo--entry-view"></a><h3>The <code class="literal">"entry-view"</code> property</h3>
+<pre class="programlisting">  "entry-view"               <a class="link" href="RBEntryView.html" title="RBEntryView"><span class="type">RBEntryView</span></a>*          : Read / Write / Construct Only</pre>
+<p>
+The <a class="link" href="RBEntryView.html" title="RBEntryView"><span class="type">RBEntryView</span></a> for the source that created the song properties window.  Used
+find the set of selected entries, and to change the selection when the 'back' and
+'forward' buttons are pressed.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSongInfo--selected-entries"></a><h3>The <code class="literal">"selected-entries"</code> property</h3>
+<pre class="programlisting">  "selected-entries"         <span class="type">GValueArray</span>*          : Read</pre>
+<p>
+The set of <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> objects currently being displayed.  Valid for both
+single-entry and multiple-entry song properties windows.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSongInfo--source"></a><h3>The <code class="literal">"source"</code> property</h3>
+<pre class="programlisting">  "source"                   <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>*             : Read / Write / Construct Only</pre>
+<p>
+The <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> that created the song properties window.  Used to update
+for track list changes, and to find the sets of albums, artist, and genres
+to use for tag edit completion.
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBSongInfo.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="RBSongInfo-post-metadata-change"></a><h3>The <code class="literal">"post-metadata-change"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBSongInfo.html" title="RBSongInfo"><span class="type">RBSongInfo</span></a>    *song_info,
+                                                        <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry,
+                                                        <span class="type">gpointer</span>       user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted just after changes have been applied to the database.
+Probably useless.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>song_info</code></em> :</span></p></td>
+<td>the <a class="link" href="RBSongInfo.html" title="RBSongInfo"><span class="type">RBSongInfo</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> that was changed</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBSongInfo-pre-metadata-change"></a><h3>The <code class="literal">"pre-metadata-change"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBSongInfo.html" title="RBSongInfo"><span class="type">RBSongInfo</span></a>    *song_info,
+                                                        <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry,
+                                                        <span class="type">gpointer</span>       user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted just before the changes made in the song properties window
+are applied to the database.  This is only emitted in the single-entry
+case.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>song_info</code></em> :</span></p></td>
+<td>the <a class="link" href="RBSongInfo.html" title="RBSongInfo"><span class="type">RBSongInfo</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> being changed</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

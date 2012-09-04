@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>rb-debug</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch02.html" title="Lib">
+<link rel="prev" href="rhythmbox-rb-async-queue-watch.html" title="rb-async-queue-watch">
+<link rel="next" href="rhythmbox-rb-file-helpers.html" title="rb-file-helpers">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rhythmbox-rb-async-queue-watch.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="rhythmbox-rb-file-helpers.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#rhythmbox-rb-debug.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#rhythmbox-rb-debug.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="rhythmbox-rb-debug"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="rhythmbox-rb-debug.top_of_page"></a>rb-debug</span></h2>
+<p>rb-debug — debugging support functions</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="rhythmbox-rb-debug.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">#define             <a class="link" href="rhythmbox-rb-debug.html#rb-debug" title="rb_debug()">rb_debug</a>                            (...)
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-rb-debug.html#rb-debug-init" title="rb_debug_init ()">rb_debug_init</a>                       (<em class="parameter"><code><span class="type">gboolean</span> debug</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-rb-debug.html#rb-debug-init-match" title="rb_debug_init_match ()">rb_debug_init_match</a>                 (<em class="parameter"><code>const <span class="type">char</span> *match</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="rhythmbox-rb-debug.html#rb-debug-matches" title="rb_debug_matches ()">rb_debug_matches</a>                    (<em class="parameter"><code>const <span class="type">char</span> *func</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *file</code></em>);
+<span class="returnvalue">char</span> **             <a class="link" href="rhythmbox-rb-debug.html#rb-debug-get-args" title="rb_debug_get_args ()">rb_debug_get_args</a>                   (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-rb-debug.html#rb-debug-stop-in-debugger" title="rb_debug_stop_in_debugger ()">rb_debug_stop_in_debugger</a>           (<em class="parameter"><code><span class="type">void</span></code></em>);
+typedef             <a class="link" href="rhythmbox-rb-debug.html#RBProfiler" title="RBProfiler">RBProfiler</a>;
+<a class="link" href="rhythmbox-rb-debug.html#RBProfiler" title="RBProfiler"><span class="returnvalue">RBProfiler</span></a> *        <a class="link" href="rhythmbox-rb-debug.html#rb-profiler-new" title="rb_profiler_new ()">rb_profiler_new</a>                     (<em class="parameter"><code>const <span class="type">char</span> *name</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-rb-debug.html#rb-profiler-dump" title="rb_profiler_dump ()">rb_profiler_dump</a>                    (<em class="parameter"><code><a class="link" href="rhythmbox-rb-debug.html#RBProfiler" title="RBProfiler"><span class="type">RBProfiler</span></a> *profiler</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-rb-debug.html#rb-profiler-reset" title="rb_profiler_reset ()">rb_profiler_reset</a>                   (<em class="parameter"><code><a class="link" href="rhythmbox-rb-debug.html#RBProfiler" title="RBProfiler"><span class="type">RBProfiler</span></a> *profiler</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-rb-debug.html#rb-profiler-free" title="rb_profiler_free ()">rb_profiler_free</a>                    (<em class="parameter"><code><a class="link" href="rhythmbox-rb-debug.html#RBProfiler" title="RBProfiler"><span class="type">RBProfiler</span></a> *profiler</code></em>);
+#define             <a class="link" href="rhythmbox-rb-debug.html#rb-profile-start" title="rb_profile_start()">rb_profile_start</a>                    (msg)
+#define             <a class="link" href="rhythmbox-rb-debug.html#rb-profile-end" title="rb_profile_end()">rb_profile_end</a>                      (msg)
+</pre>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-debug.description"></a><h2>Description</h2>
+<p>
+In addition to a simple debug output system, we have two distinct
+profiling mechanisms for timing sections of code.
+</p>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-rb-debug.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="rb-debug"></a><h3>rb_debug()</h3>
+<pre class="programlisting">#define rb_debug(...) rb_debug_realf (__func__, __FILE__, __LINE__, TRUE, __VA_ARGS__)
+</pre>
+<p>
+If the call site function or file name matches the current debug output
+settings, the message will be formatted and printed to standard error,
+including a timestamp, the thread ID, the file and function names, and
+the line number.  A newline will be appended, so the format string shouldn't
+include one.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-debug-init"></a><h3>rb_debug_init ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_debug_init                       (<em class="parameter"><code><span class="type">gboolean</span> debug</code></em>);</pre>
+<p>
+Sets up debug output, with either all debug enabled
+or none.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>debug</code></em> :</span></p></td>
+<td>if TRUE, enable all debug output</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-debug-init-match"></a><h3>rb_debug_init_match ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_debug_init_match                 (<em class="parameter"><code>const <span class="type">char</span> *match</code></em>);</pre>
+<p>
+Sets up debug output, enabling debug output from file and function
+names that contain the specified match string.
+</p>
+<p>
+Also sets up a GLib log handler that will trigger a debugger
+break for critical or warning level output if any debug output
+at all is enabled.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>match</code></em> :</span></p></td>
+<td>string to match functions and filenames against</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-debug-matches"></a><h3>rb_debug_matches ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_debug_matches                    (<em class="parameter"><code>const <span class="type">char</span> *func</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *file</code></em>);</pre>
+<p>
+Checks if <em class="parameter"><code>file</code></em> or <em class="parameter"><code>func</code></em> matches the current debug output settings.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>function to check</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>file</code></em> :</span></p></td>
+<td>filename to check</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if matched</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-debug-get-args"></a><h3>rb_debug_get_args ()</h3>
+<pre class="programlisting"><span class="returnvalue">char</span> **             rb_debug_get_args                   (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Constructs arguments to pass to another process using
+this debug output code that will produce the same debug output
+settings.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>debug output arguments, must be freed with #<code class="function">g_strfreev()</code>. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-debug-stop-in-debugger"></a><h3>rb_debug_stop_in_debugger ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_debug_stop_in_debugger           (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Raises a SIGINT signal to get the attention of the debugger.
+When not running under the debugger, we don't want to stop,
+so we ignore the signal for just the moment that we raise it.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBProfiler"></a><h3>RBProfiler</h3>
+<pre class="programlisting">typedef struct RBProfiler RBProfiler;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-profiler-new"></a><h3>rb_profiler_new ()</h3>
+<pre class="programlisting"><a class="link" href="rhythmbox-rb-debug.html#RBProfiler" title="RBProfiler"><span class="returnvalue">RBProfiler</span></a> *        rb_profiler_new                     (<em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-profiler-dump"></a><h3>rb_profiler_dump ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_profiler_dump                    (<em class="parameter"><code><a class="link" href="rhythmbox-rb-debug.html#RBProfiler" title="RBProfiler"><span class="type">RBProfiler</span></a> *profiler</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-profiler-reset"></a><h3>rb_profiler_reset ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_profiler_reset                   (<em class="parameter"><code><a class="link" href="rhythmbox-rb-debug.html#RBProfiler" title="RBProfiler"><span class="type">RBProfiler</span></a> *profiler</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-profiler-free"></a><h3>rb_profiler_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_profiler_free                    (<em class="parameter"><code><a class="link" href="rhythmbox-rb-debug.html#RBProfiler" title="RBProfiler"><span class="type">RBProfiler</span></a> *profiler</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-profile-start"></a><h3>rb_profile_start()</h3>
+<pre class="programlisting">#define rb_profile_start(msg) _rb_profile_log (__func__, __FILE__, __LINE__, RB_PROFILE_INDENTATION, "START", msg)
+</pre>
+<p>
+Records a start point for profiling.
+This profile mechanism operates by issuing file access
+requests with filenames indicating the profile points.
+Use 'strace -e access' to gather this information.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td>profile point message</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-profile-end"></a><h3>rb_profile_end()</h3>
+<pre class="programlisting">#define rb_profile_end(msg)   _rb_profile_log (__func__, __FILE__, __LINE__, -RB_PROFILE_INDENTATION, "END", msg)
+</pre>
+<p>
+Records an end point for profiling.  See <em class="parameter"><code>rb_profile_start</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td>profile point message</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

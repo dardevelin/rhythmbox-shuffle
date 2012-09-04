@@ -1,0 +1,80 @@
+<!-- ##### SECTION Title ##### -->
+RBHeader
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBHeader ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG RBHeader:db ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBHeader:seekable ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBHeader:shell-player ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBHeader:show-album-art ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBHeader:show-position-slider ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBHeader:show-remaining ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBHeader:slider-dragging ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBHeaderClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+
+<!-- ##### FUNCTION rb_header_new ##### -->
+<para>
+
+</para>
+
+@shell_player: 
+@db: 
+@Returns: 
+
+

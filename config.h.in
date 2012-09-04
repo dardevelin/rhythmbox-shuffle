@@ -1,0 +1,192 @@
+/* config.h.in.  Generated from configure.ac by autoheader.  */
+
+/* Define if building universal (internal helper macro) */
+#undef AC_APPLE_UNIVERSAL_BUILD
+
+/* always defined to indicate that i18n is enabled */
+#undef ENABLE_NLS
+
+/* maximum gdk version */
+#undef GDK_VERSION_MAX_ALLOWED
+
+/* minimum gdk version */
+#undef GDK_VERSION_MIN_REQUIRED
+
+/* Define to the Gettext package name */
+#undef GETTEXT_PACKAGE
+
+/* maximum glib version */
+#undef GLIB_VERSION_MAX_ALLOWED
+
+/* minimum glib version */
+#undef GLIB_VERSION_MIN_REQUIRED
+
+/* Define to 1 if you have the `bind_textdomain_codeset' function. */
+#undef HAVE_BIND_TEXTDOMAIN_CODESET
+
+/* Define to 1 if you have the `dcgettext' function. */
+#undef HAVE_DCGETTEXT
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Define if the GNU gettext() function is already present or preinstalled. */
+#undef HAVE_GETTEXT
+
+/* Define if you have GNU fwrite_unlocked */
+#undef HAVE_GNU_FWRITE_UNLOCKED
+
+/* Define if Grilo support is enabled */
+#undef HAVE_GRILO
+
+/* Use GUdev for hardware detection */
+#undef HAVE_GUDEV
+
+/* Define if you have HAL support */
+#undef HAVE_HAL
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Indicates whether libgpod is new enough to have its itdb_start/stop_sync
+   API */
+#undef HAVE_ITDB_START_STOP_SYNC
+
+/* Define if your <locale.h> file defines LC_MESSAGES. */
+#undef HAVE_LC_MESSAGES
+
+/* Have libbrasero-media */
+#undef HAVE_LIBBRASERO_MEDIA
+
+/* Define if libdmapsharing support is enabled */
+#undef HAVE_LIBDMAPSHARING
+
+/* Define to 1 if you have the `z' library (-lz). */
+#undef HAVE_LIBZ
+
+/* Define to 1 if you have the <locale.h> header file. */
+#undef HAVE_LOCALE_H
+
+/* Define to 1 if you have the `mb_extract_uuid' function. */
+#undef HAVE_MB_EXTRACT_UUID
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* define if Multimedia Keys are enabled */
+#undef HAVE_MMKEYS
+
+/* Whether libmusicbrainz3 is available */
+#undef HAVE_MUSICBRAINZ3
+
+/* Whether libmusicbrainz4 is available */
+#undef HAVE_MUSICBRAINZ4
+
+/* Define if libnotify support is enabled */
+#undef HAVE_NOTIFY
+
+/* Whether to use the sound-juicer metadata getter code */
+#undef HAVE_SJ_METADATA_GETTER
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define if strftime supports %E and %O modifiers. */
+#undef HAVE_STRFTIME_EXTENSION
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* defined if you have X11/XF86keysym.h */
+#undef HAVE_XFREE
+
+/* Define to the sub-directory in which libtool stores uninstalled libraries.
+   */
+#undef LT_OBJDIR
+
+/* path to metadata build dir */
+#undef METADATA_UNINSTALLED_DIR
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* Define to the level of RhythmDB sanity checking */
+#undef RHYTHMDB_ENABLE_SANITY_CHECK
+
+/* path to built source data dir */
+#undef SHARE_UNINSTALLED_BUILDDIR
+
+/* path to source data dir */
+#undef SHARE_UNINSTALLED_DIR
+
+/* The size of `long', as computed by sizeof. */
+#undef SIZEOF_LONG
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Define to look for files in source tree locations */
+#undef USE_UNINSTALLED_DIRS
+
+/* Version number of package */
+#undef VERSION
+
+/* Define if mDNS/DNS-SD implementation uses Avahi */
+#undef WITH_AVAHI
+
+/* Define if gnome-keyring support is enabled */
+#undef WITH_GNOME_KEYRING
+
+/* Define if you are using the RhythmDB tree database */
+#undef WITH_RHYTHMDB_TREE
+
+/* Define if WebKit is enabled */
+#undef WITH_WEBKIT
+
+/* Define WORDS_BIGENDIAN to 1 if your processor stores words with the most
+   significant byte first (like Motorola and SPARC, unlike Intel). */
+#if defined AC_APPLE_UNIVERSAL_BUILD
+# if defined __BIG_ENDIAN__
+#  define WORDS_BIGENDIAN 1
+# endif
+#else
+# ifndef WORDS_BIGENDIAN
+#  undef WORDS_BIGENDIAN
+# endif
+#endif
+
+/* Define to 1 if the X Window System is missing or not being used. */
+#undef X_DISPLAY_MISSING

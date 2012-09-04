@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBBrowserSource</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch06.html" title="Sources">
+<link rel="prev" href="RBAutoPlaylistSource.html" title="RBAutoPlaylistSource">
+<link rel="next" href="RBImportErrorsSource.html" title="RBImportErrorsSource">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBAutoPlaylistSource.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch06.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="RBImportErrorsSource.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBBrowserSource.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBBrowserSource.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBBrowserSource.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBBrowserSource.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#RBBrowserSource.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBBrowserSource"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBBrowserSource.top_of_page"></a>RBBrowserSource</span></h2>
+<p>RBBrowserSource — base class for sources that include genre/artist/album browsers</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBBrowserSource.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBBrowserSource.html#RBBrowserSource-struct" title="struct RBBrowserSource">RBBrowserSource</a>;
+struct              <a class="link" href="RBBrowserSource.html#RBBrowserSourceClass" title="struct RBBrowserSourceClass">RBBrowserSourceClass</a>;
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBBrowserSource.html#rb-browser-source-has-drop-support" title="rb_browser_source_has_drop_support ()">rb_browser_source_has_drop_support</a>  (<em class="parameter"><code><a class="link" href="RBBrowserSource.html" title="RBBrowserSource"><span class="type">RBBrowserSource</span></a> *source</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBBrowserSource.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----GtkWidget
+               +----GtkContainer
+                     +----GtkBox
+                           +----GtkHBox
+                                 +----RBDisplayPage
+                                       +----<a class="link" href="RBSource.html" title="RBSource">RBSource</a>
+                                             +----RBBrowserSource
+                                                   +----<a class="link" href="RBLibrarySource.html" title="RBLibrarySource">RBLibrarySource</a>
+                                                   +----<a class="link" href="rhythmbox-Media-player-ID.html#RBMediaPlayerSource">RBMediaPlayerSource</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBBrowserSource.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBBrowserSource implements
+ AtkImplementorIface,  GtkBuildable and  GtkOrientable.</p>
+</div>
+<div class="refsect1">
+<a name="RBBrowserSource.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBBrowserSource.html#RBBrowserSource--populate" title='The "populate" property'>populate</a>"                 <span class="type">gboolean</span>              : Read / Write / Construct
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBBrowserSource.description"></a><h2>Description</h2>
+<p>
+This class simplifies implementation of sources that include genre/artist/album browsers.
+It also handles searching (using the search box) and a few other UI niceties.
+</p>
+<p>
+Instances of browser sources will use a query that will match all entries of
+the entry type assigned to the source, so it's mostly suited for sources that
+have an entry type of their own.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBBrowserSource.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBBrowserSource-struct"></a><h3>struct RBBrowserSource</h3>
+<pre class="programlisting">struct RBBrowserSource;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBBrowserSourceClass"></a><h3>struct RBBrowserSourceClass</h3>
+<pre class="programlisting">struct RBBrowserSourceClass {
+	RBSourceClass parent;
+
+	void		(*pack_content)		(RBBrowserSource *source, GtkWidget *content);
+	gboolean (*has_drop_support) (RBBrowserSource *source);
+	void		(*show_entry_popup) (RBBrowserSource *source);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-browser-source-has-drop-support"></a><h3>rb_browser_source_has_drop_support ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_browser_source_has_drop_support  (<em class="parameter"><code><a class="link" href="RBBrowserSource.html" title="RBBrowserSource"><span class="type">RBBrowserSource</span></a> *source</code></em>);</pre>
+<p>
+This is a virtual method that should be implemented by subclasses.  It returns <code class="literal">TRUE</code>
+if drag and drop target support for the source should be activated.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>a <a class="link" href="RBBrowserSource.html" title="RBBrowserSource"><span class="type">RBBrowserSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if drop support should be activated</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBBrowserSource.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBBrowserSource--populate"></a><h3>The <code class="literal">"populate"</code> property</h3>
+<pre class="programlisting">  "populate"                 <span class="type">gboolean</span>              : Read / Write / Construct</pre>
+<p>whether to populate the source.</p>
+<p>Default value: TRUE</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

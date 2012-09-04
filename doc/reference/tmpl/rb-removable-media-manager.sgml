@@ -1,0 +1,107 @@
+<!-- ##### SECTION Title ##### -->
+RBRemovableMediaManager
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBRemovableMediaManager ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBRemovableMediaManager::create-source-device ##### -->
+<para>
+
+</para>
+
+@rbremovablemediamanager: the object which received the signal.
+@arg1: 
+@Returns: 
+
+<!-- ##### SIGNAL RBRemovableMediaManager::create-source-mount ##### -->
+<para>
+
+</para>
+
+@rbremovablemediamanager: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### SIGNAL RBRemovableMediaManager::create-source-volume ##### -->
+<para>
+
+</para>
+
+@rbremovablemediamanager: the object which received the signal.
+@arg1: 
+@Returns: 
+
+<!-- ##### SIGNAL RBRemovableMediaManager::medium-added ##### -->
+<para>
+
+</para>
+
+@rbremovablemediamanager: the object which received the signal.
+@arg1: 
+
+<!-- ##### ARG RBRemovableMediaManager:scanned ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBRemovableMediaManager:shell ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBRemovableMediaManager:source ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBRemovableMediaManagerClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@medium_added: 
+@create_source_device: 
+@create_source_mount: 
+@create_source_volume: 
+
+<!-- ##### FUNCTION rb_removable_media_manager_new ##### -->
+<para>
+
+</para>
+
+@shell: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_removable_media_manager_scan ##### -->
+<para>
+
+</para>
+
+@manager: 
+
+

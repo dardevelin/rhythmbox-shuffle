@@ -1,0 +1,59 @@
+<!-- ##### SECTION Title ##### -->
+RBURIDialog
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBURIDialog ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBURIDialog::location-added ##### -->
+<para>
+
+</para>
+
+@rburidialog: the object which received the signal.
+@arg1: 
+
+<!-- ##### ARG RBURIDialog:label ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBURIDialogClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@location_added: 
+
+<!-- ##### FUNCTION rb_uri_dialog_new ##### -->
+<para>
+
+</para>
+
+@title: 
+@label: 
+@Returns: 
+
+

@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBEncoder</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch01.html" title="Backends">
+<link rel="prev" href="RBPlayerGstTee.html" title="RBPlayerGstTee">
+<link rel="next" href="ch02.html" title="Lib">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBPlayerGstTee.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="ch02.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBEncoder.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBEncoder.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBEncoder.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBEncoder.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBEncoder"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBEncoder.top_of_page"></a>RBEncoder</span></h2>
+<p>RBEncoder — audio transcoder interface</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBEncoder.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">                    <a class="link" href="RBEncoder.html#RBEncoder-struct" title="RBEncoder">RBEncoder</a>;
+struct              <a class="link" href="RBEncoder.html#RBEncoderIface" title="struct RBEncoderIface">RBEncoderIface</a>;
+<a class="link" href="RBEncoder.html" title="RBEncoder"><span class="returnvalue">RBEncoder</span></a> *         <a class="link" href="RBEncoder.html#rb-encoder-new" title="rb_encoder_new ()">rb_encoder_new</a>                      (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBEncoder.html#rb-encoder-encode" title="rb_encoder_encode ()">rb_encoder_encode</a>                   (<em class="parameter"><code><a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a> *encoder</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *dest</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> overwrite</code></em>,
+                                                         <em class="parameter"><code><a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingProfile"><span class="type">GstEncodingProfile</span></a> *profile</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBEncoder.html#rb-encoder-cancel" title="rb_encoder_cancel ()">rb_encoder_cancel</a>                   (<em class="parameter"><code><a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a> *encoder</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBEncoder.html#rb-encoder-get-missing-plugins" title="rb_encoder_get_missing_plugins ()">rb_encoder_get_missing_plugins</a>      (<em class="parameter"><code><a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a> *encoder</code></em>,
+                                                         <em class="parameter"><code><a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingProfile"><span class="type">GstEncodingProfile</span></a> *profile</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> ***details</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> ***descriptions</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBEncoder.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GInterface
+   +----RBEncoder
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBEncoder.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBEncoder.html#RBEncoder-completed" title='The "completed" signal'>completed</a>"                                      : <code class="literal">Run Last</code>
+  "<a class="link" href="RBEncoder.html#RBEncoder-progress" title='The "progress" signal'>progress</a>"                                       : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBEncoder.description"></a><h2>Description</h2>
+<p>
+The RBEncoder interface provides transcoding between audio formats based on
+encoding profiles.  The encoder implementation operates asynchronously and
+provides status updates in the form of signals emitted on the main thread.
+A new encoder instance should be created for each file that is transcoded
+or copied.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBEncoder.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBEncoder-struct"></a><h3>RBEncoder</h3>
+<pre class="programlisting">typedef struct _RBEncoder RBEncoder;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBEncoderIface"></a><h3>struct RBEncoderIface</h3>
+<pre class="programlisting">struct RBEncoderIface {
+	GTypeInterface g_iface;
+
+	/* vtable */
+	void		(*encode) (RBEncoder *encoder,
+					 RhythmDBEntry *entry,
+					 const char *dest,
+					 gboolean overwrite,
+					 GstEncodingProfile *profile);
+	void		(*cancel) (RBEncoder *encoder);
+	gboolean (*get_missing_plugins) (RBEncoder *encoder,
+					 GstEncodingProfile *profile,
+					 char ***details,
+					 char ***descriptions);
+
+	/* signals */
+	void (*progress) (RBEncoder *encoder,  double fraction);
+	void (*completed) (RBEncoder *encoder, guint64 dest_size, const char *mediatype, GError *error);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-encoder-new"></a><h3>rb_encoder_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBEncoder.html" title="RBEncoder"><span class="returnvalue">RBEncoder</span></a> *         rb_encoder_new                      (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Creates a new <a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a> instance.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the new <a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a>. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-encoder-encode"></a><h3>rb_encoder_encode ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_encoder_encode                   (<em class="parameter"><code><a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a> *encoder</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> *entry</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *dest</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> overwrite</code></em>,
+                                                         <em class="parameter"><code><a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingProfile"><span class="type">GstEncodingProfile</span></a> *profile</code></em>);</pre>
+<p>
+Initiates encoding, transcoding to the specified profile if specified.
+</p>
+<p>
+Encoding and error reporting takes place asynchronously.  The caller should wait
+for the 'completed' signal which indicates it has either completed or failed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>encoder</code></em> :</span></p></td>
+<td>the <a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>entry</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> to transcode</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>destination file URI</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>overwrite</code></em> :</span></p></td>
+<td>if <code class="literal">TRUE</code>, overwrite <em class="parameter"><code>dest</code></em> if it already exists</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>profile</code></em> :</span></p></td>
+<td>encoding profile to use, or NULL to just copy</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-encoder-cancel"></a><h3>rb_encoder_cancel ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_encoder_cancel                   (<em class="parameter"><code><a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a> *encoder</code></em>);</pre>
+<p>
+Attempts to cancel any in progress encoding.  The encoder should
+delete the destination file, if it created one, and emit the
+'completed' signal.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>encoder</code></em> :</span></p></td>
+<td>a <a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-encoder-get-missing-plugins"></a><h3>rb_encoder_get_missing_plugins ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_encoder_get_missing_plugins      (<em class="parameter"><code><a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a> *encoder</code></em>,
+                                                         <em class="parameter"><code><a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-encoding-profile.html#GstEncodingProfile"><span class="type">GstEncodingProfile</span></a> *profile</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> ***details</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> ***descriptions</code></em>);</pre>
+<p>
+Retrieves the plugin installer detail strings and descriptions
+for any missing plugins required to use the specified encoding profile.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>encoder</code></em> :</span></p></td>
+<td>a <a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>profile</code></em> :</span></p></td>
+<td>an encoding profile</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>details</code></em> :</span></p></td>
+<td>returns plugin installer detail strings. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a> callee-allocates]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>descriptions</code></em> :</span></p></td>
+<td>returns plugin descriptions. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a> callee-allocates]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if some detail strings are returned, <code class="literal">FALSE</code> otherwise</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBEncoder.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="RBEncoder-completed"></a><h3>The <code class="literal">"completed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a> *encoder,
+                                                        <span class="type">guint64</span>    dest_size,
+                                                        <span class="type">gchar</span>     *mediatype,
+                                                        <span class="type">gpointer</span>   error,
+                                                        <span class="type">gpointer</span>   user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when the encoding process is complete, or when a fatal error
+has occurred.  The destination file, if one exists,  will be closed
+and flushed to disk before this signal is emitted.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>encoder</code></em> :</span></p></td>
+<td>the <a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest_size</code></em> :</span></p></td>
+<td>size of the output file</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>mediatype</code></em> :</span></p></td>
+<td>output media type</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>encoding error, or NULL if successful</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBEncoder-progress"></a><h3>The <code class="literal">"progress"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a> *encoder,
+                                                        <span class="type">gdouble</span>    fraction,
+                                                        <span class="type">gpointer</span>   user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted regularly during the encoding process to provide progress updates.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>encoder</code></em> :</span></p></td>
+<td>the <a class="link" href="RBEncoder.html" title="RBEncoder"><span class="type">RBEncoder</span></a> instance</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fraction</code></em> :</span></p></td>
+<td>progress as a fraction (0..1)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

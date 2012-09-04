@@ -1,0 +1,189 @@
+<!-- ##### SECTION Title ##### -->
+RBTrackTransferBatch
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBTrackTransferBatch ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBTrackTransferBatch::cancelled ##### -->
+<para>
+
+</para>
+
+@rbtracktransferbatch: the object which received the signal.
+
+<!-- ##### SIGNAL RBTrackTransferBatch::complete ##### -->
+<para>
+
+</para>
+
+@rbtracktransferbatch: the object which received the signal.
+
+<!-- ##### SIGNAL RBTrackTransferBatch::configure-profile ##### -->
+<para>
+
+</para>
+
+@rbtracktransferbatch: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL RBTrackTransferBatch::get-dest-uri ##### -->
+<para>
+
+</para>
+
+@rbtracktransferbatch: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@Returns: 
+
+<!-- ##### SIGNAL RBTrackTransferBatch::overwrite-prompt ##### -->
+<para>
+
+</para>
+
+@rbtracktransferbatch: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBTrackTransferBatch::started ##### -->
+<para>
+
+</para>
+
+@rbtracktransferbatch: the object which received the signal.
+
+<!-- ##### SIGNAL RBTrackTransferBatch::track-done ##### -->
+<para>
+
+</para>
+
+@rbtracktransferbatch: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+@arg5: 
+
+<!-- ##### SIGNAL RBTrackTransferBatch::track-progress ##### -->
+<para>
+
+</para>
+
+@rbtracktransferbatch: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+@arg5: 
+
+<!-- ##### SIGNAL RBTrackTransferBatch::track-started ##### -->
+<para>
+
+</para>
+
+@rbtracktransferbatch: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### ARG RBTrackTransferBatch:destination ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBTrackTransferBatch:done-entries ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBTrackTransferBatch:encoding-target ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBTrackTransferBatch:entry-list ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBTrackTransferBatch:progress ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBTrackTransferBatch:source ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBTrackTransferBatch:total-entries ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBTrackTransferBatchClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@started: 
+@cancelled: 
+@complete: 
+@configure_profile: 
+@get_dest_uri: 
+@overwrite_prompt: 
+@track_started: 
+@track_progress: 
+@track_done: 
+
+<!-- ##### FUNCTION rb_track_transfer_batch_new ##### -->
+<para>
+
+</para>
+
+@target: 
+@source: 
+@destination: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_track_transfer_batch_add ##### -->
+<para>
+
+</para>
+
+@batch: 
+@entry: 
+
+
+<!-- ##### FUNCTION rb_track_transfer_batch_cancel ##### -->
+<para>
+
+</para>
+
+@batch: 
+
+

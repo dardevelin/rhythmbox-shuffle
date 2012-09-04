@@ -1,0 +1,1047 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBShell</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch05.html" title="Shell">
+<link rel="prev" href="RBShellPreferences.html" title="RBShellPreferences">
+<link rel="next" href="rhythmbox-RBSourceHeader.html" title="RBSourceHeader">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RBShellPreferences.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch05.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="rhythmbox-RBSourceHeader.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBShell.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBShell.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBShell.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RBShell.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#RBShell.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#RBShell.signals" class="shortcut">Signals</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBShell"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBShell.top_of_page"></a>RBShell</span></h2>
+<p>RBShell — holds the Rhythmbox main window and everything else</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBShell.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBShell.html#RBShell-struct" title="struct RBShell">RBShell</a>;
+struct              <a class="link" href="RBShell.html#RBShellClass" title="struct RBShellClass">RBShellClass</a>;
+<a class="link" href="RBShell.html" title="RBShell"><span class="returnvalue">RBShell</span></a> *           <a class="link" href="RBShell.html#rb-shell-new" title="rb_shell_new ()">rb_shell_new</a>                        (<em class="parameter"><code><span class="type">gboolean</span> autostarted</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> *argc</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> ***argv</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBShell.html#rb-shell-present" title="rb_shell_present ()">rb_shell_present</a>                    (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint32</span> timestamp</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          <a class="link" href="RBShell.html#rb-shell-guess-source-for-uri" title="rb_shell_guess_source_for_uri ()">rb_shell_guess_source_for_uri</a>       (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBShell.html#rb-shell-add-uri" title="rb_shell_add_uri ()">rb_shell_add_uri</a>                    (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *title</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *genre</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBShell.html#rb-shell-load-uri" title="rb_shell_load_uri ()">rb_shell_load_uri</a>                   (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> play</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBShell.html#rb-shell-toggle-visibility" title="rb_shell_toggle_visibility ()">rb_shell_toggle_visibility</a>          (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBShell.html#rb-shell-get-song-properties" title="rb_shell_get_song_properties ()">rb_shell_get_song_properties</a>        (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">GHashTable</span> **properties</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBShell.html#rb-shell-set-song-property" title="rb_shell_set_song_property ()">rb_shell_set_song_property</a>          (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *propname</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">GValue</span> *value</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBShell.html#rb-shell-quit" title="rb_shell_quit ()">rb_shell_quit</a>                       (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBShell.html#rb-shell-do-notify" title="rb_shell_do_notify ()">rb_shell_do_notify</a>                  (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> requested</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBShell.html#rb-shell-register-entry-type-for-source" title="rb_shell_register_entry_type_for_source ()">rb_shell_register_entry_type_for_source</a>
+                                                        (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> *type</code></em>);
+<a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          <a class="link" href="RBShell.html#rb-shell-get-source-by-entry-type" title="rb_shell_get_source_by_entry_type ()">rb_shell_get_source_by_entry_type</a>   (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> *type</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBShell.html#rb-shell-get-party-mode" title="rb_shell_get_party_mode ()">rb_shell_get_party_mode</a>             (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBShell.html#rb-shell-add-widget" title="rb_shell_add_widget ()">rb_shell_add_widget</a>                 (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkWidget</span> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">RBShellUILocation</span> location</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> expand</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> fill</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBShell.html#rb-shell-remove-widget" title="rb_shell_remove_widget ()">rb_shell_remove_widget</a>              (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkWidget</span> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">RBShellUILocation</span> location</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBShell.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GApplication
+         +----GtkApplication
+               +----RBShell
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBShell.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RBShell implements
+ GActionGroup and  GActionMap.</p>
+</div>
+<div class="refsect1">
+<a name="RBShell.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBShell.html#RBShell--autostarted" title='The "autostarted" property'>autostarted</a>"              <span class="type">gboolean</span>              : Read / Write / Construct Only
+  "<a class="link" href="RBShell.html#RBShell--clipboard" title='The "clipboard" property'>clipboard</a>"                <a class="link" href="RBShellClipboard.html" title="RBShellClipboard"><span class="type">RBShellClipboard</span></a>*     : Read
+  "<a class="link" href="RBShell.html#RBShell--db" title='The "db" property'>db</a>"                       <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>*             : Read
+  "<a class="link" href="RBShell.html#RBShell--disable-plugins" title='The "disable-plugins" property'>disable-plugins</a>"          <span class="type">gboolean</span>              : Read / Write / Construct Only
+  "<a class="link" href="RBShell.html#RBShell--display-page-model" title='The "display-page-model" property'>display-page-model</a>"       <span class="type">RBDisplayPageModel</span>*   : Read
+  "<a class="link" href="RBShell.html#RBShell--display-page-tree" title='The "display-page-tree" property'>display-page-tree</a>"        <span class="type">RBDisplayPageTree</span>*    : Read
+  "<a class="link" href="RBShell.html#RBShell--dry-run" title='The "dry-run" property'>dry-run</a>"                  <span class="type">gboolean</span>              : Read / Write / Construct Only
+  "<a class="link" href="RBShell.html#RBShell--library-source" title='The "library-source" property'>library-source</a>"           <a class="link" href="RBLibrarySource.html" title="RBLibrarySource"><span class="type">RBLibrarySource</span></a>*      : Read
+  "<a class="link" href="RBShell.html#RBShell--no-registration" title='The "no-registration" property'>no-registration</a>"          <span class="type">gboolean</span>              : Read / Write / Construct Only
+  "<a class="link" href="RBShell.html#RBShell--no-update" title='The "no-update" property'>no-update</a>"                <span class="type">gboolean</span>              : Read / Write / Construct Only
+  "<a class="link" href="RBShell.html#RBShell--playlist-manager" title='The "playlist-manager" property'>playlist-manager</a>"         <a class="link" href="RBPlaylistManager.html" title="RBPlaylistManager"><span class="type">RBPlaylistManager</span></a>*    : Read
+  "<a class="link" href="RBShell.html#RBShell--playlists-file" title='The "playlists-file" property'>playlists-file</a>"           <span class="type">gchar</span>*                : Read / Write / Construct Only
+  "<a class="link" href="RBShell.html#RBShell--prefs" title='The "prefs" property'>prefs</a>"                    <a class="link" href="RBShellPreferences.html" title="RBShellPreferences"><span class="type">RBShellPreferences</span></a>*   : Read
+  "<a class="link" href="RBShell.html#RBShell--queue-source" title='The "queue-source" property'>queue-source</a>"             <a class="link" href="RBPlayQueueSource.html" title="RBPlayQueueSource"><span class="type">RBPlayQueueSource</span></a>*    : Read
+  "<a class="link" href="RBShell.html#RBShell--removable-media-manager" title='The "removable-media-manager" property'>removable-media-manager</a>"  <a class="link" href="RBRemovableMediaManager.html" title="RBRemovableMediaManager"><span class="type">RBRemovableMediaManager</span></a>*  : Read
+  "<a class="link" href="RBShell.html#RBShell--rhythmdb-file" title='The "rhythmdb-file" property'>rhythmdb-file</a>"            <span class="type">gchar</span>*                : Read / Write / Construct Only
+  "<a class="link" href="RBShell.html#RBShell--selected-page" title='The "selected-page" property'>selected-page</a>"            <span class="type">RBDisplayPage</span>*        : Read
+  "<a class="link" href="RBShell.html#RBShell--shell-player" title='The "shell-player" property'>shell-player</a>"             <a class="link" href="RBShellPlayer.html" title="RBShellPlayer"><span class="type">RBShellPlayer</span></a>*        : Read
+  "<a class="link" href="RBShell.html#RBShell--track-transfer-queue" title='The "track-transfer-queue" property'>track-transfer-queue</a>"     <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a>*  : Read
+  "<a class="link" href="RBShell.html#RBShell--ui-manager" title='The "ui-manager" property'>ui-manager</a>"               <span class="type">GtkUIManager</span>*         : Read
+  "<a class="link" href="RBShell.html#RBShell--visibility" title='The "visibility" property'>visibility</a>"               <span class="type">gboolean</span>              : Read / Write
+  "<a class="link" href="RBShell.html#RBShell--window" title='The "window" property'>window</a>"                   <span class="type">GtkWindow</span>*            : Read
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBShell.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="RBShell.html#RBShell-create-song-info" title='The "create-song-info" signal'>create-song-info</a>"                               : <code class="literal">Run Last</code>
+  "<a class="link" href="RBShell.html#RBShell-notify-custom" title='The "notify-custom" signal'>notify-custom</a>"                                  : <code class="literal">Run Last</code>
+  "<a class="link" href="RBShell.html#RBShell-notify-playing-entry" title='The "notify-playing-entry" signal'>notify-playing-entry</a>"                           : <code class="literal">Run Last</code>
+  "<a class="link" href="RBShell.html#RBShell-visibility-changed" title='The "visibility-changed" signal'>visibility-changed</a>"                             : <code class="literal">Run Last</code>
+  "<a class="link" href="RBShell.html#RBShell-visibility-changing" title='The "visibility-changing" signal'>visibility-changing</a>"                            : <code class="literal">Run Last</code>
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBShell.description"></a><h2>Description</h2>
+<p>
+RBShell is the main application class in Rhythmbox.  It creates and holds
+references to the other main objects (<a class="link" href="RBShellPlayer.html" title="RBShellPlayer"><span class="type">RBShellPlayer</span></a>, <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>, <span class="type">RBDisplayPageTree</span>),
+constructs the main window UI, and provides the basic DBus interface.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBShell.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBShell-struct"></a><h3>struct RBShell</h3>
+<pre class="programlisting">struct RBShell;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShellClass"></a><h3>struct RBShellClass</h3>
+<pre class="programlisting">struct RBShellClass {
+        GtkApplicationClass parent_class;
+
+	/* signals */
+	gboolean (*visibility_changing) (RBShell *shell, gboolean initial, gboolean visible);
+	void	 (*visibility_changed) (RBShell *shell, gboolean visible);
+	void	 (*create_song_info) (RBShell *shell, RBSongInfo *song_info, gboolean multi);
+	void	 (*removable_media_scan_finished) (RBShell *shell);
+	void     (*database_load_complete) (RBShell *shell);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-new"></a><h3>rb_shell_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBShell.html" title="RBShell"><span class="returnvalue">RBShell</span></a> *           rb_shell_new                        (<em class="parameter"><code><span class="type">gboolean</span> autostarted</code></em>,
+                                                         <em class="parameter"><code><span class="type">int</span> *argc</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> ***argv</code></em>);</pre>
+<p>
+Creates the Rhythmbox shell.  This is effectively a singleton, so it doesn't
+make sense to call this from anywhere other than main.c.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>autostarted</code></em> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if autostarted by the session manager</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>argc</code></em> :</span></p></td>
+<td>a pointer to the number of command line arguments</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>argv</code></em> :</span></p></td>
+<td>a pointer to the array of command line arguments</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> instance</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-present"></a><h3>rb_shell_present ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_shell_present                    (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint32</span> timestamp</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Attempts to display the main window to the user.  See <span class="type">gtk_window_present</span> for details.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>timestamp</code></em> :</span></p></td>
+<td>GTK timestamp to use (for focus-stealing prevention)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>not used</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>not used.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-guess-source-for-uri"></a><h3>rb_shell_guess_source_for_uri ()</h3>
+<pre class="programlisting"><a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          rb_shell_guess_source_for_uri       (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>);</pre>
+<p>
+Attempts to locate the source that should handle the specified URI.
+This iterates through all sources, calling <a class="link" href="RBSource.html#rb-source-want-uri" title="rb_source_want_uri ()"><span class="type">rb_source_want_uri</span></a>,
+returning the source that returns the highest value.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>the URI to guess a source for</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the most appropriate <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> for the uri. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-add-uri"></a><h3>rb_shell_add_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_shell_add_uri                    (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *title</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *genre</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Adds the specified URI to the Rhythmbox database.  Whether the
+title and genre specified are actually used is up to the source
+that handles the URI
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>the URI to add</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>title</code></em> :</span></p></td>
+<td>optional title value for the URI</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>genre</code></em> :</span></p></td>
+<td>optional genre value for the URI</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>returns error information</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if the URI was added successfully</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-load-uri"></a><h3>rb_shell_load_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_shell_load_uri                   (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> play</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Loads a URI representing a single song, a directory, a playlist, or
+an internet radio station, and optionally starts playing it.
+</p>
+<p>
+For playlists containing only stream URLs, we either add the playlist
+itself (if it's remote) or each URL from it (if it's local).  The main
+reason for this is so clicking on stream playlist links in web browsers
+works properly - the playlist file will be downloaded to /tmp/, and
+we can't add that to the database, so we need to add the stream URLs
+instead.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>the URI to load</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>play</code></em> :</span></p></td>
+<td>if TRUE, start playing the URI (if possible)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>returns error information</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if the URI was added successfully</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-toggle-visibility"></a><h3>rb_shell_toggle_visibility ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_shell_toggle_visibility          (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>);</pre>
+<p>
+Toggles the visibility of the main Rhythmbox window.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-get-song-properties"></a><h3>rb_shell_get_song_properties ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_shell_get_song_properties        (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">GHashTable</span> **properties</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Gathers and returns all metadata (including extra metadata such as album
+art URIs and lyrics) for the specified URI.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>the URI to query</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>properties</code></em> :</span></p></td>
+<td>(out callee-allocates) (element-type utf8 GObject.Value) returns the properties of the specified URI</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>returns error information</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the URI is found in the database</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-set-song-property"></a><h3>rb_shell_set_song_property ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_shell_set_song_property          (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *propname</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">GValue</span> *value</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Attempts to set a property of a database entry identified by its URI.
+If the URI identifies a file and the property is one associated with a
+file metadata tag, the new value will be written to the file.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>the URI to modify</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>propname</code></em> :</span></p></td>
+<td>the name of the property to modify</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>the new value to set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>returns error information</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the property was set successfully.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-quit"></a><h3>rb_shell_quit ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_shell_quit                       (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Begins the process of shutting down Rhythmbox.  This function will
+return.  The error parameter and return value only exist because this
+function is part of the DBus interface.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>not used</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>not important</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-do-notify"></a><h3>rb_shell_do_notify ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_shell_do_notify                  (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> requested</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Displays a notification of the current playing track.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>requested</code></em> :</span></p></td>
+<td>if <code class="literal">TRUE</code>, the notification was requested by some explicit user action</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>not used</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>not important</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-register-entry-type-for-source"></a><h3>rb_shell_register_entry_type_for_source ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_shell_register_entry_type_for_source
+                                                        (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> *source</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> *type</code></em>);</pre>
+<p>
+Registers a source as the owner of entries of the specified type.
+The main effect of this is that calling <a class="link" href="RBShell.html#rb-shell-get-source-by-entry-type" title="rb_shell_get_source_by_entry_type ()"><span class="type">rb_shell_get_source_by_entry_type</span></a>
+with the same entry type will return the source.  A source should only
+be registered as the owner of a single entry type.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>the <a class="link" href="RBSource.html" title="RBSource"><span class="type">RBSource</span></a> to register</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>the <a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> to register for</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-get-source-by-entry-type"></a><h3>rb_shell_get_source_by_entry_type ()</h3>
+<pre class="programlisting"><a class="link" href="RBSource.html" title="RBSource"><span class="returnvalue">RBSource</span></a> *          rb_shell_get_source_by_entry_type   (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RhythmDBEntryType.html" title="RhythmDBEntryType"><span class="type">RhythmDBEntryType</span></a> *type</code></em>);</pre>
+<p>
+Looks up and returns the source that owns entries of the specified
+type.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>entry type for which to find a source</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>source instance, if any. <span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-get-party-mode"></a><h3>rb_shell_get_party_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_shell_get_party_mode             (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>);</pre>
+<p>
+Returns <code class="literal">TRUE</code> if the shell is in party mode
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the shell is in party mode</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-add-widget"></a><h3>rb_shell_add_widget ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_shell_add_widget                 (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkWidget</span> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">RBShellUILocation</span> location</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> expand</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> fill</code></em>);</pre>
+<p>
+Adds a widget to the main Rhythmbox window.  See <span class="type">gtk_box_pack_start</span> for
+details on how the expand and fill parameters work.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>the <span class="type">GtkWidget</span> to insert into the main window</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>location</code></em> :</span></p></td>
+<td>the location at which to insert the widget</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>expand</code></em> :</span></p></td>
+<td>whether the widget should be given extra space</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fill</code></em> :</span></p></td>
+<td>whether the widget should fill all space allocated to it</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-shell-remove-widget"></a><h3>rb_shell_remove_widget ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_shell_remove_widget              (<em class="parameter"><code><a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell</code></em>,
+                                                         <em class="parameter"><code><span class="type">GtkWidget</span> *widget</code></em>,
+                                                         <em class="parameter"><code><span class="type">RBShellUILocation</span> location</code></em>);</pre>
+<p>
+Removes a widget added with <a class="link" href="RBShell.html#rb-shell-add-widget" title="rb_shell_add_widget ()"><span class="type">rb_shell_add_widget</span></a> from the main window.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>the <span class="type">GtkWidget</span> to remove from the main window</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>location</code></em> :</span></p></td>
+<td>the UI location to which the widget was originally added</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBShell.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="RBShell--autostarted"></a><h3>The <code class="literal">"autostarted"</code> property</h3>
+<pre class="programlisting">  "autostarted"              <span class="type">gboolean</span>              : Read / Write / Construct Only</pre>
+<p>
+Whether Rhythmbox was automatically started by the session manager
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--clipboard"></a><h3>The <code class="literal">"clipboard"</code> property</h3>
+<pre class="programlisting">  "clipboard"                <a class="link" href="RBShellClipboard.html" title="RBShellClipboard"><span class="type">RBShellClipboard</span></a>*     : Read</pre>
+<p>
+The <a class="link" href="RBShellClipboard.html" title="RBShellClipboard"><span class="type">RBShellClipboard</span></a> instance
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--db"></a><h3>The <code class="literal">"db"</code> property</h3>
+<pre class="programlisting">  "db"                       <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a>*             : Read</pre>
+<p>
+The <a class="link" href="RhythmDB.html" title="RhythmDB"><span class="type">RhythmDB</span></a> instance
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--disable-plugins"></a><h3>The <code class="literal">"disable-plugins"</code> property</h3>
+<pre class="programlisting">  "disable-plugins"          <span class="type">gboolean</span>              : Read / Write / Construct Only</pre>
+<p>
+If <code class="literal">TRUE</code>, disable plugins
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--display-page-model"></a><h3>The <code class="literal">"display-page-model"</code> property</h3>
+<pre class="programlisting">  "display-page-model"       <span class="type">RBDisplayPageModel</span>*   : Read</pre>
+<p>
+The model underlying the display page tree
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--display-page-tree"></a><h3>The <code class="literal">"display-page-tree"</code> property</h3>
+<pre class="programlisting">  "display-page-tree"        <span class="type">RBDisplayPageTree</span>*    : Read</pre>
+<p>
+The <span class="type">RBDisplayPageTree</span> instance
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--dry-run"></a><h3>The <code class="literal">"dry-run"</code> property</h3>
+<pre class="programlisting">  "dry-run"                  <span class="type">gboolean</span>              : Read / Write / Construct Only</pre>
+<p>
+If TRUE, don't write back file metadata changes.
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--library-source"></a><h3>The <code class="literal">"library-source"</code> property</h3>
+<pre class="programlisting">  "library-source"           <a class="link" href="RBLibrarySource.html" title="RBLibrarySource"><span class="type">RBLibrarySource</span></a>*      : Read</pre>
+<p>
+The library source
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--no-registration"></a><h3>The <code class="literal">"no-registration"</code> property</h3>
+<pre class="programlisting">  "no-registration"          <span class="type">gboolean</span>              : Read / Write / Construct Only</pre>
+<p>
+If <code class="literal">TRUE</code>, disable single-instance features.
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--no-update"></a><h3>The <code class="literal">"no-update"</code> property</h3>
+<pre class="programlisting">  "no-update"                <span class="type">gboolean</span>              : Read / Write / Construct Only</pre>
+<p>
+If <code class="literal">TRUE</code>, don't update the database.
+</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--playlist-manager"></a><h3>The <code class="literal">"playlist-manager"</code> property</h3>
+<pre class="programlisting">  "playlist-manager"         <a class="link" href="RBPlaylistManager.html" title="RBPlaylistManager"><span class="type">RBPlaylistManager</span></a>*    : Read</pre>
+<p>
+The <a class="link" href="RBPlaylistManager.html" title="RBPlaylistManager"><span class="type">RBPlaylistManager</span></a> instance
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--playlists-file"></a><h3>The <code class="literal">"playlists-file"</code> property</h3>
+<pre class="programlisting">  "playlists-file"           <span class="type">gchar</span>*                : Read / Write / Construct Only</pre>
+<p>
+The path to the playlist file
+</p>
+<p>Default value: "playlists.xml"</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--prefs"></a><h3>The <code class="literal">"prefs"</code> property</h3>
+<pre class="programlisting">  "prefs"                    <a class="link" href="RBShellPreferences.html" title="RBShellPreferences"><span class="type">RBShellPreferences</span></a>*   : Read</pre>
+<p>
+The <a class="link" href="RBShellPreferences.html" title="RBShellPreferences"><span class="type">RBShellPreferences</span></a> instance
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--queue-source"></a><h3>The <code class="literal">"queue-source"</code> property</h3>
+<pre class="programlisting">  "queue-source"             <a class="link" href="RBPlayQueueSource.html" title="RBPlayQueueSource"><span class="type">RBPlayQueueSource</span></a>*    : Read</pre>
+<p>
+The play queue source
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--removable-media-manager"></a><h3>The <code class="literal">"removable-media-manager"</code> property</h3>
+<pre class="programlisting">  "removable-media-manager"  <a class="link" href="RBRemovableMediaManager.html" title="RBRemovableMediaManager"><span class="type">RBRemovableMediaManager</span></a>*  : Read</pre>
+<p>
+The <a class="link" href="RBRemovableMediaManager.html" title="RBRemovableMediaManager"><span class="type">RBRemovableMediaManager</span></a> instance
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--rhythmdb-file"></a><h3>The <code class="literal">"rhythmdb-file"</code> property</h3>
+<pre class="programlisting">  "rhythmdb-file"            <span class="type">gchar</span>*                : Read / Write / Construct Only</pre>
+<p>
+The path to the rhythmdb file
+</p>
+<p>Default value: "rhythmdb.xml"</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--selected-page"></a><h3>The <code class="literal">"selected-page"</code> property</h3>
+<pre class="programlisting">  "selected-page"            <span class="type">RBDisplayPage</span>*        : Read</pre>
+<p>
+The currently selected display page
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--shell-player"></a><h3>The <code class="literal">"shell-player"</code> property</h3>
+<pre class="programlisting">  "shell-player"             <a class="link" href="RBShellPlayer.html" title="RBShellPlayer"><span class="type">RBShellPlayer</span></a>*        : Read</pre>
+<p>
+The <a class="link" href="RBShellPlayer.html" title="RBShellPlayer"><span class="type">RBShellPlayer</span></a> instance
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--track-transfer-queue"></a><h3>The <code class="literal">"track-transfer-queue"</code> property</h3>
+<pre class="programlisting">  "track-transfer-queue"     <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a>*  : Read</pre>
+<p>
+The <a class="link" href="RBTrackTransferQueue.html" title="RBTrackTransferQueue"><span class="type">RBTrackTransferQueue</span></a> instance
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--ui-manager"></a><h3>The <code class="literal">"ui-manager"</code> property</h3>
+<pre class="programlisting">  "ui-manager"               <span class="type">GtkUIManager</span>*         : Read</pre>
+<p>
+The <span class="type">GtkUIManager</span> instance
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--visibility"></a><h3>The <code class="literal">"visibility"</code> property</h3>
+<pre class="programlisting">  "visibility"               <span class="type">gboolean</span>              : Read / Write</pre>
+<p>
+Whether the main window is currently visible.
+</p>
+<p>Default value: TRUE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell--window"></a><h3>The <code class="literal">"window"</code> property</h3>
+<pre class="programlisting">  "window"                   <span class="type">GtkWindow</span>*            : Read</pre>
+<p>
+The main Rhythmbox window.
+</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="RBShell.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="RBShell-create-song-info"></a><h3>The <code class="literal">"create-song-info"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>    *shell,
+                                                        <a class="link" href="RBSongInfo.html" title="RBSongInfo"><span class="type">RBSongInfo</span></a> *song_info,
+                                                        <span class="type">gboolean</span>    multi,
+                                                        <span class="type">gpointer</span>    user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when creating a new <a class="link" href="RBSongInfo.html" title="RBSongInfo"><span class="type">RBSongInfo</span></a> window.  Signal handlers can
+add pages to the song info window notebook to display additional
+information.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>song_info</code></em> :</span></p></td>
+<td>the new <a class="link" href="RBSongInfo.html" title="RBSongInfo"><span class="type">RBSongInfo</span></a> window</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>multi</code></em> :</span></p></td>
+<td>if <code class="literal">TRUE</code>, the song info window is for multiple entries</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell-notify-custom"></a><h3>The <code class="literal">"notify-custom"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell,
+                                                        <span class="type">guint</span>    timeout,
+                                                        <span class="type">gchar</span>   *primary,
+                                                        <span class="type">gchar</span>   *secondary,
+                                                        <span class="type">gchar</span>   *image_uri,
+                                                        <span class="type">gboolean</span> requested,
+                                                        <span class="type">gpointer</span> user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when a custom notification should be displayed to the user.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>timeout</code></em> :</span></p></td>
+<td>length of time (in seconds) to display the notification</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>primary</code></em> :</span></p></td>
+<td>main notification text</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>secondary</code></em> :</span></p></td>
+<td>secondary notification text</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>image_uri</code></em> :</span></p></td>
+<td>URI for an image to include in the notification (optional)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>requested</code></em> :</span></p></td>
+<td>if <code class="literal">TRUE</code>, the notification was triggered by an explicit user action</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell-notify-playing-entry"></a><h3>The <code class="literal">"notify-playing-entry"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell,
+                                                        <span class="type">gboolean</span> arg1,
+                                                        <span class="type">gpointer</span> user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted when a notification should be displayed showing the current
+playing entry.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell-visibility-changed"></a><h3>The <code class="literal">"visibility-changed"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell,
+                                                        <span class="type">gboolean</span> visibile,
+                                                        <span class="type">gpointer</span> user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted after the visibility of the main Rhythmbox window has
+changed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>visibile</code></em> :</span></p></td>
+<td>new visibility</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBShell-visibility-changing"></a><h3>The <code class="literal">"visibility-changing"</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            user_function                      (<a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a> *shell,
+                                                        <span class="type">gboolean</span> initial,
+                                                        <span class="type">gboolean</span> visible,
+                                                        <span class="type">gpointer</span> user_data)      : <code class="literal">Run Last</code></pre>
+<p>
+Emitted before the visibility of the main window changes.  The return
+value overrides the visibility setting.  If multiple signal handlers
+are attached, the last one wins.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shell</code></em> :</span></p></td>
+<td>the <a class="link" href="RBShell.html" title="RBShell"><span class="type">RBShell</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>initial</code></em> :</span></p></td>
+<td>if <code class="literal">TRUE</code>, this is the initial visibility for the window</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>visible</code></em> :</span></p></td>
+<td>new shell visibility</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

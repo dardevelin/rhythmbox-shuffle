@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBStringValueMap</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch02.html" title="Lib">
+<link rel="prev" href="rhythmbox-rb-builder-helpers.html" title="rb-builder-helpers">
+<link rel="next" href="rhythmbox-rb-tree-dnd.html" title="rb-tree-dnd">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rhythmbox-rb-builder-helpers.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="rhythmbox-rb-tree-dnd.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBStringValueMap.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBStringValueMap.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBStringValueMap.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBStringValueMap"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBStringValueMap.top_of_page"></a>RBStringValueMap</span></h2>
+<p>RBStringValueMap — specialized hash table for storing string to GValue mappings</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBStringValueMap.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBStringValueMap.html#RBStringValueMap-struct" title="struct RBStringValueMap">RBStringValueMap</a>;
+struct              <a class="link" href="RBStringValueMap.html#RBStringValueMapClass" title="struct RBStringValueMapClass">RBStringValueMapClass</a>;
+<a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="returnvalue">RBStringValueMap</span></a> *  <a class="link" href="RBStringValueMap.html#rb-string-value-map-new" title="rb_string_value_map_new ()">rb_string_value_map_new</a>             (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBStringValueMap.html#rb-string-value-map-set" title="rb_string_value_map_set ()">rb_string_value_map_set</a>             (<em class="parameter"><code><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a> *map</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">GValue</span> *value</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBStringValueMap.html#rb-string-value-map-get" title="rb_string_value_map_get ()">rb_string_value_map_get</a>             (<em class="parameter"><code><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a> *map</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                                         <em class="parameter"><code><span class="type">GValue</span> *out</code></em>);
+const <span class="returnvalue">GValue</span> *      <a class="link" href="RBStringValueMap.html#rb-string-value-map-peek" title="rb_string_value_map_peek ()">rb_string_value_map_peek</a>            (<em class="parameter"><code><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a> *map</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBStringValueMap.html#rb-string-value-map-remove" title="rb_string_value_map_remove ()">rb_string_value_map_remove</a>          (<em class="parameter"><code><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a> *map</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>);
+<span class="returnvalue">guint</span>               <a class="link" href="RBStringValueMap.html#rb-string-value-map-size" title="rb_string_value_map_size ()">rb_string_value_map_size</a>            (<em class="parameter"><code><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a> *map</code></em>);
+<span class="returnvalue">GHashTable</span> *        <a class="link" href="RBStringValueMap.html#rb-string-value-map-steal-hashtable" title="rb_string_value_map_steal_hashtable ()">rb_string_value_map_steal_hashtable</a> (<em class="parameter"><code><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a> *map</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBStringValueMap.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----RBStringValueMap
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBStringValueMap.description"></a><h2>Description</h2>
+<p>
+Simplifies the use of string:GValue maps with respect to copying of the values
+inserted into the map.  Except for rb_string_value_map_peek, the caller retains
+ownership of values passed in, and assumes ownership of all values returned.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBStringValueMap.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBStringValueMap-struct"></a><h3>struct RBStringValueMap</h3>
+<pre class="programlisting">struct RBStringValueMap;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBStringValueMapClass"></a><h3>struct RBStringValueMapClass</h3>
+<pre class="programlisting">struct RBStringValueMapClass {
+	GObjectClass parent;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-string-value-map-new"></a><h3>rb_string_value_map_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="returnvalue">RBStringValueMap</span></a> *  rb_string_value_map_new             (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Creates a new <a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new empty <a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-string-value-map-set"></a><h3>rb_string_value_map_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_string_value_map_set             (<em class="parameter"><code><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a> *map</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">GValue</span> *value</code></em>);</pre>
+<p>
+Inserts a value into the map.  The value is copied.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>a <a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>key to set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>value to store</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-string-value-map-get"></a><h3>rb_string_value_map_get ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_string_value_map_get             (<em class="parameter"><code><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a> *map</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>,
+                                                         <em class="parameter"><code><span class="type">GValue</span> *out</code></em>);</pre>
+<p>
+Locates and copies the value associated with the key.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>a <a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>key to retrieve</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out</code></em> :</span></p></td>
+<td>returns a copy of the value in the map</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the value was found</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-string-value-map-peek"></a><h3>rb_string_value_map_peek ()</h3>
+<pre class="programlisting">const <span class="returnvalue">GValue</span> *      rb_string_value_map_peek            (<em class="parameter"><code><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a> *map</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>);</pre>
+<p>
+Locates the value associated with the key.  This returns the
+GValue stored in the map, so it cannot be modified.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>a <a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>key to retrieve</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the GValue associated with the key</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-string-value-map-remove"></a><h3>rb_string_value_map_remove ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_string_value_map_remove          (<em class="parameter"><code><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a> *map</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *key</code></em>);</pre>
+<p>
+Removes a value from the map.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>a <a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>key to remove</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">TRUE</code> if the value was found and removed</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-string-value-map-size"></a><h3>rb_string_value_map_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>               rb_string_value_map_size            (<em class="parameter"><code><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a> *map</code></em>);</pre>
+<p>
+Returns the number of entries in the map.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>a <a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>number of entries</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-string-value-map-steal-hashtable"></a><h3>rb_string_value_map_steal_hashtable ()</h3>
+<pre class="programlisting"><span class="returnvalue">GHashTable</span> *        rb_string_value_map_steal_hashtable (<em class="parameter"><code><a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a> *map</code></em>);</pre>
+<p>
+Extracts and returns the underlying hash table from the map,
+and creates a new empty map.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>a <a class="link" href="RBStringValueMap.html" title="RBStringValueMap"><span class="type">RBStringValueMap</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<span class="type">GHashTable</span> from the map. <span class="annotation">[<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

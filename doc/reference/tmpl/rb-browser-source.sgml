@@ -1,0 +1,52 @@
+<!-- ##### SECTION Title ##### -->
+RBBrowserSource
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBBrowserSource ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG RBBrowserSource:populate ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBBrowserSourceClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+@pack_content: 
+@has_drop_support: 
+@show_entry_popup: 
+
+<!-- ##### FUNCTION rb_browser_source_has_drop_support ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+

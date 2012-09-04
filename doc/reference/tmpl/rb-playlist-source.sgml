@@ -1,0 +1,137 @@
+<!-- ##### SECTION Title ##### -->
+RBPlaylistSource
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBPlaylistSource ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG RBPlaylistSource:db ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBPlaylistSource:dirty ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBPlaylistSource:is-local ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBPlaylistSourceClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+@impl_show_entry_view_popup: 
+@impl_save_contents_to_xml: 
+@impl_mark_dirty: 
+
+<!-- ##### FUNCTION rb_playlist_source_new_from_xml ##### -->
+<para>
+
+</para>
+
+@shell: 
+@node: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_source_save_playlist ##### -->
+<para>
+
+</para>
+
+@source: 
+@uri: 
+@export_type: 
+
+
+<!-- ##### FUNCTION rb_playlist_source_save_to_xml ##### -->
+<para>
+
+</para>
+
+@source: 
+@parent_node: 
+
+
+<!-- ##### FUNCTION rb_playlist_source_set_query_model ##### -->
+<para>
+
+</para>
+
+@source: 
+@model: 
+
+
+<!-- ##### FUNCTION rb_playlist_source_get_query_model ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_source_get_db ##### -->
+<para>
+
+</para>
+
+@source: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_source_mark_dirty ##### -->
+<para>
+
+</para>
+
+@source: 
+
+
+<!-- ##### FUNCTION rb_playlist_source_location_in_map ##### -->
+<para>
+
+</para>
+
+@source: 
+@location: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_source_add_to_map ##### -->
+<para>
+
+</para>
+
+@source: 
+@location: 
+@Returns: 
+
+

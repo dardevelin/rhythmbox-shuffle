@@ -1,0 +1,655 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RBMetaData</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch03.html" title="Metadata">
+<link rel="prev" href="ch03.html" title="Metadata">
+<link rel="next" href="ch04.html" title="RhythmDB">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch03.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="ch04.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#RBMetaData.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RBMetaData.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RBMetaData.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="RBMetaData"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RBMetaData.top_of_page"></a>RBMetaData</span></h2>
+<p>RBMetaData — metadata reader and writer interface</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RBMetaData.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">struct              <a class="link" href="RBMetaData.html#RBMetaData-struct" title="struct RBMetaData">RBMetaData</a>;
+struct              <a class="link" href="RBMetaData.html#RBMetaDataClass" title="struct RBMetaDataClass">RBMetaDataClass</a>;
+enum                <a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField">RBMetaDataField</a>;
+enum                <a class="link" href="RBMetaData.html#RBMetaDataError" title="enum RBMetaDataError">RBMetaDataError</a>;
+<a class="link" href="RBMetaData.html" title="RBMetaData"><span class="returnvalue">RBMetaData</span></a> *        <a class="link" href="RBMetaData.html#rb-metadata-new" title="rb_metadata_new ()">rb_metadata_new</a>                     (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">GType</span>               <a class="link" href="RBMetaData.html#rb-metadata-get-field-type" title="rb_metadata_get_field_type ()">rb_metadata_get_field_type</a>          (<em class="parameter"><code><a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a> field</code></em>);
+const <span class="returnvalue">char</span> *        <a class="link" href="RBMetaData.html#rb-metadata-get-field-name" title="rb_metadata_get_field_name ()">rb_metadata_get_field_name</a>          (<em class="parameter"><code><a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a> field</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBMetaData.html#rb-metadata-can-save" title="rb_metadata_can_save ()">rb_metadata_can_save</a>                (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *media_type</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBMetaData.html#rb-metadata-load" title="rb_metadata_load ()">rb_metadata_load</a>                    (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="RBMetaData.html#rb-metadata-save" title="rb_metadata_save ()">rb_metadata_save</a>                    (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);
+const <span class="returnvalue">char</span> *        <a class="link" href="RBMetaData.html#rb-metadata-get-media-type" title="rb_metadata_get_media_type ()">rb_metadata_get_media_type</a>          (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBMetaData.html#rb-metadata-has-missing-plugins" title="rb_metadata_has_missing_plugins ()">rb_metadata_has_missing_plugins</a>     (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBMetaData.html#rb-metadata-get-missing-plugins" title="rb_metadata_get_missing_plugins ()">rb_metadata_get_missing_plugins</a>     (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> ***missing_plugins</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> ***plugin_descriptions</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBMetaData.html#rb-metadata-get" title="rb_metadata_get ()">rb_metadata_get</a>                     (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a> field</code></em>,
+                                                         <em class="parameter"><code><span class="type">GValue</span> *val</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="RBMetaData.html#rb-metadata-set" title="rb_metadata_set ()">rb_metadata_set</a>                     (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a> field</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">GValue</span> *val</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBMetaData.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----RBMetaData
+</pre>
+</div>
+<div class="refsect1">
+<a name="RBMetaData.description"></a><h2>Description</h2>
+<p>
+Provides a simple synchronous interface for metadata extraction and updating.
+</p>
+</div>
+<div class="refsect1">
+<a name="RBMetaData.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBMetaData-struct"></a><h3>struct RBMetaData</h3>
+<pre class="programlisting">struct RBMetaData;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBMetaDataClass"></a><h3>struct RBMetaDataClass</h3>
+<pre class="programlisting">struct RBMetaDataClass {
+	GObjectClass parent_class;
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBMetaDataField"></a><h3>enum RBMetaDataField</h3>
+<pre class="programlisting">typedef enum {
+	RB_METADATA_FIELD_TITLE,                   /* string */
+	RB_METADATA_FIELD_ARTIST,                  /* string */
+	RB_METADATA_FIELD_ALBUM,                   /* string */
+	RB_METADATA_FIELD_DATE,                    /* ulong */
+	RB_METADATA_FIELD_GENRE,                   /* string */
+	RB_METADATA_FIELD_COMMENT,                 /* string */
+	RB_METADATA_FIELD_TRACK_NUMBER,            /* ulong */
+	RB_METADATA_FIELD_MAX_TRACK_NUMBER,        /* ulong */
+	RB_METADATA_FIELD_DISC_NUMBER,             /* ulong */
+	RB_METADATA_FIELD_MAX_DISC_NUMBER,         /* ulong */
+	RB_METADATA_FIELD_DESCRIPTION,             /* string */
+	RB_METADATA_FIELD_VERSION,                 /* string */
+	RB_METADATA_FIELD_ISRC,                    /* string */
+	RB_METADATA_FIELD_ORGANIZATION,            /* string */
+	RB_METADATA_FIELD_COPYRIGHT,               /* string */
+	RB_METADATA_FIELD_CONTACT,                 /* string */
+	RB_METADATA_FIELD_LICENSE,                 /* string */
+	RB_METADATA_FIELD_PERFORMER,               /* string */
+	RB_METADATA_FIELD_DURATION,                /* ulong */
+	RB_METADATA_FIELD_CODEC,		   /* string */
+	RB_METADATA_FIELD_BITRATE,                 /* ulong */
+	RB_METADATA_FIELD_TRACK_GAIN,		   /* double */
+	RB_METADATA_FIELD_TRACK_PEAK,		   /* double */
+	RB_METADATA_FIELD_ALBUM_GAIN,		   /* double */
+	RB_METADATA_FIELD_ALBUM_PEAK,		   /* double */
+	RB_METADATA_FIELD_LANGUAGE_CODE,	   /* string */
+	RB_METADATA_FIELD_BPM,			   /* double */
+	RB_METADATA_FIELD_MUSICBRAINZ_TRACKID,     /* string */
+	RB_METADATA_FIELD_MUSICBRAINZ_ARTISTID,    /* string */
+	RB_METADATA_FIELD_MUSICBRAINZ_ALBUMID,     /* string */
+	RB_METADATA_FIELD_MUSICBRAINZ_ALBUMARTISTID,   /* string */
+	RB_METADATA_FIELD_ARTIST_SORTNAME,         /* string */
+	RB_METADATA_FIELD_ALBUM_SORTNAME,          /* string */
+	RB_METADATA_FIELD_ALBUM_ARTIST,            /* string */
+	RB_METADATA_FIELD_ALBUM_ARTIST_SORTNAME,   /* string */
+
+	RB_METADATA_FIELD_LAST			   /* nothing */
+} RBMetaDataField;
+</pre>
+<p>
+Metadata fields that can be read from and written to files.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-TITLE:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_TITLE</code></span></p></td>
+<td>Title of the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-ARTIST:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_ARTIST</code></span></p></td>
+<td>Person(s) responsible for the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-ALBUM:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_ALBUM</code></span></p></td>
+<td>Album containing the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-DATE:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_DATE</code></span></p></td>
+<td>Release date of the album
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-GENRE:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_GENRE</code></span></p></td>
+<td>Genre of the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-COMMENT:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_COMMENT</code></span></p></td>
+<td>Free form comment on the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-TRACK-NUMBER:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_TRACK_NUMBER</code></span></p></td>
+<td>Track number inside a collection
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-MAX-TRACK-NUMBER:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_MAX_TRACK_NUMBER</code></span></p></td>
+<td>Count of tracks inside the collection
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-DISC-NUMBER:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_DISC_NUMBER</code></span></p></td>
+<td>Disc number inside a collection
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-MAX-DISC-NUMBER:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_MAX_DISC_NUMBER</code></span></p></td>
+<td>Count of discs inside the collection
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-DESCRIPTION:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_DESCRIPTION</code></span></p></td>
+<td>Short text describing the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-VERSION:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_VERSION</code></span></p></td>
+<td>Version of the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-ISRC:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_ISRC</code></span></p></td>
+<td>International Standard Recording Code
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-ORGANIZATION:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_ORGANIZATION</code></span></p></td>
+<td>Organization responsible for the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-COPYRIGHT:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_COPYRIGHT</code></span></p></td>
+<td>Copyright notice on the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-CONTACT:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_CONTACT</code></span></p></td>
+<td>Contact information
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-LICENSE:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_LICENSE</code></span></p></td>
+<td>License of the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-PERFORMER:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_PERFORMER</code></span></p></td>
+<td>Person(s) performing in the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-DURATION:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_DURATION</code></span></p></td>
+<td>Duration of the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-CODEC:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_CODEC</code></span></p></td>
+<td>Codec used to store the recording
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-BITRATE:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_BITRATE</code></span></p></td>
+<td>Exact or average encoding bitrate in bits/s
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-TRACK-GAIN:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_TRACK_GAIN</code></span></p></td>
+<td>Track gain in dB for replaygain
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-TRACK-PEAK:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_TRACK_PEAK</code></span></p></td>
+<td>Track peak volume level
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-ALBUM-GAIN:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_ALBUM_GAIN</code></span></p></td>
+<td>Album gain in dB for replaygain
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-ALBUM-PEAK:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_ALBUM_PEAK</code></span></p></td>
+<td>Album peak volume level
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-LANGUAGE-CODE:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_LANGUAGE_CODE</code></span></p></td>
+<td>Language code (ISO-639-1)
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-BPM:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_BPM</code></span></p></td>
+<td>Beats Per Minute
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-MUSICBRAINZ-TRACKID:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_MUSICBRAINZ_TRACKID</code></span></p></td>
+<td>MusicBrainz track ID
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-MUSICBRAINZ-ARTISTID:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_MUSICBRAINZ_ARTISTID</code></span></p></td>
+<td>MusicBrainz artist ID
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-MUSICBRAINZ-ALBUMID:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_MUSICBRAINZ_ALBUMID</code></span></p></td>
+<td>MusicBrainz album ID
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-MUSICBRAINZ-ALBUMARTISTID:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_MUSICBRAINZ_ALBUMARTISTID</code></span></p></td>
+<td>MusicBrainz album artist ID
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-ARTIST-SORTNAME:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_ARTIST_SORTNAME</code></span></p></td>
+<td>Person(s) responsible for the recording, as used for sorting
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-ALBUM-SORTNAME:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_ALBUM_SORTNAME</code></span></p></td>
+<td>Album containing the recording, as used for sorting
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-ALBUM-ARTIST:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_ALBUM_ARTIST</code></span></p></td>
+<td>The artist of the entire album
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-ALBUM-ARTIST-SORTNAME:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_ALBUM_ARTIST_SORTNAME</code></span></p></td>
+<td>The artist of the entire album, as it should be sorted
+</td>
+</tr>
+<tr>
+<td><p><a name="RB-METADATA-FIELD-LAST:CAPS"></a><span class="term"><code class="literal">RB_METADATA_FIELD_LAST</code></span></p></td>
+<td>invalid field
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBMetaDataError"></a><h3>enum RBMetaDataError</h3>
+<pre class="programlisting">typedef enum {
+	RB_METADATA_ERROR_IO,
+	RB_METADATA_ERROR_MISSING_PLUGIN,
+	RB_METADATA_ERROR_UNRECOGNIZED,
+	RB_METADATA_ERROR_UNSUPPORTED,
+	RB_METADATA_ERROR_GENERAL,
+	RB_METADATA_ERROR_INTERNAL,
+	RB_METADATA_ERROR_EMPTY_FILE
+} RBMetaDataError;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-metadata-new"></a><h3>rb_metadata_new ()</h3>
+<pre class="programlisting"><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="returnvalue">RBMetaData</span></a> *        rb_metadata_new                     (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Creates a new metadata backend instance.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> instance</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-metadata-get-field-type"></a><h3>rb_metadata_get_field_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">GType</span>               rb_metadata_get_field_type          (<em class="parameter"><code><a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a> field</code></em>);</pre>
+<p>
+Returns the <span class="type">GType</span> of the value for a metadata field.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>a <a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>value type</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-metadata-get-field-name"></a><h3>rb_metadata_get_field_name ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *        rb_metadata_get_field_name          (<em class="parameter"><code><a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a> field</code></em>);</pre>
+<p>
+Returns the name of a metadata field.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>a <a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>field name</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-metadata-can-save"></a><h3>rb_metadata_can_save ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_metadata_can_save                (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *media_type</code></em>);</pre>
+<p>
+Checks if the metadata writer is capable of updating file metadata
+for a given media type.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>md</code></em> :</span></p></td>
+<td>a <a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>media_type</code></em> :</span></p></td>
+<td>the media type string to check</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if the file metadata for the given media type can be updated</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-metadata-load"></a><h3>rb_metadata_load ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_metadata_load                    (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Reads metadata information from the specified URI.
+Once this has returned successfully (with *error == NULL),
+rb_metadata_get, rb_metadata_get_media_type, rb_metadata_has_missing_plugins,
+and rb_metadata_get_missing_plugins can usefully be called.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>md</code></em> :</span></p></td>
+<td>a <a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>URI from which to load metadata</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>returns error information</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-metadata-save"></a><h3>rb_metadata_save ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_metadata_save                    (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">char</span> *uri</code></em>,
+                                                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+Saves all metadata changes made with rb_metadata_set to the
+target URI.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>md</code></em> :</span></p></td>
+<td>a <a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>the target URI</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>returns error information</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-metadata-get-media-type"></a><h3>rb_metadata_get_media_type ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *        rb_metadata_get_media_type          (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>);</pre>
+<p>
+Returns the type of the file from which metadata was read.
+This may look like a MIME type, but it isn't.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>md</code></em> :</span></p></td>
+<td>a <a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>media type string</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-metadata-has-missing-plugins"></a><h3>rb_metadata_has_missing_plugins ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_metadata_has_missing_plugins     (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>);</pre>
+<p>
+If the metadata reader could not decode the file it was asked to
+because one or more media framework plugins (specifically, for the
+existing implementations, GStreamer plugins) required are missing,
+this will return TRUE.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>md</code></em> :</span></p></td>
+<td>a <a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if required plugins are missing</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-metadata-get-missing-plugins"></a><h3>rb_metadata_get_missing_plugins ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_metadata_get_missing_plugins     (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> ***missing_plugins</code></em>,
+                                                         <em class="parameter"><code><span class="type">char</span> ***plugin_descriptions</code></em>);</pre>
+<p>
+This function returns the information used to request automatic
+installation of media framework plugins required to decode the target URI.
+Use <code class="function">g_strfreev()</code> to free the returned information arrays.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>md</code></em> :</span></p></td>
+<td>a <a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>missing_plugins</code></em> :</span></p></td>
+<td>returns machine-readable
+missing plugin information. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> zero-terminated=1]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin_descriptions</code></em> :</span></p></td>
+<td>returns human-readable
+missing plugin descriptions. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a>][<a href="http://foldoc.org/array"><span class="acronym">array</span></a> zero-terminated=1]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if missing plugin information was returned</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-metadata-get"></a><h3>rb_metadata_get ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_metadata_get                     (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a> field</code></em>,
+                                                         <em class="parameter"><code><span class="type">GValue</span> *val</code></em>);</pre>
+<p>
+Retrieves the value of a metadata field extracted from the target URI.
+If the target URI contained no value for the field, returns FALSE.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>md</code></em> :</span></p></td>
+<td>a <a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>the <a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a> to retrieve</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>returns the field value. <span class="annotation">[<a href="http://foldoc.org/out"><span class="acronym">out</span></a> caller-allocates][<a href="http://foldoc.org/transfer%20full"><span class="acronym">transfer full</span></a>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if a value was returned</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-metadata-set"></a><h3>rb_metadata_set ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            rb_metadata_set                     (<em class="parameter"><code><a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> *md</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a> field</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">GValue</span> *val</code></em>);</pre>
+<p>
+Sets a metadata field value.  The value is only stored inside the
+<a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a> object until rb_metadata_save is called.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>md</code></em> :</span></p></td>
+<td>a <a class="link" href="RBMetaData.html" title="RBMetaData"><span class="type">RBMetaData</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>the <a class="link" href="RBMetaData.html#RBMetaDataField" title="enum RBMetaDataField"><span class="type">RBMetaDataField</span></a> to set</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>the value to set</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if the field is valid</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

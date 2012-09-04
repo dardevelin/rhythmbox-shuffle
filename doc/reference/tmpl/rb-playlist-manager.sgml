@@ -1,0 +1,252 @@
+<!-- ##### SECTION Title ##### -->
+RBPlaylistManager
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBPlaylistManager ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBPlaylistManager::load-finish ##### -->
+<para>
+
+</para>
+
+@rbplaylistmanager: the object which received the signal.
+
+<!-- ##### SIGNAL RBPlaylistManager::load-start ##### -->
+<para>
+
+</para>
+
+@rbplaylistmanager: the object which received the signal.
+
+<!-- ##### SIGNAL RBPlaylistManager::playlist-added ##### -->
+<para>
+
+</para>
+
+@rbplaylistmanager: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBPlaylistManager::playlist-created ##### -->
+<para>
+
+</para>
+
+@rbplaylistmanager: the object which received the signal.
+@arg1: 
+
+<!-- ##### ARG RBPlaylistManager:display-page-model ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBPlaylistManager:display-page-tree ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBPlaylistManager:playlists-file ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBPlaylistManager:shell ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBPlaylistManager:source ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBPlaylistManagerClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@playlist_added: 
+@playlist_created: 
+@load_start: 
+@load_finish: 
+
+<!-- ##### ENUM RBPlaylistManagerError ##### -->
+<para>
+
+</para>
+
+@RB_PLAYLIST_MANAGER_ERROR_PARSE: 
+@RB_PLAYLIST_MANAGER_ERROR_PLAYLIST_EXISTS: 
+@RB_PLAYLIST_MANAGER_ERROR_PLAYLIST_NOT_FOUND: 
+
+<!-- ##### FUNCTION rb_playlist_manager_new ##### -->
+<para>
+
+</para>
+
+@shell: 
+@page_model: 
+@page_tree: 
+@playlists_file: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_shutdown ##### -->
+<para>
+
+</para>
+
+@mgr: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_parse_file ##### -->
+<para>
+
+</para>
+
+@mgr: 
+@uri: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_load_playlists ##### -->
+<para>
+
+</para>
+
+@mgr: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_save_playlists ##### -->
+<para>
+
+</para>
+
+@mgr: 
+@force: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_new_playlist ##### -->
+<para>
+
+</para>
+
+@mgr: 
+@suggested_name: 
+@automatic: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_new_playlist_from_selection_data ##### -->
+<para>
+
+</para>
+
+@mgr: 
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_get_playlists ##### -->
+<para>
+
+</para>
+
+@mgr: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_get_playlist_names ##### -->
+<para>
+
+</para>
+
+@mgr: 
+@playlists: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_create_static_playlist ##### -->
+<para>
+
+</para>
+
+@mgr: 
+@name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_delete_playlist ##### -->
+<para>
+
+</para>
+
+@mgr: 
+@name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_add_to_playlist ##### -->
+<para>
+
+</para>
+
+@mgr: 
+@name: 
+@uri: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_remove_from_playlist ##### -->
+<para>
+
+</para>
+
+@mgr: 
+@name: 
+@uri: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_playlist_manager_export_playlist ##### -->
+<para>
+
+</para>
+
+@mgr: 
+@name: 
+@uri: 
+@m3u_format: 
+@error: 
+@Returns: 
+
+

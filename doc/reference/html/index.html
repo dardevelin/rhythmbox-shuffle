@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Rhythmbox Development Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="next" href="ch01.html" title="Backends">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="book">
+<div class="titlepage">
+<div><div><table class="navigation" id="top" width="100%" cellpadding="2" cellspacing="0"><tr><th valign="middle"><p class="title">Rhythmbox Development Reference Manual</p></th></tr></table></div></div>
+<hr>
+</div>
+<div class="toc"><dl>
+<dt><span class="chapter"><a href="ch01.html">Backends</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="RBPlayer.html">RBPlayer</a></span><span class="refpurpose"> — playback backend interface</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBPlayerGstDataTee.html">RBPlayerGstDataTee</a></span><span class="refpurpose"> — player interface for processing raw data</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBPlayerGstFilter.html">RBPlayerGstFilter</a></span><span class="refpurpose"> — player interface for inserting filter elements</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBPlayerGstTee.html">RBPlayerGstTee</a></span><span class="refpurpose"> — player interface for inserting additional sinks</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBEncoder.html">RBEncoder</a></span><span class="refpurpose"> — audio transcoder interface</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch02.html">Lib</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="rhythmbox-Media-player-ID.html">Media player ID</a></span><span class="refpurpose"> — Media player device information library</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="rhythmbox-rb-async-queue-watch.html">rb-async-queue-watch</a></span><span class="refpurpose"> — GSource for watching a GAsyncQueue in the main loop</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="rhythmbox-rb-debug.html">rb-debug</a></span><span class="refpurpose"> — debugging support functions</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="rhythmbox-rb-file-helpers.html">rb-file-helpers</a></span><span class="refpurpose"> — An assortment of file and URI helper functions</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="rhythmbox-rb-builder-helpers.html">rb-builder-helpers</a></span><span class="refpurpose"> — helper functions for dealing with GtkBuilder files</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBStringValueMap.html">RBStringValueMap</a></span><span class="refpurpose"> — specialized hash table for storing string to GValue mappings</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="rhythmbox-rb-tree-dnd.html">rb-tree-dnd</a></span><span class="refpurpose"> — multi-row drag and drop support for GtkTreeViews</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="rhythmbox-rb-util.html">rb-util</a></span><span class="refpurpose"> — assorted utility functions</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="rhythmbox-rb-text-helpers.html">rb-text-helpers</a></span><span class="refpurpose"> — text direction (LTR/RTL) functions</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch03.html">Metadata</a></span></dt>
+<dd><dl><dt>
+<span class="refentrytitle"><a href="RBMetaData.html">RBMetaData</a></span><span class="refpurpose"> — metadata reader and writer interface</span>
+</dt></dl></dd>
+<dt><span class="chapter"><a href="ch04.html">RhythmDB</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="RhythmDBEntryType.html">RhythmDBEntryType</a></span><span class="refpurpose"> — Database entry type base class</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RhythmDBImportJob.html">RhythmDBImportJob</a></span><span class="refpurpose"> — batch import job</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RhythmDBPropertyModel.html">RhythmDBPropertyModel</a></span><span class="refpurpose"> — tree model grouping entries from a query model by property values</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RhythmDBQueryModel.html">RhythmDBQueryModel</a></span><span class="refpurpose"> — a <span class="type">GtkTreeModel</span> containing <a class="link" href="RhythmDB.html#RhythmDBEntry"><span class="type">RhythmDBEntry</span></a> items</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RhythmDBQueryResults.html">RhythmDBQueryResults</a></span><span class="refpurpose"> — interface for receiving query results from RhythmDB</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RhythmDB.html">RhythmDB</a></span><span class="refpurpose"> — Rhythmbox database functions</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch05.html">Shell</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="RBHistory.html">RBHistory</a></span><span class="refpurpose"> — sequence data structure useful for implementing play orders</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBPlayOrder.html">RBPlayOrder</a></span><span class="refpurpose"> — base class for play order implementations</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBRandomPlayOrder.html">RBRandomPlayOrder</a></span><span class="refpurpose"> — base class for weighted random play orders</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBPlaylistManager.html">RBPlaylistManager</a></span><span class="refpurpose"> — Playlist management object</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBRemovableMediaManager.html">RBRemovableMediaManager</a></span><span class="refpurpose"> — handling of removable media such as audio CDs and DAP devices</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBShellClipboard.html">RBShellClipboard</a></span><span class="refpurpose"> — cut and paste handling</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBShellPlayer.html">RBShellPlayer</a></span><span class="refpurpose"> — playback state management</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBShellPreferences.html">RBShellPreferences</a></span><span class="refpurpose"> — preferences dialog</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBShell.html">RBShell</a></span><span class="refpurpose"> — holds the Rhythmbox main window and everything else</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="rhythmbox-RBSourceHeader.html">RBSourceHeader</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBStatusbar.html">RBStatusbar</a></span><span class="refpurpose"> — status bar widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBTrackTransferBatch.html">RBTrackTransferBatch</a></span><span class="refpurpose"> — batch track transfer job</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBTrackTransferQueue.html">RBTrackTransferQueue</a></span><span class="refpurpose"> — track transfer queue and surrounding junk</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch06.html">Sources</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="RBAutoPlaylistSource.html">RBAutoPlaylistSource</a></span><span class="refpurpose"> — automatic playlist source, based on a database query</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBBrowserSource.html">RBBrowserSource</a></span><span class="refpurpose"> — base class for sources that include genre/artist/album browsers</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBImportErrorsSource.html">RBImportErrorsSource</a></span><span class="refpurpose"> — source for displaying import errors</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBLibrarySource.html">RBLibrarySource</a></span><span class="refpurpose"> — main library source, containing all local songs</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBMissingFilesSource.html">RBMissingFilesSource</a></span><span class="refpurpose"> — source displaying files missing from the library</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBMediaPlayerSource.html">RBMediaPlayerSource</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBPlayQueueSource.html">RBPlayQueueSource</a></span><span class="refpurpose"> — source object for the play queue</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBPlaylistSource.html">RBPlaylistSource</a></span><span class="refpurpose"> — Base class for playlist sources</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="rhythmbox-RBRemovableMediaSource.html">RBRemovableMediaSource</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBSourceSearch.html">RBSourceSearch</a></span><span class="refpurpose"> — Base class for source search implementations</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBSourceSearchBasic.html">RBSourceSearchBasic</a></span><span class="refpurpose"> — Simple implementation of <a class="link" href="RBSourceSearch.html" title="RBSourceSearch"><span class="type">RBSourceSearch</span></a></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBSource.html">RBSource</a></span><span class="refpurpose"> — base class for sources</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBStaticPlaylistSource.html">RBStaticPlaylistSource</a></span><span class="refpurpose"> — Manually defined playlist class</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBStreamingSource.html">RBStreamingSource</a></span><span class="refpurpose"> — Base class for streaming sources such as internet radio</span>
+</dt>
+</dl></dd>
+<dt><span class="chapter"><a href="ch07.html">Widgets</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="RBCellRendererPixbuf.html">RBCellRendererPixbuf</a></span><span class="refpurpose"> — <span class="type">GtkCellRenderer</span> for displaying pixbufs in tree views</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBCellRendererRating.html">RBCellRendererRating</a></span><span class="refpurpose"> — a <span class="type">GtkCellRenderer</span> for displaying song ratings</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="rhythmbox-rb-dialog.html">rb-dialog</a></span><span class="refpurpose"> — helper functions for creating gtk+ dialog windows</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBEntryView.html">RBEntryView</a></span><span class="refpurpose"> — a <span class="type">GtkTreeView</span> for displaying track listings</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBHeader.html">RBHeader</a></span><span class="refpurpose"> — playback area widgetry</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBLibraryBrowser.html">RBLibraryBrowser</a></span><span class="refpurpose"> — album/artist/genre browser widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBPropertyView.html">RBPropertyView</a></span><span class="refpurpose"> — a <span class="type">GtkTreeView</span> backed by a <a class="link" href="RhythmDBPropertyModel.html" title="RhythmDBPropertyModel"><span class="type">RhythmDBPropertyModel</span></a></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBQueryCreator.html">RBQueryCreator</a></span><span class="refpurpose"> — database query creator widget</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="rhythmbox-rb-rating-helper.html">rb-rating-helper</a></span><span class="refpurpose"> — helper functions for displaying song ratings</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBRating.html">RBRating</a></span><span class="refpurpose"> — widget for displaying song ratings</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBSearchEntry.html">RBSearchEntry</a></span><span class="refpurpose"> — text entry widget for the search box</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBSongInfo.html">RBSongInfo</a></span><span class="refpurpose"> — song properties dialog</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="RBURIDialog.html">RBURIDialog</a></span><span class="refpurpose"> — simple URI entry dialog</span>
+</dt>
+</dl></dd>
+</dl></div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

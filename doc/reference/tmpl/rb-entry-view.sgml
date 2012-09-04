@@ -1,0 +1,394 @@
+<!-- ##### SECTION Title ##### -->
+RBEntryView
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBEntryView ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBEntryView::entries-replaced ##### -->
+<para>
+
+</para>
+
+@rbentryview: the object which received the signal.
+
+<!-- ##### SIGNAL RBEntryView::entry-activated ##### -->
+<para>
+
+</para>
+
+@rbentryview: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBEntryView::entry-added ##### -->
+<para>
+
+</para>
+
+@rbentryview: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBEntryView::entry-deleted ##### -->
+<para>
+
+</para>
+
+@rbentryview: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBEntryView::have-selection-changed ##### -->
+<para>
+
+</para>
+
+@rbentryview: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBEntryView::selection-changed ##### -->
+<para>
+
+</para>
+
+@rbentryview: the object which received the signal.
+
+<!-- ##### SIGNAL RBEntryView::show-popup ##### -->
+<para>
+
+</para>
+
+@rbentryview: the object which received the signal.
+@arg1: 
+
+<!-- ##### ARG RBEntryView:db ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBEntryView:is-drag-dest ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBEntryView:is-drag-source ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBEntryView:model ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBEntryView:playing-state ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBEntryView:shell-player ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBEntryView:sort-order ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBEntryView:visible-columns ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBEntryViewClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+@entry_added: 
+@entry_deleted: 
+@entries_replaced: 
+@entry_activated: 
+@have_selection_changed: 
+@selection_changed: 
+@show_popup: 
+
+<!-- ##### ENUM RBEntryViewColumn ##### -->
+<para>
+
+</para>
+
+@RB_ENTRY_VIEW_COL_TRACK_NUMBER: 
+@RB_ENTRY_VIEW_COL_TITLE: 
+@RB_ENTRY_VIEW_COL_ARTIST: 
+@RB_ENTRY_VIEW_COL_ALBUM: 
+@RB_ENTRY_VIEW_COL_GENRE: 
+@RB_ENTRY_VIEW_COL_COMMENT: 
+@RB_ENTRY_VIEW_COL_DURATION: 
+@RB_ENTRY_VIEW_COL_QUALITY: 
+@RB_ENTRY_VIEW_COL_RATING: 
+@RB_ENTRY_VIEW_COL_PLAY_COUNT: 
+@RB_ENTRY_VIEW_COL_YEAR: 
+@RB_ENTRY_VIEW_COL_LAST_PLAYED: 
+@RB_ENTRY_VIEW_COL_FIRST_SEEN: 
+@RB_ENTRY_VIEW_COL_LAST_SEEN: 
+@RB_ENTRY_VIEW_COL_LOCATION: 
+@RB_ENTRY_VIEW_COL_BPM: 
+@RB_ENTRY_VIEW_COL_ERROR: 
+
+<!-- ##### FUNCTION rb_entry_view_new ##### -->
+<para>
+
+</para>
+
+@db: 
+@shell_player: 
+@is_drag_source: 
+@is_drag_dest: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_entry_view_append_column ##### -->
+<para>
+
+</para>
+
+@view: 
+@coltype: 
+@always_visible: 
+
+
+<!-- ##### FUNCTION rb_entry_view_append_column_custom ##### -->
+<para>
+
+</para>
+
+@view: 
+@column: 
+@title: 
+@key: 
+@sort_func: 
+@data: 
+@data_destroy: 
+
+
+<!-- ##### FUNCTION rb_entry_view_insert_column_custom ##### -->
+<para>
+
+</para>
+
+@view: 
+@column: 
+@title: 
+@key: 
+@sort_func: 
+@data: 
+@data_destroy: 
+@position: 
+
+
+<!-- ##### FUNCTION rb_entry_view_set_columns_clickable ##### -->
+<para>
+
+</para>
+
+@view: 
+@clickable: 
+
+
+<!-- ##### FUNCTION rb_entry_view_set_model ##### -->
+<para>
+
+</para>
+
+@view: 
+@model: 
+
+
+<!-- ##### FUNCTION rb_entry_view_set_state ##### -->
+<para>
+
+</para>
+
+@view: 
+@state: 
+
+
+<!-- ##### FUNCTION rb_entry_view_have_selection ##### -->
+<para>
+
+</para>
+
+@view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_entry_view_have_complete_selection ##### -->
+<para>
+
+</para>
+
+@view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_entry_view_get_selected_entries ##### -->
+<para>
+
+</para>
+
+@view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_entry_view_select_all ##### -->
+<para>
+
+</para>
+
+@view: 
+
+
+<!-- ##### FUNCTION rb_entry_view_select_none ##### -->
+<para>
+
+</para>
+
+@view: 
+
+
+<!-- ##### FUNCTION rb_entry_view_select_entry ##### -->
+<para>
+
+</para>
+
+@view: 
+@entry: 
+
+
+<!-- ##### FUNCTION rb_entry_view_get_entry_contained ##### -->
+<para>
+
+</para>
+
+@view: 
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_entry_view_get_entry_visible ##### -->
+<para>
+
+</para>
+
+@view: 
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_entry_view_scroll_to_entry ##### -->
+<para>
+
+</para>
+
+@view: 
+@entry: 
+
+
+<!-- ##### FUNCTION rb_entry_view_enable_drag_source ##### -->
+<para>
+
+</para>
+
+@view: 
+@targets: 
+@n_targets: 
+
+
+<!-- ##### FUNCTION rb_entry_view_get_sorting_order ##### -->
+<para>
+
+</para>
+
+@view: 
+@column_name: 
+@sort_order: 
+
+
+<!-- ##### FUNCTION rb_entry_view_set_sorting_order ##### -->
+<para>
+
+</para>
+
+@view: 
+@column_name: 
+@sort_order: 
+
+
+<!-- ##### FUNCTION rb_entry_view_get_sorting_type ##### -->
+<para>
+
+</para>
+
+@view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_entry_view_set_sorting_type ##### -->
+<para>
+
+</para>
+
+@view: 
+@sorttype: 
+
+
+<!-- ##### FUNCTION rb_entry_view_set_fixed_column_width ##### -->
+<para>
+
+</para>
+
+@view: 
+@column: 
+@renderer: 
+@strings: 
+
+
+<!-- ##### FUNCTION rb_entry_view_get_time_date_column_sample ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_entry_view_resort_model ##### -->
+<para>
+
+</para>
+
+@view: 
+
+

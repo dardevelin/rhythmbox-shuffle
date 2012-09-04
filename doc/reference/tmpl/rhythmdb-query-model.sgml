@@ -1,0 +1,460 @@
+<!-- ##### SECTION Title ##### -->
+RhythmDBQueryModel
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RhythmDBQueryModel ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RhythmDBQueryModel::complete ##### -->
+<para>
+
+</para>
+
+@rhythmdbquerymodel: the object which received the signal.
+
+<!-- ##### SIGNAL RhythmDBQueryModel::entry-prop-changed ##### -->
+<para>
+
+</para>
+
+@rhythmdbquerymodel: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+
+<!-- ##### SIGNAL RhythmDBQueryModel::entry-removed ##### -->
+<para>
+
+</para>
+
+@rhythmdbquerymodel: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RhythmDBQueryModel::filter-entry-drop ##### -->
+<para>
+
+</para>
+
+@rhythmdbquerymodel: the object which received the signal.
+@arg1: 
+@Returns: 
+
+<!-- ##### SIGNAL RhythmDBQueryModel::non-entry-dropped ##### -->
+<para>
+
+</para>
+
+@rhythmdbquerymodel: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL RhythmDBQueryModel::post-entry-delete ##### -->
+<para>
+
+</para>
+
+@rhythmdbquerymodel: the object which received the signal.
+@arg1: 
+
+<!-- ##### ARG RhythmDBQueryModel:base-model ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RhythmDBQueryModel:db ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RhythmDBQueryModel:limit-type ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RhythmDBQueryModel:limit-value ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RhythmDBQueryModel:query ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RhythmDBQueryModel:show-hidden ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RhythmDBQueryModel:sort-data ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RhythmDBQueryModel:sort-data-destroy ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RhythmDBQueryModel:sort-func ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RhythmDBQueryModel:sort-reverse ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RhythmDBQueryModelClass ##### -->
+<para>
+
+</para>
+
+@parent: 
+@complete: 
+@entry_prop_changed: 
+@non_entry_dropped: 
+@entry_removed: 
+@post_entry_delete: 
+@filter_entry_drop: 
+
+<!-- ##### ENUM RhythmDBQueryModelLimitType ##### -->
+<para>
+
+</para>
+
+@RHYTHMDB_QUERY_MODEL_LIMIT_NONE: 
+@RHYTHMDB_QUERY_MODEL_LIMIT_COUNT: 
+@RHYTHMDB_QUERY_MODEL_LIMIT_SIZE: 
+@RHYTHMDB_QUERY_MODEL_LIMIT_TIME: 
+
+<!-- ##### MACRO RHYTHMDB_QUERY_MODEL_SUGGESTED_UPDATE_CHUNK ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_new ##### -->
+<para>
+
+</para>
+
+@db: 
+@query: 
+@sort_func: 
+@sort_data: 
+@sort_data_destroy: 
+@sort_reverse: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_new_empty ##### -->
+<para>
+
+</para>
+
+@db: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_copy_contents ##### -->
+<para>
+
+</para>
+
+@dest: 
+@src: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_chain ##### -->
+<para>
+
+</para>
+
+@model: 
+@base: 
+@import_entries: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_add_entry ##### -->
+<para>
+
+</para>
+
+@model: 
+@entry: 
+@index: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_remove_entry ##### -->
+<para>
+
+</para>
+
+@model: 
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_shuffle_entries ##### -->
+<para>
+
+</para>
+
+@model: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_move_entry ##### -->
+<para>
+
+</para>
+
+@model: 
+@entry: 
+@index: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_get_size ##### -->
+<para>
+
+</para>
+
+@model: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_get_duration ##### -->
+<para>
+
+</para>
+
+@model: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_entry_to_iter ##### -->
+<para>
+
+</para>
+
+@model: 
+@entry: 
+@iter: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_has_pending_changes ##### -->
+<para>
+
+</para>
+
+@model: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_tree_path_to_entry ##### -->
+<para>
+
+</para>
+
+@model: 
+@path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_iter_to_entry ##### -->
+<para>
+
+</para>
+
+@model: 
+@entry_iter: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_get_next_from_entry ##### -->
+<para>
+
+</para>
+
+@model: 
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_get_previous_from_entry ##### -->
+<para>
+
+</para>
+
+@model: 
+@entry: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_compute_status_normal ##### -->
+<para>
+
+</para>
+
+@model: 
+@singular: 
+@plural: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_set_sort_order ##### -->
+<para>
+
+</para>
+
+@model: 
+@sort_func: 
+@sort_data: 
+@sort_data_destroy: 
+@sort_reverse: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_reapply_query ##### -->
+<para>
+
+</para>
+
+@model: 
+@filter: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_location_sort_func ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_string_sort_func ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_title_sort_func ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_album_sort_func ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_artist_sort_func ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_genre_sort_func ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_track_sort_func ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_double_ceiling_sort_func ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_ulong_sort_func ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_query_model_date_sort_func ##### -->
+<para>
+
+</para>
+
+@a: 
+@b: 
+@data: 
+@Returns: 
+
+

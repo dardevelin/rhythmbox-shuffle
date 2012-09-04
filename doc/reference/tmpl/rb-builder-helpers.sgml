@@ -1,0 +1,52 @@
+<!-- ##### SECTION Title ##### -->
+rb-builder-helpers
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### FUNCTION rb_builder_load ##### -->
+<para>
+
+</para>
+
+@file: 
+@user_data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_builder_boldify_label ##### -->
+<para>
+
+</para>
+
+@builder: 
+@name: 
+
+
+<!-- ##### FUNCTION rb_combo_box_hyphen_separator_func ##### -->
+<para>
+
+</para>
+
+@model: 
+@iter: 
+@data: 
+@Returns: 
+
+

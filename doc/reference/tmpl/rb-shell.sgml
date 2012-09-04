@@ -1,0 +1,359 @@
+<!-- ##### SECTION Title ##### -->
+RBShell
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBShell ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBShell::create-song-info ##### -->
+<para>
+
+</para>
+
+@rbshell: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL RBShell::notify-custom ##### -->
+<para>
+
+</para>
+
+@rbshell: the object which received the signal.
+@arg1: 
+@arg2: 
+@arg3: 
+@arg4: 
+@arg5: 
+
+<!-- ##### SIGNAL RBShell::notify-playing-entry ##### -->
+<para>
+
+</para>
+
+@rbshell: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBShell::visibility-changed ##### -->
+<para>
+
+</para>
+
+@rbshell: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RBShell::visibility-changing ##### -->
+<para>
+
+</para>
+
+@rbshell: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### ARG RBShell:autostarted ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:clipboard ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:db ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:disable-plugins ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:display-page-model ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:display-page-tree ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:dry-run ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:library-source ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:no-registration ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:no-update ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:playlist-manager ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:playlists-file ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:prefs ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:queue-source ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:removable-media-manager ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:rhythmdb-file ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:selected-page ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:shell-player ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:track-transfer-queue ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:ui-manager ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:visibility ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBShell:window ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBShellClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@visibility_changing: 
+@visibility_changed: 
+@create_song_info: 
+@removable_media_scan_finished: 
+@database_load_complete: 
+
+<!-- ##### FUNCTION rb_shell_new ##### -->
+<para>
+
+</para>
+
+@autostarted: 
+@argc: 
+@argv: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_shell_present ##### -->
+<para>
+
+</para>
+
+@shell: 
+@timestamp: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_shell_guess_source_for_uri ##### -->
+<para>
+
+</para>
+
+@shell: 
+@uri: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_shell_add_uri ##### -->
+<para>
+
+</para>
+
+@shell: 
+@uri: 
+@title: 
+@genre: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_shell_load_uri ##### -->
+<para>
+
+</para>
+
+@shell: 
+@uri: 
+@play: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_shell_toggle_visibility ##### -->
+<para>
+
+</para>
+
+@shell: 
+
+
+<!-- ##### FUNCTION rb_shell_get_song_properties ##### -->
+<para>
+
+</para>
+
+@shell: 
+@uri: 
+@properties: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_shell_set_song_property ##### -->
+<para>
+
+</para>
+
+@shell: 
+@uri: 
+@propname: 
+@value: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_shell_quit ##### -->
+<para>
+
+</para>
+
+@shell: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_shell_do_notify ##### -->
+<para>
+
+</para>
+
+@shell: 
+@requested: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_shell_register_entry_type_for_source ##### -->
+<para>
+
+</para>
+
+@shell: 
+@source: 
+@type: 
+
+
+<!-- ##### FUNCTION rb_shell_get_source_by_entry_type ##### -->
+<para>
+
+</para>
+
+@shell: 
+@type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_shell_get_party_mode ##### -->
+<para>
+
+</para>
+
+@shell: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rb_shell_add_widget ##### -->
+<para>
+
+</para>
+
+@shell: 
+@widget: 
+@location: 
+@expand: 
+@fill: 
+
+
+<!-- ##### FUNCTION rb_shell_remove_widget ##### -->
+<para>
+
+</para>
+
+@shell: 
+@widget: 
+@location: 
+
+

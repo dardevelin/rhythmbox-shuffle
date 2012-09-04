@@ -1,0 +1,2006 @@
+rhythmbox (2.97-2.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Urgency high for security fix
+  * fix insecure directory for python module import in context plugin
+    (Closes: #616673)
+    - debian/patches/CVE-2012-3355.patch: update context plugin to use
+      tempfile.mkdtemp() instead of /tmp/context. Patch thanks to Andreas
+      Henriksson (used theUbuntu security fix instead of the upstream commit
+      because the upstream commit was a mix of functional changes and a
+      security fix))
+    - CVE-2012-3355
+
+ -- Scott Kitterman <scott@kitterman.com>  Fri, 27 Jul 2012 16:41:52 -0400
+
+rhythmbox (2.97-2) unstable; urgency=low
+
+  [ Jon Dowland ]
+  * Update to use libmusicbrainz5. Closes: #677247.
+
+  [ Michael Biebl ]
+  * Add Build-Conflicts against libmusicbrainz3-dev to make sure we don't
+    accidentally build against the old version in a tainted build environment.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 20 Jun 2012 07:38:08 +0200
+
+rhythmbox (2.97-1) unstable; urgency=low
+
+  * New upstream release.
+    - New more compact header layout, including album art.
+      Closes: #660483, #658717
+  * debian/watch: Also track odd version numbers since rhythmbox does not seem
+    to follow the typical GNOME versioning scheme.
+  * Remove patches which have been applied upstream.
+  * Update librhythmbox-core5 → librhythmbox-core6 for the soname bump.
+  * Add explicit Build-Depends on libxml2-dev (>= 2.7.8).
+  * Drop artdisplay plugin. It has been removed upstream as it is no longer
+    needed now that the playing track display includes album art.
+  * Drop Build-Depends on python-gst0.10-dev and replace Depends on
+    python-gst0.10 with gir1.2-gstreamer-0.10 (required by the replaygain
+    plugin).
+  * Drop Recommends on nautilus-sendto. The sendto plugin is for sending
+    selected tracks by email or instant message from within rhythmbox. It is
+    not a nautilus-sendto plugin.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 10 Jun 2012 16:19:59 +0200
+
+rhythmbox (2.96-5) unstable; urgency=low
+
+  * Rhythmbox does not use the typical versioning scheme of GNOME
+    applications, so gnome:Version and gnome:NextVersion do not work as
+    intended and it even breaks binNMUs. As rhythmbox-data ships gsettings
+    schemas use a strict dependency instead.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 08 May 2012 23:42:24 +0200
+
+rhythmbox (2.96-4) unstable; urgency=low
+
+  * Add Depends on python-gi to rhythmbox-plugins.
+  * List any files which are not installed.
+  * Drop explicit Build-Depends on gir packages.
+  * Bump Standards-Version to 3.9.3.
+  * Reset tags properly in rb_metadata_reset.
+    Patch cherry-picked from upstream Git. Closes: #671232
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 03 May 2012 00:05:13 +0200
+
+rhythmbox (2.96-3) unstable; urgency=low
+
+  * Replace dependency on python-gnomekeyring with gir1.2-gnomekeyring-1.0
+    (required by the magnatune plugin). Closes: #663872
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 14 Mar 2012 18:52:05 +0100
+
+rhythmbox (2.96-2) unstable; urgency=low
+
+  * Fix a typo in the artsearch plugin. Thanks to Patrice Duroux for spotting
+    the bug. Closes: #663629
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 13 Mar 2012 09:38:05 +0100
+
+rhythmbox (2.96-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update Build-Depends:
+    - Bump libgtk-3-dev to (>= 3.2.0).
+    - Drop gir1.2-gtk-3.0, pulled via libgtk-3-dev.
+    - Bump libglib2.0-dev (>= 2.28.0).
+  * Re-add magnatune plugin.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 12 Mar 2012 12:07:21 +0100
+
+rhythmbox (2.95-1) unstable; urgency=low
+
+  [ Loïc Minier ]
+  * Update watch file to glob stable version numbers properly.
+
+  [ Michael Biebl ]
+  * New upstream release.
+  * Drop debian/patches/im-status-gettext-unicode.patch, merged upstream.
+  * Update librhythmbox-core4 → librhythmbox-core5 due to soname bump.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 15 Jan 2012 13:17:38 +0100
+
+rhythmbox (2.90.1~git20120106.cf2d7c0-1) unstable; urgency=low
+
+  * New upstream Git snapshot cf2d7c0528f206a3e6d6d99a81d30e7f2ef0ccac.
+  * Drop debian/patches/dbus-getplaylists-fix.patch, fixed upstream.
+  * Add Depends on gir1.2-peas-1.0 to rhythmbox-plugins. Closes: #654762
+  * Build and install the gtk-doc API documentation. Split it into a separate
+    rhythmbox-doc package and update the development-reference symlink
+    accordingly. Closes: #654321
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 05 Jan 2012 23:31:55 +0100
+
+rhythmbox (2.90.1~git20120101.c0486b0-1) unstable; urgency=low
+
+  [ Josselin Mouette ]
+  * Replace python-gobject by python-gi.
+
+  [ Michael Biebl ]
+  * New upstream Git snapshot c0486b042978c79c12495792f0be95fc66dd5592.
+  * Change section of gir1.2-rb-3.0 to introspection.
+  * Add Build-Depends on libtdb-dev (>= 1.2.6).
+  * Install new artsearch plugin.
+  * Also remove magnatune plugin from package description. Closes: #653203
+  * debian/patches/im-status-gettext-unicode.patch: Install gettext
+    translations for im-status plugin with unicode enabled. Closes: #653165
+    Thanks Peter Denison for the patch.
+  * debian/patches/dbus-getplaylists-fix.patch: Correctly return playlist
+    names via D-Bus. Closes: #653373
+    Thanks Piotr Szydełko for the patch.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 02 Jan 2012 16:59:05 +0100
+
+rhythmbox (2.90.1~git20111117.f101562-1) unstable; urgency=low
+
+  [ Jean Schurger ]
+  * New git snapshot (many fixes and UI improvments)
+    - Revive rhythmbox-client using new dbus interfaces + mpris.
+      Closes: #633398
+  * debian/patches
+    - Removed 01_fix_visualizer_plugin_dir.patch (fixed upstream)
+    - Removed 02_disable_rb_client_desktop.patch (client came back)
+  * debian/plugins
+    - removed magnatune (as in upstream)
+  * debian/control.in
+    - Bumped python-gobject-dev dependency
+    - Splited rhythmbox into rhythmbox and rhythmbox-data
+    - Removed dependency on libimobiledevice-dev as it have been
+      added properly to libgpod-dev since 0.8.2-4
+    - Set pkg-gnome-maintainers@lists.alioth.debian.org as Maintainer.
+  * Bump debhelper compatibility level to 8.
+    - Strip debian/tmp/ from .install files.
+    - Bump Build-Depends on debhelper.
+
+  [ Jeremy Bicha ]
+  * Switch to dh_python2 instead of python-support
+  * debian/control.in
+    - Add Vcs fields. Closes: #649057
+
+  [ Josselin Mouette ]
+  * Drop useless gst-alsa | gst-audiosink dependency; recommend
+    gst-pulseaudio instead.
+
+  [ Michael Biebl ]
+  * debian/control.in:
+    - Drop (Build-)Depends on libgnome-media-profiles-dev. Closes: #649056
+    - Mark libdbus-glib-1-dev Build-Depends as !linux-any, as it is only
+      required when enabling hal support.
+    - Bump Build-Depends on gobject-introspection to (>= 0.10.0).
+    - Add Breaks/Replaces to rhythmbox-data to ensure proper upgrades.
+    - Use Breaks instead of Conflicts.
+    - Drop old Conflicts from pre-lenny.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 22 Nov 2011 03:30:41 +0100
+
+rhythmbox (2.90.1~git20110919.2dfea6-3) unstable; urgency=low
+
+  * debian/control.in:
+    - Tighten dependency of rhythmbox on librhythmbox-core4. Closes: #645834
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 22 Oct 2011 20:49:54 +0200
+
+rhythmbox (2.90.1~git20110919.2dfea6-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 14 Oct 2011 03:09:47 +0200
+
+rhythmbox (2.90.1~git20110919.2dfea6-1) experimental; urgency=low
+
+  [ Josselin Mouette ]
+  * Make the -dev package depend on the gir package.
+  * Add missing -dev dependencies, corresponding to the pkg-config file.
+
+  [ Jean Schurger ]
+  * debian/control.in:
+    - Disabled coherence package while it's commented in the sources
+    - Bumped Standards-Version to 3.9.2 (no change needed)
+    - Updated libdmapsharing dependency
+    - Added Homepage
+  * debian/rhythmbox-plugins.install:
+    - Removed status-icon, visualizer
+    - Added notification
+  * debian/rhythmbox.install:
+    - Added org.gnome.rhythmbox.gschema.xml
+  * debian/rules, debian/control.in, debian/rhythmbox-plugins.install
+    - Configure using autogen.sh
+    - Updated dependencies (enabled musicbrainz, visualizer)
+    - Removed evocations of coherence and jamendo as it have been removed
+      (and replaces by grilo)
+  * New upstream git snashot.
+  * Added debian/patches/01_fix_visualizer_plugin_dir.patch (b-g-o #659508)
+  * Added debian/patches/02_disable_rb_client_desktop.patch (b-g-o #659510)
+  * debian/copyright
+    - Fixed GPL-2 location
+  * debian/*.install
+    - Moved plugin data files in the right package
+
+  [ Josselin Mouette ]
+  * Rename gir1.2-rb-0.13 to gir1.2-rb-3.0.
+
+ -- Josselin Mouette <joss@debian.org>  Sun, 25 Sep 2011 17:26:45 +0200
+
+rhythmbox (2.90.1~20110329-1) experimental; urgency=low
+
+  * New upstream git snapshot.
+  * 0001-Fix-build-with-HAL-support.patch: dropped, merged upstream.
+  * Update (build-)dependencies to the new versions.
+  * Split librhythmbox-core in its separate package.
+  * Include development headers in a new rhythmbox-dev one.
+  * Create a GIR package, needed by the plugins.
+  * Include again the daap plugin, thanks to libdmapsharing.
+  * Require pygobject 2.27 for the gi module.
+
+ -- Josselin Mouette <joss@debian.org>  Wed, 30 Mar 2011 13:58:34 +0200
+
+rhythmbox (0.13.3-2) experimental; urgency=low
+
+  * debian/patches/0001-Fix-build-with-HAL-support.patch:
+    + Fix build when configured with HAL support. Closes: #610280.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Mon, 17 Jan 2011 23:58:59 +0000
+
+rhythmbox (0.13.3-1) experimental; urgency=low
+
+  * New upstream release.
+    + debian/patches/01_dlna_vorbis.patch:
+      - Removed, applied upstream.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 16 Jan 2011 21:54:10 +0000
+
+rhythmbox (0.13.2-1) experimental; urgency=low
+
+  [ Josselin Mouette ]
+  * Drop type-handling usage. Closes: #587870.
+  * Bump standards version accordingly.
+
+  [ Emilio Pozuelo Monfort ]
+  * New upstream development release.
+    - debian/patches/02_python_fixes.patch:
+      + Removed, fixed upstream.
+    - debian/control.in:
+      + Updated build dependencies and dependencies.
+    - debian/rhythmbox-plugins.install:
+      + Updated.
+  * debian/copyright:
+    - Remove reference to /usr/share/common-licenses/BSD.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 18 Dec 2010 22:16:14 +0000
+
+rhythmbox (0.12.8-2) unstable; urgency=low
+
+  * Switch to format 3.0 (quilt).
+  * debian/patches/02_python_fixes.patch:
+    - Fix segfault at startup with python2.6 as default Python version.
+  * debian/control.in:
+    - Let rhythmbox-plugin-coherence depend on rhythmbox-plugin, it
+      needs some Python modules provided by it (Closes: #582621).
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Sat, 19 Jun 2010 10:33:29 +0200
+
+rhythmbox (0.12.8-1) unstable; urgency=low
+
+  * rhythmbox-plugins depends on python-gnomekeyring. Closes: #576428.
+  * New upstream release.
+
+ -- Josselin Mouette <joss@debian.org>  Wed, 07 Apr 2010 21:20:17 +0200
+
+rhythmbox (0.12.7-1) unstable; urgency=low
+
+  * New upstream release.
+    - Builds fine with Python 2.6. Closes: #571510.
+    - Allows to change the sorting name for artists and albums.
+      Closes: #261443.
+    - Fixes sorting order of localized sentences. Closes: #489207.
+    - debian/control.in:
+      + Update build dependencies.
+    - debian/rhythmbox.1,
+      debian/rhythmbox-client.1,
+      debian/rhythmbox.manpages:
+      + Removed, the manpages are now shipped upstream.
+    - debian/rhythmbox-plugins.install,
+      debian/control.in:
+      + Install the new sendto and replaygain plugins, and list them in
+        the package description.
+    - debian/control.in:
+      + rhythmbox-plugins now recommends nautilus-sendto.
+  * debian/copyright:
+    - Add a couple of missing files with different licenses.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 05 Mar 2010 17:18:26 +0100
+
+rhythmbox (0.12.6-5) unstable; urgency=low
+
+  * debian/rules:
+    - Don't install the fmradio plugin on non Linux architectures.
+      Fixes FTBFS on kFreeBSD. Closes: #570888.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Mon, 22 Feb 2010 20:09:14 +0100
+
+rhythmbox (0.12.6-4) unstable; urgency=low
+
+  * Split plugins in a separate rhythmbox-plugins package, plus another 
+    one for the coherence plugin and one for the cdrecorder plugin. 
+    Mostly based on a patch by Yves-Alexis Perez. Closes: #566711.
+  * rhythmbox-plugins depends on python-webkit and python-mako.
+    Closes: #558203.
+
+ -- Josselin Mouette <joss@debian.org>  Mon, 15 Feb 2010 17:33:32 +0100
+
+rhythmbox (0.12.6-3) unstable; urgency=low
+
+  [ Josselin Mouette ]
+  * Drop recommends on hal on Linux.
+
+  [ Emilio Pozuelo Monfort ]
+  * debian/patches/01_dlna_vorbis.patch:
+    - Add header.
+  * Standards-Version is 3.8.4, no changes needed.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 05 Feb 2010 09:07:46 +0100
+
+rhythmbox (0.12.6-2) unstable; urgency=low
+
+  * Switch to quilt for patch management.
+  * 01_dlna_vorbis.patch: patch from Brent Hendricks to enable Ogg 
+    Vorbis playback on UPnP/DLNA shares. Closes: #558694.
+  * Use gudev on Linux, not HAL.
+  * Conflict against HAL-enabled gvfs. Part of Closes: #561083.
+  * Depend on media-player-info on Linux. 
+
+ -- Josselin Mouette <joss@debian.org>  Mon, 14 Dec 2009 14:35:42 +0100
+
+rhythmbox (0.12.6-1) unstable; urgency=low
+
+  * New upstream release.
+    - Builds with ld's --no-add-needed and binutils-gold. Closes: #556320.
+    - debian/patches/01_inhibit_g-session.patch,
+      debian/patches/02_track_finished.patch:
+      + Removed, fixed upstream.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 22 Nov 2009 13:07:31 +0100
+
+rhythmbox (0.12.5-2) unstable; urgency=low
+
+  [ Josselin Mouette ]
+  * 01_inhibit_g-session.patch: stolen upstream. Use gnome-session to 
+    inhibit suspension. Closes: #553504.
+
+  [ Emilio Pozuelo Monfort ]
+  * debian/control.in:
+    - Build depend on xulrunner-dev rather than iceape-dev.
+      Closes: #555913.
+
+  [ Josselin Mouette ]
+  * 02_track_finished.patch: stolen upstream. Clear the track status 
+    when read has finished. Closes: #555189.
+
+ -- Josselin Mouette <joss@debian.org>  Thu, 19 Nov 2009 10:59:02 +0100
+
+rhythmbox (0.12.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 18 Sep 2009 18:00:38 +0200
+
+rhythmbox (0.12.4-2) unstable; urgency=low
+
+  * Stop build-depending on libnautilus-burn-dev, we get the cd burning
+    support through libbrasero-media-dev.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Thu, 03 Sep 2009 17:48:58 +0200
+
+rhythmbox (0.12.4-1) unstable; urgency=low
+
+  * debian/NEWS: mention that the tray icon is now a plugin. Closes:
+    #537137, #539612.
+  * New upstream release.
+  * Standards-Version is 3.8.3, no changes needed.
+  * debian/rules:
+    - Don't pass --with-gecko to configure, it's not used anymore.
+    - Don't ship librhythmbox-core.so, it's a private library
+      to be used by rhythmbox and its plugins.
+    - Exclude /usr/lib/mozilla from the shlibs generation too.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 26 Aug 2009 18:00:42 +0200
+
+rhythmbox (0.12.3-1) unstable; urgency=low
+
+  [ Josselin Mouette ]
+  * Recommend gvfs-backends. Closes: #529654.
+
+  [ Emilio Pozuelo Monfort ]
+  * New upstream release.
+    - Migrated to playbin2, can now play chained oggs. Closes: #448215.
+  * Update build-dependencies.
+
+  [ Josselin Mouette ]
+  * Update README.Debian to indicate that devices need to be mounted for 
+    rhythmbox to see them.
+  * Only suggest gnome-codec-install, it is way too obnoxious.
+
+  [ Sam Morris ]
+  * New upstream release.
+    - Increased build-depends on gstreamer, libnotify and libsoup.
+    - Build-depend on libsoup-gnome2.4-dev.
+  * Enabled brasero now it's in unstable.
+
+ -- Josselin Mouette <joss@debian.org>  Wed, 08 Jul 2009 22:49:25 +0200
+
+rhythmbox (0.12.1-1) unstable; urgency=low
+
+  [ Emilio Pozuelo Monfort ]
+  * Recommend gnome-codec-install rather than gnome-app-install.
+    Closes: #523053.
+  * New upstream release.
+    - Doesn't exit after the last song. Closes: #525208.
+    - Doesn't crash when downloading jamendo playlists. Closes: #525766.
+    - Update build dependencies.
+  * Remove gstreamer0.10-gnomevfs and libgnomevfs2-extra from Depends
+    and Recommends, rhythmbox uses gio now. Thanks Sebastien Bacher.
+  * Require the minimun gstreamer0.10-plugins-base and -good packages
+    that ship the gio and soup plugins.
+  * debian/rhythmbox-client.1: Document %st format. LP: #372009.
+
+  [ Josselin Mouette ]
+  * Only suggest control-center.
+  * Drop recommends on scrollkeeper.
+  * Build-depend on libglib2.0-doc and libgtk2.0-doc to ensure proper 
+    xrefs.
+  * Bump requirement on gstreamer according to upstream.
+  * Require the development package for gst-python.
+
+ -- Josselin Mouette <joss@debian.org>  Tue, 26 May 2009 18:16:18 +0200
+
+rhythmbox (0.12.0-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Josselin Mouette <joss@debian.org>  Tue, 07 Apr 2009 14:49:45 +0200
+
+rhythmbox (0.12.0-1) experimental; urgency=low
+
+  [ Loic Minier ]
+  * Fix super old libgnome2-dev bdep to use -1~ instead of -1; it's likely
+    that the Debian revision isn't needed, but I can't tell from history.
+
+  [ Josselin Mouette ]
+  * 02_pause_crash.patch: new patch, stolen from upstream. Fixes crashes 
+    when pausing MP3 playback. Closes: #501944.
+  * Drop Recommends on gnome-volume-manager.
+
+  [ Loic Minier ]
+  * Use ge-nl and lt-nl in postinst for robustness.
+
+  [ Josselin Mouette ]
+  * Drop Recommends on sound-juicer. Closes: #510022.
+  * Move python-gst0.10 to Depends. Closes: #517451.
+
+  [ Rafael Laboissiere ]
+  * debian/patches/20_compile_with_libmtp8.patch: New patch for fixing
+    the new number of arguments in function LIBMTP_Send_Track_From_File
+    (closes: #516564)
+
+  [ Emilio Pozuelo Monfort ]
+  * New upstream release.
+    - Fix memory leaks and reduce memory consumption. Closes: #432586.
+    - Use the XDG music dir for podcast downloads, or $HOME if it
+      doesn't exist, rather than failing. Closes: #485831.
+    - Don't crash on Alt+Space. Closes: #501944.
+    - Don't crash when connecting uninitialized iPods. Closes: #478507.
+    - Update build-dependencies.
+    - debian/patches/01_gecko_iceape.patch:
+      + Removed, not needed anymore.
+    - debian/patches/00_rhythmbox_radio_songinfo.patch,
+      debian/patches/02_pause_crash.patch,
+      debian/patches/10_en_GB.po.patch,
+      debian/patches/20_compile_with_libmtp8.patch:
+      + Removed, fixed upstream.
+  * debian/watch: don't uupdate.
+  * debian/rhythmbox.postinst: removed, the version needed the hack is
+    not even in oldstable now.
+  * Let rhythmbox-dbg depend on ${misc:Depends}
+  * Section of rhythmbox-dbg is debug.
+  * Standards-Version is 3.8.0, no changes needed.
+  * debian/pycompat: removed, not needed.
+  * debian/rhythmbox.1: escape hyphens
+
+  [ Josselin Mouette ]
+  * Update some lagging build-dependencies.
+  * Re-enable HAL on hurd and kfreebsd.
+
+ -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Thu, 19 Mar 2009 18:38:16 +0100
+
+rhythmbox (0.11.6-1) unstable; urgency=low
+
+  [ Josselin Mouette ]
+  * 10_en_GB.po.patch: fix minor issue in British translation.
+    Closes: #487942.
+
+  [ Sam Morris ]
+  * New upstream release. 
+  * Drop 90_from_svn_fix_audioscrobbler_issue.patch,
+    91_from_svn_fix_eject_crasher.patch,
+    92_from_svn_fix_amazon_coverts_download.patch,
+    93_from_svn_fix_cdda_gvfs_handling.patch,
+    93_from_svn_fix_xfade_locking_issue.patch,
+    94_from_svn_fix_podcast_parsing_issue.patch: incorporated upstream.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 18 Jul 2008 22:49:56 +0200
+
+rhythmbox (0.11.5-5) unstable; urgency=low
+
+  * debian/control.in:
+    + Don't build depend on vala as it only builds a useless sample plugin
+      anyway and fails to build with latest vala (Closes: #481395).
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 22 May 2008 10:48:55 +0200
+
+rhythmbox (0.11.5-4) unstable; urgency=low
+
+  * 01_gecko_iceape.patch: allow iceape as a valid gecko variant.
+  * Pass --with-gecko=iceape to make it used.
+  * Build-depend on iceape-dev 1.1.9-5. Closes: #480823.
+  * Remove unnecessary argument passed to dh_pysupport.
+  * Put the Debian menu entry in Applications/Sound.
+  * rhythmbox-small.xpm: downscaled to 32x32 per menu policy (bwahaha).
+  * Standards version is 3.7.3.
+  * Build-depend on libvala-dev for vala plugin support.
+
+ -- Josselin Mouette <joss@debian.org>  Mon, 12 May 2008 21:57:19 +0200
+
+rhythmbox (0.11.5-3) unstable; urgency=low
+
+  * debian/patches/00_rhythmbox_radio_songinfo.patch
+    - Added. Fixes radio streams not showing metadata after being paused and
+    started again.
+  * Sync a set of fixes from SVN from the Ubuntu packaging:
+    - debian/patches/90_from_svn_fix_audioscrobbler_issue.patch
+      + Added. Fixes sending songs data with uri escape sequences still in them
+      to audioscrobbler
+    - debian/patches/91_from_svn_fix_eject_crasher.patch
+      + Added. Fixes crash on eject
+    - debian/patches/92_from_svn_fix_amazon_coverts_download.patch
+      + Added. Fix the amazon cover downloader
+    - debian/patches/93_from_svn_fix_cdda_gvfs_handling.patch
+      + Added. Handle new-style gvfs cdda URIs
+    - debian/patches/93_from_svn_fix_xfade_locking_issue.patch
+      + Added. Fixes some locking issues with the xfade backend
+    - debian/patches/94_from_svn_fix_podcast_parsing_issue.patch
+      + Added. Fix parsing problems with some podcasts (Closes: #473412)
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Sat, 03 May 2008 12:23:44 +0200
+
+rhythmbox (0.11.5-2) unstable; urgency=low
+
+  [ Norbert Tretkowski ]
+  * Recommend python-gst0.10, most plugins are useless without it.
+    (closes: #472849)
+
+  [ Loic Minier ]
+  * Suggest python-coherence instead of python-louie and update description;
+    Franklin Piat; closes: #474733.
+
+ -- Norbert Tretkowski <nobse@debian.org>  Fri, 04 Apr 2008 10:49:18 +0200
+
+rhythmbox (0.11.5-1) unstable; urgency=low
+
+  [ Norbert Tretkowski ]
+  * New upstream development release, upload to unstable.
+  * Add python-gst0.10 to Build-Dependencies.
+  * Update libtotem-plparser-dev Build-Dependency.
+
+  [ Loic Minier ]
+  * Suggest python-louie for UPnP support; thanks Amaya Rodrigo Sastre;
+    closes: #452087.
+  * Rename debian/rhythmbox.xpm to rhythmbox-small.xpm; update the menu file
+    to use this icon; should permit the .desktop file to prefer the SVG.
+  * Update the XPM file with the new SVG artwork.
+
+  [ Sam Morris ]
+  * Update libnotify-dev Build-Dependency.
+  * Build-depend on libxul-dev for the Mozilla browser iTunes Music Store
+    plugin.
+  * Recommend gnome-app-install for automatic codec installation.
+  * Build-depend on libsoup2.4-dev.
+
+ -- Norbert Tretkowski <nobse@debian.org>  Fri, 21 Mar 2008 09:59:09 +0100
+
+rhythmbox (0.11.2-1) experimental; urgency=low
+
+  [ Norbert Tretkowski ]
+  * New upstream development release.
+    - Fix crash in preferences dialog; GNOME #455232; closes: #443169.
+  * Versioned dependency on python-gnome2; closes: #436719.
+
+  [ Sven Arvidsson ]
+  * Update man page for rythmbox-client.
+
+  [ Loic Minier ]
+  * Only recommend gstreamer0.10-plugins-ugly; closes: #436736.
+
+ -- Norbert Tretkowski <nobse@debian.org>  Sat, 13 Oct 2007 14:17:51 +0200
+
+rhythmbox (0.11.1-1) experimental; urgency=low
+
+  [ Loic Minier ]
+  * Document the need for gstreamer0.10-plugins-bad to play mms:// web radios
+    and suggest the package; thanks Alexis Bezverkhyy; closes: #429991.
+  * New upstream development release.
+    - Add a libmtp-dev build-dep for MTP support.
+    - Drop patches 80_from_bugzilla_fix_crash_on_eject,
+      81_from_bugzilla_fix_unknown_tags,
+      and 81_from_bugzilla_process_pending_events, merged upstream.
+
+ -- Loic Minier <lool@dooz.org>  Tue, 26 Jun 2007 16:28:06 +0200
+
+rhythmbox (0.11.0-1) experimental; urgency=low
+
+  * New upstream development series; use at your own risk.
+    - Target at experimental; include check-dist.
+    - Bump up build-deps to libgtk2.0-dev >= 2.8.0, libgnomevfs2-dev >= 2.8.0,
+      libgstreamer0.10-dev >= 0.10.11, libgstreamer-plugins-base0.10-dev
+      >= 0.10.4, libglib2.0-dev >= 2.13.0.
+    - Add vala support to TODO.
+    - Search now ignores diacritics; closes: #425806.
+  * Build-depend on python-gtk2-dev >= 2.10 and python-gtk2 >= 2.10;
+    closes: #427056.
+  * New patch, 80_from_bugzilla_fix_crash_on_eject, fixes crash on iPod eject;
+    Ubuntu #117724; found in the Ubuntu package.
+  * New patch, 81_from_bugzilla_fix_unknown_tags, fixes songs having "Unknown"
+    tags when both ID3v1 and ID3v2 tags exist with possible trailing
+    whitespace; GNOME #442792; found in the Ubuntu package.
+  * New patch, 81_from_bugzilla_process_pending_events, process pending events
+    so that tags aren't randomly ignored, complements
+    81_from_bugzilla_fix_unknown_tags; found in the Ubuntu package.
+
+ -- Loic Minier <lool@dooz.org>  Tue, 19 Jun 2007 15:04:22 +0200
+
+rhythmbox (0.10.1-1) unstable; urgency=low
+
+  * Recommend libgnomevfs2-extra to fetch album art; thanks Tom Parker;
+    closes: #423830, #424753.
+  * New upstream stable release.
+  * Wrap build-deps and deps.
+  * Watch all stable versions in watch file.
+  * Misc cleanups.
+
+ -- Loic Minier <lool@dooz.org>  Tue, 29 May 2007 14:08:14 +0200
+
+rhythmbox (0.10.0-3) unstable; urgency=low
+
+  [ Sven Arvidsson ]
+  * Add a -dbg package (Closes: #419891).
+    - Bump up build-dep of cdbs to >= 0.4.37.
+    - Let rhythmbox-dbg recommend the available GStreamer -dbg packages
+
+ -- Loic Minier <lool@dooz.org>  Sat, 12 May 2007 10:02:47 +0200
+
+rhythmbox (0.10.0-2) unstable; urgency=low
+
+  * Upload to unstable; closes: #423478.
+
+ -- Loic Minier <lool@dooz.org>  Sat, 12 May 2007 09:53:42 +0200
+
+rhythmbox (0.10.0-1) experimental; urgency=low
+
+  * Fix 0.9.8-4 changelog entry.
+  * New upstream release.
+    - Drop patch 01_xoverlay-fix, merged upstream.
+
+ -- Loic Minier <lool@dooz.org>  Wed, 04 Apr 2007 11:22:13 +0200
+
+rhythmbox (0.9.8-4) experimental; urgency=low
+
+  * Let rhythmbox recommend gnome-control-center >= 2.15.90 for
+    gnome-sound-properties; conflict with gnome-control-center << 2.15.90 as
+    the bundled gnome-sound-properties is not aware of GStreamer profiles;
+    update README.Debian accordingly.
+
+ -- Loic Minier <lool@dooz.org>  Fri, 23 Mar 2007 11:31:26 +0100
+
+rhythmbox (0.9.8-3) experimental; urgency=high
+
+  * Depend on gstreamer0.10-x, fixes segfault in the visualization plugin; 
+    closes: #414273.
+
+ -- Loic Minier <lool@dooz.org>  Sun, 11 Mar 2007 18:51:49 +0100
+
+rhythmbox (0.9.8-2) experimental; urgency=low
+
+  * New patch, 01_xoverlay-fix,  to stop visualizer 
+    problems when no x overlay is found; from upstream r4915; 
+    thanks Jonathan Matthew (Closes: #414273)
+
+ -- Sven Arvidsson <sa@whiz.se>  Sat, 10 Mar 2007 21:35:15 +0100
+
+rhythmbox (0.9.8-1) experimental; urgency=low
+
+  * New upstream release; "Type slowly".
+    - Drop patch 10_gnome-power-manager-active-key, merged upstream.
+    - Drop patch 94_from-svn-fix-soup-headers, merged upstream.
+    - Delete *.la and *.a files for the new shared lib.
+    - Ship shlibs, but exclude plugins from shlibs generation.
+  * Don't overwrite DEB_INSTALL_MANPAGES_rhythmbox.
+  * Move man pages to rhythmbox.manpages.
+  * Drop obsolete clean rule.
+  * Bump up python-support build-dep to >= 0.5.3 and drop dh_python call.
+
+ -- Loic Minier <lool@dooz.org>  Thu, 22 Feb 2007 14:39:46 +0100
+
+rhythmbox (0.9.7-2) experimental; urgency=low
+
+  [ Sven Arvidsson ]
+  * Merge 0.9.6-6.
+
+  [ Loic Minier ]
+  * Add a get-orig-source target to retrieve the upstream tarball.
+  * Merge final bits from 0.9.6-6.
+
+ -- Loic Minier <lool@dooz.org>  Sat, 27 Jan 2007 09:36:29 +0100
+
+rhythmbox (0.9.7-1) experimental; urgency=low
+
+  * New upstream release, "I love Perth".
+    - Bump up libgpod-dev build-dep to >= 0.4.
+    - Drop patch 10_podcasts-with-html-mime-type, merged upstream.
+    - Drop patch 90_from_cvs_fix_crash_when_disconnecting_ipod, merged
+      upstream.
+    - Drop patch 91_from_cvs_fix_crasher_when_closing_while_playing_cd,
+      merged upstream.
+    - Drop patch 92_from_cvs_set_codeset_to_utf8, merged upstream.
+    - Drop patch 93_from_cvs_fix_crash_on_song_edition, merged upstream.
+    - New patch, 10_gnome-power-manager-active-key, fixes a copy-paste typo in
+      the GConf schema for the gnome-power-manager enable/disable key;
+      GNOME #387527.
+
+ -- Loic Minier <lool@dooz.org>  Tue, 19 Dec 2006 15:36:05 +0100
+
+rhythmbox (0.9.6-6) unstable; urgency=low
+
+  [ Sven Arvidsson ]
+  * Update man page, add man page for rhythmbox-client
+    (Closes: #386372, #401638)
+  * Removed broken scripts, rb-print-playing.py and rb-set-rating.py.
+    Partly superseded by rhythmbox-client.
+  * Recommend notification-daemon (Closes: #381233)
+
+  [ Loic Minier ]
+  * Add a get-orig-source target to retrieve the upstream tarball.
+  * New patch, 94_from-svn-fix-soup-headers, to fix call to
+    soup_headers_parse_response with libsoup 2.2.99; backported from upstream
+    r4760; thanks Jonathan Matthew; closes: #406688.
+
+ -- Loic Minier <lool@dooz.org>  Sat, 27 Jan 2007 09:34:11 +0100
+
+rhythmbox (0.9.6-5) unstable; urgency=high
+
+  * Recommend hal; closes: #380503.
+
+ -- Loic Minier <lool@dooz.org>  Sun, 17 Dec 2006 11:29:12 +0100
+
+rhythmbox (0.9.6-4) unstable; urgency=low
+
+  * Drop libhal-dev build-dep on kfreebsd and hurd; thanks Petr Salinger;
+    closes: #401601.
+
+ -- Loic Minier <lool@dooz.org>  Mon,  4 Dec 2006 21:25:27 +0100
+
+rhythmbox (0.9.6-3) unstable; urgency=low
+
+  * Depend on gnome-icon-theme; closes: #382529, #391769.
+
+ -- Loic Minier <lool@dooz.org>  Wed, 25 Oct 2006 12:15:38 +0200
+
+rhythmbox (0.9.6-2) unstable; urgency=low
+
+  * Stop shipping *.a and *.la files of plugins.
+  * Recommend g-v-m for iPod support; document this in README.Debian.
+  * New patch, 90_from_cvs_fix_crash_when_disconnecting_ipod, fixes a crash
+    when disconnecting an iPod; from upstream; found in the Ubuntu package;
+    Ubuntu #63985.
+  * New patch, 91_from_cvs_fix_crasher_when_closing_while_playing_cd, fixes a
+    crash when closing Rhythmbox during CD playback; from CVS; found in the
+    Ubuntu package.
+  * New patch, 92_from_cvs_set_codeset_to_utf8, to force the charset of
+    GStreamer messages to UTF-8, fixes a crash; from CVS; found in the Ubuntu
+    package; GNOME #359083.
+  * New patch, 93_from_cvs_fix_crash_on_song_edition, fixes a crasher when
+    editing a song; from CVS; found in the Ubuntu package; GNOME #359083.
+  * New patch, 10_podcasts-with-html-mime-type, to accept parsing Postcasts
+    served as html as MIME type; thanks Matt Kraai; closes: 394961.
+
+ -- Loic Minier <lool@dooz.org>  Tue, 24 Oct 2006 21:55:40 +0200
+
+rhythmbox (0.9.6-1) unstable; urgency=low
+
+  * New upstream release.
+    - Build-depend on libgnome-keyring-dev for gnome-keyring support of DAAP
+      shares.
+    - Drop --enable-tag-writing from configure args, it is now the default.
+    - Bump libnautilus-burn-dev build-dep to >= 2.14 to ensure most functions
+      are available.
+    - Bump python-gtk2-dev build-dep to >= 2.8.0.
+    - Depend on python-gnome2 for gnomevfs support in plugins.
+    - Drop patch 03_dbus0.9, merged upstream.
+    - Smarter about creating podcast file names; closes: #350802.
+    - HTTP proxy-related fixes/improvements; closes: #370751.
+    - Doesn't try to download an episode if it couldn't be parsed;
+      closes: #371868.
+  * Build-depend on cdbs >= 0.4.35 instead of calling dh_installmime manually.
+  * Leave the Rhythmbox Development Reference Manual in the gtk-doc canonical
+    location, and symlink to it instead.
+  * Bump Debhelper compatibility level to 5.
+  * Convert to new Python Policy.
+    - Build-depend on python-support (>= 0.4).
+    - Bump up Debhelper build-dep to 5.0.37.2.
+    - Set Python compatibility level to 2.
+    - Add XS-Python-Version with ">= 2.3".
+    - Add XB-Python-Version to rhythmbox.
+    - Call dh_pysupport and dh_python; pass /usr/lib/rhythmbox/plugins to
+      dh_pysupport.
+    - Depend on ${python:Depends}.
+    - Depend on python-gtk2.
+
+ -- Loic Minier <lool@dooz.org>  Sun,  1 Oct 2006 18:37:08 +0200
+
+rhythmbox (0.9.5-3) unstable; urgency=low
+
+  * New patch, 03_dbus0.9.patch, to use dbus_connection_close() instead of
+    dbus_connection_disconnect() which will be removed in dbus >= 0.90; thanks
+    Sebastian Dröge. (Closes: #385381)
+
+ -- Loic Minier <lool@dooz.org>  Thu, 31 Aug 2006 11:29:09 +0200
+
+rhythmbox (0.9.5-2) unstable; urgency=low
+
+  * Fix spelling of Podcasts, thanks mlind (feenix) and Sébastien Bacher.
+    (Ubuntu: #54336)
+
+ -- Loic Minier <lool@dooz.org>  Fri, 28 Jul 2006 14:39:48 +0200
+
+rhythmbox (0.9.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Loic Minier <lool@dooz.org>  Thu, 22 Jun 2006 20:24:45 +0200
+
+rhythmbox (0.9.4.90-1) experimental; urgency=low
+
+  * New upstream pre-release of 0.9.5.
+    - Update James Livingston's email address.
+      [debian/copyright]
+    - Bump up libgtk2.0-dev build-dep to >= 2.6.0.
+      [debian/control, debian/control.in]
+    - Add a libgnome-media-dev (>= 2.8) build-dep for track transfer support.
+      [debian/control, debian/control.in]
+    - Drop libbonobo2-dev and liborbit2-dev build-deps.
+      [debian/control, debian/control.in]
+    - Don't configure with --enable-daap as this is now the default.
+      [debian/rules]
+    - Drop libnotify version checks patch, merged upstream.
+      [debian/patches/10_eggtrayicon-libnotify-version-checks.patch]
+    - Use local copies of the rb-print-playing.py and rb-set-rating.py samples
+      as they didn't end in the tarball.
+      [debian/rb-print-playing.py, debian/rb-set-rating.py,
+       debian/rhythmbox.install]
+
+ -- Loic Minier <lool@dooz.org>  Thu,  8 Jun 2006 08:36:56 +0200
+
+rhythmbox (0.9.4.1-6) unstable; urgency=low
+
+  * Ship Rhythmbox Development Reference Manual below /usr/share/doc/rhythmbox
+    instead of /usr/share/gtk-doc/html/rhythmbox. (Closes: #363143)
+    [debian/rules]
+
+ -- Loic Minier <lool@dooz.org>  Mon, 22 May 2006 15:30:25 +0200
+
+rhythmbox (0.9.4.1-5) unstable; urgency=low
+
+  * Fix postinst to repair the scrollkeeper db only when scrollkeeper is
+    installed, hence do repair for upgrades from <= 0.9.4.1-5.
+    (Closes: #368279)
+    [debian/rhythmbox.postinst]
+
+ -- Loic Minier <lool@dooz.org>  Sun, 21 May 2006 10:29:28 +0200
+
+rhythmbox (0.9.4.1-4) unstable; urgency=low
+
+  * Recommend sound-juicer for audio CD ripping, thanks Jack.
+    (Closes: #367980)
+    [debian/control, debian/control.in]
+  * Rebuild against unstable's libsexy. (Closes: #368069)
+
+ -- Loic Minier <lool@dooz.org>  Fri, 19 May 2006 20:34:04 +0200
+
+rhythmbox (0.9.4.1-3) unstable; urgency=low
+
+  * Update description to mention Audio CD playback, Generic portable audio
+    player support, and Podcasts, thanks Sven Arvidsson. (Closes: #367035)
+    [debian/control, debian/control.in]
+  * Removed obsolete pipelines. (Closes: #367192)
+    [debian/README.Debian]
+  * Rebuild scrollkeeper database completely if upgrading from versions
+    >= 0.9.4.1-1 and < 0.9.4.1-3.
+    [debian/rhythmbox.postinst]
+  * New patch to take a CVS version of widgets/eggtrayicon.c and additional
+    libnotify version checks fixes. (Closes: #367713)
+    [debian/patches/10_eggtrayicon-libnotify-version-checks.patch]
+
+ -- Loic Minier <lool@dooz.org>  Thu, 18 May 2006 14:29:26 +0200
+
+rhythmbox (0.9.4.1-2) unstable; urgency=medium
+
+  * Disable scrollkeeper-update run in "make install" with configure's
+    --disable-scrollkeeper.
+    [debian/rules]
+
+ -- Loic Minier <lool@dooz.org>  Sun,  7 May 2006 11:59:08 +0200
+
+rhythmbox (0.9.4.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump up Standards-Version to 3.7.2.
+    [debian/control, debian/control.in]
+
+ -- Loic Minier <lool@dooz.org>  Sat,  6 May 2006 17:03:17 +0200
+
+rhythmbox (0.9.4-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixes handling of songs with "&" in tags. (Closes: #353226)
+    - Remembers window visibility between sessions. (Closes: #223257)
+    - New --no-update command-line flag to skip any check for changes on files
+      of the library. (Closes: #200586, #332584)
+    - Sorts automatic playlists. (Closes: #220481)
+    - Music sharing is now documented in the manual. (Closes: #355234)
+    - Goes to next song when you delete the current one. (Closes: #205976)
+    - Update address of Jonathan Matthew.
+      [debian/copyright]
+    - Pass --enable-lirc to configure.
+      [debian/rules]
+    - Document the need to bump up the nautilus-burn build-dep in later
+      uploads.
+      [debian/TODO]
+    - Build-depend on libsexy-dev (>= 0.1.5).
+      [debian/control, debian/control.in]
+    - Build-depend on python, python-gtk2-dev, python-dev.
+      [debian/control, debian/control.in]
+    - Build-depend on gnome-doc-utils (>= 0.3.2).
+      [debian/control, debian/control.in]
+  * Ship sample Python scripts to access Rhythmbox via dbus to retrieve things
+    like the name of the currently playing song. (Closes: #230302)
+    [debian/rhythmbox.install]
+  * Rework the description to mention sharing.
+    [debian/control, debian/control.in]
+  * Document the Avahi dependency in README.Debian.
+    [debian/README.Debian]
+
+ -- Loic Minier <lool@dooz.org>  Sun, 16 Apr 2006 18:33:44 +0200
+
+rhythmbox (0.9.3.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Loic Minier <lool@dooz.org>  Sun,  5 Feb 2006 14:48:09 +0100
+
+rhythmbox (0.9.3-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fix crashes with Ogg Vorbis and FLAC. (Closes: #348021)
+    - Shell invocations don't bring up the window. (Closes: #349686)
+    - Now offers links to last.fm instead of allmusic.com.
+      (Closes: #225088, #270245)
+    - Now saves the database every 5 minutes if dirty.
+      (Closes: #271215, #335785)
+    - Now restores the state of the window completely when de-iconifying.
+      (Closes: #301846)
+    - Add libnotify-dev >= 0.2.2 build-dep.
+      [debian/control, debian/control.in]
+    - Bump libgnomevfs2-dev build-dep to >= 2.7.4
+      [debian/control, debian/control.in]
+    - Bump libtotem-plparser-dev build-dep to >= 1.1.5.
+      [debian/control, debian/control.in]
+    - Add libglade2-dev build-dep.
+      [debian/control, debian/control.in]
+    - Drop useless --enable-ipod from DEB_CONFIGURE_EXTRA_FLAGS and comment
+      on the other flags.
+    - Switch to a GStreamer 0.10 sound-system.
+      . Should avoid gap between songs. (Closes: #293437)
+      . Should be faster to index new directories. (Closes: #320678)
+      . Drop GStreamer 0.8 build-deps.
+        [debian/control, debian/control.in]
+      . Add libgstreamer0.10-dev, libgstreamer-plugins-base0.10-dev
+        build-deps.
+        [debian/control, debian/control.in]
+      . Add gstreamer0.10-gnomevfs, gstreamer0.10-plugins-base,
+        gstreamer0.10-plugins-good, gstreamer0.10-plugins-ugly,
+        libgstreamer0.10-0, and gstreamer0.10-alsa | gstreamer0.10-audiosink
+        deps to rhythmbox.
+        [debian/control, debian/control.in]
+      . Drop gstreamer0.8 deps for rhythmbox.
+        [debian/control, debian/control.in]
+    - Bump libavahi-client-dev and libavahi-glib-dev to >= 0.6.
+      [debian/control, debian/control.in]
+    - Add zlib1g-dev build-dep.
+      [debian/control, debian/control.in]
+    - Bump libmusicbrainz-dev build-dep to >= 2.1.0.
+      [debian/control, debian/control.in]
+    - Add libx11-dev build-dep but keep the libxt-dev build-dep for now.
+      [debian/control, debian/control.in]
+    - Add libglib2.0-dev build-dep for glib-genmarshal.
+      [debian/control, debian/control.in]
+    - Add gtk-doc-tools >= 1.4 build-dep.
+      [debian/control, debian/control.in]
+    - Drop obsolete DBus 0.60 patch (merged upstream).
+      [debian/patches/07_dbus060.patch]
+  * Downgrade the avahi-daemon dependency to a Recommends since Rhythmbox
+    now starts without any error dialog when avahi-daemon isn't running.
+    (Closes: #349478, #349533)
+    [debian/control, debian/control.in]
+  * Include full GPL block and full AUTHORS list.
+    [debian/copyright]
+  * Use HTTP in watch file.
+    [debian/watch]
+  * Misc doc updates.
+    [debian/rules, debian/README.Debian, debian/TODO]
+  * Drop obsolete NEWS file.
+    [debian/NEWS]
+
+ -- Loic Minier <lool@dooz.org>  Thu,  2 Feb 2006 22:22:18 +0100
+
+rhythmbox (0.9.2-3) unstable; urgency=low
+
+  * Depend on dbus, command-line invocations should work again, thanks Alexis
+    Papadopoulos and Sjoerd Simons. (Closes: #348168)
+    [debian/control, debian/control.in]
+  * Depend on avahi-daemon for DAAP music sharing.
+    [debian/control, debian/control.in]
+
+ -- Loic Minier <lool@dooz.org>  Mon, 16 Jan 2006 18:10:22 +0100
+
+rhythmbox (0.9.2-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * Add libgpod-dev to build-depends to reenable iPod support
+    (closes: #346006). [debian/control.in]
+  * Update description. [debian/control.in]
+  * Make ALSA the default GStreamer audiosink. [debian/control.in]
+
+ -- Jordi Mallach <jordi@debian.org>  Tue, 10 Jan 2006 21:11:18 +0100
+
+rhythmbox (0.9.2-1) experimental; urgency=low
+
+  * New upstream version:
+    - Add podcast support
+    - Podcast fixes and improvements
+    - Add support for audioscrobbler/last.fm submission
+    - Add audio CD support
+    - Use libgpod, add support for ipod playlists
+    - Make more strings translatable
+    - Stop when reaching end of playlist in linear mode
+    - Fix lots of window-state weirdness
+    - Remember window position
+    - Fix memory leaks
+    - Make hidden/shown window policy better
+    - DBus interface improvements
+    - Use natural sorting order
+    - Fix "show window" in tray icon menu to toggle correctly
+    - Don't share hidden tracks with DAAP
+    - Make connecting to DAAP shares asynchronous
+    - Make DAAP work on 64 bit systems
+    - Make tag-writing safer
+    - Fix memory leaks 
+    - Make default stations actually show up
+    - Make dragging playlists copy not move files
+    - Fix re-ordering problems
+    - Save the database regularly
+    - Show disc number in info window
+    - UI and HIG fixes
+    - Allow search box to match multiple properties
+    - Report iradio errors better
+    - Make date formats correct in all locales
+    - Fix drag-and-drop of URLs
+    - Mork better with autofs mounts
+    - Don't wedge gnome-vfs-daemon
+    - Use chunked loading/sending of daap files
+    - Allow Anjuta to import the source tree
+    - Add support for year/date metadata
+    - Display errors in the radio properties
+    - Add file-overwrite dialogs for GTK 2.8
+    - Add "Edit Playlist" item to main menu
+    - Make new radio station use the properties dialog
+    - Display the count in the "All" line of browsers
+    - Fix query-model refcount and polling problems
+    - Fix emission of entry-changed signals on startip
+    - Support gzip encoded DAAP
+    - Allow pause by middle-clicking on the tray icon
+    - Start some RhythmDB API docs
+    - Don't display error if Avahi daemon isn't running
+    - Emit single "icon missing" warning
+    - Store the bitrate for radio streams
+    - Bring back per-source search box text
+    - GObject-ify rb-daap-connection.c
+    - Make disabling and re-enabling daap work
+    - Give playlists and entry-type
+    - Use g_list_prepend to make things not O(n^2)
+    - Don't hang with broken DAAP servers
+    - Update quick-reference to have right keys
+    - Fix libsoup tests for DAAP
+    - Don't have date-added column for cds and ipods
+    - Support Avahi 0.6
+    - Disable saving, renaming, and deletion of DAAP playlists
+    - Assorted other bug fixes
+    - Disable the close button's minimise-to-tray action
+    - Fix the window parameter storage when using the notify (Ubuntu: #1657).
+    - Fix the scaling of the side pane (Ubuntu: #15048).
+    - Fix the sorting by genre (Ubuntu: #19815).
+  * debian/control.in:
+    - Build-Depends on libmusicbrainz4-dev
+    - doesn't Build-Depends on dbus-1-utils
+    - build with dbus 0.60
+  * debian/patches/07_dbus060.patch:
+    - patch for dbus 0.60
+  * debian/rules:
+    - build with tag writing (it does id3/flac changes at the moment)
+
+  [ Loic Minier ]
+  * Update watch file.
+  * Don't depend on avahi-daemon. (Closes: #343051)
+  
+ -- Sebastien Bacher <seb128@debian.org>  Mon, 19 Dec 2005 00:48:21 +0100
+
+rhythmbox (0.9.1-1) experimental; urgency=low
+
+  [ Loic Minier ]
+  * Fix and update GStreamer pipelines suggested to debug Rhythmbox.
+    (Closes: #329213) [debian/README.Debian]
+  * Update audiosink configuration information. [debian/README.Debian]
+  
+  [ Sebastien Bacher ]
+  * New upstream version:
+    - Add DAAP (iTunes' music sharing) support.
+    - Notification bubble from tray icon.
+    - Minimise to tray rather than exiting when close is used.
+    - Allow sources to form a tree, for child playlists.
+    - Add removable media framework and port ipod code.
+    - Support HAL >= 0.5 as well as > 0.2.
+    - Much improved automatic playlists, including more criteria options and
+      sorting.
+    - Use a proper GTK status bar.
+    - Better drag-n-drop support: drag from browsers to source list, 
+      from browsers or track list to other apps and re-order playlists.
+    - Update DBus support to version 0.35, general DBUS improvements and drop
+      command-line arguments for DBus.
+    - Add "limit by time" option to playlists.
+    - Display hours if a song is longer than 60 minutes.
+    - Use new volume widget, same as in Totem.
+    - Focus entry view when enter is pressed in search box.
+    - Show source list when playlist os created.
+    - Disable rather then hide seek bar.
+    - Improved error handling in RBPlayer.
+    - Remove dashboard support.
+    - Many HIG and UI improvements.
+    - Use last.fm instead of allofmusic.com for links.
+    - Remove autorating of tracks.
+    - Fix header synchronisation.
+    - Fix some window state issues.
+    - Add "Date Added" column.
+    - Better playlist loading.
+    - Make playing source bold, rather than using an icon.
+    - Allow library-derived sources to override behaviour.
+    - Correctly update status bar and don't use useless info.
+    - Add support for building API docs with gnome-doc-utils.
+    - Update the default radio stations.
+    - Remove a heap of old code, and use stock art instead of custom art.
+    - Many rhythmdb improvements.
+    - Fix more memory leaks.
+    - Many bug fixes and minor improvements.
+    - Updated Translations.
+  * debian/control.in:
+    - build with the new dbus/hal versions (Closes: #333362).
+  * debian/control.in, debian/rules:
+    - build with the daap option.
+
+ -- Sebastien Bacher <seb128@debian.org>  Mon, 17 Oct 2005 19:35:51 +0200
+
+rhythmbox (0.9.0-2) experimental; urgency=medium
+
+  * Bump totem build-dep to catch the shlib-deps. (Closes: #327460)
+
+ -- Loic Minier <lool@dooz.org>  Sun, 11 Sep 2005 12:14:39 +0200
+
+rhythmbox (0.9.0-1) experimental; urgency=low
+
+  * New upstream release.
+    - Bump libgtk2.0-dev, libgnomevfs2-dev, dbus-glib-1-dev,
+      libgstreamer0.8-dev, libgstreamer-plugins0.8-dev,
+      libgstreamer-gconf0.8-dev build-deps.
+      [debian/control, debian/control.in]
+    - Add libnautilus-burn-dev, libhal-dev, libtotem-plparser-dev, pkg-config,
+      liblircclient-dev, libbonobo2-dev, liborbit2-dev build-deps.
+      [debian/control, debian/control.in]
+    - Drop obsolete patches. [debian/patches/02_patch-134_ipod-crash.patch,
+      debian/patches/03_patch-135_utf-8-filenames.patch,
+      debian/patches/04_patch-136_musepack-wma-support.patch,
+      debian/patches/05_patch-137-song-rating.patch,
+      debian/patches/20_bugzilla-attach-38781_ipod-gnomevfsvolumemonitor-hal-support.patch,
+      debian/patches/21_re-autotools.patch,
+      debian/patches/30_bugzilla-attach-39194_fix-null-mountpoint.patch,
+      debian/patches/40_debian_geometry_hints.patch,
+      debian/patches/50_debian_xmlsaveformatfile_check.patch]
+    - Doesn't loop forever when parsing radio streams. (Closes: #278761)
+    - Column sorting works. (Closes: #294605, #315511)
+    - New ^Y keybinding to clear the search text. (Closes: #211720)
+    - Doesn't drop files from the DB if a network share isn't mounted.
+      (Closes: #287072)
+    - Xine backend has been dropped upstream. (Closes: #225883, #255817)
+    - Shows date in song properties. (Closes: #274407)
+  * Switch DEB_CONFIGURE_EXTRA_FLAGS to a "+=" and add a comment on building
+    with tag writing support. [debian/rules]
+  * Bump Standards-Version to 3.6.2. [debian/copyright]
+  * Drop xine TODO item. [debian/TODO]
+  * Add CDBS' utils. [debian/rules]
+
+ -- Loic Minier <lool@dooz.org>  Tue,  6 Sep 2005 10:35:16 +0200
+
+rhythmbox (0.8.8-13) unstable; urgency=high
+
+  * urgency high for Sarge targetted RC bugfix
+  * check the return code of xmlSaveFormatFile when saving playlists, fixes
+    data loss when disk is full (closes: #309119).  Thanks to Robert McQueen.
+    [debian/patches/50_debian_xmlsaveformatfile_check.patch]
+  * fix a bug introduced with the 40_debian_geometry_hints patch where one
+    couldn't resize the small version of the GUI (closes: #257838)
+    [debian/patches/40_debian_geometry_hints.patch]
+
+ -- Loic Minier <lool@dooz.org>  Sun, 15 May 2005 20:42:12 +0200
+
+rhythmbox (0.8.8-12) unstable; urgency=low
+
+  * debian/patches/40_debian_geometry_hints.patch: new patch to fix the
+    probably wrong 0 max_height geometry hint, interpreted strangely by
+    different windows managers
+
+ -- Loic Minier <lool@dooz.org>  Sun,  8 May 2005 10:02:40 +0200
+
+rhythmbox (0.8.8-11) unstable; urgency=low
+
+  * debian/patches/\
+      20_bugzilla-attach-38781_ipod-gnomevfsvolumemonitor-hal-support.patch:
+    new patch from upstream to detect the mount point of iPod devices.  This
+    means there's no more hardcoded iPod mount point, and we "comply" with FHS
+    (closes: #298915)
+  * Add a dbus-glib-1-dev build-dep for HAL support.
+  * debian/patches/21_re-autotools.patch: re-configure and re-autoheader with
+    newer configure.ac
+  * debian/patches/30_bugzilla-attach-39194_fix-null-mountpoint.patch: new
+    patch from upstream to fix a crash when mountpoint is NULL (probably
+    caused by blank CD in drive)
+
+ -- Loic Minier <lool@dooz.org>  Thu, 24 Mar 2005 14:11:36 +0100
+
+rhythmbox (0.8.8-6) unstable; urgency=high
+
+  * urgency high because of RC bug fix
+  * build-depend on libgnomeui-dev (>= 2.8.1-3) to get rif of the libhowl
+    dependency (closes: #298870) (that's enough to get a good libgnomevfs2
+    dep)
+
+ -- Loic Minier <lool@dooz.org>  Sat, 12 Mar 2005 15:43:19 +0100
+
+rhythmbox (0.8.8-5) unstable; urgency=low
+
+  * debian/patches/00_relibtoolize.patch: dropped (useless)
+
+ -- Loic Minier <lool@dooz.org>  Sun, 30 Jan 2005 14:10:10 +0100
+
+rhythmbox (0.8.8-4) unstable; urgency=low
+
+  * debian/patches:
+    - removed 01_keep-playing-state.patch (closes: #292509)
+      (reopens: #218262)
+    - added 00_relibtoolize.patch (libtoolize --force && aclocal-1.7 &&
+      autoconf && rm -rf autom4te.cache)
+
+ -- Loic Minier <lool@dooz.org>  Sat, 29 Jan 2005 19:51:34 +0100
+
+rhythmbox (0.8.8-3) unstable; urgency=low
+
+  * control:
+    . we do need libgstreamer-plugins0.8-dev
+    . we only need libxml-parser-perl, and not intltool
+
+ -- Loic Minier <lool@dooz.org>  Wed, 26 Jan 2005 18:54:10 +0100
+
+rhythmbox (0.8.8-2) unstable; urgency=low
+
+  * build with iPod support! (closes: #277678)
+  * patches:
+      . 01_keep-playing-state.patch: patch from upstream BTS to stay in
+        paused mode when pressing next or previous (closes: #218262)
+      . 02_patch-134_ipod-crash.patch: prevent crash when iPod is connected
+      . 03_patch-135_utf-8-filenames.patch: better handling of utf-8 and
+        non-utf-8 filenames
+      . 04_patch-136_musepack-wma-support.patch: musepack and wma support
+      . 05_patch-137-song-rating.patch: song rating fix
+  * updated notes in README.Debian
+  * corrected copyright file
+  * added TODO.Debian with a short list of small things that could done
+  * new rhythmbox.xpm (Gimp's output is really nicer)
+  * control:
+    . removed libpanel-applet2-dev libgstreamer-plugins0.8-dev, libflac-dev,
+      libvorbis-dev, and libmusicbrainz2-dev Build-Depends (not used)
+    . removed esound Recommends
+    . removed vorbis-tools Depends
+    . moved scrollkeeper and yelp to Recommends
+    . added debhelper's misc:deps
+    . updated CDBS vresionned build-deps to ensure we have dh_desktop
+    . changed libxml-parser-perl Depends in favor of intltool (>= 0.28-2)
+  * rhythmbox.postinst: removed
+
+ -- Loic Minier <lool@dooz.org>  Tue, 25 Jan 2005 10:04:52 +0100
+
+rhythmbox (0.8.8-1) unstable; urgency=low
+
+  * New upstream release:
+    - flip playing icon in RTL locale.
+    - don't include x-directory/normal in MimeType.
+    - save playlists after first start even if nothing's loaded.
+    - don't include nautilus menu item by default. (Closes: #260317)
+  * rhythmbox.menu: remove trailing space (Closes: #262427)
+  * rules:
+    - add DEB_DH_MAKESHLIBS_ARGS_rhythmbox to workaround #204975
+    - remove debugging CFLAGS
+  * added rhythmbox.xpm (convert'ed from upstream's rhythmbox.png) and
+    rhythmbox.install to provide an ugly icon in the menu
+  * set myself as Maintainer
+  * Updated notes in README.Debian (Closes: #265167)
+
+ -- Loic Minier <lool@dooz.org>  Tue, 12 Oct 2004 23:56:37 +0200
+
+rhythmbox (0.8.7-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Sebastien Bacher <seb128@debian.org>  Thu, 30 Sep 2004 01:44:27 +0200
+
+rhythmbox (0.8.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * rhythmbox.postinst:
+    - register the desktop file in the database for the new mime system.
+
+ -- Sebastien Bacher <seb128@debian.org>  Sat, 18 Sep 2004 23:09:19 +0200
+
+rhythmbox (0.8.5-3) unstable; urgency=low
+
+  * debian/rhythmbox.postinst, debian/rhythmbox.postrm:
+    - removed, dh_gconf and dh_scrollkeeper handle that.
+
+ -- Sebastien Bacher <seb128@debian.org>  Fri,  6 Aug 2004 20:41:15 +0000
+
+rhythmbox (0.8.5-2) unstable; urgency=low
+
+  * debian/NEWS: fix typos (closes: #263203).
+  * rebuild against libgnutls11 (closes: #263676).
+  * debian/control.in: build-depend on libgnomeui 2.6.1.1-4 to enforce the
+    libgnutls11 dependency.
+
+ -- Josselin Mouette <joss@debian.org>  Thu,  5 Aug 2004 16:47:49 +0200
+
+rhythmbox (0.8.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/rhythmbox.mime:
+    - register with the MIME system (Closes: #255905).
+  * debian/patches/lirc.patch:
+    - removed the patch for the lirc support since apparently it doesn't work.
+  
+ -- Sebastien Bacher <seb128@debian.org>  Thu, 24 Jun 2004 12:47:00 +0200
+
+rhythmbox (0.8.4-6) unstable; urgency=low
+
+  * debian/control.in:
+    - depends on gstreamer0.8-flac (Closes: #250584).
+  * debian/rhythmbox.menu:
+    - added an icon (Closes: #252844).
+  * debian/patches/lirc.patch:
+    - patch from Jon Oberheide <jon@focalhost.com> to reactivate the lirc
+      support (Closes: #246422).
+
+ -- Sebastien Bacher <seb128@debian.org>  Fri, 11 Jun 2004 18:37:33 +0200
+
+rhythmbox (0.8.4-5) unstable; urgency=low
+
+  * Rebuilt with gtk+2.4 to use the new fileselector (Closes: #252827).
+
+ -- Sebastien Bacher <seb128@debian.org>  Sun,  6 Jun 2004 02:47:40 +0200
+
+rhythmbox (0.8.4-4) unstable; urgency=low
+
+  * debian/control.in:
+    + really fix audiosink problem.
+
+ -- Sebastien Bacher <seb128@debian.org>  Sun, 23 May 2004 21:36:32 +0200
+
+rhythmbox (0.8.4-3) unstable; urgency=low
+
+  * debian/control.in:
+    + use gstreamer0.8-audiosink for Depends (Closes: #250433).
+  * included NEWS file from Martin-Eric Racine <q-funk@pp.fishpool.fi>.
+
+ -- Sebastien Bacher <seb128@debian.org>  Sun, 23 May 2004 03:07:11 +0200
+
+rhythmbox (0.8.4-2) unstable; urgency=low
+
+  * Upload to unstable since the new branch works fine.
+
+ -- Sebastien Bacher <seb128@debian.org>  Sat, 22 May 2004 01:51:46 +0200
+
+rhythmbox (0.8.4-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Sebastien Bacher <seb128@debian.org>  Wed, 19 May 2004 00:00:12 +0200
+
+rhythmbox (0.8.3-2) experimental; urgency=low
+
+  * Upload in experimental since gstreamer 0.8 is in the archive now.
+    + officially close bugs marked as fixed in previous changelog entries
+      (Closes: #243408, #245839, #244144, #229361, #235110, #220213, #229710)
+      (Closes: #228474, #225183, #237048, #244340, #247167).
+  * debian/control.in:
+    + added Build-Depends on libxt-dev and libxml-parser-perl.
+
+ -- Sebastien Bacher <seb128@debian.org>  Mon, 17 May 2004 18:53:07 +0200
+
+rhythmbox (0.8.3-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Sebastien Bacher <seb128@debian.org>  Tue,  4 May 2004 22:24:23 +0200
+
+rhythmbox (0.8.2-1) experimental; urgency=low
+
+  * New upstream release.
+    + don't crash when the GConf schema isn't properly installed
+      (Closes: #243408).
+  * debian/control.in:
+    + removed Build-depends on libid3tag0-dev (Closes: #245839).
+
+ -- Sebastien Bacher <seb128@debian.org>  Sat,  1 May 2004 12:51:43 +0200
+
+rhythmbox (0.8.1-1) experimental; urgency=low
+
+  * New upstream release
+    + find iradio-initial.pls correctly (Closes: #244144).
+
+ -- Sebastien Bacher <seb128@debian.org>  Tue, 20 Apr 2004 22:54:33 +0200
+
+rhythmbox (0.8.0-1) experimental; urgency=low
+
+  * New upstream release.
+    + save database and playlists while running (Closes: #229361, #235110).
+    + magnatune radio is in default list (Closes: #220213).
+    + update shuffle checkbox on changes (Closes: #229710).
+  * Added manpage from Max Vozeler <max@hinterhof.net> (Closes: 228474).
+  * debian/control.in:
+    + updated Build-Depends on libid3tag0-dev to >= 0.15.0b 
+      (Closes: #225183, #237048).
+
+ -- Sebastien Bacher <seb128@debian.org>  Fri, 16 Apr 2004 22:25:19 +0200
+
+rhythmbox (0.7.2-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Sebastien Bacher <seb128@debian.org>  Mon, 12 Apr 2004 19:33:13 +0200
+
+rhythmbox (0.6.10-1) unstable; urgency=low
+
+  * New upstream release (Closes: #241166).
+
+ -- Sebastien Bacher <seb128@debian.org>  Wed, 31 Mar 2004 19:38:10 +0200
+
+rhythmbox (0.6.8-1) unstable; urgency=low
+
+  * New upstream release:
+    + Save library even after first time Rhythmbox runs 
+      (Closes: #235818,  #235823).
+
+ -- Sebastien Bacher <seb128@debian.org>  Sat,  6 Mar 2004 12:40:54 +0100
+
+rhythmbox (0.6.7-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/rules:
+    + Removed the workaround, the schemas installation is fixed in this version.
+
+ -- Sebastien Bacher <seb128@debian.org>  Sat, 28 Feb 2004 11:56:07 +0100
+
+rhythmbox (0.6.6-1) unstable; urgency=low
+
+  * New upstream release:
+    + Keep current selection on right-click (Closes: #211575).
+  * debian/control.in:
+    + Suggests yelp (Closes: #227263).
+    + Updated Buil-Depends on debhelper to 4.1.87 for dh_gconf 
+      (Closes: #230861).  
+  * debian/README.Debian:
+    + Added a note on list conversions of files between 0.5 and 0.6 versions
+      (Closes: #227501).
+  * debian/patches/rb-m3u-playlists.patch:
+    + Removed since the fix is included in the new version.
+  * debian/rules:
+    + Workaround for the wrong schemas installation dir.
+
+ -- Sebastien Bacher <seb128@debian.org>  Fri, 27 Feb 2004 22:35:39 +0100
+
+rhythmbox (0.6.5-2) unstable; urgency=low
+
+  * debian/patches/rb-m3u-playlists.patch:
+    + New patch to fix m3u playlists loading (Closes: #229481).
+
+ -- Sebastien Bacher <seb128@debian.org>  Sun,  1 Feb 2004 00:47:56 +0100
+
+rhythmbox (0.6.5-1) unstable; urgency=low
+
+  * New upstream release:
+    + Work with session management (Closes: #223257).
+    + Fix length calculation for some VBR MP3s (Closes: #224456).
+    + Fix volume popup near bottom of screen (Closes: #213257).    
+  * debian/README.Debian:
+    + Updated to add a note on gstreamer-properties usage to change audio sink
+      (Closes: #229023).
+  
+ -- Sebastien Bacher <seb128@debian.org>  Thu, 22 Jan 2004 19:36:22 +0100
+
+rhythmbox (0.6.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Colin Walters <walters@debian.org>  Mon, 12 Jan 2004 08:16:39 +0000
+
+rhythmbox (0.6.3-1) unstable; urgency=low
+
+  * New upstream release.
+    + Use better algorithms for Shuffle (Closes: #206407).
+    + Fix length parsing from variable-bitrate MP3s (Closes: #224456).
+  * debian/patches/00docs-fix.patch: 
+    + Removed since the changes are include in the new version.     
+  * debian/patches/01docs-fix-autogen.patch: 
+    + Removed since the changes are include in the new version.  
+
+ -- Sebastien Bacher <seb128@debian.org>  Mon, 22 Dec 2003 20:40:58 +0100
+
+rhythmbox (0.6.1-2) unstable; urgency=low
+
+  * 00docs-fix.patch: patch from Jordi Mallach to make the XML correct
+    (closes: #223538, #223802).
+  * 01docs-fix-autogen.patch: patch Makefile.in as well.
+  * rules:
+    + use simple-patchsys.mk to apply the patches.
+    + clean help/C/authors.xml to force its rebuild.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 12 Dec 2003 20:50:18 +0100
+
+rhythmbox (0.6.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Sebastien Bacher <seb128@debian.org>  Thu,  4 Dec 2003 21:53:28 +0100
+
+rhythmbox (0.6.0-1) unstable; urgency=low
+
+  * New upstream release.
+    + Fix the launching from nautilus (Closes: #218715).
+    + Keep a playback history (Closes: #218264).
+    + Don't crash on a song removal (Closes: #207073).
+  * debian/control:
+    + Set GNOME Team as maintainer (thanks Colin).
+    + Updated Standards-Version to 3.6.1.0.
+  * debian/patches:
+    + keycodes.patch: removed.
+  * debian/rules:
+    + Updated for the GNOME Team maintenance.
+
+ -- Sebastien Bacher <seb128@debian.org>  Tue, 11 Nov 2003 22:02:23 +0100
+
+rhythmbox (0.5.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Colin Walters <walters@debian.org>  Mon, 27 Oct 2003 17:19:42 -0500
+
+rhythmbox (0.5.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Colin Walters <walters@debian.org>  Thu,  4 Sep 2003 23:43:28 -0400
+
+rhythmbox (0.5.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Colin Walters <walters@debian.org>  Tue, 26 Aug 2003 23:50:22 -0400
+
+rhythmbox (0.5.1-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixes multimedia keycodes grabbing (Closes: #206010)
+
+ -- Colin Walters <walters@debian.org>  Mon, 18 Aug 2003 18:34:37 -0400
+
+rhythmbox (0.5.0-1) unstable; urgency=low
+
+  * New upstream release.
+    - Kills off old copied getline stuff, which had size_t issues
+      (Closes: #205849)
+
+ -- Colin Walters <walters@debian.org>  Sat, 16 Aug 2003 23:13:40 -0400
+
+rhythmbox (0.4.99.5-1) unstable; urgency=low
+
+  * New upstream prerelease (Closes: #204115)
+
+    Sorry Debian Unstable users, you're my guinea pigs.  This is
+    a prerelease.  It does however fix a near-infinite number of bugs,
+    some of which you can see below.  So overall, I doubt anyone
+    would want to stay with the old package.  If you don't like this,
+    please don't file bugs.  Instead, you will have to fork a copy
+    of net-rhythmbox yourself.
+
+    Now, since this is a prerelease - I am interested in bug reports.
+    You may file bugs in the Debian Bug Tracking System, but I would
+    much prefer that you file them in the upstream Bugzilla:
+    http://bugzilla.gnome.org/
+
+    However, it does break compatibility with the old library cache
+    format; you will have to re-add all of your files to the library.  The
+    upstream author is kind of a lazy bastard, and doesn't really have
+    time to write transition scripts (which would be quite difficult
+    anyways).  Sorry about that.
+  
+    - Rhythmbox follows links, this is intentional (Closes: #169488)
+    - Alphabetical sorting is fixed (Closes: #172089)
+    - Playlist saving is more reliable (Closes: #182815)
+    - Tray icon recreates itself (Closes: #192557)
+    - Setting properties on iradio stations works (Closes: #193686)
+    - Control-J is consistent with menu item (Closes: #173634)
+    - Groks .m3u files (Closes: #182596)
+    - GStreamer threading is more reliable (Closes: #178283)
+    - Shuffling code is refactored, should not hang (Closes: #192556)
+    - Playing files with : in name works (Closes: #188511)
+    - Repeat in single-song playlists works (Closes: #188477)
+
+ -- Colin Walters <walters@debian.org>  Fri, 15 Aug 2003 21:31:23 -0400
+
+rhythmbox (0.4.8-5) unstable; urgency=low
+
+  * debian/control:
+    - Remove Build-Depends on libgstreamer-core-libs-dev.
+    - Remove Depends on gstreamer-core.
+    - Build-Depend on the latest libgstreamer0.6-dev.
+    - Build-Depend on the latest cdbs.
+  
+ -- Colin Walters <walters@debian.org>  Sat,  7 Jun 2003 01:47:20 -0400
+
+rhythmbox (0.4.8-4) unstable; urgency=low
+
+  * debian/control:
+    - Bump Standards-Version: 3.5.10, no changes required.
+    - Build-Depend on cdbs.
+    - Remove Build-Depends on xlibs-pic, now that libxosd2-dev has
+      picked it up.
+    - Change Section to gnome.
+  * debian/rules:
+    - Convert to cdbs.
+  * debian/rocks:
+    - Removed.
+
+ -- Colin Walters <walters@debian.org>  Sun, 25 May 2003 05:08:35 -0400
+
+rhythmbox (0.4.8-3) unstable; urgency=low
+
+  * The "Pfizer Launches 'Zoloft For Everything' Ad Campaign" release.
+  * debian/control:
+    - Add Build-Depends on xlibs-pic; this should make the powerpc buildd
+    happy.
+
+ -- Colin Walters <walters@debian.org>  Wed, 14 May 2003 16:34:01 -0400
+
+rhythmbox (0.4.8-2) unstable; urgency=low
+
+  * The "Dozens Dead In Chicago-Area Meatwave" release.
+  * debian/control:
+    - Add Build-Depends on xlibs-pic (Closes: #192561).
+  * debian/patches/getline-ssizet.patch:
+    - New patch, should fix build failures on ia64 and alpha.
+
+ -- Colin Walters <walters@debian.org>  Sat, 10 May 2003 00:10:36 -0400
+
+rhythmbox (0.4.8-1) unstable; urgency=low
+
+  * The "Bush To Lovely Chilean Ambassador: 'I Must Paint You'" release.
+  * New upstream release.
+    - Really restore shuffle state (Closes: #188951)
+  * debian/control:
+    - Bump Build-Depends on musicbrainz to 2.0.0.
+    - Bump Build-Depends on gstreamer to 0.6.1.
+    - Standards-Version: 3.5.9, no changes required.
+    - Update description.
+  * debian/rules:
+    - Update to latest version of Colin's Build System.
+
+ -- Colin Walters <walters@debian.org>  Wed,  7 May 2003 15:07:35 -0400
+
+rhythmbox (0.4.6-1) unstable; urgency=low
+
+  * The "Marilyn Manson Now Going Door-To-Door Trying To Shock People"
+    release.
+  * If this release fixes one of the bugs you reported, please close it!
+  * New upstream release.
+  * debian/rocks:
+    - Include NEWS, README in /usr/share/doc/rhythmbox (Closes: #179430)
+  * debian/rules:
+    - Update to latest version of Colin's Build System.
+
+ -- Colin Walters <walters@debian.org>  Fri, 11 Apr 2003 23:43:52 -0400
+
+rhythmbox (0.4.5-6) unstable; urgency=low
+
+  * debian/control:
+    - Build-Depend on the latest libvorbis-dev.
+  * debian/rocks:
+    - Disable -Werror.
+
+ -- Colin Walters <walters@debian.org>  Thu, 13 Mar 2003 18:09:53 -0500
+
+rhythmbox (0.4.5-5) unstable; urgency=low
+
+  * debian/control:
+    - Add Depends on gstreamer-core (Closes: #182114).
+
+ -- Colin Walters <walters@debian.org>  Sat, 22 Feb 2003 18:38:41 -0500
+
+rhythmbox (0.4.5-4) unstable; urgency=low
+
+  * debian/control:
+    - Add Build-Depends on gstreamer-gconf.
+
+ -- Colin Walters <walters@debian.org>  Sat, 15 Feb 2003 11:18:16 -0500
+
+rhythmbox (0.4.5-3) unstable; urgency=low
+
+  * debian/control:
+    - Add missing comma in Build-Depends.
+
+ -- Colin Walters <walters@debian.org>  Sat, 15 Feb 2003 02:10:42 -0500
+
+rhythmbox (0.4.5-2) unstable; urgency=low
+
+  * debian/control:
+    - Add Build-Depends on libflac-dev.
+
+ -- Colin Walters <walters@debian.org>  Fri, 14 Feb 2003 23:58:59 -0500
+
+rhythmbox (0.4.5-1) unstable; urgency=low
+
+  * New upstream (literally).  This package is now built from the
+  netRhythmbox branch.  This is a one-time temporary release, until
+  the next version of Rhythmbox.
+  * debian/control:
+    - Merge in dependencies from monkey-media.  Include
+    gstreamer-core-libs (Closes: #179905).
+
+ -- Colin Walters <walters@debian.org>  Thu,  6 Feb 2003 23:44:44 -0500
+
+rhythmbox (0.4.1-8) unstable; urgency=low
+
+  * NMU (with maintainer's permission)
+  * recompile against gstreamer-0.6 and monkey-media
+
+ -- David Schleef <ds@schleef.org>  Mon, 10 Feb 2003 22:11:28 -0800
+
+rhythmbox (0.4.1-7) unstable; urgency=low
+
+  * debian/control:
+    - Build-Depend on the latest monkey-media (Closes: #177971).
+  * debian/rules:
+    - Update to latest version of Colin's Build System.
+
+ -- Colin Walters <walters@debian.org>  Wed, 22 Jan 2003 15:05:36 -0500
+
+rhythmbox (0.4.1-6) unstable; urgency=low
+
+  * debian/README.Debian:
+    - Note on how to change output sink.
+  * debian/patches/no-double-filename-escape.patch:
+    - New patch, created thanks to debugging from
+    Aleksey Kliger <aleksey+@cs.cmu.edu> (Closes: #169486).
+  * debian/rules:
+    - Update to latest version of Colin's Build System.
+
+ -- Colin Walters <walters@debian.org>  Fri, 10 Jan 2003 18:46:23 -0500
+
+rhythmbox (0.4.1-5) unstable; urgency=low
+
+  * debian/control:
+    - Build-Depend on the latest monkey-media.
+    - Minor description tweaks again.
+
+ -- Colin Walters <walters@debian.org>  Mon, 23 Dec 2002 03:20:03 -0500
+
+rhythmbox (0.4.1-4) unstable; urgency=low
+
+  * debian/control:
+    - Build-Depend on scrollkeeper.  Doh.
+
+ -- Colin Walters <walters@debian.org>  Sun, 15 Dec 2002 22:07:25 -0500
+
+rhythmbox (0.4.1-3) unstable; urgency=low
+
+  * debian/rocks:
+    - Also remove omf_timestamp file in clean rule, in an attempt to fix
+      build failures on i386.
+
+ -- Colin Walters <walters@debian.org>  Sun, 15 Dec 2002 14:02:55 -0500
+
+rhythmbox (0.4.1-2) unstable; urgency=low
+
+  * debian/control:
+    - Make description suck less.
+    - Build-Depend on the latest monkey-media.
+
+ -- Colin Walters <walters@debian.org>  Thu, 12 Dec 2002 16:54:54 -0500
+
+rhythmbox (0.4.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - Build-Depend on the latest monkey-media.
+  * debian/patches/fix-color-value-overflow-in-link.patch:
+    - Incorporated upstream; deleted.
+  * debian/patches/no-crash-on-null-LANG.patch:
+    - Incorporated upstream; deleted.
+  * debian/patches/no-crash-on-null-column-preferences.patch:
+    - Incorporated upstream; deleted.
+
+ -- Colin Walters <walters@debian.org>  Wed, 11 Dec 2002 14:10:45 -0500
+
+rhythmbox (0.4.0-4) unstable; urgency=low
+
+  * debian/rocks:
+    - Fix up XML references.
+    - Remove extra cruft in deb-extra-clean rule.
+  * debian/rules:
+    - Update to latest version of Colin's Build System.
+  * debian/postinst, debian/postrm:
+    - Old, obsolete files; deleted.
+  * debian/menu:
+    - Renamed to rhythmbox.menu, so dh_installmenu actually does something
+      with it.
+
+ -- Colin Walters <walters@debian.org>  Wed, 11 Dec 2002 01:32:40 -0500
+
+rhythmbox (0.4.0-3) unstable; urgency=low
+
+  * debian/rules:
+    - Update to latest version of Colin's Build System.
+  * debian/patches/fix-color-value-overflow-in-link.patch:
+    - Use a width of 4 instead of 2.
+  * debian/patches/no-crash-on-null-LANG.patch:
+    - New patch.
+  * debian/control:
+    - Build-Depend on the latest monkey-media.
+
+ -- Colin Walters <walters@debian.org>  Tue,  3 Dec 2002 10:49:05 -0500
+
+rhythmbox (0.4.0-2) unstable; urgency=low
+
+  * debian/rules:
+    - Update to latest version of Colin's Build System.
+  * debian/rocks:
+    - Use GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 instead of
+      GCONF_DISABLE_SCHEMA_MAKEFILE_INSTALL=1.
+  * debian/patches/fix-color-value-overflow-in-link.patch,
+    debian/patches/no-crash-on-null-column-preferences.patch:
+    - New patches from Sjoerd Simons <sjoerd@luon.net>
+      (Closes: #169199, #169204).
+
+ -- Colin Walters <walters@debian.org>  Fri, 15 Nov 2002 11:49:08 -0500
+
+rhythmbox (0.4.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - Build-Depend on latest version of monkey-media.
+    - Don't Build-Depend on dbs or automake1.6.
+  * debian/rules:
+    - Use Colin's Build System.
+
+ -- Colin Walters <walters@debian.org>  Thu, 14 Nov 2002 11:42:57 -0500
+
+rhythmbox (0.3.0+release-7) unstable; urgency=low
+
+  * The "I love making the i386 users wait for the autobuilders" release.
+  * debian/control:
+    - Build-Depend on latest version of monkey-media (Closes: #168402).
+    - Bump Standards-Version to 3.5.7.
+  * debian/rules:
+    - Support DEB_BUILD_OPTIONS=noopt instead of debug.
+
+ -- Colin Walters <walters@debian.org>  Tue, 12 Nov 2002 21:22:58 -0500
+
+rhythmbox (0.3.0+release-6) unstable; urgency=low
+
+  * debian/control:
+    - Build-Depend on latest version of monkey-media (Closes: #168402).
+    - Note that Internet radio isn't implemented yet.
+  * debian/patches/gconf-schema-fix.patch:
+    - New.
+  * README.Debian:
+    - Remove outdated information (Closes: #167709).
+
+ -- Colin Walters <walters@debian.org>  Sat,  9 Nov 2002 11:33:02 -0500
+
+rhythmbox (0.3.0+release-5) unstable; urgency=low
+
+  * The "Maybe this and monkey-media should be in the same tarball..." release.
+  * debian/control:
+    - Build-Depend on latest version of monkey-media.
+
+ -- Colin Walters <walters@debian.org>  Thu, 10 Oct 2002 12:36:12 -0400
+
+rhythmbox (0.3.0+release-4) unstable; urgency=low
+
+  * The "This version of rhythmbox is a bit old, but it actually works" release.
+  * First upload to sid!  (Closes: #154919)
+  * debian/control:
+    - Build-Depend on latest version of monkey-media.
+
+ -- Colin Walters <walters@debian.org>  Thu, 10 Oct 2002 12:36:12 -0400
+
+rhythmbox (0.3.0+release-3) unstable; urgency=low
+
+  * Recompile against gstreamer packages in experimental, not my own local
+    hacked-up .debs of CVS.
+
+ -- Colin Walters <walters@debian.org>  Wed,  2 Oct 2002 20:58:59 -0400
+
+rhythmbox (0.3.0+release-2) unstable; urgency=low
+
+  * debian/control:
+    - Build-Depend on the latest versions of libpanel-applet2-dev and
+      libgnomevfs2-dev.  Remove Build-Dependency on obsolete libgnutls-dev
+      package.
+    - Update description to reflect the fact that the features list is at
+      the moment a blatant set of lies.
+
+ -- Colin Walters <walters@debian.org>  Sun, 29 Sep 2002 15:23:59 -0400
+
+rhythmbox (0.3.0+release-1) unstable; urgency=low
+
+  * New upstream version.
+  * debian/control:
+    - [rhythmbox]: Depend on scrollkeeper.
+
+ -- Colin Walters <walters@debian.org>  Fri, 16 Aug 2002 22:54:00 -0400
+
+rhythmbox (0.3.0+cvs20020730-2) unstable; urgency=low
+
+  * debian/control:
+    - [src:rhythmbox] Tighten up Build-Depends.
+
+ -- Colin Walters <walters@debian.org>  Wed, 31 Jul 2002 14:13:20 -0400
+
+rhythmbox (0.3.0+cvs20020730-1) unstable; urgency=low
+
+  * Initial Release (Closes: #151346, #154919).
+
+ -- Colin Walters <walters@debian.org>  Wed, 31 Jul 2002 01:01:06 -0400
+

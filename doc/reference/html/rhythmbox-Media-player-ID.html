@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Media player ID</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="Rhythmbox Development Reference Manual">
+<link rel="up" href="ch02.html" title="Lib">
+<link rel="prev" href="ch02.html" title="Lib">
+<link rel="next" href="rhythmbox-rb-async-queue-watch.html" title="rb-async-queue-watch">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch02.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rhythmbox Development Reference Manual</th>
+<td><a accesskey="n" href="rhythmbox-rb-async-queue-watch.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#rhythmbox-Media-player-ID.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#rhythmbox-Media-player-ID.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="rhythmbox-Media-player-ID"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="rhythmbox-Media-player-ID.top_of_page"></a>Media player ID</span></h2>
+<p>Media player ID — Media player device information library</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="rhythmbox-Media-player-ID.synopsis"></a><h2>Synopsis</h2>
+<a name="RBMediaPlayerSource"></a><pre class="synopsis">struct              <a class="link" href="rhythmbox-Media-player-ID.html#RBMediaPlayerSource-struct" title="struct RBMediaPlayerSource">RBMediaPlayerSource</a>;
+struct              <a class="link" href="rhythmbox-Media-player-ID.html#RBMediaPlayerSourceClass" title="struct RBMediaPlayerSourceClass">RBMediaPlayerSourceClass</a>;
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-Media-player-ID.html#rb-media-player-source-show-properties" title="rb_media_player_source_show_properties ()">rb_media_player_source_show_properties</a>
+                                                        (<em class="parameter"><code><a class="link" href="rhythmbox-Media-player-ID.html#RBMediaPlayerSource"><span class="type">RBMediaPlayerSource</span></a> *source</code></em>);
+                    <a class="link" href="rhythmbox-Media-player-ID.html#MPIDDevice" title="MPIDDevice">MPIDDevice</a>;
+enum                <a class="link" href="rhythmbox-Media-player-ID.html#MPIDError" title="enum MPIDError">MPIDError</a>;
+enum                <a class="link" href="rhythmbox-Media-player-ID.html#MPIDSource" title="enum MPIDSource">MPIDSource</a>;
+<a class="link" href="rhythmbox-Media-player-ID.html#MPIDDevice" title="MPIDDevice"><span class="returnvalue">MPIDDevice</span></a> *        <a class="link" href="rhythmbox-Media-player-ID.html#mpid-device-new" title="mpid_device_new ()">mpid_device_new</a>                     (<em class="parameter"><code>const <span class="type">char</span> *path</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="rhythmbox-Media-player-ID.html#mpid-enable-debug" title="mpid_enable_debug ()">mpid_enable_debug</a>                   (<em class="parameter"><code><span class="type">gboolean</span> debug</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-Media-player-ID.description"></a><h2>Description</h2>
+<p>
+MPID provides access to device information, such as device and vendor names,
+supported formats, and audio folder locations, for USB mass storage media
+player devices.  It queries the operating system (udev or HAL) and reads
+override files from the device filesystem and provides a simple set of
+properties.
+</p>
+</div>
+<div class="refsect1">
+<a name="rhythmbox-Media-player-ID.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="RBMediaPlayerSource-struct"></a><h3>struct RBMediaPlayerSource</h3>
+<pre class="programlisting">struct RBMediaPlayerSource;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="RBMediaPlayerSourceClass"></a><h3>struct RBMediaPlayerSourceClass</h3>
+<pre class="programlisting">struct RBMediaPlayerSourceClass {
+	RBBrowserSourceClass parent_class;
+
+	/* class members */
+	void		(*impl_get_entries) (RBMediaPlayerSource *source, const char *category, GHashTable *map);
+	guint64		(*impl_get_capacity) (RBMediaPlayerSource *source);
+	guint64		(*impl_get_free_space) (RBMediaPlayerSource *source);
+	void		(*impl_delete_entries) (RBMediaPlayerSource *source,
+						 GList *entries,
+						 RBMediaPlayerSourceDeleteCallback callback,
+						 gpointer data,
+						 GDestroyNotify destroy_data);
+	void		(*impl_add_playlist) (RBMediaPlayerSource *source, gchar *name, GList *entries);
+	void		(*impl_remove_playlists) (RBMediaPlayerSource *source);
+	void		(*impl_show_properties) (RBMediaPlayerSource *source, GtkWidget *info_box, GtkWidget *notebook);
+};
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="rb-media-player-source-show-properties"></a><h3>rb_media_player_source_show_properties ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                rb_media_player_source_show_properties
+                                                        (<em class="parameter"><code><a class="link" href="rhythmbox-Media-player-ID.html#RBMediaPlayerSource"><span class="type">RBMediaPlayerSource</span></a> *source</code></em>);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MPIDDevice"></a><h3>MPIDDevice</h3>
+<pre class="programlisting">typedef struct _MPIDDevice MPIDDevice;</pre>
+<p>
+An <a class="link" href="rhythmbox-Media-player-ID.html#MPIDDevice" title="MPIDDevice"><span class="type">MPIDDevice</span></a> stores a set of information for a particular attached device,
+identified by either a mount point (e.g. /media/device) or a device node
+(e.g. /dev/sdb).
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MPIDError"></a><h3>enum MPIDError</h3>
+<pre class="programlisting">typedef enum {
+	MPID_ERROR_NONE,
+	MPID_ERROR_NO_DEVICE_PATH,			/* unable to find the device path */
+	MPID_ERROR_MECHANISM_FAILED,			/* mechanism (udev, hal) not available */
+	MPID_ERROR_NOT_MEDIA_PLAYER,			/* device is not a media player */
+	MPID_ERROR_DEVICE_INFO_MISSING			/* the device info file is missing */
+} MPIDError;
+</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="MPID-ERROR-NONE:CAPS"></a><span class="term"><code class="literal">MPID_ERROR_NONE</code></span></p></td>
+<td>Indicates no error has occurred
+</td>
+</tr>
+<tr>
+<td><p><a name="MPID-ERROR-NO-DEVICE-PATH:CAPS"></a><span class="term"><code class="literal">MPID_ERROR_NO_DEVICE_PATH</code></span></p></td>
+<td>Unable to find the device path
+</td>
+</tr>
+<tr>
+<td><p><a name="MPID-ERROR-MECHANISM-FAILED:CAPS"></a><span class="term"><code class="literal">MPID_ERROR_MECHANISM_FAILED</code></span></p></td>
+<td>The device detection mechanism (e.g. udev or HAL) failed
+</td>
+</tr>
+<tr>
+<td><p><a name="MPID-ERROR-NOT-MEDIA-PLAYER:CAPS"></a><span class="term"><code class="literal">MPID_ERROR_NOT_MEDIA_PLAYER</code></span></p></td>
+<td>The device is not a media player
+</td>
+</tr>
+<tr>
+<td><p><a name="MPID-ERROR-DEVICE-INFO-MISSING:CAPS"></a><span class="term"><code class="literal">MPID_ERROR_DEVICE_INFO_MISSING</code></span></p></td>
+<td>The device detection mechanism identified the device
+  but was unable to locate its device information
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="MPIDSource"></a><h3>enum MPIDSource</h3>
+<pre class="programlisting">typedef enum {
+	MPID_SOURCE_NONE,
+	MPID_SOURCE_SYSTEM,
+	MPID_SOURCE_OVERRIDE
+} MPIDSource;
+</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="MPID-SOURCE-NONE:CAPS"></a><span class="term"><code class="literal">MPID_SOURCE_NONE</code></span></p></td>
+<td>No device information is available
+</td>
+</tr>
+<tr>
+<td><p><a name="MPID-SOURCE-SYSTEM:CAPS"></a><span class="term"><code class="literal">MPID_SOURCE_SYSTEM</code></span></p></td>
+<td>Device information provided by the operating system (e.g. udev or HAL)
+</td>
+</tr>
+<tr>
+<td><p><a name="MPID-SOURCE-OVERRIDE:CAPS"></a><span class="term"><code class="literal">MPID_SOURCE_OVERRIDE</code></span></p></td>
+<td>Device information provided by an override file on the device itself.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="mpid-device-new"></a><h3>mpid_device_new ()</h3>
+<pre class="programlisting"><a class="link" href="rhythmbox-Media-player-ID.html#MPIDDevice" title="MPIDDevice"><span class="returnvalue">MPIDDevice</span></a> *        mpid_device_new                     (<em class="parameter"><code>const <span class="type">char</span> *path</code></em>);</pre>
+<p>
+Creates a new <a class="link" href="rhythmbox-Media-player-ID.html#MPIDDevice" title="MPIDDevice"><span class="type">MPIDDevice</span></a> and reads device information for the specified
+device node path or mount point path.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>the input path (either device node path or mount point)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>new <a class="link" href="rhythmbox-Media-player-ID.html#MPIDDevice" title="MPIDDevice"><span class="type">MPIDDevice</span></a> instance</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="mpid-enable-debug"></a><h3>mpid_enable_debug ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                mpid_enable_debug                   (<em class="parameter"><code><span class="type">gboolean</span> debug</code></em>);</pre>
+<p>
+Enables or disables debug output from the MPID library
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>debug</code></em> :</span></p></td>
+<td>whether to enable debug output</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

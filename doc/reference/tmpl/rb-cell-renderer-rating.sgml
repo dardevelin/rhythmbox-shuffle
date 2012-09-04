@@ -1,0 +1,60 @@
+<!-- ##### SECTION Title ##### -->
+RBCellRendererRating
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBCellRendererRating ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RBCellRendererRating::rated ##### -->
+<para>
+
+</para>
+
+@rbcellrendererrating: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### ARG RBCellRendererRating:rating ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBCellRendererRatingClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@rated: 
+@priv: 
+
+<!-- ##### FUNCTION rb_cell_renderer_rating_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+

@@ -1,0 +1,66 @@
+<!-- ##### SECTION Title ##### -->
+RBStatusbar
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RBStatusbar ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG RBStatusbar:db ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBStatusbar:page ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBStatusbar:transfer-queue ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RBStatusbar:ui-manager ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RBStatusbarClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+
+<!-- ##### FUNCTION rb_statusbar_new ##### -->
+<para>
+
+</para>
+
+@db: 
+@ui_manager: 
+@transfer_queue: 
+@Returns: 
+
+

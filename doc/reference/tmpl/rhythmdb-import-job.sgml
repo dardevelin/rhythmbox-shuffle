@@ -1,0 +1,165 @@
+<!-- ##### SECTION Title ##### -->
+RhythmDBImportJob
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT RhythmDBImportJob ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL RhythmDBImportJob::complete ##### -->
+<para>
+
+</para>
+
+@rhythmdbimportjob: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RhythmDBImportJob::entry-added ##### -->
+<para>
+
+</para>
+
+@rhythmdbimportjob: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RhythmDBImportJob::scan-complete ##### -->
+<para>
+
+</para>
+
+@rhythmdbimportjob: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL RhythmDBImportJob::status-changed ##### -->
+<para>
+
+</para>
+
+@rhythmdbimportjob: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### ARG RhythmDBImportJob:db ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RhythmDBImportJob:entry-type ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RhythmDBImportJob:error-type ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG RhythmDBImportJob:ignore-type ##### -->
+<para>
+
+</para>
+
+<!-- ##### STRUCT RhythmDBImportJobClass ##### -->
+<para>
+
+</para>
+
+@parent_class: 
+@entry_added: 
+@status_changed: 
+@scan_complete: 
+@complete: 
+
+<!-- ##### FUNCTION rhythmdb_import_job_new ##### -->
+<para>
+
+</para>
+
+@db: 
+@entry_type: 
+@ignore_type: 
+@error_type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_import_job_add_uri ##### -->
+<para>
+
+</para>
+
+@job: 
+@uri: 
+
+
+<!-- ##### FUNCTION rhythmdb_import_job_start ##### -->
+<para>
+
+</para>
+
+@job: 
+
+
+<!-- ##### FUNCTION rhythmdb_import_job_cancel ##### -->
+<para>
+
+</para>
+
+@job: 
+
+
+<!-- ##### FUNCTION rhythmdb_import_job_complete ##### -->
+<para>
+
+</para>
+
+@job: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_import_job_scan_complete ##### -->
+<para>
+
+</para>
+
+@job: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_import_job_get_total ##### -->
+<para>
+
+</para>
+
+@job: 
+@Returns: 
+
+
+<!-- ##### FUNCTION rhythmdb_import_job_get_imported ##### -->
+<para>
+
+</para>
+
+@job: 
+@Returns: 
+
+
